@@ -1,0 +1,16 @@
+<view class="page">
+    <view class="scroll-box">
+        <scroll-view class="scroll" scrollIntoView="{{'t_'+type}}" scrollX="{{true}}">
+            <view bindtap="__e" class="{{['item',item.type==type?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'changeHouseType',['$0'],[ [ ['houseTypeList','',index,'type'] ] ] ] ] ] ]}}" id="{{'t_'+item.type}}" wx:for="{{houseTypeList}}" wx:key="index">{{item.name}}</view>
+        </scroll-view>
+    </view>
+    <view class="search-box">
+        <input bindconfirm="__e" bindinput="__e" class="input" confirmType="search" data-event-opts="{{[ [ 'confirm',[ [ 'search',['$event'] ] ] ],[ 'input',[ [ '__set_model',[ '','key','$event',[] ] ] ] ] ]}}" placeholder="请输入关键字查询" value="{{key}}"></input>
+        <view bindtap="__e" class="{{['search',search_delay?'animation-slide-right':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'search',['$event'] ] ] ] ]}}">
+            <view class="iconfont icon-search" style="font-size:26rpx;color:#FFFFFF;"></view>
+        </view>
+    </view>
+    <view class="house-box">
+        <wk-houses bind:__l="__l" value="{{houseList}}" vueId="3584c8c8-1"></wk-houses>
+    </view>
+</view>

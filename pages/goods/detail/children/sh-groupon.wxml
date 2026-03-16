@@ -1,0 +1,55 @@
+<view class="group-people shopro-selector-rect">
+    <block wx:if="{{$root.g0}}">
+        <view class="into-title x-bc">
+            <text>{{'已有'+grouponData.sales+'人参与活动'}}</text>
+            <text bindtap="__e" class="cuIcon-right" data-event-opts="{{[ [ 'tap',[ [ 'onMoreGrouponTeam',['$event'] ] ] ] ]}}"></text>
+        </view>
+        <view class="into-item x-bc" wx:if="{{index<2}}" wx:for="{{grouponTeamList}}" wx:for-item="g" wx:key="id">
+            <view class="x-f">
+                <image class="into-img" mode="aspectFill" src="{{g.leader.user_avatar}}"></image>
+                <text class="into-name">{{g.leader.user_nickname}}</text>
+            </view>
+            <view class="x-f">
+                <view class="y-end">
+                    <view class="num">还差<text class="num-color">{{g.num-g.current_num+'人'}}</text>成团</view>
+                    <view class="time" wx:if="{{g.expiretime&&g.time}}">{{'剩余时间'+g.time.h+':'+g.time.m+':'+g.time.s}}</view>
+                </view>
+                <button bindtap="__e" class="cu-btn join-btn" data-event-opts="{{[ [ 'tap',[ [ 'jump',[ '/pages/activity/groupon/detail',[ 'o',['id',g.id] ] ] ] ] ] ]}}">去参团</button>
+            </view>
+        </view>
+    </block>
+    <view bindtap="__e" class="groupon-play x-bc" data-event-opts="{{[ [ 'tap',[ [ 'jump',[ '/pages/public/richtext',[ 'o',['id',grouponData.activity.richtext_id] ] ] ] ] ] ]}}" wx:if="{{$root.m0}}">
+        <view class="x-f">
+            <text class="title">玩法</text>
+            <view class="description one-t">{{grouponData.activity.richtext_title||'开团/参团·邀请好友·人满发货（不满退款'}}</view>
+        </view>
+        <text class="cuIcon-right"></text>
+    </view>
+    <view bindtap="__e" class="{{['cu-modal','bottom-modal',showModal?'show':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'hideModal',['$event'] ] ] ] ]}}">
+        <view catchtap="__e" class="cu-dialog shop-modal" data-event-opts="{{[ [ 'tap',[ [ '',['$event'] ] ] ] ]}}" style="background:none;">
+            <view class="modal-box page_box">
+                <view class="modal-head x-bc">
+                    <text></text>
+                    <text class="head-title">正在拼团</text>
+                    <text bindtap="__e" class="cuIcon-roundclosefill" data-event-opts="{{[ [ 'tap',[ [ 'hideModal',['$event'] ] ] ] ]}}"></text>
+                </view>
+                <view class="modal-content content_box y-f">
+                    <view class="into-item x-bc" wx:for="{{grouponTeamList}}" wx:for-index="__i0__" wx:for-item="g" wx:key="id">
+                        <view class="x-f">
+                            <image class="into-img" mode="aspectFill" src="{{g.leader.user_avatar}}"></image>
+                            <text class="into-name">{{g.leader.user_nickname}}</text>
+                        </view>
+                        <view class="x-f">
+                            <view class="y-end">
+                                <view class="num">还差<text class="num-color">{{g.num-g.current_num+'人'}}</text>成团</view>
+                                <view class="time" wx:if="{{g.expiretime&&g.time}}">{{'剩余时间'+g.time.h+':'+g.time.m+':'+g.time.s}}</view>
+                            </view>
+                            <button bindtap="__e" class="cu-btn join-btn" data-event-opts="{{[ [ 'tap',[ [ 'joinTeam',[ '/pages/activity/groupon/detail',[ 'o',['id',g.id] ] ] ] ] ] ]}}">去参团</button>
+                        </view>
+                    </view>
+                </view>
+                <view class="modal-foot x-c">仅显示10个正在拼团的人</view>
+            </view>
+        </view>
+    </view>
+</view>

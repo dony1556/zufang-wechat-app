@@ -1,0 +1,27 @@
+<view class="top-box">
+    <image class="top-img" src="{{value.params.imgUrl||'../../../static/imgs/top-back.png'}}"></image>
+    <view class="user">
+        <view class="img-box">
+            <image class="avatar" src="{{loginUser.avatarurl||'/static/imgs/tx.png'}}" wx:if="{{isLogin}}"></image>
+            <image bindtap="__e" class="avatar" data-event-opts="{{[ [ 'tap',[ [ 'login',['$event'] ] ] ] ]}}" src="/static/imgs/tx.png" wx:else></image>
+        </view>
+        <view class="right">
+            <view class="text" wx:if="{{isLogin}}">{{loginUser.nickname}}</view>
+            <view bindtap="__e" class="text" data-event-opts="{{[ [ 'tap',[ [ 'login',['$event'] ] ] ] ]}}" wx:else>点击登录</view>
+            <view class="phone" wx:if="{{isLogin}}">
+                <text class="iconfont icon-shouji"></text>
+                <button bindgetphonenumber="__e" class="btn1" data-event-opts="{{[ [ 'getphonenumber',[ [ 'bindPhone',['$event'] ] ] ] ]}}" openType="getPhoneNumber">{{loginUser.phone||'绑定手机号'}}</button>
+            </view>
+        </view>
+    </view>
+    <view bindtap="__e" class="buyvip" data-event-opts="{{[ [ 'tap',[ [ 'navToMenu',['$event'] ] ] ] ]}}" wx:if="{{value.params.vip_show==1}}">
+        <view class="vipleft">
+            <image src="../../../static/imgs/vipicon.png"></image>
+            <text>VIP会员</text>
+        </view>
+        <view class="vipright">
+            <text class="text">{{loginUser.vip_end_time?loginUser.vip_end_time:'立即开通VIP会员'}}</text>
+            <text class="iconfont icon-you" style="font-size:22rpx;color:#999;margin-left:6rpx;"></text>
+        </view>
+    </view>
+</view>

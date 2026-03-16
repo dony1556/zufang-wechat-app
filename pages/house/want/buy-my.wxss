@@ -1,0 +1,62 @@
+.page .item-box {
+  padding: 16rpx 20rpx;
+}
+.page .item-box .item {
+  padding: 20rpx 20rpx;
+  background-color: #fff;
+  border-radius: 12rpx;
+  margin: 20rpx 0rpx;
+  position: relative;
+}
+.page .item-box .item .city {
+  font-size: 28rpx;
+}
+.page .item-box .item .budget {
+  font-size: 28rpx;
+  margin-top: 16rpx;
+}
+.page .item-box .item .time {
+  font-size: 26rpx;
+  margin-top: 16rpx;
+}
+.page .item-box .item .remark {
+  font-size: 28rpx;
+  margin-top: 16rpx;
+}
+.page .item-box .item .tel {
+  font-size: 58rpx;
+  color: #f50;
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+}
+.page .item-box .item .btn-box {
+  margin-top: 26rpx;
+  justify-content: flex-end;
+  display: flex;
+  font-size: 24rpx;
+}
+.page .item-box .item .btn-box .edit {
+  padding: 6rpx 20rpx;
+  line-height: 40rpx;
+  border: 1rpx solid #999;
+  color: #999;
+  border-radius: 8rpx;
+  margin-right: 20rpx;
+}
+.page .item-box .item .btn-box .delete {
+  padding: 6rpx 20rpx;
+  line-height: 40rpx;
+  border: 1rpx solid #999;
+  color: #999;
+  border-radius: 8rpx;
+  margin-right: 30rpx;
+}
+.page .item-box .item .btn-box .deal {
+  padding: 6rpx 20rpx;
+  line-height: 40rpx;
+  border: 1rpx solid #999;
+  color: #999;
+  border-radius: 8rpx;
+  margin-right: 20rpx;
+}

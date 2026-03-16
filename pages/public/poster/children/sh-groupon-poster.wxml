@@ -1,0 +1,24 @@
+<view class="content">
+    <view class="poster-box y-f" wx:if="{{poster.finalPath}}">
+        <image class="posterImage" mode="widthFix" src="{{poster.finalPath}}"></image>
+        <view class="share-box">
+            <view class="share-list-box x-f">
+                <button class="share-item share-btn y-f" openType="share">
+                    <image mode class="share-img" src="http://shopro.7wpp.com/imgs/share_wx.png"></image>
+                    <text class="share-title">微信好友</text>
+                </button>
+                <view bindtap="__e" class="share-item y-f" data-event-opts="{{[ [ 'tap',[ [ 'saveImage',['$event'] ] ] ] ]}}">
+                    <image mode class="share-img" src="http://shopro.7wpp.com/imgs/save_img.png"></image>
+                    <text class="share-title">保存图片</text>
+                </view>
+                <view bindtap="__e" class="share-item y-f" data-event-opts="{{[ [ 'tap',[ [ 'copyLink',['$event'] ] ] ] ]}}">
+                    <image mode class="share-img" src="http://shopro.7wpp.com/imgs/share_link.png"></image>
+                    <text class="share-title">复制链接</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="hideCanvasView">
+        <canvas canvasId="groupon_poster" class="hideCanvas" style="{{'width:'+(poster.width||1)+'px'+';'+'height:'+(poster.height||1)+'px'+';'}}"></canvas>
+    </view>
+</view>

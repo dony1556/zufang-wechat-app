@@ -1,0 +1,225 @@
+.detail-head {
+  background: linear-gradient(0deg, #efc480, #f8dca5) no-repeat;
+  background-size: 100% 134rpx;
+}
+.detail-head .state-box {
+  padding: 30rpx 40rpx;
+  color: hsla(0, 0%, 100%, 0.9);
+}
+.detail-head .state-box .state-img {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 40rpx;
+}
+.detail-goods {
+  padding: 20rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.detail-goods .order-list .refund_msg {
+  font-size: 28rpx;
+  color: #999;
+  flex: 1;
+  text-align: left;
+}
+.detail-goods .order-list .order-bottom {
+  background: #fff;
+  padding-bottom: 20rpx;
+  justify-content: flex-end;
+  padding-top: 20rpx;
+}
+.detail-goods .order-list .order-bottom .btn1 {
+  width: 160rpx;
+  height: 60rpx;
+  border: 1rpx solid #dfdfdf;
+  border-radius: 30rpx;
+  font-size: 26rpx;
+  background: #fff;
+  padding: 0;
+  margin-right: 20rpx;
+}
+.detail-goods .order-list .order-bottom .btn2 {
+  width: 160rpx;
+  height: 60rpx;
+  border: 1rpx solid #d5a65a !important;
+  border-radius: 30rpx;
+  font-size: 26rpx;
+  color: #d5a65a !important;
+  padding: 0;
+  background: #fff;
+  margin-right: 20rpx;
+}
+.group-box {
+  background: #fff;
+  padding: 40rpx 0;
+  height: 250rpx;
+  margin-bottom: 20rpx;
+}
+.group-box .tip-box {
+  font-size: 28rpx;
+}
+.group-box .tip-box .cuIcon-roundcheckfill {
+  color: #ecbe60;
+  font-size: 34rpx;
+  margin-right: 20rpx;
+}
+.group-box .title-box {
+  font-size: 26rpx;
+  font-weight: 700;
+  color: #333;
+}
+.group-box .title-box .group-num {
+  color: #f8002c;
+}
+.group-box .title-box .count-down-tip {
+  font-size: 24rpx;
+  padding-left: 10rpx;
+}
+.group-box .title-box .time-box {
+  font-size: 18rpx;
+}
+.group-box .title-box .time-box .count-text {
+  display: inline-block;
+  background-color: #383a46;
+  color: #fff;
+  font-size: 18rpx;
+  border-radius: 2rpx;
+  padding: 0 5rpx;
+  height: 28rpx;
+  text-align: center;
+  line-height: 28rpx;
+  margin: 0 6rpx;
+}
+.group-box .group-people .img-box {
+  position: relative;
+  margin-right: 20rpx;
+}
+.group-box .group-people .img-box .tag {
+  position: absolute;
+  line-height: 36rpx;
+  background: linear-gradient(132deg, #f3dfb1, #f3dfb1, #ecbe60);
+  border-radius: 18rpx;
+  padding: 0 10rpx;
+  white-space: nowrap;
+  font-size: 24rpx;
+  color: #784f06;
+  z-index: 2;
+  top: -10rpx;
+}
+.group-box .group-people .img-box .avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background: #ccc;
+}
+.notice-box {
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.notice-box .notice-box__head {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333;
+  line-height: 80rpx;
+  border-bottom: 1rpx solid #dfdfdf;
+  padding: 0 25rpx;
+}
+.notice-box .notice-box__content {
+  padding: 25rpx;
+}
+.notice-box .notice-box__content .self-pickup-box {
+  width: 100%;
+}
+.notice-box .notice-box__content .self-pickup-box .self-pickup--img {
+  width: 200rpx;
+  height: 200rpx;
+  margin: 40rpx 0;
+}
+.notice-box .notice-item--center {
+  margin-bottom: 10rpx;
+}
+.notice-box .notice-item,
+.notice-box .notice-item--center {
+  margin-bottom: 10rpx;
+  align-items: flex-start;
+}
+.notice-box .notice-item .title,
+.notice-box .notice-item--center .title {
+  font-size: 28rpx;
+  color: #999;
+  text-align: justify;
+  text-align-last: justify;
+  text-justify: distribute-all-lines;
+  width: 140rpx;
+}
+.notice-box .notice-item .detail,
+.notice-box .notice-item--center .detail {
+  font-size: 28rpx;
+  color: #333;
+  flex: 1;
+}
+.notice-box .notice-item .copy-btn,
+.notice-box .notice-item--center .copy-btn {
+  width: 120rpx;
+  height: 50rpx;
+  padding: 0;
+  background: #fff;
+  color: #b38436;
+  font-size: 26rpx;
+  margin-left: 30rpx;
+}
+.notice-box .notice-item--center {
+  align-items: center;
+}
+.foot_box {
+  width: 750rpx;
+  min-height: 100rpx;
+  background: #fff;
+  border: 1rpx solid #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+.foot_box .money-box {
+  height: 60rpx;
+  padding: 0 20rpx;
+}
+.foot_box .money-box .money-title {
+  font-size: 26rpx;
+  color: #999;
+}
+.foot_box .money-box .all-price {
+  color: #333;
+  font-size: 26rpx;
+}
+.foot_box .btn-box {
+  justify-content: flex-end;
+  margin-bottom: 20rpx;
+}
+.foot_box .btn-box .obtn1 {
+  width: 160rpx;
+  height: 60rpx;
+  background: #eee;
+  border-radius: 30rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #333;
+  margin-right: 20rpx;
+  padding: 0;
+}
+.foot_box .btn-box .obtn2 {
+  width: 160rpx;
+  height: 60rpx;
+  background: linear-gradient(90deg, #e9b461, #eecc89);
+  box-shadow: 0 7rpx 6rpx 0 rgba(229, 138, 0, 0.22);
+  border-radius: 30rpx;
+  margin-right: 20rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(168, 112, 13, 0.9);
+  padding: 0;
+}

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "收藏列表",
+  "usingComponents": {
+    "wk-houses": "/components/wk-houses/index",
+    "wk-empty": "/components/wk-empty/index"
+  }
+}

@@ -1,0 +1,45 @@
+<view class="page">
+    <view wx:if="{{checked=='checked_3'}}">
+        <view bindtap="__e" class="{{['tatol',yueone==1?'styleyue':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'yueone2',['$event'] ] ] ] ]}}">还款合计</view>
+        <view bindtap="__e" class="{{['tatol',yuetwo==1?'styleyue':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'yuetwo2',['$event'] ] ] ] ]}}">商贷还款</view>
+        <view bindtap="__e" class="{{['tatol',yuethree==1?'styleyue':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'yuethree2',['$event'] ] ] ] ]}}">公积金还款</view>
+        <view style="clear:both;"></view>
+    </view>
+    <block wx:if="{{req.type==1||req.type==2}}">
+        <view style="height:77rpx;">
+            <view class="tit" style="position:fixed;left:0;top:1;width:100%;">
+                <view class="fir">期数</view>
+                <view>月供总额</view>
+                <view>月供本金</view>
+                <view>月供利息</view>
+                <view class="end">剩余本金</view>
+            </view>
+        </view>
+        <view class="list" wx:for="{{ygList}}" wx:key="index">
+            <view class="fir">{{index+1}}</view>
+            <view>{{item.m_money}}</view>
+            <view>{{item.b_money}}</view>
+            <view>{{item.r_money}}</view>
+            <view class="end">{{item.b_l_money}}</view>
+        </view>
+    </block>
+    <block wx:if="{{req.type==3}}">
+        <view style="height:77rpx;">
+            <view class="tit" style="position:fixed;left:0;top:1;width:100%;">
+                <view class="fir">期数</view>
+                <view>月供总额</view>
+                <view>月供商贷</view>
+                <view>月供公积金</view>
+                <view></view>
+            </view>
+        </view>
+        <view class="list" wx:for="{{ygList}}" wx:key="index">
+            <view class="fir">{{index+1}}</view>
+            <view>{{item.t_m_money}}</view>
+            <view>{{item.sd_m_money}}</view>
+            <view>{{item.gj_m_money}}</view>
+            <view></view>
+        </view>
+    </block>
+    <view class="tishi">以上结果仅供参考，请以当地实际情况为准</view>
+</view>

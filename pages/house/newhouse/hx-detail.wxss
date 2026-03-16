@@ -1,0 +1,350 @@
+.page {
+  background-color: #fff;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.page .top-box {
+  display: flex;
+}
+.page .content-box {
+  flex: 1;
+  overflow-y: auto;
+}
+.page .content-box .swiper-box {
+  width: 100%;
+  height: 550rpx;
+  position: relative;
+}
+.page .content-box .swiper-box .carousel {
+  width: 100%;
+  height: 550rpx;
+}
+.page .content-box .swiper-box .carousel .carousel-item {
+  width: 100%;
+  height: 550rpx;
+}
+.page .content-box .swiper-box .carousel .carousel-item .img {
+  width: 100%;
+  height: 100%;
+}
+.page .content-box .swiper-box .label-box {
+  position: absolute;
+  bottom: 18rpx;
+  left: 18rpx;
+  width: 90%;
+  display: flex;
+}
+.page .content-box .swiper-box .label-box .label {
+  margin-right: 13rpx;
+  padding: 0 14rpx;
+  line-height: 32rpx;
+  color: #fff;
+  font-size: 20rpx;
+}
+.page .content-box .swiper-box .label-box .label.active {
+  background: #fff;
+  color: #333;
+  border: #fff;
+  border-radius: 100rpx;
+}
+.page .content-box .swiper-box .num-box {
+  position: absolute;
+  right: 30rpx;
+  bottom: 20rpx;
+  color: #fff;
+  font-size: 20rpx;
+  width: 43rpx;
+  height: 28rpx;
+}
+.page .content-box .box-1 {
+  padding: 16rpx 30rpx;
+  border-bottom: 8rpx solid #f7f8f9;
+}
+.page .content-box .box-1 .title-box {
+  display: flex;
+  width: 100%;
+}
+.page .content-box .box-1 .title-box .img {
+  width: 32rpx;
+  height: 32rpx;
+}
+.page .content-box .box-1 .title-box .title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 40rpx;
+  flex: 1;
+  width: 0;
+  font-weight: 700;
+}
+.page .content-box .box-1 .title-box .share {
+  width: 80rpx;
+  height: 80rpx;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.page .content-box .box-1 .title-box .share .img {
+  width: 40rpx;
+  height: 40rpx;
+}
+.page .content-box .box-1 .title-box .share .text {
+  font-size: 22rpx;
+  color: #999;
+}
+.page .content-box .box-1 .price {
+  color: #ed8c15;
+  font-size: 30rpx;
+  font-weight: 700;
+  margin-top: 8rpx;
+}
+.page .content-box .box-1 .lb-box {
+  display: flex;
+  margin-top: 6rpx;
+  flex-wrap: wrap;
+}
+.page .content-box .box-1 .lb-box .lb {
+  border: 2rpx solid rgba(83, 190, 191, 0.5);
+  font-size: 20rpx;
+  color: #3dbcc6;
+  padding: 7rpx 18rpx;
+  margin-right: 16rpx;
+  margin-bottom: 16rpx;
+  border-radius: 4rpx;
+}
+.page .content-box .info-box {
+  padding: 25rpx 26rpx 25rpx 26rpx;
+  border-bottom: 1px solid #edeeef;
+  background-color: #fff;
+}
+.page .content-box .info-box .head {
+  font-size: 32rpx;
+  color: #333;
+  font-weight: 700;
+}
+.page .content-box .info-box .des-box {
+  margin-top: 25rpx;
+  padding: 0 15rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+.page .content-box .info-box .des-box .des {
+  width: 50%;
+  padding: 0 10rpx;
+  display: flex;
+  align-items: center;
+  line-height: 68rpx;
+}
+.page .content-box .info-box .des-box .des .left {
+  color: #8d9292;
+  font-size: 24rpx;
+}
+.page .content-box .info-box .des-box .des .right {
+  color: #666;
+}
+.page .content-box .info-box .address {
+  display: flex;
+  align-items: center;
+  padding: 0 25rpx;
+}
+.page .content-box .info-box .address .title {
+  color: #8d9292;
+  font-size: 24rpx;
+}
+.page .content-box .info-box .address .name {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.page .content-box .info-box .address .icon {
+  font-size: 46rpx;
+  color: #3dbcc6;
+}
+.page .content-box .hx-box {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx 30rpx;
+}
+.page .content-box .hx-box .head-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.page .content-box .hx-box .head-box .title {
+  font-size: 30rpx;
+  font-weight: 700;
+}
+.page .content-box .hx-box .head-box .more {
+  font-size: 24rpx;
+  color: #c3c3c3;
+}
+.page .content-box .hx-box .content {
+  width: 100%;
+  margin-top: 16rpx;
+}
+.page .content-box .hx-box .content .scroll {
+  width: 100%;
+  white-space: nowrap;
+}
+.page .content-box .hx-box .content .scroll .scroll-item {
+  position: relative;
+  display: inline-block;
+  width: 300rpx;
+}
+.page .content-box .hx-box .content .scroll .scroll-item .img {
+  width: 280rpx;
+  height: 240rpx;
+  border-radius: 20rpx;
+}
+.page .content-box .hx-box .content .scroll .scroll-item .info {
+  display: flex;
+  flex-direction: column;
+}
+.page .content-box .hx-box .content .scroll .scroll-item .info .title {
+  display: flex;
+}
+.page .content-box .hx-box .content .scroll .scroll-item .info .title .shi {
+  font-size: 26rpx;
+}
+.page
+  .content-box
+  .hx-box
+  .content
+  .scroll
+  .scroll-item
+  .info
+  .title
+  .sale_status {
+  background: linear-gradient(45deg, #5af, #66deff);
+  margin-left: 20rpx;
+  padding: 4rpx 12rpx;
+  border-radius: 8rpx;
+  font-size: 24rpx;
+  color: #fff;
+}
+.page .content-box .hx-box .content .scroll .scroll-item .info .mj {
+  font-size: 26rpx;
+  margin-top: 10rpx;
+}
+.page .content-box .hx-box .content .scroll .scroll-item .info .price {
+  color: red;
+  font-size: 26rpx;
+  margin-top: 10rpx;
+}
+.page .content-box .near-box {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+.page .content-box .near-box .title-box {
+  width: 100%;
+  padding: 20rpx 30rpx;
+}
+.page .content-box .near-box .title-box .title {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #333;
+}
+.page .content-box .near-box .content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10rpx 0rpx;
+}
+.footer-box {
+  width: 100%;
+  height: 120rpx;
+}
+.footer-box .bot2 {
+  width: 100%;
+  height: 110rpx;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  z-index: 10;
+  border-top: 1rpx solid #eee;
+}
+.footer-box .bot2 .nav2 {
+  width: 110rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.footer-box .bot2 .nav2 .text {
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}
+.footer-box .bot2 .btn-box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-box .bot2 .btn-box .call2 {
+  text-align: center;
+  line-height: 76rpx;
+  color: #fff;
+  width: 320rpx;
+  background-color: #05b702;
+  border-radius: 40rpx;
+  font-size: 26rpx;
+}
+.footer-box .bot2 .btn-box .yy2 {
+  text-align: center;
+  line-height: 76rpx;
+  color: #fff;
+  width: 200rpx;
+  background-color: #9cf;
+  border-top-right-radius: 40rpx;
+  border-bottom-right-radius: 40rpx;
+  font-size: 26rpx;
+}
+.footer-box .bot {
+  width: 100%;
+  height: 120rpx;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  z-index: 10;
+  padding: 0rpx 12rpx;
+}
+.footer-box .bot .nav {
+  width: 90rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1rpx solid #f7f8f9;
+}
+.footer-box .bot .nav image {
+  height: 40rpx;
+  width: 40rpx;
+  margin-bottom: 10rpx;
+}
+.footer-box .bot .nav text {
+  font-size: 23rpx;
+}
+.footer-box .bot .call {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffc543;
+  border-radius: 6rpx;
+  color: #fff;
+  width: 200rpx;
+  height: 90rpx;
+  margin-right: 20rpx;
+  font-size: 32rpx;
+}

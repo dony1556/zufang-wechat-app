@@ -1,0 +1,32 @@
+.empty-fixed {
+  position: fixed;
+  z-index: 11;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.empty-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.empty-box .icon {
+  font-size: 150rpx;
+  color: #f3f3f3;
+}
+.empty-box .empty-text {
+  font-size: 24rpx;
+  color: #f3f3f3;
+  margin-top: 12rpx;
+}
+.btn-box {
+  margin-top: 100rpx;
+}
+.btn-box .empty-btn {
+  width: 320rpx;
+  height: 70rpx;
+  background: linear-gradient(90deg, #e9b461, #eecc89);
+  border-radius: 35rpx;
+  font-size: 28rpx;
+  color: hsla(0, 0%, 100%, 0.9);
+}

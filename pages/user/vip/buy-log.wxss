@@ -1,0 +1,38 @@
+.page {
+  background-color: #fff;
+}
+.page .content-box .item-box {
+  display: flex;
+  flex-direction: column;
+}
+.page .content-box .item-box .item {
+  display: flex;
+  flex-direction: column;
+  padding: 26rpx 30rpx;
+  border-bottom: 1rpx solid #efefef;
+}
+.page .content-box .item-box .item .title {
+  font-size: 26rpx;
+  font-weight: 700;
+}
+.page .content-box .item-box .item .detail {
+  font-size: 24rpx;
+  margin-top: 20rpx;
+}
+.page .content-box .item-box .item .detail {
+  font-size: 24rpx;
+  margin-top: 20rpx;
+}
+.page .content-box .item-box .item .fee-box {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+.page .content-box .item-box .item .fee-box .time {
+  font-size: 22rpx;
+  color: #cacaca;
+}
+.page .content-box .item-box .item .fee-box .fee {
+  font-size: 22rpx;
+  color: #f50;
+}

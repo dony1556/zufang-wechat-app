@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "聊天列表",
+  "usingComponents": {
+    "wk-qrcode": "/components/wk-qrcode/index",
+    "wk-tabar": "/components/wk-tabar/index"
+  }
+}

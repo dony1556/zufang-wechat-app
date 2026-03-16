@@ -1,0 +1,56 @@
+.hideCanvasView {
+  position: relative;
+}
+.hideCanvas {
+  position: fixed;
+  top: -99999rpx;
+  left: -99999rpx;
+  z-index: -99999;
+}
+.content {
+  position: relative;
+  width: 100%;
+  height: 1350rpx;
+}
+.content .bg_img {
+  width: 100%;
+  height: 100%;
+}
+.content .poster-box {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50rpx;
+}
+.content .poster-box .posterImage {
+  width: 660rpx;
+}
+.share-box {
+  width: 750rpx;
+  border-radius: 30rpx;
+  margin-top: 60rpx;
+}
+.share-box .share-list-box .share-btn {
+  background: none;
+  border: none;
+  line-height: 1;
+  padding: 0;
+}
+.share-box .share-list-box .share-btn::after {
+  border: none;
+}
+.share-box .share-list-box .share-item {
+  flex: 1;
+  padding-bottom: 20rpx;
+}
+.share-box .share-list-box .share-item .share-img {
+  width: 70rpx;
+  height: 70rpx;
+  background: #f6f6fe;
+  border-radius: 50%;
+  margin-bottom: 20rpx;
+}
+.share-box .share-list-box .share-item .share-title {
+  font-size: 24rpx;
+  color: #666;
+}

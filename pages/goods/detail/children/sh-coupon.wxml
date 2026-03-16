@@ -1,0 +1,12 @@
+<view class="category-box shopro-selector-rect">
+    <swiper autoplay="{{false}}" bindchange="__e" circular="{{true}}" class="swiper-box" data-event-opts="{{[ [ 'change',[ [ 'onSwiper',['$event'] ] ] ] ]}}" duration="{{1000}}" interval="{{3000}}">
+        <swiper-item wx:for="{{couponList}}" wx:for-item="c" wx:key="id">
+            <view class="tab-list x-c">
+                <shopro-coupon bind:__l="__l" couponData="{{c}}" state="{{0}}" vueId="{{'f9f5ccc8-1-'+index}}"></shopro-coupon>
+            </view>
+        </swiper-item>
+    </swiper>
+    <view class="category-dots">
+        <text class="{{[categoryCurrent===index?'category-dot-active':'category-dot']}}" wx:for="{{couponList.length}}" wx:for-item="dot" wx:key="index"></text>
+    </view>
+</view>

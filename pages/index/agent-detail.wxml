@@ -1,0 +1,44 @@
+<view class="page">
+    <view class="top-box"></view>
+    <view class="body-box" style="margin-bottom:120rpx;">
+        <view class="box-1">
+            <view class="img-box">
+                <image class="img" mode="aspectFill" src="{{agent.logo}}"></image>
+            </view>
+            <view class="right">
+                <view class="name">{{agent.name}}</view>
+                <view class="area">{{'主营'+agent.city_name+'-'+agent.area_name}}</view>
+            </view>
+        </view>
+        <view class="detail-box" wx:if="{{agent.intro}}">
+            <view class="head">介绍</view>
+            <view class="content">{{agent.intro}}</view>
+        </view>
+        <view class="select-box">
+            <scroll-view class="bg-white nav" scrollLeft="{{scrollLeft}}" scrollWithAnimation="{{true}}" scrollX="{{true}}">
+                <view bindtap="__e" class="{{['cu-item',item.type==house_type?'text-green cur':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selcetTab',['$0'],[ [ ['houseTypeList','',index,'type'] ] ] ] ] ] ]}}" wx:if="{{item.type!='newhouse'}}" wx:for="{{houseTypeList}}" wx:key="index">{{''+(item.alias||item.name)+''}}</view>
+            </scroll-view>
+        </view>
+        <view class="house-box">
+            <wk-houses bind:__l="__l" value="{{houseList}}" vueId="6464c377-1"></wk-houses>
+        </view>
+    </view>
+    <view class="footer-box">
+        <view class="bot2">
+            <view catchtap="__e" class="nav2" data-event-opts="{{[ [ 'tap',[ [ 'backHome',['$event'] ] ] ] ]}}">
+                <view class="iconfont icon-shouye" style="font-size:36rpx;color:#999;"></view>
+                <text class="text">首页</text>
+            </view>
+            <view catchtap="__e" class="nav2" data-event-opts="{{[ [ 'tap',[ [ 'chat',['$event'] ] ] ] ]}}">
+                <view class="iconfont icon-IMliaotian-duihua" style="font-size:36rpx;color:#999;"></view>
+                <text class="text">聊天</text>
+                <button class="system-buttom" openType="contact" wx:if="{{agent.user_id==0}}"></button>
+            </view>
+            <view class="btn-box2">
+                <view catchtap="__e" class="call" data-event-opts="{{[ [ 'tap',[ ['call'] ] ] ]}}">电话联系</view>
+            </view>
+        </view>
+    </view>
+    <wk-login-modal bind:__l="__l" vueId="6464c377-2"></wk-login-modal>
+    <wk-skeletons bind:__l="__l" type="detail" vueId="6464c377-3" wx:if="{{isLoading}}"></wk-skeletons>
+</view>

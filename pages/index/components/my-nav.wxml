@@ -1,0 +1,14 @@
+<view class="nav-box" style="{{'border-radius:'+value.params.borderRadius+'rpx '+';'+'margin:'+value.params.outMarginT+'rpx '+value.params.outMarginLR+'rpx '+'0rpx '+value.params.outMarginLR+'rpx '+';'}}">
+    <view style="padding:0rpx 24rpx;line-height:80rpx;font-weight:bold;font-size:26rpx;border-bottom:1rpx solid #f5f5f5;" wx:if="{{value.params.title}}">{{value.params.title}}</view>
+    <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'routerTo',['$0'],[ [ ['value.data','',index] ] ] ] ] ] ]}}" wx:for="{{value.data}}" wx:for-item="child" wx:key="index">
+        <view class="img-box">
+            <image class="img" src="{{child.imgUrl}}"></image>
+        </view>
+        <view class="content">
+            <view class="text">{{child.title}}</view>
+        </view>
+        <view class="iconfont icon-you" style="font-size:20rpx;color:#999;"></view>
+        <button class="system-buttom" openType="contact" wx:if="{{child.click_type==2}}"></button>
+        <button class="system-buttom" openType="share" wx:if="{{child.click_type==6}}"></button>
+    </view>
+</view>

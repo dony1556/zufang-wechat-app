@@ -1,0 +1,106 @@
+.page .float {
+  position: fixed;
+  bottom: 200rpx;
+  right: 60rpx;
+  z-index: 99;
+}
+.page .float .btn {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  background-color: #e65339;
+  color: #fff;
+  text-align: center;
+  line-height: 90rpx;
+  font-size: 24rpx;
+  box-shadow: 2rpx 2rpx 10rpx #e9e9e9;
+}
+.page .swiper-box {
+  height: 400rpx;
+  background: #fff;
+}
+.page .swiper-box .slide-swiper {
+  width: 100%;
+  height: 400rpx;
+  position: relative;
+  background-color: #fff;
+  margin-top: 12rpx;
+}
+.page .swiper-box .slide-swiper .swiper-item {
+  width: 100%;
+  font-size: 0;
+  line-height: 0;
+}
+.page .swiper-box .slide-swiper .swiper-item .item {
+  width: 100%;
+  height: 100%;
+  padding: 0 20rpx;
+}
+.page .swiper-box .slide-swiper .swiper-item .item .img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12rpx;
+}
+.page .scroll-box {
+  background: #fff;
+}
+.page .scroll-box .scroll {
+  white-space: nowrap;
+  height: 90rpx;
+  text-align: center;
+}
+.page .scroll-box .scroll .item {
+  padding: 0 38rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: inline-block;
+  text-align: center;
+  overflow: hidden;
+  font-size: 30rpx;
+}
+.page .scroll-box .scroll .item.on {
+  font-weight: 700;
+  color: #0a0;
+}
+.page .goods-box {
+  padding: 16rpx 0rpx;
+}
+.page .goods-box .goods-list {
+  padding: 10rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+.page .goods-box .goods-list .goods {
+  width: 46%;
+  border-radius: 10rpx;
+  background-color: #fff;
+  margin: 0 2% 20rpx 2%;
+  box-shadow: 0rpx 5rpx 25rpx rgba(0, 0, 0, 0.1);
+}
+.page .goods-box .goods-list .goods .img {
+  width: 100%;
+  height: 350rpx;
+  border-radius: 12rpx 12rpx 0 0;
+}
+.page .goods-box .goods-list .goods .title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-align: justify;
+  overflow: hidden;
+  font-size: 26rpx;
+  padding: 0 10rpx;
+}
+.page .goods-box .goods-list .goods .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 92%;
+  padding: 10rpx 4% 18rpx 4%;
+}
+.page .goods-box .goods-list .goods .info .price {
+  color: #e65339;
+  font-size: 26rpx;
+  font-weight: 700;
+}

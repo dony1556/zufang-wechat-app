@@ -1,0 +1,9 @@
+<view class="num-box" style="{{'background:'+value.params.backgroundColor+';'}}">
+    <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'routerTo',['$0'],[ [ ['value.data','',index] ] ] ] ] ] ]}}" wx:for="{{value.data}}" wx:key="index">
+        <view class="title">{{item.title}}</view>
+        <view class="nums">
+            <text class="num" style="{{'color:'+item.color+';'}}">{{item.num}}</text>
+            <text class="unit">{{item.unit}}</text>
+        </view>
+    </view>
+</view>

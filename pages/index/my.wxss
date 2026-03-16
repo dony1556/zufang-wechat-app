@@ -1,0 +1,19 @@
+.page .loginOut {
+  height: 90rpx;
+  width: 700rpx;
+  margin-left: 25rpx;
+  margin-top: 40rpx;
+  line-height: 90rpx;
+  text-align: center;
+  background-color: #fff;
+  color: #757575;
+  font-size: 24rpx;
+  color: #a1a1a1;
+}
+.page .copyright {
+  margin-top: 50rpx;
+  margin-bottom: 40rpx;
+  text-align: center;
+  color: #979797;
+  font-size: 22rpx;
+}

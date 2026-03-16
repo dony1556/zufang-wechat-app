@@ -1,0 +1,7 @@
+<view class="{{['empty-box',isFixed?'empty-fixed':'']}}">
+    <view class="iconfont icon-kongbaiye icon"></view>
+    <view class="empty-text">{{emptyData.tip}}</view>
+    <view class="btn-box" wx:if="{{emptyData.path}}">
+        <button bindtap="__e" class="cu-btn empty-btn" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}">{{emptyData.pathText}}</button>
+    </view>
+</view>

@@ -1,0 +1,32 @@
+.num-box {
+  display: flex;
+  width: 710rpx;
+  margin: 16rpx 20rpx;
+  border: 1rpx solid #f7f7f7;
+  border-radius: 10rpx;
+  padding: 20rpx 10rpx;
+}
+.num-box .item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.num-box .item .title {
+  font-size: 28rpx;
+  text-align: center;
+}
+.num-box .item .nums {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 26rpx;
+}
+.num-box .item .nums .num {
+  color: #ff502f;
+  font-size: 36rpx;
+  font-weight: 700;
+}
+.num-box .item .nums .unit {
+  font-size: 18rpx;
+  margin-left: 6rpx;
+}

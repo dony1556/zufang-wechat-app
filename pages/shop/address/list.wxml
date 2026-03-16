@@ -1,0 +1,19 @@
+<view class="page">
+    <view class="top-box"></view>
+    <view class="content-box">
+        <view class="address-box">
+            <view bindtap="__e" class="address" data-event-opts="{{[ [ 'tap',[ [ 'useAddress',['$0'],[ [ ['addressList','',index] ] ] ] ] ] ]}}" wx:for="{{addressList}}" wx:key="index">
+                <view class="top">
+                    <text class="name">{{item.name}}</text>
+                    <text class="phone">{{item.phone}}</text>
+                    <text class="tag" wx:if="{{item.is_default==1}}">默认</text>
+                </view>
+                <view class="detail">{{item.province+'-'+item.city+'-'+item.district+' - '+item.address}}</view>
+                <button catchtap="__e" class="cu-btn set-btn" data-event-opts="{{[ [ 'tap',[ [ 'jump',[ '/pages/shop/address/edit',[ 'o',['id',item.id] ] ] ] ] ] ]}}">编辑</button>
+            </view>
+        </view>
+    </view>
+    <view class="footer-box">
+        <button bindtap="__e" class="cu-btn add-btn" data-event-opts="{{[ [ 'tap',[ [ 'jump',[ '/pages/shop/address/edit',[ 'o',['id',0] ] ] ] ] ] ]}}">添加新的收货地址</button>
+    </view>
+</view>

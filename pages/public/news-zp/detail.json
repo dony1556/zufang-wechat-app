@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "详情",
+  "usingComponents": {
+    "wk-login-modal": "/components/wk-login-modal/index"
+  }
+}

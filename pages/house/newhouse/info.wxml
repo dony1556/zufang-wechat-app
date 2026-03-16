@@ -1,0 +1,73 @@
+<view class="page">
+    <view class="info-box">
+        <view class="head">基础信息</view>
+        <view class="content">
+            <view class="item">
+                <view class="name">销售状态</view>
+                <view class="name2">{{house.sale_status}}</view>
+            </view>
+            <view class="item">
+                <view class="name">开盘时间</view>
+                <view class="name2">{{house.open_sale_time}}</view>
+            </view>
+            <view class="item">
+                <view class="name">交房时间</view>
+                <view class="name2">{{house.stay_time}}</view>
+            </view>
+            <view class="item">
+                <view class="name">楼盘地址</view>
+                <view class="name2">{{house.address}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="info-box">
+        <view class="head">建筑规划</view>
+        <view class="content">
+            <view class="item">
+                <view class="name">产权年限</view>
+                <view class="name2">{{house.cq_year}}</view>
+            </view>
+            <view class="item">
+                <view class="name">容积率</view>
+                <view class="name2">{{house.house_rate+'%'}}</view>
+            </view>
+            <view class="item">
+                <view class="name">绿化率</view>
+                <view class="name2">{{house.green_rate+'%'}}</view>
+            </view>
+            <view class="item">
+                <view class="name">楼层状况</view>
+                <view class="name2">{{house.floor_info}}</view>
+            </view>
+            <view class="item">
+                <view class="name">占地面积</view>
+                <view class="name2">{{house.house_covered+'㎡'}}</view>
+            </view>
+            <view class="item">
+                <view class="name">建筑面积</view>
+                <view class="name2">{{house.build_area+'㎡'}}</view>
+            </view>
+            <view class="item">
+                <view class="name">开发商</view>
+                <view class="name2">{{house.developers}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="info-box">
+        <view class="head">物业信息</view>
+        <view class="content">
+            <view class="item">
+                <view class="name">物业费</view>
+                <view class="name2">{{house.wy_fee}}</view>
+            </view>
+            <view class="item">
+                <view class="name">物业公司</view>
+                <view class="name2">{{house.wy_company}}</view>
+            </view>
+            <view class="item">
+                <view class="name">车位数</view>
+                <view class="name2">{{house.parking_space}}</view>
+            </view>
+        </view>
+    </view>
+</view>

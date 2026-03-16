@@ -1,0 +1,3 @@
+<view class="skeletons-box">
+    <image class="img" mode="widthFix" src="{{skeletonsDot[type]}}"></image>
+</view>

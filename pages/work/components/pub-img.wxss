@@ -1,0 +1,13 @@
+.imageWindow {
+  display: flex;
+  flex-wrap: wrap;
+}
+.imageWindow .image-item {
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+  position: relative;
+}
+.imageWindow .image-item .img {
+  width: 100%;
+}

@@ -1,0 +1,13 @@
+<view class="notice-box" style="{{'padding:'+value.params.paddingOutTB+'rpx '+value.params.paddingOutLR+'rpx'+';'+'background-color:'+value.params.outBackgroundColor+';'}}">
+    <view class="box" style="{{'padding:'+value.params.paddingInTB+'rpx '+value.params.paddingInLR+'rpx'+';'+'background-color:'+value.params.inBackgroundColor+';'+'border-radius:'+value.params.borderRadius+'rpx'+';'}}">
+        <view class="icon-box">
+            <image class="img" mode="heightFix" src="{{value.params.imgUrl}}"></image>
+        </view>
+        <swiper autoplay="true" circular="true" class="swiper" interval="{{interval}}" vertical="true">
+            <swiper-item bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'navTo',['$0'],[ [ ['value.data','',index] ] ] ] ] ] ]}}" wx:for="{{value.data}}" wx:key="index">
+                <view class="text" style="{{'color:'+value.params.fontColor+';'}}">{{item.title}}</view>
+                <view class="iconfont icon-you" style="{{'font-size:20rpx;'+'color:'+value.params.fontColor+';'}}"></view>
+            </swiper-item>
+        </swiper>
+    </view>
+</view>

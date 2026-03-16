@@ -1,0 +1,10 @@
+.icon-star-nhover {
+  color: #dedede;
+}
+.icon-star-hover {
+  color: #ffba00;
+}
+.cuIcon-favorfill {
+  font-size: 36rpx;
+  margin-left: 20rpx;
+}

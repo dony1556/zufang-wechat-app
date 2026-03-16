@@ -1,0 +1,58 @@
+.active {
+  transition: all linear 0.3s;
+}
+.search-box {
+  width: 750rpx;
+  padding: 10rpx 25rpx;
+  display: flex;
+  align-items: center;
+}
+.search-box .search {
+  height: 70rpx;
+  flex: 1;
+  background: #f7f8f9;
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  padding: 0rpx 30rpx;
+  border-radius: 4rpx;
+  border-radius: 35rpx;
+}
+.search-box .search .city-box {
+  display: flex;
+  align-items: center;
+}
+.search-box .search .city-box .name {
+  font-size: 26rpx;
+}
+.search-box .search .city-box .down {
+  margin-left: 10rpx;
+  width: 0;
+  height: 0;
+  border-left: 10rpx solid transparent;
+  border-right: 10rpx solid transparent;
+  border-top: 13rpx solid #999;
+}
+.search-box .search .shu {
+  width: 2rpx;
+  height: 28rpx;
+  background: #e4e8eb;
+  margin: 0rpx 26rpx;
+}
+.search-box .search .input {
+  flex: 1;
+  line-height: 70rpx;
+  height: 70rpx;
+}
+.search-box .ditu {
+  width: 110rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 24rpx;
+}
+.search-box .ditu .text {
+  color: #fff;
+  font-size: 20rpx;
+  margin-top: 6rpx;
+}

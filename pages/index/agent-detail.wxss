@@ -1,0 +1,213 @@
+.page {
+  background-color: #fff;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+}
+.page .content-box {
+  flex: 1;
+  overflow-y: auto;
+}
+.page .content-box .top-box {
+  display: flex;
+  height: 100rpx;
+}
+.page .content-box .top-box .item {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page .content-box .top-box .item.active {
+  font-weight: 700;
+  color: #000;
+  font-size: 32rpx;
+}
+.page .box-1 {
+  padding: 20rpx 30rpx;
+  border-bottom: 10rpx solid #f7f8f9;
+  position: relative;
+  display: flex;
+}
+.page .box-1 .img-box {
+  margin-right: 20rpx;
+}
+.page .box-1 .img-box .img {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+.page .box-1 .right {
+  flex: 1;
+}
+.page .box-1 .right .name {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #0e1010;
+}
+.page .box-1 .right .area {
+  font-size: 26rpx;
+  margin-top: 16rpx;
+}
+.page .box-1 .keywords {
+  font-size: 26rpx;
+  margin-top: 16rpx;
+}
+.page .box-1 .address {
+  display: flex;
+  padding: 12rpx 0rpx;
+}
+.page .box-1 .address .title {
+  color: #8d9292;
+  font-size: 24rpx;
+}
+.page .box-1 .address .name {
+  flex: 1;
+}
+.page .box-1 .address .icon {
+  font-size: 30rpx;
+  color: #f50;
+}
+.page .map-box .community-box {
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+  background-color: #fff;
+  padding: 20rpx 30rpx;
+  margin-top: 10rpx;
+}
+.page .map-box .community-box .name {
+  font-size: 34rpx;
+  font-weight: 700;
+  flex: 1;
+}
+.page .map-box .community-box .detail {
+  color: #007aff;
+  margin-right: 8rpx;
+}
+.page .map-box .community-box .icon {
+  font-size: 30rpx;
+  color: #999;
+}
+.page .detail-box {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx 20rpx;
+  background-color: #fff;
+}
+.page .detail-box .head {
+  font-size: 32rpx;
+  font-weight: 700;
+}
+.page .detail-box .content {
+  padding: 20rpx 10rpx;
+  font-size: 26rpx;
+}
+.page .select-box {
+  display: flex;
+  height: 100rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #efefef;
+}
+.page .select-box .item {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page .select-box .item.active {
+  font-weight: 700;
+  color: #000;
+  font-size: 32rpx;
+}
+.page .house-box {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+.page .house-box .title-box {
+  width: 100%;
+  padding: 20rpx 30rpx;
+}
+.page .house-box .title-box .title {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #333;
+}
+.page .house-box .content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20rpx 0rpx;
+  border-radius: 10rpx;
+}
+.page .footer-box {
+  width: 100%;
+  height: 110rpx;
+  z-index: 99;
+  position: fixed;
+  left: 0rpx;
+  bottom: 0rpx;
+}
+.page .footer-box .bot2 {
+  width: 100%;
+  height: 110rpx;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  z-index: 10;
+  border-top: 1rpx solid #eee;
+}
+.page .footer-box .bot2 .nav2 {
+  width: 110rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.page .footer-box .bot2 .nav2 .text {
+  font-size: 23rpx;
+  margin-top: 10rpx;
+}
+.page .footer-box .bot2 .btn-box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page .footer-box .bot2 .btn-box .call2 {
+  text-align: center;
+  line-height: 76rpx;
+  color: #fff;
+  width: 200rpx;
+  background-color: #05b702;
+  border-top-left-radius: 40rpx;
+  border-bottom-left-radius: 40rpx;
+  font-size: 26rpx;
+}
+.page .footer-box .bot2 .btn-box .yy2 {
+  text-align: center;
+  line-height: 76rpx;
+  color: #fff;
+  width: 200rpx;
+  background-color: #9cf;
+  border-top-right-radius: 40rpx;
+  border-bottom-right-radius: 40rpx;
+  font-size: 26rpx;
+}
+.page .footer-box .bot2 .btn-box2 {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page .footer-box .bot2 .btn-box2 .call {
+  text-align: center;
+  line-height: 76rpx;
+  color: #fff;
+  width: 280rpx;
+  background-color: #f50;
+  border-radius: 38rpx;
+  font-size: 26rpx;
+}

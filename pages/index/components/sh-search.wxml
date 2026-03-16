@@ -1,0 +1,14 @@
+<view class="search-box">
+    <view class="search">
+        <view bindtap="__e" class="city-box" data-event-opts="{{[ [ 'tap',[ [ 'selctCity',['$event'] ] ] ] ]}}">
+            <view class="name">{{cityArea.cityName}}</view>
+            <view class="down"></view>
+        </view>
+        <view class="shu"></view>
+        <view bindtap="__e" class="input" data-event-opts="{{[ [ 'tap',[ [ 'navToSearch',['$0'],['value.params.linkUrl'] ] ] ] ]}}">{{value.params.placeholder}}</view>
+    </view>
+    <!-- <view bindtap="__e" class="{{['ditu',map_delay?'animation-scale-up':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'mapSelect',['$event'] ] ] ] ]}}">
+        <view class="iconfont icon-daohangdizhi" style="font-size:24rpx;color:#fff;"></view>
+        <view class="text">地图</view>
+    </view> -->
+</view>

@@ -1,0 +1,171 @@
+.add-address-box {
+  height: 100rpx;
+  background: #fff;
+  position: relative;
+}
+.add-address-box .address-bg {
+  position: absolute;
+  bottom: 0;
+  height: 8rpx;
+  width: 100%;
+}
+.add-address-box .select-notice {
+  font-weight: 400;
+  color: #999;
+  line-height: 40rpx;
+}
+.address-list {
+  padding: 40rpx;
+  background: #fff;
+  position: relative;
+}
+.address-list .address-bg {
+  position: absolute;
+  bottom: 0;
+  height: 8rpx;
+  width: 750rpx;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.address-list .name,
+.address-list .phone {
+  font-size: 30rpx;
+  font-weight: 500;
+}
+.address-list .phone {
+  margin: 0 20rpx;
+}
+.address-list .tag {
+  background: rgba(233, 191, 113, 0.2);
+  border-radius: 6rpx;
+  padding: 0 16rpx;
+  line-height: 38rpx;
+  color: #a8700d;
+  font-size: 22rpx;
+}
+.address-list .detail .address {
+  margin-top: 25rpx;
+  width: 543rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #999;
+  line-height: 40rpx;
+}
+.goods-list {
+  padding: 30rpx 20rpx;
+  background: #fff;
+  margin: 20rpx 0;
+  position: relative;
+}
+.goods-list .goods-title {
+  width: 460rpx !important;
+}
+.goods-list .tag-box {
+  padding-top: 10rpx;
+}
+.goods-list .tag-box .tag1 {
+  line-height: 36rpx;
+  padding: 0 8rpx;
+  font-size: 18rpx;
+  color: hsla(0, 0%, 100%, 0.9);
+  background: #f39800;
+  display: inline-block;
+  box-sizing: border-box;
+}
+.goods-list .tag-box .tag2 {
+  line-height: 34rpx;
+  padding: 0 8rpx;
+  font-size: 18rpx;
+  color: rgba(243, 152, 0, 0.9);
+  background: #fff;
+  border: 1rpx solid #f39800;
+  display: inline-block;
+  box-sizing: border-box;
+}
+.goods-list .goods-price {
+  font-size: 30rpx;
+  font-weight: 500;
+  width: 480rpx;
+}
+.goods-list .goods-price .goods-num {
+  font-size: 28rpx;
+  color: #c4c4c4;
+}
+.goods-list .goods-radio {
+  transform: scale(0.7);
+  margin-right: 20rpx;
+}
+.item-list {
+  height: 100rpx;
+  background: #fff;
+  padding: 0 25rpx;
+}
+.item-list .item-title {
+  font-size: 28rpx;
+  margin-right: 20rpx;
+}
+.item-list .detail {
+  font-size: 28rpx;
+  color: #c4c4c4;
+}
+.item-list .price {
+  font-size: 26rpx;
+  color: #e1212b;
+  margin-right: 20rpx;
+}
+.item-list .sel-coupon {
+  font-size: 26rpx;
+  color: #c4c4c4;
+  margin-right: 20rpx;
+}
+.remark-box {
+  margin-bottom: 20rpx;
+  background: #fff;
+  padding: 25rpx;
+}
+.remark-box .remark-notice {
+  font-size: 24rpx;
+  color: #c4c4c4;
+  padding: 0 20rpx;
+}
+.remark-box .remark-inp {
+  width: 700rpx;
+  font-size: 28rpx;
+  padding: 20rpx;
+  height: 200rpx;
+  background: #f5f5f5;
+  border-radius: 20rpx;
+  margin-top: 25rpx;
+}
+.logistic,
+.price-box,
+.score {
+  border-top: 1rpx solid hsla(0, 0%, 87.5%, 0.5);
+  margin-bottom: 20rpx;
+}
+.foot_box {
+  height: 100rpx;
+  padding: 0 25rpx;
+  justify-content: flex-end;
+  background-color: #fff;
+}
+.foot_box .num {
+  font-size: 26rpx;
+  color: #999;
+}
+.foot_box .all-money {
+  margin: 0 60rpx 0 20rpx;
+}
+.foot_box .all-money .price {
+  color: #e1212b;
+}
+.foot_box .sub-btn {
+  width: 210rpx;
+  height: 70rpx;
+  background: linear-gradient(90deg, #e9b461, #eecc89);
+  box-shadow: 0 7rpx 6rpx 0 rgba(229, 138, 0, 0.22);
+  border-radius: 35rpx;
+  font-size: 28rpx;
+  color: #fff;
+}

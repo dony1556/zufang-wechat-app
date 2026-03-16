@@ -1,0 +1,60 @@
+.comment-box {
+  padding: 30rpx 20rpx;
+  border-bottom: 1rpx solid #eee;
+  background: #fff;
+}
+.comment-box .head {
+  margin-bottom: 20rpx;
+}
+.comment-box .head .avatar {
+  width: 52rpx;
+  height: 52rpx;
+  border-radius: 50%;
+  background: #ccc;
+}
+.comment-box .head .user-name {
+  font-size: 26rpx;
+  color: #999;
+  margin: 0 20rpx;
+}
+.comment-box .head .star-box .cuIcon-favorfill {
+  font-size: 30rpx;
+  color: #dedede;
+}
+.comment-box .head .star-box .star-active {
+  color: #ffba00;
+}
+.comment-box .head .time {
+  font-size: 24rpx;
+  color: #c4c4c4;
+}
+.comment-box .detail {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #666;
+  line-height: 42rpx;
+}
+.comment-box .img-box {
+  margin-top: 30rpx;
+  position: relative;
+}
+.comment-box .img-box .mask {
+  background: linear-gradient(
+    270deg,
+    hsla(0, 0%, 100%, 0.8),
+    hsla(0, 0%, 100%, 0)
+  );
+  width: 100rpx;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  right: 0;
+}
+.comment-box .img-box .comment-img {
+  width: 166rpx;
+  height: 166rpx;
+  background: #ccc;
+  margin-right: 19rpx;
+  margin-bottom: 19rpx;
+}

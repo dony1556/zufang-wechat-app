@@ -1,0 +1,19 @@
+<view class="container">
+    <view class="tui-product-list">
+        <view class="tui-product-container">
+            <view bindtap="__e" class="tui-pro-item" data-event-opts="{{[ [ 'tap',[ [ 'detail',['$event'] ] ] ] ]}}" data-id="{{item.id}}" wx:for="{{goods_list}}" wx:key="index">
+                <image class="tui-pro-img" mode="widthFix" src="{{item.thumbs[0]}}"></image>
+                <view class="tui-pro-content">
+                    <view class="tui-pro-tit">{{item.title}}</view>
+                    <view>
+                        <view class="tui-pro-price">
+                            <text class="tui-sale-price">{{'￥'+item.price}}</text>
+                            <text class="tui-factory-price">{{'￥'+item.old_price}}</text>
+                        </view>
+                        <view class="tui-pro-pay">{{item.sale_count+'人付款'}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

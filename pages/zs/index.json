@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "wk-skeletons": "/components/wk-skeletons/index",
+    "zs-nav": "/pages/zs/components/zs-nav",
+    "zs-banner": "/pages/zs/components/zs-banner",
+    "zs-img-w": "/pages/zs/components/zs-img-w"
+  }
+}

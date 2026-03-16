@@ -1,0 +1,31 @@
+<view class="page">
+    <view class="top-box"></view>
+    <view class="body-box">
+        <form bindsubmit="__e" class="form" data-event-opts="{{[ [ 'submit',[ [ 'formSubmit',['$event'] ] ] ] ]}}">
+            <view class="form-item">
+                <view class="title">标题</view>
+                <view class="right">
+                    <input class="input" name="title" placeholder="请填写标题"></input>
+                </view>
+            </view>
+            <view class="form-item">
+                <text class="title">图片</text>
+                <view class="right">
+                    <view class="img-box">
+                        <view class="preview-box" wx:for="{{imgs}}" wx:key="index">
+                            <image class="preview-img" mode="aspectFill" src="{{item}}"></image>
+                            <text bindtap="__e" class="cuIcon-close" data-event-opts="{{[ [ 'tap',[ [ 'delImg',['$0',index],['imgs'] ] ] ] ]}}"></text>
+                        </view>
+                        <view bindtap="__e" class="choose-img " data-event-opts="{{[ [ 'tap',[ [ 'onChooseImg',['$0',9],['imgs'] ] ] ] ]}}" wx:if="{{$root.g0<9}}">
+                            <text class="cuIcon-cameraadd"></text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="btn-box">
+                <button class="submit" formType="submit" type="primary">提交</button>
+            </view>
+        </form>
+    </view>
+    <view class="footer-box"></view>
+</view>

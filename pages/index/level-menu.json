@@ -1,0 +1,4 @@
+{
+  "navigationBarTitleText": "会员套餐",
+  "usingComponents": { "wk-login-modal": "/components/wk-login-modal/index" }
+}

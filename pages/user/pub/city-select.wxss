@@ -1,0 +1,22 @@
+.page {
+  background-color: #fff;
+}
+.page .citys {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 12rpx 20rpx;
+}
+.page .citys .item {
+  width: 33.333%;
+  flex-shrink: 0;
+  display: felx;
+  margin-top: 26rpx;
+}
+.page .citys .item .text {
+  width: 90%;
+  background-color: #f7f7f7;
+  font-size: 26rpx;
+  text-align: center;
+  line-height: 70rpx;
+}

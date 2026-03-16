@@ -1,0 +1,10 @@
+<view bindtap="__e" class="shop-list y-f" data-event-opts="{{[ [ 'tap',[ [ 'jump',[ '/pages/goods/detail/index',[ 'o',['id',scoreData.id],['type','score'] ] ] ] ] ] ]}}">
+    <view class="image-box">
+        <image class="shop-img" mode="aspectFill" src="{{scoreData.thumbs[0]}}"></image>
+    </view>
+    <view class="shop-title more-t">{{scoreData.title}}</view>
+    <view class="num-box x-bc">
+        <view class="beans-box x-f">{{''+scoreData.credit+'积分+￥'+scoreData.price+''}}</view>
+        <view class="end-cash">{{'已兑换'+scoreData.sale_count+'件'}}</view>
+    </view>
+</view>

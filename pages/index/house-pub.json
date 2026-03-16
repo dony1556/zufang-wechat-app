@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "发布",
+  "usingComponents": {
+    "wk-tabar": "/components/wk-tabar/index",
+    "wk-login-modal": "/components/wk-login-modal/index"
+  }
+}

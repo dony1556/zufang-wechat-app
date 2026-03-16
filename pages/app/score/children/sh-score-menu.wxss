@@ -1,0 +1,58 @@
+.menu-category-box {
+  padding: 20rpx 30rpx 0 30rpx;
+  background: #fff;
+  margin-bottom: 10rpx;
+}
+.menu-category-box,
+.menu-swiper-box {
+  position: relative;
+  background: #fff;
+}
+.menu-category-box .menu-swiper-item,
+.menu-swiper-box .menu-swiper-item {
+  background: #fff;
+  height: 100%;
+  width: 100%;
+}
+.menu-category-box .menu-tab-box,
+.menu-swiper-box .menu-tab-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+.menu-category-box .menu-tab-box .tab-list,
+.menu-swiper-box .menu-tab-box .tab-list {
+  font-size: 22rpx;
+  font-weight: 500;
+  color: #333;
+  padding-bottom: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.menu-category-box .menu-tab-box .tab-list .tab-img,
+.menu-swiper-box .menu-tab-box .tab-list .tab-img {
+  margin-bottom: 10rpx;
+}
+.menu-category-box .menu-category-dots,
+.menu-swiper-box .menu-category-dots {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20rpx;
+}
+.menu-category-box .menu-category-dots .category-dot,
+.menu-swiper-box .menu-category-dots .category-dot {
+  width: 40rpx;
+  height: 3rpx;
+  background: #eee;
+  margin-right: 10rpx;
+}
+.menu-category-box .menu-category-dots .category-dot-active,
+.menu-swiper-box .menu-category-dots .category-dot-active {
+  width: 40rpx;
+  height: 3rpx;
+  background: #a8700d;
+  margin-right: 10rpx;
+}

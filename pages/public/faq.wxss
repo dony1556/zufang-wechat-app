@@ -1,0 +1,64 @@
+page {
+  background: #fff;
+}
+.faq-box {
+  background: #fff;
+}
+.faq-box .problem-item {
+  padding: 0 20rpx;
+  border-bottom: 1rpx solid hsla(0, 0%, 87.5%, 0.5);
+}
+.faq-box .problem-item .title-box {
+  height: 98rpx;
+}
+.faq-box .problem-item .detail {
+  width: 631rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #666;
+  line-height: 48rpx;
+  padding-left: 40rpx;
+  padding-bottom: 40rpx;
+}
+.faq-box .problem-item .tag-box {
+  margin-right: 20rpx;
+  width: 39rpx;
+  height: 34rpx;
+  background: #e9bf71;
+  border-radius: 6rpx;
+  position: relative;
+  z-index: 6;
+}
+.faq-box .problem-item .tag-box .serial {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #a8700d;
+  line-height: 24rpx;
+}
+.faq-box .problem-item .tag-box .triangle {
+  position: absolute;
+  z-index: 5;
+  width: 10rpx;
+  height: 10rpx;
+  background: #e9bf71;
+  transform: rotate(45deg);
+  bottom: -4rpx;
+}
+.faq-box .problem-item .detail-box {
+  flex: 1;
+}
+.faq-box .problem-item .detail-box .title {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333;
+}
+.faq-box .problem-item .cuIcon-unfold {
+  transition: all ease-in-out 0.2s;
+}
+.faq-box .problem-item .cuicon-active {
+  transform: rotate(180deg);
+  transition: all ease-in-out 0.2s;
+}

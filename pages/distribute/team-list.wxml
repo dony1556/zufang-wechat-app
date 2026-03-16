@@ -1,0 +1,14 @@
+<view class="page">
+    <view class="log-box">
+        <view class="item" wx:for="{{list}}" wx:key="index">
+            <view class="img-box">
+                <image mode class="img" src="{{item.avatarurl||'/static/imgs/tx.png'}}"></image>
+            </view>
+            <view class="right">
+                <view class="name">{{item.nickname}}</view>
+                <view class="title">{{item.phone}}</view>
+                <view class="time">{{item.create_time}}</view>
+            </view>
+        </view>
+    </view>
+</view>

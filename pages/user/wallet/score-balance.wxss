@@ -1,0 +1,104 @@
+.scroll-box {
+  flex: 1;
+  height: 100%;
+  padding: 0 30rpx;
+}
+.page_box {
+  background: #fff;
+}
+.page_box .head_box {
+  width: 750rpx;
+  height: 480rpx;
+  background: linear-gradient(180deg, #efc480, #f8dca5 57%, #fff);
+  position: relative;
+}
+.page_box .head_box .bg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 310rpx;
+  height: 310rpx;
+}
+.page_box .head_box .all-box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 180rpx;
+  height: 180rpx;
+}
+.page_box .head_box .all-box .all-num {
+  font-size: 50rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #a8700d;
+  margin-bottom: 20rpx;
+}
+.page_box .head_box .all-box .all-title {
+  position: absolute;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #a8700d;
+  line-height: 54rpx;
+  text-align: center;
+  width: 154rpx;
+  height: 53rpx;
+  background: linear-gradient(90deg, #e9b461, #eecc89);
+  border-radius: 27rpx;
+  bottom: -16rpx;
+}
+.page_box .head_box .tab-box {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 710rpx;
+  height: 90rpx;
+  background: #fff;
+  border-radius: 30rpx 30rpx 0 0;
+  border-bottom: 1rpx solid #dfdfdf;
+  padding: 0 30rpx;
+}
+.page_box .head_box .tab-box .tab-item {
+  flex: 1;
+}
+.page_box .head_box .tab-box .tab-item .tab-name {
+  font-size: 30rpx;
+  font-family: Noto Sans S Chinese;
+  font-weight: 400;
+  color: #333;
+  border-bottom: 4rpx solid transparent;
+  line-height: 86rpx;
+}
+.page_box .head_box .tab-box .tab-item .tab-active {
+  border-bottom: 4rpx solid #d5a65a;
+}
+.item-box {
+  background: #fff;
+  min-height: 150rpx;
+  border-bottom: 1rpx solid #dfdfdf;
+  padding: 30rpx;
+}
+.item-box .name {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #666;
+  line-height: 28rpx;
+  margin-bottom: 20rpx;
+}
+.item-box .time {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #c4c4c4;
+  line-height: 24px;
+}
+.item-box .num {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #e6b873;
+}

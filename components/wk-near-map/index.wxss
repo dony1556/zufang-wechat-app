@@ -1,0 +1,50 @@
+.near-box {
+  background-color: #fff;
+  margin-top: 10rpx;
+  padding-bottom: 30rpx;
+}
+.near-box .tab-title {
+  white-space: nowrap;
+  height: 80rpx;
+}
+.near-box .tab-title .tab {
+  width: 20%;
+  display: inline-block;
+  position: relative;
+  font-size: 26rpx;
+  line-height: 70rpx;
+  text-align: center;
+}
+.near-box .tab-title .tab.active {
+  color: #3dbcc6;
+  font-weight: 700;
+}
+.near-box .tab-title .tab.active:after {
+  content: "";
+  width: 20rpx;
+  height: 4rpx;
+  background-color: #3dbcc6;
+  border-radius: 2rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 10rpx;
+}
+.near-box .map-ct {
+  width: 750rpx;
+  height: 300rpx;
+  position: relative;
+  padding: 0rpx 30rpx;
+}
+.near-box .map-ct .map {
+  width: 690rpx;
+  height: 300rpx;
+}
+.near-box .map-ct .hide-map {
+  position: absolute;
+  top: 0rpx;
+  bottom: 0rpx;
+  left: 0rpx;
+  right: 0rpx;
+}

@@ -1,0 +1,61 @@
+.page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.page .top-box {
+  display: flex;
+}
+.page .content-box {
+  flex: 1;
+  overflow-y: auto;
+}
+.page .content-box .address-box .address {
+  margin: 30rpx 20rpx 0rpx 20rpx;
+  padding: 30rpx 16rpx;
+  position: relative;
+  background: #fff;
+}
+.page .content-box .address-box .address .name {
+  font-weight: 700;
+}
+.page .content-box .address-box .address .phone {
+  font-weight: 700;
+  margin: 0 20rpx;
+}
+.page .content-box .address-box .address .tag {
+  background: #f50;
+  border-radius: 6rpx;
+  padding: 6rpx 16rpx;
+  color: #fff;
+  font-size: 22rpx;
+}
+.page .content-box .address-box .address .detail {
+  margin-top: 25rpx;
+  width: 543rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #999;
+  line-height: 40rpx;
+}
+.page .content-box .address-box .address .set-btn {
+  background: none;
+  position: absolute;
+  font-size: 26rpx;
+  color: #a8700d;
+  top: 40rpx;
+  right: 20rpx;
+}
+.page .footer-box {
+  padding: 20rpx;
+}
+.page .footer-box .add-btn {
+  width: 710rpx;
+  height: 80rpx;
+  background-color: #f50;
+  border: 1rpx solid ff5500;
+  border-radius: 40rpx;
+  color: #fff;
+}

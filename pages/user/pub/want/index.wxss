@@ -1,0 +1,201 @@
+.page {
+  background-color: #fff;
+  width: 100%;
+  position: relative;
+}
+.page .tip {
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  background-color: #fef9e6;
+  color: #f9922b;
+  padding: 0rpx 20rpx;
+  font-size: 26rpx;
+}
+.page .body-box {
+  padding: 10rpx 0rpx 40rpx 0rpx;
+}
+.page .body-box .out-box {
+  padding: 20rpx 100rpx;
+  display: flex;
+  justify-content: space-around;
+}
+.page .body-box .out-box .item {
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 26rpx;
+  padding: 0rpx 20rpx;
+}
+.page .body-box .out-box .item.on {
+  border-bottom: 4rpx solid #0a0;
+  color: #0a0;
+}
+.page .body-box .price-box {
+  width: 690rpx;
+  border: 12rpx solid #f9f9f9;
+  padding: 16rpx;
+  margin-left: 30rpx;
+}
+.page .body-box .price-box .title {
+  display: flex;
+  align-items: center;
+}
+.page .body-box .price-box .title .line {
+  width: 6rpx;
+  height: 22rpx;
+  background-color: #0a0;
+  border-radius: 8rpx;
+  margin: 0rpx 10rpx;
+}
+.page .body-box .price-box .title .txt {
+  line-height: 38rpx;
+  font-size: 26rpx;
+}
+.page .body-box .price-box .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120rpx;
+}
+.page .body-box .price-box .content .input {
+  width: 120rpx;
+  font-size: 24rpx;
+  border-bottom: 1rpx solid #e6e6e6;
+  text-align: center;
+}
+.page .body-box .price-box .content .unit {
+  margin: 0rpx 40rpx;
+  font-size: 24rpx;
+}
+.page .body-box .tag-box {
+  width: 690rpx;
+  border: 12rpx solid #f9f9f9;
+  padding: 16rpx;
+  margin-left: 30rpx;
+}
+.page .body-box .tag-box .title {
+  display: flex;
+  align-items: center;
+}
+.page .body-box .tag-box .title .line {
+  width: 6rpx;
+  height: 22rpx;
+  background-color: #0a0;
+  border-radius: 8rpx;
+  margin: 0rpx 10rpx;
+}
+.page .body-box .tag-box .title .txt {
+  line-height: 38rpx;
+  font-size: 26rpx;
+}
+.page .body-box .tag-box .content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40rpx 20rpx;
+}
+.page .body-box .tag-box .content .cu-tag {
+  margin: 0rpx 20rpx 30rpx 0rpx;
+}
+.page .body-box .yx-box {
+  width: 690rpx;
+  border: 12rpx solid #f9f9f9;
+  padding: 16rpx;
+  margin-left: 30rpx;
+}
+.page .body-box .yx-box .title {
+  display: flex;
+  align-items: center;
+}
+.page .body-box .yx-box .title .line {
+  width: 6rpx;
+  height: 22rpx;
+  background-color: #0a0;
+  border-radius: 8rpx;
+  margin: 0rpx 10rpx;
+}
+.page .body-box .yx-box .title .txt {
+  line-height: 38rpx;
+  font-size: 26rpx;
+}
+.page .body-box .yx-box .content {
+  padding: 20rpx 20rpx;
+}
+.page .body-box .yx-box .content .area {
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+.page .body-box .yx-box .content .area .name {
+  margin-right: 30rpx;
+  font-size: 26rpx;
+}
+.page .body-box .yx-box .content .area .input {
+  font-size: 26rpx;
+}
+.page .body-box .yx-box .content .detail .name {
+  line-height: 70rpx;
+  font-size: 26rpx;
+}
+.page .body-box .yx-box .content .detail .textarea {
+  padding: 12rpx;
+  border-radius: 8rpx;
+  border: 1rpx solid #f3f3f3;
+  width: 100%;
+  font-size: 24rpx;
+  height: 200rpx;
+}
+.page .body-box .lx-box {
+  width: 690rpx;
+  border: 12rpx solid #f9f9f9;
+  padding: 16rpx;
+  margin-left: 30rpx;
+}
+.page .body-box .lx-box .title {
+  display: flex;
+  align-items: center;
+}
+.page .body-box .lx-box .title .line {
+  width: 6rpx;
+  height: 22rpx;
+  background-color: #0a0;
+  border-radius: 8rpx;
+  margin: 0rpx 10rpx;
+}
+.page .body-box .lx-box .title .txt {
+  line-height: 38rpx;
+  font-size: 26rpx;
+}
+.page .body-box .lx-box .content {
+  padding: 20rpx 20rpx;
+}
+.page .body-box .lx-box .content .item {
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+.page .body-box .lx-box .content .item .name {
+  margin-right: 30rpx;
+  font-size: 26rpx;
+}
+.page .body-box .lx-box .content .item .input {
+  font-size: 26rpx;
+}
+.page .body-box .b-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30rpx;
+  padding: 0rpx 30rpx;
+}
+.page .body-box .b-box .submit {
+  width: 690rpx;
+  height: 78rpx;
+  line-height: 78rpx;
+  text-align: center;
+  background-color: #5a0;
+  color: #fff;
+  font-size: 26rpx;
+  border-radius: 40rpx;
+}

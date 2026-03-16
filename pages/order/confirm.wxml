@@ -1,0 +1,60 @@
+<view class="page_box">
+    <view class="head_box">
+        <view bindtap="__e" class="add-address-box flex-sub x-f" data-event-opts="{{[ [ 'tap',[ [ 'jump',[ '/pages/user/address/list',[ 'o',['from','order'] ] ] ] ] ] ]}}" wx:if="{{!addressId}}">
+            <image mode class="address-bg" src="http://shopro.7wpp.com/imgs/address_line.png"></image>
+            <view class="box-bg x-bc flex-sub pad">
+                <text class="select-notice">请选择默认地址</text>
+                <text class="cuIcon-right"></text>
+            </view>
+        </view>
+        <view bindtap="__e" class="address-list" data-event-opts="{{[ [ 'tap',[ [ 'jump',[ '/pages/user/address/list',[ 'o',['from','order'] ] ] ] ] ] ]}}" wx:else>
+            <image mode class="address-bg" src="http://shopro.7wpp.com/imgs/address_line.png"></image>
+            <view class="top x-f">
+                <text class="name">{{address.name}}</text>
+                <text class="phone">{{address.phone}}</text>
+                <text class="tag" wx:if="{{address.is_default==1}}">默认</text>
+            </view>
+            <view class="detail x-bc">
+                <view class="address">{{address.province_name+address.city_name+address.area_name+address.address}}</view>
+                <text class="cuIcon-right"></text>
+            </view>
+        </view>
+    </view>
+    <view class="content_box">
+        <view class="goods-list" wx:for="{{orderPre.goods_list}}" wx:for-index="__i0__" wx:for-item="g" wx:key="spec_id"></view>
+        <view class="score item-list x-bc" wx:if="{{orderType==='score'}}">
+            <view class="x-f">
+                <text class="item-title">积分</text>
+            </view>
+            <view class="price">{{'-'+orderPre.total_credit+'积分'}}</view>
+        </view>
+        <view class=" x-bc item-list">
+            <view class="item-title">商品金额</view>
+            <view class="x-f">
+                <text class="price">{{'￥'+(orderPre.total_price||'0.00')}}</text>
+            </view>
+        </view>
+        <view class="price-box x-bc item-list">
+            <view class="item-title">运费</view>
+            <view class="x-f">
+                <text class="price">{{'￥'+(orderPre.express_fee||'0.00')}}</text>
+            </view>
+        </view>
+        <view class="remark-box">
+            <view class="item-title">备注:<text class="remark-notice">(100字以内)</text>
+            </view>
+            <textarea bindinput="__e" class="remark-inp" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','remark','$event',[] ] ] ] ] ]}}" fixed="true" hidden="{{!!showPicker}}" maxlength="100" placeholder="请填写备注信息" value="{{remark}}"></textarea>
+        </view>
+    </view>
+    <view class="foot_box x-f">
+        <text class="num">{{'共'+orderPre.total_num+'件'}}</text>
+        <view class="all-money">
+            <text>合计：</text>
+            <text class="price">{{'￥'+(orderPre.total_fee||'0.00')+''}}<block wx:if="{{orderDetail.total_credit}}">{{'+'+orderDetail.total_credit+'积分'}}</block>
+            </text>
+        </view>
+        <button bindtap="__e" class="cu-btn sub-btn" data-event-opts="{{[ [ 'tap',[ [ 'subOrder',['$event'] ] ] ] ]}}" disabled="{{isSubOrder}}">
+            <text class="cuIcon-loading2 cuIconfont-spin" wx:if="{{isSubOrder}}"></text>提交订单</button>
+    </view>
+    <sh-picker-modal bind:__l="__l" bind:changeCoupon="__e" bind:input="__e" data-event-opts="{{[ [ '^changeCoupon',[ ['changeCoupon'] ] ],[ '^input',[ [ '__set_model',[ '','showPicker','$event',[] ] ] ] ] ]}}" pickerData="{{pickerData}}" value="{{showPicker}}" vueId="7fdf8c20-1" wx:if="{{pickerData.couponList}}"></sh-picker-modal>
+</view>

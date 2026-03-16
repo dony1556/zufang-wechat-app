@@ -1,0 +1,4 @@
+{
+  "navigationBarTitleText": "经纪人列表",
+  "usingComponents": { "wk-skeletons": "/components/wk-skeletons/index" }
+}

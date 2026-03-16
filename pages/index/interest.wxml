@@ -1,0 +1,30 @@
+<view class="page">
+    <view class="top-box">
+        <view bindtap="__e" class="{{['item',currentIndex==0?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selcetTab',[0] ] ] ] ]}}">我的关注</view>
+        <view bindtap="__e" class="{{['item',currentIndex==1?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selcetTab',[1] ] ] ] ]}}">浏览足迹</view>
+    </view>
+    <block wx:if="{{$root.g0==0}}">
+        <view class="no-box" wx:if="{{currentIndex==0}}">
+            <image class="img" mode="widthFix" src="https://public.danke.com.cn/public-20190715-FqbPFZ11_l4xqqbx_u_OZpLu1KUf"></image>
+            <text class="tip">您还没有关注任何房源记录</text>
+        </view>
+        <view class="no-box" wx:if="{{currentIndex==1}}">
+            <image class="img" mode="widthFix" src="https://public.danke.com.cn/public-20190315-FvLJDDhjYwAMYb6mOI4e8XKQ0d3C"></image>
+            <text class="tip">您还没有关注任何房源记录</text>
+        </view>
+    </block>
+    <block wx:if="{{$root.g1}}">
+        <view class="house-box" wx:if="{{currentIndex==0}}">
+            <wk-houses bind:__l="__l" list="{{houseList}}" vueId="32153006-1"></wk-houses>
+        </view>
+        <view class="house-box" wx:if="{{currentIndex==1}}">
+            <wk-houses bind:__l="__l" list="{{houseList}}" vueId="32153006-2"></wk-houses>
+        </view>
+    </block>
+    <view class="login-box" wx:if="{{!isLogin}}">
+        <button bindtap="__e" class="login" data-event-opts="{{[ [ 'tap',[ [ 'doLogin',['$event'] ] ] ] ]}}">登录</button>
+    </view>
+    <wk-tabar bind:__l="__l" vueId="32153006-3"></wk-tabar>
+    <shopro-float-btn bind:__l="__l" vueId="32153006-4"></shopro-float-btn>
+    <wk-login-modal bind:__l="__l" vueId="32153006-5"></wk-login-modal>
+</view>

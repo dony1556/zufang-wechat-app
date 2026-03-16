@@ -1,0 +1,63 @@
+.page .float-box {
+  position: fixed;
+  bottom: 260rpx;
+  right: 50rpx;
+  z-index: 9999;
+}
+.page .float-box .pub {
+  font-size: 24rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #f50;
+  width: 90rpx;
+  height: 90rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 6rpx 6rpx 6rpx #d9d9d9;
+  margin-top: 30rpx;
+}
+.page .float-box .my {
+  font-size: 24rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #01aaed;
+  width: 90rpx;
+  height: 90rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 6rpx 6rpx 6rpx #dedede;
+}
+.page .item-box {
+  padding: 16rpx 20rpx;
+}
+.page .item-box .item {
+  padding: 20rpx 20rpx;
+  background-color: #fff;
+  border-radius: 12rpx;
+  margin: 20rpx 0rpx;
+  position: relative;
+}
+.page .item-box .item .city {
+  font-size: 28rpx;
+}
+.page .item-box .item .budget {
+  font-size: 28rpx;
+  margin-top: 16rpx;
+}
+.page .item-box .item .time {
+  font-size: 26rpx;
+  margin-top: 16rpx;
+}
+.page .item-box .item .remark {
+  font-size: 28rpx;
+  margin-top: 16rpx;
+}
+.page .item-box .item .tel {
+  font-size: 46rpx;
+  color: #f50;
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx;
+}

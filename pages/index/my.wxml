@@ -1,0 +1,13 @@
+<view class="page">
+    <view wx:if="{{$root.g0>0}}">
+        <block wx:for="{{basicSet.my_items}}" wx:key="index">
+            <my-nav bind:__l="__l" value="{{item}}" vueId="{{'2f91d444-1-'+index}}" wx:if="{{item.type=='nav_list'}}"></my-nav>
+            <my-nav2 bind:__l="__l" value="{{item}}" vueId="{{'2f91d444-2-'+index}}" wx:if="{{item.type=='nav_list2'}}"></my-nav2>
+            <my-top-head bind:__l="__l" value="{{item}}" vueId="{{'2f91d444-3-'+index}}" wx:if="{{item.type=='top_head'}}"></my-top-head>
+        </block>
+    </view>
+    <view bindtap="__e" class="loginOut" data-event-opts="{{[ [ 'tap',[ [ 'loginOut',['$event'] ] ] ] ]}}" wx:if="{{isLogin}}">退出登录</view>
+    <view bindlongpress="__e" class="copyright" data-event-opts="{{[ [ 'longpress',[ [ 'openVersion',['$event'] ] ] ] ]}}">{{basicSet.copyright}}</view>
+    <wk-tabar bind:__l="__l" vueId="2f91d444-4"></wk-tabar>
+    <wk-login-modal bind:__l="__l" vueId="2f91d444-5"></wk-login-modal>
+</view>

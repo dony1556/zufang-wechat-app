@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "申请协议",
+  "usingComponents": {
+    "wk-parser": "/components/wk-parser/index"
+  }
+}

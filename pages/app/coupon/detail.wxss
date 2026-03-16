@@ -1,0 +1,122 @@
+.page_box {
+  background: linear-gradient(180deg, #f0c785, #f6d69d);
+}
+.coupon-box {
+  margin: 100rpx 30rpx 0;
+  background: #fff;
+  border-radius: 20rpx;
+}
+.coupon-box .top {
+  border-radius: 20rpx 20rpx 0 0;
+  background-image: radial-gradient(
+      circle at bottom left,
+      #f0c785,
+      #f0c785 16rpx,
+      transparent 17rpx
+    ),
+    radial-gradient(
+      circle at bottom right,
+      #f0c785,
+      #f0c785 16rpx,
+      transparent 17rpx
+    );
+  padding: 110rpx 0 40rpx 0;
+  border-bottom: 1rpx dashed #f3ce90;
+  position: relative;
+}
+.coupon-box .top .img-box {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -70rpx;
+}
+.coupon-box .top .img-box .coupon-img {
+  width: 100rpx;
+  height: 100rpx;
+}
+.coupon-box .top .title {
+  font-size: 40rpx;
+  font-weight: 700;
+  line-height: 40rpx;
+  margin-bottom: 30rpx;
+}
+.coupon-box .top .tip {
+  font-size: 28rpx;
+  font-weight: 500;
+  margin-bottom: 50rpx;
+}
+.coupon-box .top .use-btn {
+  width: 386rpx;
+  height: 80rpx;
+  background: linear-gradient(90deg, #f0c785, #f6d69d);
+  border-radius: 40rpx;
+  color: hsla(0, 0%, 100%, 0.9);
+  margin-bottom: 30rpx;
+}
+.coupon-box .top .fail-btn {
+  width: 386rpx;
+  height: 80rpx;
+  background: #f5f5f5;
+  border-radius: 40rpx;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #bcbcbc;
+  margin-bottom: 30rpx;
+}
+.coupon-box .top .time {
+  color: #999;
+  font-size: 26rpx;
+}
+.coupon-box .bottom {
+  border-radius: 0 0 20rpx 20rpx;
+  background-image: radial-gradient(
+      circle at top left,
+      #f0c785,
+      #f0c785 16rpx,
+      transparent 17rpx
+    ),
+    radial-gradient(
+      circle at top right,
+      #f0c785,
+      #f0c785 16rpx,
+      transparent 17rpx
+    );
+  padding: 40rpx 30rpx;
+}
+.coupon-box .bottom .notice-item {
+  border-bottom: 1rpx solid #eee;
+  height: 90rpx;
+  width: 100%;
+}
+.coupon-box .bottom .notice-item .notice-title {
+  font-weight: 500;
+  font-size: 26rpx;
+}
+.coupon-box .bottom .notice-item .notice-detail {
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 10rpx;
+}
+.coupon-goods {
+  background: #fff;
+  margin: 20rpx;
+  padding: 20rpx;
+  border-radius: 20rpx;
+}
+.coupon-goods .goods-title {
+  width: 420rpx;
+}
+.coupon-goods .goods-list {
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid hsla(0, 0%, 87.5%, 0.5);
+}
+.coupon-goods .coupon-goods-title {
+  font-size: 30rpx;
+  font-weight: 700;
+  height: 80rpx;
+}

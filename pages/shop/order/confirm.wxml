@@ -1,0 +1,65 @@
+<view class="page">
+    <view class="content-box">
+        <view bindtap="__e" class="addr" data-event-opts="{{[ [ 'tap',[ [ 'selectAddress',['$event'] ] ] ] ]}}">
+            <view class="right" wx:if="{{address.id}}">
+                <view class="tel-name">
+                    <view class="name">{{address.name}}</view>
+                    <view class="tel">{{address.phone}}</view>
+                </view>
+                <view class="address">{{address.address}}</view>
+            </view>
+            <view class="no-address" wx:else>请选择收货地址</view>
+            <view class="iconfont icon-you rr" style="font-size:24rpx;"></view>
+        </view>
+        <view class="buy-list">
+            <view class="row" wx:for="{{order.goods_list}}" wx:key="index">
+                <view class="goods-info">
+                    <view class="img-box">
+                        <image class="img" mode="aspectFill" src="{{item.cover}}"></image>
+                    </view>
+                    <view class="info">
+                        <view class="title">{{item.title}}</view>
+                        <view class="price-number">
+                            <view class="price">{{item.credit+'积分+￥'+item.money}}</view>
+                            <view class="number">{{'x'+num}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="detail">
+            <view class="row">
+                <view class="nominal">金额</view>
+                <view class="content">{{'￥'+order.total_money}}</view>
+            </view>
+            <view class="row">
+                <view class="nominal">积分</view>
+                <view class="content">{{order.total_credit}}</view>
+            </view>
+            <view class="row">
+                <view class="nominal">运费</view>
+                <view class="content">{{'+￥'+order.total_freight}}</view>
+            </view>
+        </view>
+        <view class="order">
+            <view class="row">
+                <view class="left">备注 :</view>
+                <view class="right">
+                    <input bindinput="__e" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','remark','$event',[] ],['form'] ] ] ] ]}}" placeholder="选填,备注内容" value="{{form.remark}}"></input>
+                </view>
+            </view>
+        </view>
+        <view class="blck"></view>
+    </view>
+    <view class="footer-box">
+        <view class="footer">
+            <view class="settlement">
+                <view class="sum">
+                    <text>合计：</text>
+                    <view class="money">{{'￥'+order.total_money+' + '+order.total_credit+'积分'}}</view>
+                </view>
+                <view bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'toPay',['$event'] ] ] ] ]}}">提交订单</view>
+            </view>
+        </view>
+    </view>
+</view>

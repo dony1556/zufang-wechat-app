@@ -1,0 +1,23 @@
+<view class="page_box">
+    <view class="head_box"></view>
+    <view class="content_box">
+        <view class="goods x-f">
+            <image class="goods-img" mode="widthFix" src="{{order.order_goods[0].cover}}"></image>
+            <view class="y-start detail">
+                <view class="state-text">物流状态：<text class="state">{{status}}</text>
+                </view>
+                <view class="code">{{'物流单号：'+order.express_no}}</view>
+                <view>{{'物流公司：'+order.express_com}}</view>
+            </view>
+        </view>
+        <view class="express-box">
+            <view class="item-box" wx:for="{{express_list}}" wx:for-index="key" wx:for-item="express">
+                <view class="item">
+                    <view class="step">{{express.step}}</view>
+                    <view class="time">{{express.time}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="foot_box"></view>
+</view>

@@ -1,0 +1,14 @@
+<view class="page">
+    <view class="top-box">
+        <view class="scroll-box">
+            <scroll-view class="scroll-view" scrollWithAnimation="{{true}}" scrollX="{{true}}">
+                <view bindtap="__e" class="{{['item',house_type==''?'on':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selectType',[''] ] ] ] ]}}">全部</view>
+                <view bindtap="__e" class="{{['item',house_type==item.type?'on':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selectType',['$0'],[ [ ['houseTypeList','',index,'type'] ] ] ] ] ] ]}}" wx:for="{{houseTypeList}}" wx:key="index">{{item.alias||item.name}}</view>
+            </scroll-view>
+        </view>
+    </view>
+    <view class="house-box">
+        <wk-houses bind:__l="__l" value="{{houseList}}" vueId="75903570-1"></wk-houses>
+    </view>
+    <wk-empty bind:__l="__l" emptyData="{{emptyData}}" vueId="75903570-2" wx:if="{{$root.g0==0}}"></wk-empty>
+</view>

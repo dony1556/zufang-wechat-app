@@ -1,0 +1,12 @@
+<view>
+    <canvas id="{{canvasId}}" style="{{style}}" type="2d" wx:if="{{isUse2dCanvas}}"></canvas>
+    <canvas canvasId="{{canvasId}}" style="{{style}}" wx:else></canvas>
+    <view bindtap="__e" class="{{['back-shadow',showModal?'on':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'hide',['$event'] ] ] ] ]}}"></view>
+    <view bindtap="__e" class="{{['box',showModal?'on':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'hide',['$event'] ] ] ] ]}}">
+        <view catchtap="__e" class="content" data-event-opts="{{[ [ 'tap',[ [ '',['$event'] ] ] ] ]}}">
+            <image class="img" mode="aspectFit" src="{{path}}" wx:if="{{path}}"></image>
+            <view class="bg _div" wx:else>正在生成中...</view>
+            <button bindtap="__e" class="btn1" data-event-opts="{{[ [ 'tap',[ [ 'saveImg',['$event'] ] ] ] ]}}" wx:if="{{path}}">保存到相册</button>
+        </view>
+    </view>
+</view>

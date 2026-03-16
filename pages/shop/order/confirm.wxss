@@ -1,0 +1,198 @@
+.page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.page .content-box {
+  flex: 1;
+  overflow-y: auto;
+}
+.page .content-box .addr {
+  padding: 30rpx 16rpx;
+  margin: 30rpx 20rpx 0rpx 20rpx;
+  box-shadow: 2rpx 2rpx 10rpx rgba(0, 0, 0, 0.1);
+  border-radius: 12rpx;
+  display: flex;
+  background-color: #fff;
+}
+.page .content-box .addr .right {
+  flex: 1;
+}
+.page .content-box .addr .right .tel-name {
+  width: 100%;
+  display: flex;
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+}
+.page .content-box .addr .right .tel-name .tel {
+  margin-left: 40rpx;
+}
+.page .content-box .addr .right .address {
+  width: 100%;
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 10rpx;
+}
+.page .content-box .addr .rr {
+  display: flex;
+  align-items: center;
+}
+.page .content-box .addr .no-address {
+  flex: 1;
+  align-items: center;
+  font-size: 24rpx;
+}
+.page .content-box .buy-list {
+  padding: 20rpx 16rpx;
+  margin: 30rpx 20rpx 20rpx 20rpx;
+  box-shadow: 2rpx 2rpx 10rpx rgba(0, 0, 0, 0.1);
+  border-radius: 12rpx;
+  background-color: #fff;
+}
+.page .content-box .buy-list .row {
+  margin: 30rpx 0;
+}
+.page .content-box .buy-list .row .goods-info {
+  width: 100%;
+  display: flex;
+}
+.page .content-box .buy-list .row .goods-info .img-box {
+  width: 22vw;
+  height: 22vw;
+  border-radius: 10rpx;
+  overflow: hidden;
+  flex-shrink: 0;
+  margin-right: 10rpx;
+}
+.page .content-box .buy-list .row .goods-info .img-box .img {
+  width: 22vw;
+  height: 22vw;
+}
+.page .content-box .buy-list .row .goods-info .info {
+  flex: 1;
+  position: relative;
+}
+.page .content-box .buy-list .row .goods-info .info .title {
+  width: 100%;
+  font-size: 28rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.page .content-box .buy-list .row .goods-info .info .spec {
+  display: flex;
+}
+.page .content-box .buy-list .row .goods-info .info .spec view {
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 20rpx;
+  padding: 0 10rpx;
+  margin-left: 8rpx;
+  border-radius: 15rpx;
+  color: #fff;
+  background-color: #f10d0d;
+}
+.page .content-box .buy-list .row .goods-info .info .price-number {
+  position: absolute;
+  width: 100%;
+  bottom: 0rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 28rpx;
+  height: 40rpx;
+}
+.page .content-box .buy-list .row .goods-info .info .price-number .price {
+  color: #f06c7a;
+}
+.page .content-box .buy-list .row .goods-info .info .price-number .number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page .content-box .order {
+  padding: 20rpx 12rpx;
+  margin: 30rpx 20rpx 0rpx 20rpx;
+  box-shadow: 2rpx 2rpx 10rpx rgba(0, 0, 0, 0.1);
+  border-radius: 12rpx;
+  background-color: #fff;
+}
+.page .content-box .order .row {
+  display: flex;
+  padding: 20rpx;
+}
+.page .content-box .order .row .left {
+  font-size: 28rpx;
+}
+.page .content-box .order .row .right {
+  flex: 1;
+  margin-left: 40rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+.page .content-box .order .row .right input {
+  font-size: 26rpx;
+  color: #999;
+}
+.page .content-box .blck {
+  width: 100%;
+  height: 100rpx;
+}
+.page .content-box .detail {
+  padding: 20rpx 16rpx;
+  margin: 30rpx 20rpx 20rpx 20rpx;
+  box-shadow: 2rpx 2rpx 10rpx rgba(0, 0, 0, 0.1);
+  border-radius: 12rpx;
+  background-color: #fff;
+}
+.page .content-box .detail .row {
+  height: 60rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.page .content-box .detail .row .nominal {
+  font-size: 28rpx;
+}
+.page .content-box .detail .row .content {
+  font-size: 26rpx;
+  color: #f06c7a;
+}
+.page .footer-box .footer {
+  width: 100%;
+  padding: 0 4%;
+  background-color: #fff;
+  height: 110rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 28rpx;
+}
+.page .footer-box .footer .settlement {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.page .footer-box .footer .settlement .sum {
+  font-size: 28rpx;
+  margin-right: 30rpx;
+  display: flex;
+}
+.page .footer-box .footer .settlement .sum .money {
+  font-weight: 600;
+  color: red;
+}
+.page .footer-box .footer .settlement .btn {
+  padding: 0 80rpx;
+  height: 76rpx;
+  background-color: red;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26rpx;
+  border-radius: 40rpx;
+}

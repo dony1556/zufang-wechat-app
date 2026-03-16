@@ -1,0 +1,31 @@
+<view class="page_box">
+    <view class="head_box"></view>
+    <view class="content_box">
+        <block wx:for="{{$root.l0}}">
+            <view class="goods-card"></view>
+            <view class="form-item">
+                <view class="star-box x-f">
+                    <view class="star-title">评分</view>
+                    <view>
+                        <sh-star bind:__l="__l" bind:changeStar="__e" data-event-opts="{{[ [ '^changeStar',[ ['changeStar'] ] ] ]}}" index="{{index}}" maxStar="{{5}}" vueId="{{'1506265d-1-'+index}}"></sh-star>
+                    </view>
+                </view>
+                <view class="area-box">
+                    <textarea bindinput="__e" class="inp-area" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','content','$event',[] ],[ [ ['goods_list','',index] ] ] ] ] ] ]}}" placeholder="宝贝满足你的期待吗？说说你的使用心得，分享给想买的他们吧~" placeholderClass="pl-style" value="{{item.$orig.content}}"></textarea>
+                    <view class="img-box">
+                        <view class="preview-box" wx:for="{{item.$orig.full_imgs}}" wx:for-index="index2" wx:for-item="img" wx:key="index2">
+                            <image class="preview-img" mode="aspectFill" src="{{img}}"></image>
+                            <text bindtap="__e" class="cuIcon-close" data-event-opts="{{[ [ 'tap',[ [ 'DelImg',[index2] ] ] ] ]}}"></text>
+                        </view>
+                        <view bindtap="__e" class="choose-img x-c" data-event-opts="{{[ [ 'tap',[ [ 'onChooseImg',[index] ] ] ] ]}}" wx:if="{{item.g0<6}}">
+                            <text class="cuIcon-cameraadd"></text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view class="foot_box x-c">
+        <button bindtap="__e" class="cu-btn post-btn" data-event-opts="{{[ [ 'tap',[ [ 'subComment',['$event'] ] ] ] ]}}">发布</button>
+    </view>
+</view>

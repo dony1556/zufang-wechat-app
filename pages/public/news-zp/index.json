@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "招聘",
+  "usingComponents": {
+    "wk-login-modal": "/components/wk-login-modal/index",
+    "wk-skeletons": "/components/wk-skeletons/index"
+  }
+}

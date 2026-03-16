@@ -1,0 +1,62 @@
+.page {
+  background-color: #fff;
+}
+.page .t-box {
+  display: flex;
+  padding: 20rpx 20rpx;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0rpx;
+  background-color: #fff;
+  z-index: 99;
+}
+.page .t-box .title {
+  font-size: 30rpx;
+  width: 110rpx;
+  line-height: 100rpx;
+}
+.page .t-box .type-scroll {
+  width: 710rpx;
+  white-space: nowrap;
+  height: 74rpx;
+}
+.page .t-box .type-scroll .item {
+  position: relative;
+  display: inline-block;
+  padding: 0rpx 30rpx;
+  background-color: #f9f9f9;
+  border-radius: 6rpx;
+  height: 62rpx;
+  margin: 0rpx 16rpx;
+  border: 1rpx solid #ececec;
+}
+.page .t-box .type-scroll .item.active {
+  background-color: #f50;
+  border: 1rpx solid #f50;
+}
+.page .t-box .type-scroll .item .name {
+  line-height: 62rpx;
+  font-size: 26rpx;
+}
+.page .t-box .type-scroll .item .name.on {
+  font-weight: 700;
+  color: #fff;
+}
+.page .z-box {
+  padding: 20rpx 20rpx;
+}
+.page .z-box .item {
+  border-top: 1rpx solid #f9f9f9;
+  padding: 20rpx 10rpx;
+}
+.page .z-box .item .title {
+  font-size: 28rpx;
+  font-weight: 700;
+}
+.page .z-box .item .info {
+  margin-top: 20rpx;
+}
+.page .z-box .item .info .time {
+  font-size: 26rpx;
+  color: #ccc;
+}

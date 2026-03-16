@@ -1,0 +1,272 @@
+.page {
+  background-color: #f6f6f6;
+  width: 100%;
+  position: relative;
+}
+.page .tip {
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  background-color: #fef9e6;
+  color: #f9922b;
+  padding: 0rpx 20rpx;
+  font-size: 22rpx;
+}
+.page .body-box .out-box {
+  width: 560rpx;
+  margin: 20rpx auto 30rpx auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 70rpx;
+  border-radius: 35rpx;
+  background-color: #fff;
+}
+.page .body-box .out-box .item {
+  width: 280rpx;
+  color: #727272;
+  border-radius: 8rpx;
+  text-align: center;
+  line-height: 70rpx;
+  font-size: 26rpx;
+  border-radius: 35rpx;
+}
+.page .body-box .out-box .item.on {
+  color: #fff;
+  background-color: #f50;
+}
+.page .body-box .treaty {
+  display: flex;
+  align-items: center;
+  padding: 26rpx 20rpx;
+}
+.page .body-box .treaty .txt {
+  margin-left: 16rpx;
+  font-size: 28rpx;
+}
+.page .body-box .form {
+  width: 718rpx;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin: 10rpx 16rpx;
+}
+.page .body-box .form .form-item {
+  width: 100%;
+  padding: 10rpx 20rpx;
+  display: flex;
+}
+.page .body-box .form .form-item:not(:last-child) {
+  border-bottom: 1rpx solid #f8f8f8;
+}
+.page .body-box .form .form-item .title {
+  width: 170rpx;
+  min-height: 90rpx;
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+  flex-shrink: 0;
+  margin-right: 10rpx;
+}
+.page .body-box .form .form-item .right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.page .body-box .form .form-item .right .radio-group {
+  display: flex;
+}
+.page .body-box .form .form-item .right .radio-group .label {
+  display: flex;
+  align-items: center;
+  margin-left: 30rpx;
+}
+.page .body-box .form .form-item .right .radio-group .label .radio {
+  transform: scale(0.7);
+}
+.page .body-box .form .form-item .right .radio-group .label .name {
+  margin-left: 10rpx;
+  font-size: 26rpx;
+}
+.page .body-box .form .form-item .right .choose-box {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  height: 90rpx;
+}
+.page .body-box .form .form-item .right .choose-box .text {
+  flex: 1;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 26rpx;
+  width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.page .body-box .form .form-item .right .choose-box .icon {
+  font-size: 20rpx;
+  color: #c4c4c4;
+  margin-right: 10rpx;
+}
+.page .body-box .form .form-item .right .picker {
+  width: 100%;
+}
+.page .body-box .form .form-item .right .picker .picker-box {
+  height: 90rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.page .body-box .form .form-item .right .picker .picker-box .text {
+  flex: 1;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 26rpx;
+}
+.page .body-box .form .form-item .right .picker .picker-box .icon {
+  font-size: 20rpx;
+  color: #c4c4c4;
+  margin-right: 10rpx;
+}
+.page .body-box .form .form-item .right .input {
+  flex: 1;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 26rpx;
+}
+.page .body-box .form .form-item .right .unit {
+  padding: 0 10rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 22rpx;
+  color: #a0a0a0;
+}
+.page .body-box .form .form-item2 {
+  width: 100%;
+  padding: 10rpx 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+.page .body-box .form .form-item2:not(:last-child) {
+  border-bottom: 1rpx solid #f8f8f8;
+}
+.page .body-box .form .form-item2 .title-box {
+  display: flex;
+  align-items: center;
+  height: 80rpx;
+  font-size: 26rpx;
+}
+.page .body-box .form .form-item2 .title-box .title {
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 26rpx;
+}
+.page .body-box .form .form-item2 .title-box .mark {
+  font-size: 22rpx;
+}
+.page .body-box .form .form-item2 .input {
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 26rpx;
+}
+.page .body-box .form .form-item2 .bot-box .textarea {
+  width: 100%;
+  border-radius: 12rpx;
+  height: 200rpx;
+  border: 1rpx solid #eee;
+  padding: 16rpx;
+  font-size: 26rpx;
+}
+.page .body-box .form .floor-item {
+  display: flex;
+  align-items: center;
+  height: 90rpx;
+  padding: 10rpx 20rpx;
+  border-bottom: 1rpx solid #f8f8f8;
+}
+.page .body-box .form .floor-item .title {
+  width: 180rpx;
+  font-size: 26rpx;
+}
+.page .body-box .form .floor-item .input {
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 26rpx;
+  flex: 1;
+}
+.page .body-box .form .floor-item .unit {
+  font-size: 22rpx;
+  padding: 0 10rpx;
+  color: #a0a0a0;
+}
+.page .body-box .form .btn-box {
+  width: 100%;
+  height: 110rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page .body-box .form .btn-box .submit {
+  width: 650rpx;
+  height: 78rpx;
+  line-height: 78rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  background: linear-gradient(45deg, #f50, #ffb8ae);
+  font-size: 26rpx;
+}
+.page .body-box .img-box {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20rpx;
+}
+.page .body-box .img-box .choose-img,
+.page .body-box .img-box .preview-box {
+  width: 90rpx;
+  height: 90rpx;
+  background: #f9fafb;
+  border: 1rpx solid #efefef;
+  margin-right: 25rpx;
+  margin-bottom: 25rpx;
+  position: relative;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page .body-box .img-box .choose-img:nth-child(5n),
+.page .body-box .img-box .preview-box:nth-child(5n) {
+  margin-right: 0;
+}
+.page .body-box .img-box .choose-img .cuIcon-cameraadd,
+.page .body-box .img-box .preview-box .cuIcon-cameraadd {
+  font-size: 42rpx;
+  color: #e9e9e9;
+}
+.page .body-box .img-box .choose-img .preview-img,
+.page .body-box .img-box .preview-box .preview-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8rpx;
+}
+.page .body-box .img-box .choose-img .preview-video,
+.page .body-box .img-box .preview-box .preview-video {
+  width: 100%;
+  height: 100%;
+  border-radius: 8rpx;
+}
+.page .body-box .img-box .choose-img .cuIcon-close,
+.page .body-box .img-box .preview-box .cuIcon-close {
+  background: linear-gradient(90deg, #f50, #ffd387);
+  border-radius: 50%;
+  width: 36rpx;
+  line-height: 36rpx;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+}

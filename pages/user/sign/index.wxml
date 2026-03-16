@@ -1,0 +1,42 @@
+<view class="page">
+    <view class="head-box"></view>
+    <view class="content_box">
+        <view class="top">
+            <view class="user-avatar">
+                <image src="{{loingUser.avatarurl}}"></image>
+            </view>
+            <view class="mum-box">
+                <view class="num">{{user.score}}</view>
+                <view class="text"></view>
+            </view>
+            <view bindtap="__e" class="integral-box" data-event-opts="{{[ [ 'tap',[ [ 'navtoIntegral',['$event'] ] ] ] ]}}">
+                <view class="iconfont icon-jifen1"></view>
+                <view class="text">积分记录</view>
+            </view>
+        </view>
+        <view class="sign-box">
+            <view class="head-box">
+                <view class="head">{{'已连续签到'+user.continue_day+'天'}}</view>
+            </view>
+            <view class="list">
+                <block wx:for="{{list}}" wx:key="index">
+                    <view class="heng" wx:if="{{index>0}}"></view>
+                    <view class="item">
+                        <view class="num on" wx:if="{{index+1<=user.continue_day}}">
+                            <icon class="icon-small" color="#fff" size="18" type="success_no_circle"></icon>
+                        </view>
+                        <view class="num" wx:if="{{index>=user.continue_day}}">{{'+'+item.num}}</view>
+                        <view class="text">{{'第'+item.sn+'天'}}</view>
+                    </view>
+                </block>
+            </view>
+            <view class="sign-btn2" wx:if="{{isSign}}">已签到，再接再厉</view>
+            <view bindtap="__e" class="sign-btn" data-event-opts="{{[ [ 'tap',[ [ 'addSign',['$event'] ] ] ] ]}}" wx:else>立即签到</view>
+        </view>
+        <view class="house-box">
+            <wk-houses bind:__l="__l" value="{{houseList}}" vueId="27c5930b-1"></wk-houses>
+        </view>
+    </view>
+    <wk-login-modal bind:__l="__l" vueId="27c5930b-2"></wk-login-modal>
+    <wk-skeletons bind:__l="__l" type="detail" vueId="27c5930b-3" wx:if="{{isLoading}}"></wk-skeletons>
+</view>

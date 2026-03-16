@@ -1,0 +1,43 @@
+<form>
+    <view class="page_box">
+        <view class="head_box"></view>
+        <view class="content_box pad">
+            <view class="form-item">
+                <view class="inp-title">请选择类型</view>
+                <radio-group class="y-start radio-box">
+                    <label bindtap="__e" class="radio-item x-f" data-event-opts="{{[ [ 'tap',[ [ 'changeType',['$0'],[ [ ['typeList','code',type.code,'code'] ] ] ] ] ] ]}}" wx:for="{{typeList}}" wx:for-index="__i0__" wx:for-item="type" wx:key="code">
+                        <radio checked="{{type===type.code}}" class="{{['orange','radio-inp',type===type.code?'chekced':'']}}"></radio>
+                        <text class="radio-title">{{type.name}}</text>
+                    </label>
+                </radio-group>
+            </view>
+            <view class="form-item">
+                <label>
+                    <view class="inp-title">相关描述</view>
+                    <view class="area-box">
+                        <textarea bindinput="__e" class="inp-area" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','content','$event',[] ] ] ] ] ]}}" name="message" placeholder="客官~您对我们的服务还满意吗，请给予我们你的意见我 们将做的更好~" placeholderClass="pl-style" value="{{content}}"></textarea>
+                        <view class="img-box">
+                            <view class="preview-box" wx:for="{{imgList}}" wx:key="index">
+                                <image class="preview-img" mode="aspectFill" src="{{item}}"></image>
+                                <text bindtap="__e" class="cuIcon-close" data-event-opts="{{[ [ 'tap',[ [ 'DelImg',[index] ] ] ] ]}}"></text>
+                            </view>
+                            <view bindtap="__e" class="choose-img x-c" data-event-opts="{{[ [ 'tap',[ [ 'onChooseImg',['$event'] ] ] ] ]}}" wx:if="{{$root.g0<10}}">
+                                <text class="cuIcon-cameraadd"></text>
+                            </view>
+                        </view>
+                    </view>
+                </label>
+            </view>
+            <view class="form-item">
+                <label>
+                    <view class="inp-title">联系方式</view>
+                    <input bindinput="__e" class="inp" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','phone','$event',[] ] ] ] ] ]}}" name="phone" placeholder="请输入您的联系电话" placeholderClass="pl-style" type="number" value="{{phone}}"></input>
+                </label>
+            </view>
+        </view>
+        <view class="foot_box x-bc pad">
+            <button bindtap="__e" class="cu-btn post-btn" data-event-opts="{{[ [ 'tap',[ [ 'addFeedback',['$event'] ] ] ] ]}}">提交</button>
+            <button bindtap="__e" class="cu-btn contact-btn" data-event-opts="{{[ [ 'tap',[ [ 'onService',['$event'] ] ] ] ]}}">联系客服</button>
+        </view>
+    </view>
+</form>

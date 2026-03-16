@@ -1,0 +1,47 @@
+.page {
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+}
+.page .no-box {
+  margin-top: 200rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page .no-box .img {
+  width: 300rpx;
+}
+.page .no-box .tip {
+  font-size: 28rpx;
+  color: #999;
+  margin: 30rpx 0rpx;
+}
+.page .top-box {
+  display: flex;
+  height: 100rpx;
+}
+.page .top-box .item {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page .top-box .item.active {
+  font-weight: 700;
+  color: #000;
+  font-size: 32rpx;
+}
+.page .house-box {
+  padding: 20rpx 0;
+}
+.page .login-box .login {
+  width: 400rpx;
+  height: 80rpx;
+  background-color: #3dbcc6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 45rpx;
+  color: #fff;
+}

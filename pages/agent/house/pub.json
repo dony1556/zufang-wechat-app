@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "发布房源",
+  "usingComponents": {
+    "wk-login-modal": "/components/wk-login-modal/index",
+    "pub-nav": "/pages/agent/components/pub-nav",
+    "pub-ad": "/pages/agent/components/pub-ad"
+  }
+}

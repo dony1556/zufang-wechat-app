@@ -1,0 +1,217 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+}
+.page .tab-box {
+  width: 100%;
+  padding: 0rpx 20rpx;
+  background-color: #fff;
+}
+.page .tab-box .scroll {
+  white-space: nowrap;
+  width: 100%;
+}
+.page .tab-box .scroll .item {
+  position: relative;
+  display: inline-block;
+  padding: 0rpx 30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+.page .tab-box .scroll .item.on {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #ff9700;
+}
+.page .map-box {
+  flex: 1;
+  overflow: hidden;
+}
+.page .input-box {
+  position: absolute;
+  width: 100%;
+  top: 100rpx;
+  z-index: 99999;
+}
+.page .input-box .sear {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.page .input-box .sear .serach-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 76rpx;
+  background-color: hsla(0, 0%, 100%, 0.9);
+  width: 600rpx;
+  border-radius: 36rpx;
+}
+.page .input-box .sear .serach-item .text {
+  color: #6c6c6c;
+  font-size: 24rpx;
+}
+.page .select-box {
+  position: absolute;
+  width: 100%;
+  top: 100rpx;
+  z-index: 99999;
+  right: 40rpx;
+  top: 280rpx;
+  width: 68rpx;
+}
+.page .select-box .se {
+  background-color: #fff;
+  width: 68rpx;
+  height: 68rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 4rpx 4rpx 12rpx #e3e3e3;
+}
+.page .select-box .scale {
+  background-color: #fff;
+  width: 68rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  text-align: center;
+  color: #ffaa7f;
+  font-size: 24rpx;
+  border-radius: 50%;
+  box-shadow: 4rpx 4rpx 12rpx #e3e3e3;
+  margin-top: 20rpx;
+}
+.page .select-box .scale-box {
+  border-radius: 34rpx;
+  box-shadow: 4rpx 4rpx 12rpx #e3e3e3;
+  overflow: hidden;
+}
+.page .select-box .scale-box .item {
+  background-color: #fff;
+  width: 68rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  text-align: center;
+  color: #696969;
+  font-size: 24rpx;
+}
+.page .select-box .scale-box .item:not(:last-child) {
+  border-bottom: 1rpx solid #f8f8f8;
+}
+.page .select-box .scale-box .item.on {
+  color: #ffaa7f;
+}
+.page .select-box .distance {
+  background-color: #fff;
+  width: 68rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  text-align: center;
+  color: #ffaa7f;
+  font-size: 22rpx;
+  border-radius: 50%;
+  box-shadow: 4rpx 4rpx 10rpx #e3e3e3;
+  margin-top: 20rpx;
+}
+.page .select-box .distance-box {
+  border-radius: 34rpx;
+  box-shadow: 4rpx 4rpx 10rpx #e3e3e3;
+  overflow: hidden;
+}
+.page .select-box .distance-box .item {
+  background-color: #fff;
+  width: 68rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  text-align: center;
+  color: #696969;
+  font-size: 22rpx;
+}
+.page .select-box .distance-box .item:not(:last-child) {
+  border-bottom: 1rpx solid #f8f8f8;
+}
+.page .select-box .distance-box .item.on {
+  color: #ffaa7f;
+}
+.page .bot-box {
+  width: 100%;
+  background-color: #fff;
+}
+.page .bot-box .head-box {
+  height: 90rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+.page .bot-box .head-box .title {
+  font-size: 30rpx;
+  font-weight: 700;
+  width: 600rpx;
+  text-align: center;
+}
+.page .bot-box .head-box .close {
+  font-size: 34rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 10rpx;
+  width: 90rpx;
+  height: 90rpxx;
+}
+.page .bot-box .house-box {
+  max-height: 50vh;
+}
+.page .tip-box {
+  position: fixed;
+  bottom: 120rpx;
+  right: 20rpx;
+  width: 440rpx;
+  padding: 15rpx 30rpx 15rpx 15rpx;
+  background-color: #000;
+  color: #fff;
+  opacity: 0.6;
+  z-index: 990;
+  font-size: 26rpx;
+  border-radius: 6rpx;
+  box-shadow: 0 0 20rpx #999;
+}
+.page .tip-box .tip-close {
+  font-size: 28rpx;
+  color: #fff;
+  position: absolute;
+  right: 6rpx;
+  bottom: 6rpx;
+}
+.page .tip-box .tip-sj {
+  width: 0;
+  height: 0;
+  border-left: 15rpx solid transparent;
+  border-right: 15rpx solid transparent;
+  border-bottom: 15rpx solid #000;
+  opacity: 0.6;
+  position: absolute;
+  top: -14rpx;
+  right: 100rpx;
+}
+.page .tip-box .small-circle {
+  width: 10rpx;
+  height: 10rpx;
+  background-color: #fff;
+  border-radius: 50%;
+  vertical-align: middle;
+  display: inline-block;
+}
+.page .tip-box .big-circle {
+  margin: 0 10rpx;
+  width: 15rpx;
+  height: 15rpx;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+}

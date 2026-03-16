@@ -1,0 +1,11 @@
+<view class="float-head" style="{{'margin:'+value.params.outMarginT+'rpx '+value.params.outMarginLR+'rpx '+'0rpx '+value.params.outMarginLR+'rpx '+';'}}">
+    <view style="padding:0rpx 24rpx;line-height:60rpx;font-weight:bold;font-size:26rpx;" wx:if="{{value.params.title}}">{{value.params.title}}</view>
+    <view style="display:flex;flex-wrap:wrap;">
+        <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'routerTo',['$0'],[ [ ['value.data','',index] ] ] ] ] ] ]}}" style="{{'width:'+100/value.params.rowNum+'%'+';'}}" wx:for="{{value.data}}" wx:for-item="child" wx:key="index">
+            <image class="img" mode="aspectFit" src="{{child.imgUrl}}"></image>
+            <view class="name">{{child.title}}</view>
+            <button class="system-buttom" openType="contact" wx:if="{{child.click_type==2}}"></button>
+            <button class="system-buttom" openType="share" wx:if="{{child.click_type==6}}"></button>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,51 @@
+<view class="page">
+    <view class="top-box">
+        <view class="money">{{'￥'+distribute.ktx_money}}</view>
+        <view class="txt">可提现金额</view>
+    </view>
+    <form bindsubmit="__e" class="form" data-event-opts="{{[ [ 'submit',[ [ 'formSubmit',['$event'] ] ] ] ]}}">
+        <view style="border-radius:12rpx;overflow:hidden;background-color:#FFFFFF;margin-top:16rpx;">
+            <view class="form-item">
+                <text class="title">提现金额</text>
+                <view class="right">
+                    <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','money','$event',[] ] ] ] ] ]}}" name="money" placeholder="请填写提现金额" type="number" value="{{money}}"></input>
+                    <view bindtap="__e" class="unit" data-event-opts="{{[ [ 'tap',[ [ 'allMoney',['$event'] ] ] ] ]}}">全部</view>
+                </view>
+            </view>
+            <view class="form-item">
+                <text class="title">打款方式</text>
+                <view class="right">
+                    <picker bindchange="__e" class="picker" data-event-opts="{{[ [ 'change',[ [ 'pay_type_change',['$event'] ] ] ] ]}}" mode="selector" range="{{pay_type_list}}" rangeKey="name" value="{{pay_type_index}}">
+                        <view class="picker-box">
+                            <view class="text">{{pay_type_list[pay_type_index].name}}</view>
+                            <view class="iconfont icon-you  icon "></view>
+                        </view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+        <view style="border-radius:12rpx;overflow:hidden;background-color:#FFFFFF;margin-top:16rpx;">
+            <view class="form-item">
+                <text class="title">姓名</text>
+                <view class="right">
+                    <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','name','$event',[] ] ] ] ] ]}}" placeholder="请填写您的姓名" value="{{name}}"></input>
+                </view>
+            </view>
+            <view class="form-item" wx:if="{{pay_type_list[pay_type_index].type!='auto'}}">
+                <text class="title">账号</text>
+                <view class="right">
+                    <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','card_no','$event',[] ] ] ] ] ]}}" placeholder="请填写您的账号" value="{{card_no}}"></input>
+                </view>
+            </view>
+        </view>
+        <view class="btn-box">
+            <button class="submit" formType="submit" type="primary">立即提现</button>
+        </view>
+    </form>
+    <view class="notice-box">
+        <view class="head">提现须知</view>
+        <view class="content">
+            <text>{{distribute_set.notice}}</text>
+        </view>
+    </view>
+</view>

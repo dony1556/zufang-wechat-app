@@ -1,0 +1,81 @@
+.goods {
+  margin-bottom: 20rpx;
+  background: #fff;
+  padding: 25rpx 40rpx;
+}
+.goods .goods-img {
+  width: 140rpx;
+  height: 140rpx;
+  background: #ccc;
+  margin-right: 20rpx;
+}
+.goods .detail {
+  height: 140rpx;
+  font-size: 28rpx;
+  justify-content: space-between;
+}
+.goods .detail .state {
+  color: #e9b664;
+}
+.express-box {
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  position: relative;
+}
+.express-box .item-box {
+  display: flex;
+}
+.express-box .item-box .item {
+  padding: 30rpx 60rpx;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.express-box .item-box .item:before {
+  content: " ";
+  width: 0;
+  height: 100%;
+  position: absolute;
+  border-left: 4rpx solid #c9c9c9;
+  transform: translate(-50%);
+  top: 0;
+  left: 30rpx;
+  z-index: 9999;
+}
+.express-box .item-box .item::after {
+  content: " ";
+  width: 20rpx;
+  height: 20rpx;
+  position: absolute;
+  background: #aaa;
+  border-radius: 50%;
+  transform: translate(-50%);
+  top: 40rpx;
+  left: 30rpx;
+  z-index: 9999;
+}
+.express-box .item-box .item .step {
+  font-size: 26rpx;
+  margin-bottom: 10rpx;
+}
+.express-box .item-box .item .time {
+  font-size: 26rpx;
+}
+.item-box:first-child .item:before {
+  top: 40rpx;
+  height: calc(100% - 40rpx);
+}
+.item-box:first-child .item:after {
+  background-color: #ef4f4f;
+}
+.item-box:first-child .item .step {
+  color: #ef4f4f;
+}
+.item-box:first-child .item .time {
+  color: #ef4f4f;
+}
+.item-box:last-child .item:before {
+  height: 50rpx;
+}

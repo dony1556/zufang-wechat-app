@@ -1,0 +1,91 @@
+.back-shadow {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+}
+.back-shadow.on {
+  opacity: 1;
+  visibility: visible;
+}
+.yy-box {
+  position: fixed;
+  width: 100%;
+  bottom: 0rpx;
+  left: 0rpx;
+  width: 750rpx;
+  transform: translate3d(0, 100vh, 0);
+  transform-origin: center;
+  transition: all 0.3s ease-in-out;
+  z-index: 999999999999999;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+}
+.yy-box.on {
+  transform: translateZ(0);
+  visibility: visible;
+}
+.yy-box .head {
+  width: 100%;
+  padding: 30rpx 0rpx;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1rpx solid #eee;
+}
+.yy-box .content {
+  padding: 20rpx;
+}
+.yy-box .content .item {
+  height: 80rpx;
+  width: 600rpx;
+  position: relative;
+  border-radius: 10rpx;
+  margin-bottom: 30rpx;
+  display: flex;
+  align-items: center;
+  padding: 0rpx 30rpx;
+  background-color: #f1f1f1;
+}
+.yy-box .content .item .input {
+  height: 80rpx;
+  font-size: 24rpx;
+}
+.yy-box .btn-box {
+  margin: 40rpx 0rpx 40rpx 0rpx;
+}
+.yy-box .btn-box .btn-yy {
+  background-color: #0c9;
+  color: #fff;
+  font-size: 26rpx;
+  line-height: 78rpx;
+}
+.time-picker {
+  width: 100%;
+  height: 100rpx;
+}
+.time-picker .text {
+  line-height: 100rpx;
+  width: 100%;
+  color: #333;
+  font-size: 24rpx;
+}
+.yy-delete {
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+  font-size: 40rpx;
+  color: #666;
+}

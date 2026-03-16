@@ -1,0 +1,83 @@
+<view class="page">
+    <view class="top-box"></view>
+    <view class="body-box">
+        <view class="swiper-box">
+            <swiper autoplay="true" class="slide-swiper">
+                <swiper-item class="swiper-item" wx:for="{{swiperList}}" wx:key="index">
+                    <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'navto',['$event'] ] ] ] ]}}">
+                        <image class="img" mode="aspectFill" src="{{item.img}}"></image>
+                    </view>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view class="pub-box" wx:if="{{$root.g0==0}}">
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'wantHouse',['$event'] ] ] ] ]}}">
+                <view class="img-box" style="background-color:#31C9E8;">
+                    <view class="iconfont icon-icon-test3" style="font-size:32rpx;color:#FFFFFF;"></view>
+                </view>
+                <view class="name">求租求购</view>
+            </view>
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'pubLethouse',['$event'] ] ] ] ]}}">
+                <view class="img-box" style="background-color:#31E749;">
+                    <view class="iconfont icon-icon-test4" style="font-size:32rpx;color:#FFFFFF;"></view>
+                </view>
+                <view class="name">出租房</view>
+            </view>
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'pubOldhouse',['$event'] ] ] ] ]}}">
+                <view class="img-box" style="background-color:#E8692F;">
+                    <view class="iconfont icon-icon-test2" style="font-size:32rpx;color:#FFFFFF;"></view>
+                </view>
+                <view class="name">二手房</view>
+            </view>
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'pubShophouse',['$event'] ] ] ] ]}}">
+                <view class="img-box" style="background-color:#FFA4A4;">
+                    <view class="iconfont icon-icon-test9" style="font-size:32rpx;color:#FFFFFF;"></view>
+                </view>
+                <view class="name">商铺</view>
+            </view>
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'pubOfficehouse',['$event'] ] ] ] ]}}">
+                <view class="img-box" style="background-color:#269EA1;">
+                    <view class="iconfont icon-icon-test5" style="font-size:32rpx;color:#FFFFFF;"></view>
+                </view>
+                <view class="name">写字楼</view>
+            </view>
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'pubWorkhouse',['$event'] ] ] ] ]}}">
+                <view class="img-box" style="background-color:#bd1210;">
+                    <view class="iconfont icon-icon-test" style="font-size:36rpx;color:#FFFFFF;"></view>
+                </view>
+                <view class="name">厂房</view>
+            </view>
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'pubWarehouse',['$event'] ] ] ] ]}}">
+                <view class="img-box" style="background-color:#3080e8;">
+                    <view class="iconfont icon-icon-test6" style="font-size:32rpx;color:#FFFFFF;"></view>
+                </view>
+                <view class="name">仓库</view>
+            </view>
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'pubPark',['$event'] ] ] ] ]}}">
+                <view class="img-box" style="background-color:#a4e82f;">
+                    <view class="iconfont icon-icon-test13" style="font-size:36rpx;color:#FFFFFF;"></view>
+                </view>
+                <view class="name">车位</view>
+            </view>
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'pubLand',['$event'] ] ] ] ]}}">
+                <view class="img-box" style="background-color:#e83a30;">
+                    <view class="iconfont icon-icon-test8" style="font-size:32rpx;color:#FFFFFF;"></view>
+                </view>
+                <view class="name">土地</view>
+            </view>
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'pubHotel',['$event'] ] ] ] ]}}">
+                <view class="img-box" style="background-color:#3080e8;">
+                    <view class="iconfont icon-icon-test11" style="font-size:32rpx;color:#FFFFFF;"></view>
+                </view>
+                <view class="name">酒店民宿</view>
+            </view>
+        </view>
+        <view wx:if="{{$root.g1>0}}">
+            <block wx:for="{{items}}" wx:key="index">
+                <pub-nav bind:__l="__l" value="{{item}}" vueId="{{'24c4e0cb-1-'+index}}" wx:if="{{item.type=='navBar'}}"></pub-nav>
+                <pub-ad bind:__l="__l" value="{{item}}" vueId="{{'24c4e0cb-2-'+index}}" wx:if="{{item.type=='ad'}}"></pub-ad>
+            </block>
+        </view>
+    </view>
+    <wk-login-modal bind:__l="__l" vueId="24c4e0cb-3"></wk-login-modal>
+</view>

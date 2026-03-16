@@ -1,0 +1,44 @@
+<view class="page">
+    <scroll-view class="select-box" scrollY="true">
+        <view class="item-box">
+            <view class="title">类型</view>
+            <view class="item">
+                <view bindtap="__e" class="{{['option',item.id==qy.let_way?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'chooseLetWay',['$0'],[ [ ['let_way_list','',index,'id'] ] ] ] ] ] ]}}" wx:for="{{let_way_list}}" wx:key="index">{{''+item.name+''}}</view>
+            </view>
+        </view>
+        <view class="item-box" wx:if="{{qy.let_way==2}}">
+            <view class="title">房间</view>
+            <view class="item">
+                <view bindtap="__e" class="{{['option',item.name==qy.room_type?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'chooseRoomType',['$0'],[ [ ['room_type_list','',index,'name'] ] ] ] ] ] ]}}" wx:for="{{room_type_list}}" wx:key="index">{{''+item.name+''}}</view>
+            </view>
+        </view>
+        <view class="item-box">
+            <view class="title">室</view>
+            <view class="item">
+                <view bindtap="__e" class="{{['option',item.id==qy.shi?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'chooseShi',['$0'],[ [ ['shi_list','',index,'id'] ] ] ] ] ] ]}}" wx:for="{{shi_list}}" wx:key="index">{{''+item.name+''}}</view>
+            </view>
+        </view>
+        <view class="item-box">
+            <view class="title">面积</view>
+            <view class="item">
+                <view bindtap="__e" class="{{['option',index==qy.mj_index?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'chooseMj',[index] ] ] ] ]}}" wx:for="{{mj_list}}" wx:key="index">{{item.name}}</view>
+            </view>
+        </view>
+        <view class="item-box">
+            <view class="title">价格</view>
+            <view class="item">
+                <view bindtap="__e" class="{{['option',index==qy.money_index?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'chooseMoney',[index] ] ] ] ]}}" wx:for="{{money_list}}" wx:key="index">{{''+item.name+''}}</view>
+            </view>
+        </view>
+        <view class="item-box">
+            <view class="title">标签</view>
+            <view class="item">
+                <view bindtap="__e" class="{{['option',item.g0>-1?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'chooseTag',['$0'],[ [ ['tag_list','',index,'id'] ] ] ] ] ] ]}}" wx:for="{{$root.l0}}" wx:key="index">{{''+item.$orig.name+''}}</view>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="bottom-box">
+        <view bindtap="__e" class="clear" data-event-opts="{{[ [ 'tap',[ [ 'hand_clear',['$event'] ] ] ] ]}}">重置</view>
+        <view bindtap="__e" class="confirm" data-event-opts="{{[ [ 'tap',[ [ 'hand_confirm',['$event'] ] ] ] ]}}">确定</view>
+    </view>
+</view>

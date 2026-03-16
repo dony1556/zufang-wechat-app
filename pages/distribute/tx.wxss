@@ -1,0 +1,140 @@
+.page {
+  background-color: #fff;
+}
+.page .top-box {
+  background-color: #55aa7f;
+  height: 300rpx;
+  padding-top: 100rpx;
+}
+.page .top-box .money {
+  color: #fff;
+  font-size: 32rpx;
+  text-align: center;
+}
+.page .top-box .txt {
+  font-size: 28rpx;
+  color: #fff;
+  margin-top: 26rpx;
+  text-align: center;
+}
+.page .form {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 0rpx 16rpx;
+}
+.page .form .form-item {
+  width: 100%;
+  padding: 10rpx 20rpx;
+  display: flex;
+}
+.page .form .form-item:not(:last-child) {
+  border-bottom: 1rpx solid #f8f8f8;
+}
+.page .form .form-item .title {
+  width: 170rpx;
+  min-height: 90rpx;
+  display: flex;
+  align-items: center;
+  font-size: 26rpx;
+  flex-shrink: 0;
+  margin-right: 10rpx;
+}
+.page .form .form-item .right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.page .form .form-item .right .radio-group {
+  display: flex;
+}
+.page .form .form-item .right .radio-group .label {
+  display: flex;
+  align-items: center;
+  margin-left: 30rpx;
+}
+.page .form .form-item .right .radio-group .label .radio {
+  transform: scale(0.7);
+}
+.page .form .form-item .right .radio-group .label .name {
+  margin-left: 10rpx;
+  font-size: 24rpx;
+}
+.page .form .form-item .right .choose-box {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  height: 90rpx;
+}
+.page .form .form-item .right .choose-box .text {
+  flex: 1;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 26rpx;
+  width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.page .form .form-item .right .choose-box .icon {
+  font-size: 20rpx;
+  color: #c4c4c4;
+  margin-right: 10rpx;
+}
+.page .form .form-item .right .picker {
+  width: 100%;
+}
+.page .form .form-item .right .picker .picker-box {
+  height: 90rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.page .form .form-item .right .picker .picker-box .text {
+  flex: 1;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 26rpx;
+}
+.page .form .form-item .right .picker .picker-box .icon {
+  font-size: 20rpx;
+  color: #c4c4c4;
+  margin-right: 10rpx;
+}
+.page .form .form-item .right .input {
+  flex: 1;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 26rpx;
+}
+.page .form .form-item .right .unit {
+  padding: 0 10rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 22rpx;
+  color: #a0a0a0;
+}
+.page .form .btn-box {
+  width: 100%;
+  margin-top: 30rpx;
+}
+.page .form .btn-box .submit {
+  width: 650rpx;
+  height: 78rpx;
+  margin: 20rpx auto;
+  line-height: 78rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  background: linear-gradient(45deg, #55aa7f, #7cf9b9);
+  font-size: 26rpx;
+}
+.page .notice-box .head {
+  font-size: 28rpx;
+  padding: 20rpx 20rpx;
+}
+.page .notice-box .content {
+  font-size: 26rpx;
+  padding: 20rpx 20rpx;
+}

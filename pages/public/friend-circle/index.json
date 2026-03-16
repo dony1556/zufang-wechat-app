@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "房友圈",
+  "usingComponents": {
+    "wk-tabar": "/components/wk-tabar/index",
+    "wk-login-modal": "/components/wk-login-modal/index",
+    "wk-skeletons": "/components/wk-skeletons/index"
+  }
+}

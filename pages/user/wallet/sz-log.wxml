@@ -1,0 +1,14 @@
+<view class="page">
+    <view class="content-box">
+        <view class="item-box">
+            <view class="item" wx:for="{{list}}" wx:key="index">
+                <view class="title">{{''+item.name+''}}</view>
+                <view class="money-box">
+                    <view class="money" style="color:#00aa00;" wx:if="{{item.money_type==1}}">{{''+item.money+''}}</view>
+                    <view class="money" style="color:#ff0000;" wx:if="{{item.money_type==2}}">{{'-'+item.money+''}}</view>
+                    <view class="time">{{''+item.create_time+''}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

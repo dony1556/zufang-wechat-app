@@ -1,0 +1,19 @@
+<view class="box">
+    <view bindtap="__e" catchtouchmove="__e" class="{{['back-shadow',showModal?'on':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'hide',['$event'] ] ] ],[ 'touchmove',[ [ '',['$event'] ] ] ] ]}}"></view>
+    <view class="{{['yy-box',showModal?'on':'']}}">
+        <view class="head">
+            <text>预约报名</text>
+        </view>
+        <form bindsubmit="__e" class="content" data-event-opts="{{[ [ 'submit',[ [ 'formSubmit',['$event'] ] ] ] ]}}">
+            <view class="item">
+                <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','name','$event',[] ] ] ] ] ]}}" name="name" placeholder="请输入联系人姓名" value="{{name}}"></input>
+            </view>
+            <view class="item">
+                <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','tel','$event',[] ] ] ] ] ]}}" name="tel" placeholder="请输入号码" value="{{tel}}"></input>
+            </view>
+            <view class="btn-box">
+                <button class="btn-yy" formType="submit">确认报名</button>
+            </view>
+        </form>
+    </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "编辑信息",
+  "usingComponents": {
+    "wk-city-area2": "/components/wk-city-area2/index"
+  }
+}

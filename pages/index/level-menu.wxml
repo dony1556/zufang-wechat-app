@@ -1,0 +1,25 @@
+<view class="page">
+    <view class="top-box"></view>
+    <view class="body-box">
+        <view class="head"></view>
+        <view class="detail">
+            <text style="font-weight:bold;">权益：</text>{{'每天可发布'+basicSet.vip_day_pub_num+'条房源信息,'}}<block wx:if="{{basicSet.vip_house_check==0}}">发布房源免审</block>
+        </view>
+        <view class="detail" wx:if="{{loginUser.vip_end_time}}">
+            <text style="font-weight:bold;">到期时间：</text>
+            <text>{{loginUser.vip_end_time}}</text>
+        </view>
+        <view class="item-box">
+            <view class="item" wx:for="{{list}}" wx:for-index="index2" wx:for-item="item2" wx:key="*this">
+                <view bindtap="__e" class="{{['item2',menuIndex==index2?'on':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selectMenu',[index2] ] ] ] ]}}">
+                    <view class="name">{{item2.name+'('+item2.day+'天)'}}</view>
+                    <view class="price">{{'¥'+item2.fee}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="footer-box">
+        <view bindtap="__e" class="ok" data-event-opts="{{[ [ 'tap',[ [ 'formHandle',['$event'] ] ] ] ]}}">购买</view>
+    </view>
+    <wk-login-modal bind:__l="__l" vueId="9f992930-1"></wk-login-modal>
+</view>

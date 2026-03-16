@@ -1,0 +1,99 @@
+.page .gzh-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffcf3e;
+  padding: 16rpx 30rpx;
+}
+.page .gzh-box .text {
+  color: red;
+  font-size: 24rpx;
+}
+.page .gzh-box .btn {
+  padding: 12rpx 26rpx;
+  border: 1rpx solid red;
+  color: red;
+  border-radius: 6rpx;
+  font-size: 24rpx;
+}
+.page .info-box {
+  overflow: hidden;
+}
+.page .info-box .item {
+  display: flex;
+  padding-right: 10rpx;
+  height: 140rpx;
+  background-color: #fff;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  transition: all 0.6s ease-in-out 0s;
+  transform: translateX(0rpx);
+}
+.page .info-box .item.move-cur {
+  transform: translateX(-130rpx);
+}
+.page .info-box .item .avatar-box {
+  position: absolute;
+  left: 30rpx;
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 8rpx;
+}
+.page .info-box .item .avatar-box .avatar {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 8rpx;
+}
+.page .info-box .item .avatar-box .bage {
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+  font-size: 20rpx;
+  padding: 4rpx 10rpx;
+  border-radius: 50%;
+  background-color: #f50;
+  color: #fff;
+}
+.page .info-box .item .content {
+  position: absolute;
+  left: 146rpx;
+  width: calc(100% - 96rpx - 60rpx - 20rpx);
+  line-height: 1.6em;
+}
+.page .info-box .item .content .top-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.page .info-box .item .content .top-box .name {
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+}
+.page .info-box .item .content .top-box .time {
+  font-size: 20rpx;
+  color: #e6e6e6;
+}
+.page .info-box .item .move {
+  position: absolute;
+  right: 0;
+  display: flex;
+  width: 130rpx;
+  height: 100%;
+  transform: translateX(100%);
+}
+.page .info-box .item .move .top {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+.page .info-box .item .move .del {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: #f50;
+  color: #fff;
+}

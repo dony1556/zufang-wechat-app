@@ -1,0 +1,20 @@
+<view class="stw-picker _div">
+    <view bindtap="__e" catchtouchmove="true" class="{{['_div',showPicker?'pickerMask':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'maskClick',['$event'] ] ] ] ]}}"></view>
+    <view class="{{['picker-content','','_div',showPicker?'shopro-picker-view-show':'']}}">
+        <view catchtouchmove="true" class="shopro-picker__hd _div">
+            <view bindtap="__e" class="shopro-picker__action _div" data-event-opts="{{[ [ 'tap',[ [ 'pickerCancel',['$event'] ] ] ] ]}}">取消</view>
+            <view bindtap="__e" class="shopro-picker__action _div" data-event-opts="{{[ [ 'tap',[ [ 'pickerConfirm',['$event'] ] ] ] ]}}">确定</view>
+        </view>
+        <picker-view bindchange="__e" class="picker-view" data-event-opts="{{[ [ 'change',[ [ 'pickerChange',['$event'] ] ] ] ]}}" indicatorStyle="height: 40px;" value="{{value}}" wx:if="{{showPicker}}">
+            <picker-view-column>
+                <view class="picker-item-column _div" wx:for="{{shiList}}" wx:key="index">{{item.name}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view class="picker-item-column _div" wx:for="{{tingList}}" wx:key="index">{{item.name}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view class="picker-item-column _div" wx:for="{{weiList}}" wx:key="index">{{item.name}}</view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+</view>

@@ -1,0 +1,6 @@
+<view>
+    <sh-invite-poster bind:__l="__l" bind:getShareInfo="__e" data-event-opts="{{[ [ '^getShareInfo',[ ['getShareInfo'] ] ] ]}}" vueId="634f45ce-1" wx:if="{{posterType==='user'}}"></sh-invite-poster>
+    <sh-goods-poster bind:__l="__l" bind:getShareInfo="__e" data-event-opts="{{[ [ '^getShareInfo',[ ['getShareInfo'] ] ] ]}}" vueId="634f45ce-2" wx:if="{{posterType==='goods'}}"></sh-goods-poster>
+    <sh-groupon-poster bind:__l="__l" bind:getShareInfo="__e" data-event-opts="{{[ [ '^getShareInfo',[ ['getShareInfo'] ] ] ]}}" vueId="634f45ce-3" wx:if="{{posterType==='groupon'}}"></sh-groupon-poster>
+    <shopro-login-modal bind:__l="__l" vueId="634f45ce-4"></shopro-login-modal>
+</view>

@@ -1,0 +1,18 @@
+<view class="page">
+    <view class="content-box">
+        <view class="item-box">
+            <view class="item" wx:for="{{list}}" wx:key="index">
+                <view class="title">{{item.name+'('+item.day+'天)'}}</view>
+                <view class="detail">
+                    <text style="font-weight:bold;">周期：</text>{{''+item.start_time+' ~~ '+item.end_time+''}}</view>
+                <view class="detail">
+                    <text style="font-weight:bold;">权益：</text>{{'总发布房源条数:'+item.total_pub_num+',剩余可发布房源条数:'}}<text style="font-weight:bold;color:#ff5500;">{{item.sy_pub_num}}</text>,</view>
+                <view class="fee-box">
+                    <view class="fee">
+                        <text style="font-weight:bold;color:#2E2E2E;">费用：</text>{{'¥'+item.fee+''}}</view>
+                    <view class="time">{{item.create_time}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

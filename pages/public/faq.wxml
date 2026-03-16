@@ -1,0 +1,19 @@
+<view class="faq-box">
+    <view bindtap="__e" class="problem-item" data-event-opts="{{[ [ 'tap',[ [ 'onProblem',[index] ] ] ] ]}}" wx:for="{{faqList}}" wx:key="id">
+        <view class="x-bc title-box">
+            <view class="x-f">
+                <view class="tag-box x-c">
+                    <text class="serial">{{item.indexNum}}</text>
+                    <text class="triangle"></text>
+                </view>
+                <view class="title">{{item.problem_title}}</view>
+            </view>
+            <text class="{{['cuIcon-unfold','',item.checked?'cuicon-active':'']}}"></text>
+        </view>
+        <view class="detail" wx:if="{{item.checked}}">{{item.problem_value}}</view>
+    </view>
+    <view class="{{['cu-load','text-gray',loadStatus]}}" wx:if="{{$root.g0}}"></view>
+    <shopro-tabbar bind:__l="__l" vueId="5021b67d-1"></shopro-tabbar>
+    <shopro-float-btn bind:__l="__l" vueId="5021b67d-2"></shopro-float-btn>
+    <shopro-login-modal bind:__l="__l" vueId="5021b67d-3"></shopro-login-modal>
+</view>

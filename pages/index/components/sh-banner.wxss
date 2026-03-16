@@ -1,0 +1,41 @@
+.banner-swiper-box {
+  width: 750rpx;
+  padding: 0rpx;
+  position: relative;
+}
+.banner-swiper-box .banner-carousel {
+  width: 100%;
+  height: 100%;
+}
+.banner-swiper-box .banner-carousel .item {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.banner-swiper-box .banner-carousel .img {
+  width: 100%;
+  height: 100%;
+}
+.banner-swiper-box .banner-swiper-dots {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20rpx;
+  z-index: 66;
+}
+.banner-swiper-box .banner-swiper-dots .banner-dot {
+  width: 14rpx;
+  height: 14rpx;
+  background: #fff;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+.banner-swiper-box .banner-swiper-dots .banner-dot-active {
+  width: 14rpx;
+  height: 14rpx;
+  background: #a8700d;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}

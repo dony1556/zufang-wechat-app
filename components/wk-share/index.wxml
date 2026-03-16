@@ -1,0 +1,27 @@
+<view>
+    <view bindtap="__e" catchtouchmove="__e" class="{{['back-shadow',showModal?'on':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'hide',['$event'] ] ] ],[ 'touchmove',[ [ '',['$event'] ] ] ] ]}}"></view>
+    <view catchtouchmove="__e" class="{{['box',showModal?'on':'']}}" data-event-opts="{{[ [ 'touchmove',[ [ '',['$event'] ] ] ] ]}}">
+        <view class="content">
+            <view class="item">
+                <view class="hy-box">
+                    <view class="iconfont icon-weixin1" style="font-size:42rpx;color:#ffffff;"></view>
+                </view>
+                <view class="text">分享给好友</view>
+                <button class="system-buttom" openType="share"></button>
+            </view>
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'openPyq',['$event'] ] ] ] ]}}">
+                <view class="pyq-box">
+                    <view class="iconfont icon-pengyouquan" style="font-size:42rpx;color:#ffffff;"></view>
+                </view>
+                <view class="text">分享到朋友圈</view>
+            </view>
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'openPoster',['$event'] ] ] ] ]}}">
+                <view class="hb-box">
+                    <view class="iconfont icon-erweima" style="font-size:42rpx;color:#ffffff;"></view>
+                </view>
+                <view class="text">生成海报</view>
+            </view>
+        </view>
+        <view bindtap="__e" class="bottom" data-event-opts="{{[ [ 'tap',[ [ 'hide',['$event'] ] ] ] ]}}">关闭</view>
+    </view>
+</view>

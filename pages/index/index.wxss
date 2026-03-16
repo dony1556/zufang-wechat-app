@@ -1,0 +1,125 @@
+.page .tip-box {
+  position: fixed;
+  top: 20rpx;
+  right: 20rpx;
+  width: 440rpx;
+  padding: 16rpx 30rpx 16rpx 16rpx;
+  background-color: #000;
+  color: #fff;
+  opacity: 0.6;
+  z-index: 990;
+  font-size: 26rpx;
+  border-radius: 6rpx;
+  box-shadow: 0 0 20rpx #999;
+}
+.page .tip-box .tip-close {
+  font-size: 28rpx;
+  color: #fff;
+  position: absolute;
+  right: 6rpx;
+  bottom: 6rpx;
+}
+.page .tip-box .tip-sj {
+  width: 0;
+  height: 0;
+  border-left: 15rpx solid transparent;
+  border-right: 15rpx solid transparent;
+  border-bottom: 15rpx solid #000;
+  opacity: 0.6;
+  position: absolute;
+  top: -14rpx;
+  right: 100rpx;
+}
+.page .tip-box .small-circle {
+  width: 10rpx;
+  height: 10rpx;
+  background-color: #fff;
+  border-radius: 50%;
+  vertical-align: middle;
+  display: inline-block;
+}
+.page .tip-box .big-circle {
+  margin: 0 10rpx;
+  width: 15rpx;
+  height: 15rpx;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+}
+.page .top-back {
+  height: 300rpx;
+  border-bottom-left-radius: 120rpx 60rpx;
+  border-bottom-right-radius: 120rpx 60rpx;
+}
+.page .content-box {
+  margin-top: -300rpx;
+}
+.page .logo {
+  height: 200rpx;
+  width: 200rpx;
+  margin: 200rpx auto 50rpx auto;
+}
+.page .house-type-box {
+  display: flex;
+  padding: 20rpx 20rpx 0rpx 20rpx;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0rpx;
+  background-color: #f6f7fb;
+  z-index: 99;
+}
+.page .house-type-box .title {
+  font-size: 30rpx;
+  width: 110rpx;
+  line-height: 100rpx;
+}
+.page .house-type-box .type-scroll {
+  width: 710rpx;
+  white-space: nowrap;
+  height: 74rpx;
+}
+.page .house-type-box .type-scroll .item {
+  position: relative;
+  display: inline-block;
+  padding: 0rpx 40rpx;
+  background-color: #fff;
+  border-radius: 31rpx;
+  height: 62rpx;
+  margin: 0rpx 16rpx;
+}
+.page .house-type-box .type-scroll .item.active {
+  background-color: #5a0;
+}
+.page .house-type-box .type-scroll .item .name {
+  line-height: 62rpx;
+  font-size: 26rpx;
+}
+.page .house-type-box .type-scroll .item .name.on {
+  font-weight: 700;
+  color: #fff;
+}
+.page .more-load {
+  margin-left: 30rpx;
+  width: 690rpx;
+  margin-top: 30rpx;
+}
+.page .more-box {
+  background: linear-gradient(45deg, #ffdab4, #e6e0c0);
+  line-height: 82rpx;
+  text-align: center;
+  width: 690rpx;
+  height: 82rpx;
+  border-radius: 16rpx;
+  margin: 16rpx 30rpx 20rpx 30rpx;
+}
+.page .more-box .text {
+  color: red;
+  font-size: 28rpx;
+}
+.page .copyright {
+  margin-top: 50rpx;
+  text-align: center;
+  color: #979797;
+  font-size: 22rpx;
+  margin-bottom: 30rpx;
+}

@@ -1,0 +1,17 @@
+<view class="page">
+    <view class="float-box">
+        <view bindtap="__e" class="my" data-event-opts="{{[ [ 'tap',[ [ 'navtoMy',['$event'] ] ] ] ]}}">我的</view>
+        <view bindtap="__e" class="pub" data-event-opts="{{[ [ 'tap',[ [ 'navtopub',['$event'] ] ] ] ]}}">发布</view>
+    </view>
+    <view class="item-box">
+        <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'toDetail',['$0'],[ [ ['list','',index,'id'] ] ] ] ] ] ]}}" wx:for="{{list}}" wx:key="index">
+            <view class="city">{{'意向位置：'+item.area}}</view>
+            <view class="budget">{{'购房预算：'+item.start_price+' ~ '+item.end_price+'万元'}}</view>
+            <view class="remark">{{'备注信息：'+item.detail}}</view>
+            <view class="time">{{'发帖时间：'+item.create_time}}</view>
+            <view class="remark" wx:if="{{item.status==6}}">处理状态：<text style="color:#06AD56;">已处理</text>
+            </view>
+            <view catchtap="__e" class="iconfont icon-dianhua  tel" data-event-opts="{{[ [ 'tap',[ [ 'get_tel',['$0'],[ [ ['list','',index,'id'] ] ] ] ] ] ]}}" wx:if="{{item.status==1}}"></view>
+        </view>
+    </view>
+</view>

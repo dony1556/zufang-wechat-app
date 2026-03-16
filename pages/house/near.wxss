@@ -1,0 +1,28 @@
+.page {
+  height: 100vh;
+}
+.page .map {
+  width: 100%;
+  height: calc(100vh - 110rpx);
+}
+.page .footer-box .tab-box {
+  width: 100%;
+  padding: 0rpx 20rpx;
+  background-color: #fff;
+}
+.page .footer-box .tab-box .scroll {
+  white-space: nowrap;
+  width: 100%;
+}
+.page .footer-box .tab-box .scroll .item {
+  position: relative;
+  display: inline-block;
+  width: 20%;
+  height: 110rpx;
+  line-height: 110rpx;
+  text-align: center;
+}
+.page .footer-box .tab-box .scroll .item.on {
+  font-size: 34rpx;
+  font-weight: 700;
+}

@@ -1,0 +1,19 @@
+<view class="page_box">
+    <view class="head_box"></view>
+    <view class="content_box">
+        <view bindtap="__e" class="address-list" data-event-opts="{{[ [ 'tap',[ [ 'useAddress',['$0'],[ [ ['addressList','id',address.id] ] ] ] ] ] ]}}" wx:for="{{addressList}}" wx:for-index="__i0__" wx:for-item="address" wx:key="id">
+            <view class="top x-f">
+                <text class="name">{{address.name}}</text>
+                <text class="phone">{{address.phone}}</text>
+                <text class="tag" wx:if="{{address.is_default==='1'}}">默认</text>
+            </view>
+            <view class="detail">{{address.province_name+address.city_name+address.area_name+address.address}}</view>
+            <button catchtap="__e" class="cu-btn set-btn" data-event-opts="{{[ [ 'tap',[ [ 'jump',[ '/pages/user/address/edit',[ 'o',['id',address.id] ] ] ] ] ] ]}}">编辑</button>
+        </view>
+    </view>
+    <view class="foot_box">
+        <button bindtap="__e" class="cu-btn add-btn" data-event-opts="{{[ [ 'tap',[ [ 'jump',[ '/pages/user/address/edit',[ 'o',['id',0],['from',from] ] ] ] ] ] ]}}">添加新的收货地址</button>
+    </view>
+    <shopro-float-btn bind:__l="__l" vueId="55a6a8dc-1"></shopro-float-btn>
+    <shopro-login-modal bind:__l="__l" vueId="55a6a8dc-2"></shopro-login-modal>
+</view>

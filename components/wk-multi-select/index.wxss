@@ -1,0 +1,67 @@
+.jsfun-picker .mask {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+.jsfun-picker .picker {
+  transition: all 0.3s ease;
+  transform: translateY(100%);
+  position: fixed;
+  z-index: 1000;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+  color: #666;
+}
+.jsfun-picker .picker.pickerShow {
+  transform: translateY(0);
+}
+.jsfun-picker .picker .top-box {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px #efefef;
+  padding: 0rpx 20rpx;
+  line-height: 90rpx;
+}
+.jsfun-picker .picker .top-box .cancel {
+  color: #d5d5d5;
+}
+.jsfun-picker .picker .top-box .ok {
+  color: #000;
+  font-weight: 700;
+}
+.jsfun-picker .picker .list {
+  padding: 0rpx 10rpx;
+  margin: 20rpx 0rpx;
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  max-height: 800rpx;
+  min-height: 400rpx;
+  overflow-y: hidden;
+}
+.jsfun-picker .picker .list .item {
+  background: #efefef;
+  text-align: center;
+  margin: 16rpx 10rpx;
+  padding: 6rpx 20rpx;
+  border-radius: 6rpx;
+  line-height: 50rpx;
+  color: #7f7f7f;
+  font-size: 24rpx;
+}
+.jsfun-picker .picker .list .item.active {
+  background: #5a0;
+  color: #fff;
+}
+.jsfun-picker .picker .mess {
+  padding: 0rpx 20rpx;
+  margin-bottom: 20rpx;
+  text-align: left;
+}

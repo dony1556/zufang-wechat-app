@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "积分商城",
+  "usingComponents": {
+    "wk-empty": "/components/wk-empty/index",
+    "wk-skeletons": "/components/wk-skeletons/index",
+    "sh-score-goods": "/pages/app/score/children/sh-score-goods",
+    "sh-score-banner": "/pages/app/score/children/sh-score-banner",
+    "sh-score-menu": "/pages/app/score/children/sh-score-menu",
+    "sh-score-search": "/pages/app/score/children/sh-score-search"
+  }
+}

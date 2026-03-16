@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "经纪人套餐",
+  "usingComponents": {
+    "wk-login-modal": "/components/wk-login-modal/index"
+  }
+}

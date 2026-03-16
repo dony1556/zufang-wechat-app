@@ -1,0 +1,54 @@
+<view class="page">
+    <view class="head-box"></view>
+    <view class="content-box">
+        <view class="form">
+            <view class="form-item">
+                <text class="title">收货人</text>
+                <view class="right">
+                    <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','name','$event',[] ],['form'] ] ] ] ]}}" placeholder="请填写收货人姓名" value="{{form.name}}"></input>
+                </view>
+            </view>
+            <view class="form-item">
+                <text class="title">手机号</text>
+                <view class="right">
+                    <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','phone','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入收货人手机号" type="number" value="{{form.phone}}"></input>
+                </view>
+            </view>
+            <view class="form-item">
+                <text class="title">地区</text>
+                <view class="right">
+                    <picker bindchange="__e" class="picker" data-event-opts="{{[ [ 'change',[ [ 'selectCity',['$event'] ] ] ] ]}}" mode="region">
+                        <view class="picker-box">
+                            <view class="text">{{pcaText||'请选择所在地区'}}</view>
+                            <view class="iconfont icon-you" style="font-size:26rpx;color:#999;"></view>
+                        </view>
+                    </picker>
+                </view>
+            </view>
+            <view class="form-item">
+                <view class="title">详细地址</view>
+                <view class="right">
+                    <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','address','$event',[] ],['form'] ] ] ] ]}}" placeholder="如道路、门牌号、小区、楼栋号、单元室等" value="{{form.address}}"></input>
+                </view>
+            </view>
+            <view class="form-item">
+                <view class="title">默认地址</view>
+                <view class="right">
+                    <view class="_div" style="display:flex;align-items:center;">
+                        <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'select_default',['$0'],[ [ ['default_list','',index,'value'] ] ] ] ] ] ]}}" style="display:flex;align-items:center;" wx:for="{{default_list}}" wx:key="index">
+                            <view class="iconfont icon-gouxuan" style="font-size:32rpx;color:#ff4544;" wx:if="{{form.is_default==item.value}}"></view>
+                            <view class="iconfont icon-gouxuan1" style="font-size:32rpx;color:#999;" wx:else></view>
+                            <view style="margin:0rpx  20rpx;">{{item.name}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="btn-box">
+                <form bindsubmit="__e" data-event-opts="{{[ [ 'submit',[ [ 'formSubmit',['$event'] ] ] ] ]}}">
+                    <button class="submit" formType="submit" type="primary">提交</button>
+                </form>
+            </view>
+            <view bindtap="__e" class="del-box" data-event-opts="{{[ [ 'tap',[ [ 'deleteAddress',['$event'] ] ] ] ]}}" wx:if="{{form.id>0}}">删除</view>
+        </view>
+    </view>
+</view>

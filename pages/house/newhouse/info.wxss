@@ -1,0 +1,30 @@
+.page {
+  background-color: #fff;
+  min-height: 100vh;
+}
+.page .info-box {
+  margin-bottom: 20rpx;
+  padding: 10rpx 30rpx;
+}
+.page .info-box .head {
+  font-size: 28rpx;
+  font-weight: 700;
+}
+.page .info-box .content {
+  margin-top: 20rpx;
+}
+.page .info-box .content .item {
+  display: flex;
+  margin-bottom: 18rpx;
+}
+.page .info-box .content .item .name {
+  font-size: 26rpx;
+  color: #b8b8b8;
+  width: 160rpx;
+  line-height: 70rpx;
+}
+.page .info-box .content .item .name2 {
+  font-size: 26rpx;
+  margin-left: 12rpx;
+  line-height: 70rpx;
+}

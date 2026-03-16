@@ -1,0 +1,20 @@
+<view class="c-box" wx:if="{{$root.g0>0}}">
+    <view bindtap="__e" class="house" data-event-opts="{{[ [ 'tap',[ [ 'detail',['$0'],[ [ ['list','',index] ] ] ] ] ] ]}}" wx:for="{{list}}" wx:key="index">
+        <view class="img-box">
+            <image class="img" mode="aspectFill" src="{{item.thumbs[0]||basicSet.default_img}}"></image>
+            <view class="icon-box">
+                <view class="iconfont icon-Dxuanzhuan  item" wx:if="{{item.vr_link}}"></view>
+                <view class="iconfont icon-shipin  item " wx:if="{{item.video}}"></view>
+            </view>
+            <view class="iconfont icon-recommend" style="position:absolute;left:0rpx;top:0rpx;color:#ff0000;font-size:50rpx;" wx:if="{{item.is_recommend==1}}"></view>
+        </view>
+        <view class="house-right">
+            <view class="title">{{item.name}}</view>
+            <view class="bq">{{item.keywords}}</view>
+            <view class="money-box">
+                <view class="money">{{item.price}}</view>
+            </view>
+            <view class="address">{{item.address}}</view>
+        </view>
+    </view>
+</view>

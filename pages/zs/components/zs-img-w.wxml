@@ -1,0 +1,21 @@
+<view class="img-w" style="{{'background:'+value.params.backgroundColor+';'}}">
+    <view bindtap="__e" class="left" data-event-opts="{{[ [ 'tap',[ [ 'routerTo',['$0'],['value.data.__$n0'] ] ] ] ]}}">
+        <view class="item">
+            <image class="img" mode="aspectFill" src="{{value.data[0].imgUrl}}"></image>
+            <button class="system-buttom" openType="contact" wx:if="{{value.data[2].click_type==2}}"></button>
+            <button class="system-buttom" openType="share" wx:if="{{value.data[2].click_type==6}}"></button>
+        </view>
+    </view>
+    <view class="right">
+        <view bindtap="__e" class="item2" data-event-opts="{{[ [ 'tap',[ [ 'routerTo',['$0'],['value.data.__$n1'] ] ] ] ]}}">
+            <image class="img" mode="aspectFill" src="{{value.data[1].imgUrl}}"></image>
+            <button class="system-buttom" openType="contact" wx:if="{{value.data[2].click_type==2}}"></button>
+            <button class="system-buttom" openType="share" wx:if="{{value.data[2].click_type==6}}"></button>
+        </view>
+        <view bindtap="__e" class="item3" data-event-opts="{{[ [ 'tap',[ [ 'routerTo',['$0'],['value.data.__$n2'] ] ] ] ]}}">
+            <image class="img" mode="aspectFill" src="{{value.data[2].imgUrl}}"></image>
+            <button class="system-buttom" openType="contact" wx:if="{{value.data[2].click_type==2}}"></button>
+            <button class="system-buttom" openType="share" wx:if="{{value.data[2].click_type==6}}"></button>
+        </view>
+    </view>
+</view>

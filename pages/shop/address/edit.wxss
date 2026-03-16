@@ -1,0 +1,204 @@
+.page {
+  background-color: #fff;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.page .tip {
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  background-color: #fef9e6;
+  color: #f9922b;
+  padding: 0rpx 20rpx;
+  font-size: 26rpx;
+}
+.page .content-box {
+  flex: 1;
+  overflow-y: auto;
+}
+.page .content-box .form {
+  margin-top: 20rpx;
+  box-sizing: border-box;
+}
+.page .content-box .form .form-item {
+  width: 100%;
+  padding: 10rpx 30rpx;
+  display: flex;
+  border-bottom: 1rpx solid hsla(0, 0%, 87.5%, 0.5);
+}
+.page .content-box .form .form-item .title {
+  width: 180rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 26rpx;
+}
+.page .content-box .form .form-item .right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.page .content-box .form .form-item .right .choose-box {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  height: 90rpx;
+}
+.page .content-box .form .form-item .right .choose-box .text {
+  flex: 1;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 26rpx;
+  width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.page .content-box .form .form-item .right .choose-box .icon {
+  font-size: 34rpx;
+  color: #999;
+  margin-right: 20rpx;
+}
+.page .content-box .form .form-item .right .img-box {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20rpx;
+}
+.page .content-box .form .form-item .right .img-box .choose-img,
+.page .content-box .form .form-item .right .img-box .preview-box {
+  width: 108rpx;
+  height: 108rpx;
+  background: #f9fafb;
+  border: 1rpx solid #dfdfdf;
+  margin-right: 25rpx;
+  margin-bottom: 25rpx;
+  position: relative;
+}
+.page .content-box .form .form-item .right .img-box .choose-img:nth-child(5n),
+.page .content-box .form .form-item .right .img-box .preview-box:nth-child(5n) {
+  margin-right: 0;
+}
+.page
+  .content-box
+  .form
+  .form-item
+  .right
+  .img-box
+  .choose-img
+  .cuIcon-cameraadd,
+.page
+  .content-box
+  .form
+  .form-item
+  .right
+  .img-box
+  .preview-box
+  .cuIcon-cameraadd {
+  font-size: 50rpx;
+  color: #dfdfdf;
+}
+.page .content-box .form .form-item .right .img-box .choose-img .preview-img,
+.page .content-box .form .form-item .right .img-box .preview-box .preview-img {
+  width: 100%;
+  height: 100%;
+}
+.page .content-box .form .form-item .right .img-box .choose-img .cuIcon-close,
+.page .content-box .form .form-item .right .img-box .preview-box .cuIcon-close {
+  background: linear-gradient(90deg, #d89f64, #ebc196);
+  border-radius: 50%;
+  width: 40rpx;
+  line-height: 40rpx;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+}
+.page .content-box .form .form-item .right .picker {
+  width: 100%;
+}
+.page .content-box .form .form-item .right .picker .picker-box {
+  height: 90rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.page .content-box .form .form-item .right .picker .picker-box .text {
+  flex: 1;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 26rpx;
+}
+.page .content-box .form .form-item .right .input {
+  flex: 1;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 26rpx;
+}
+.page .content-box .form .form-item .right .unit {
+  padding: 0 20rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.page .content-box .form .form-item2 {
+  width: 100%;
+  padding: 10rpx 30rpx;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1rpx solid hsla(0, 0%, 87.5%, 0.5);
+}
+.page .content-box .form .form-item2 .title-box {
+  display: flex;
+  align-items: center;
+  height: 90rpx;
+}
+.page .content-box .form .form-item2 .title-box .title {
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 26rpx;
+}
+.page .content-box .form .form-item2 .title-box .mark {
+  font-size: 22rpx;
+}
+.page .content-box .form .form-item2 .input {
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 26rpx;
+}
+.page .content-box .form .form-item2 .bot-box .textarea {
+  width: 100%;
+  border-radius: 12rpx;
+  height: 250rpx;
+  border: 1rpx solid #eee;
+  padding: 16rpx;
+  font-size: 26rpx;
+}
+.page .content-box .form .btn-box {
+  width: 100%;
+  display: flex;
+}
+.page .content-box .form .btn-box .submit {
+  font-size: 26rpx;
+  position: fixed;
+  bottom: 20rpx;
+  left: 50rpx;
+  width: 650rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  background-color: #f50;
+}
+.page .content-box .del-box {
+  font-size: 24rpx;
+  text-align: right;
+  padding: 0rpx 30rpx;
+  margin-top: 30rpx;
+  color: #c7c7c7;
+}
+.page .footer-box {
+  height: 110rpx;
+}

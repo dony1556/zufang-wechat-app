@@ -1,0 +1,4 @@
+.content_box {
+  background: #fff;
+  padding: 30rpx;
+}

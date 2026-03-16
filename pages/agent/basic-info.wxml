@@ -1,0 +1,70 @@
+<view class="page">
+    <view class="top-box"></view>
+    <view class="body-box">
+        <view class="form">
+            <view style="border-radius:12rpx;overflow:hidden;background-color:#FFFFFF;">
+                <view class="form-item">
+                    <text class="title">姓名</text>
+                    <view class="right">
+                        <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','name','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入店铺名称" value="{{form.name}}"></input>
+                    </view>
+                </view>
+                <view class="form-item">
+                    <text class="title">联系电话</text>
+                    <view class="right">
+                        <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','tel','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入联系电话" value="{{form.tel}}"></input>
+                    </view>
+                </view>
+                <view class="form-item">
+                    <text class="title">从业年限</text>
+                    <view class="right">
+                        <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','work_year','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入从业年限" value="{{form.work_year}}"></input>
+                    </view>
+                </view>
+                <view class="form-item">
+                    <text class="title">标签</text>
+                    <view class="right">
+                        <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','label','$event',[] ],['form'] ] ] ] ]}}" placeholder="用空格隔开" value="{{form.label}}"></input>
+                    </view>
+                </view>
+                <view bindtap="__e" class="form-item" data-event-opts="{{[ [ 'tap',[ [ 'openArea',['$event'] ] ] ] ]}}">
+                    <text class="title">主营地区</text>
+                    <view class="right">
+                        <view class="choose-box">
+                            <view class="text">{{form.area_name||'请选择所在地区'}}</view>
+                            <view class="iconfont icon-you icon "></view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view style="border-radius:12rpx;overflow:hidden;background-color:#FFFFFF;margin-top:16rpx;">
+                <view class="form-item">
+                    <text class="title">头像</text>
+                    <view class="right">
+                        <view class="img-box">
+                            <view class="preview-box" wx:for="{{form.logo}}" wx:key="index">
+                                <image class="preview-img" mode="aspectFill" src="{{item}}"></image>
+                                <text bindtap="__e" class="cuIcon-close" data-event-opts="{{[ [ 'tap',[ [ 'delImg',['$0',index],['form.logo'] ] ] ] ]}}"></text>
+                            </view>
+                            <view bindtap="__e" class="choose-img " data-event-opts="{{[ [ 'tap',[ [ 'onChooseImg',['$0',1],['form.logo'] ] ] ] ]}}" wx:if="{{$root.g0<1}}">
+                                <text class="cuIcon-cameraadd"></text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="form-item2">
+                    <text class="title-box">个人介绍</text>
+                    <view class="bot-box">
+                        <textarea bindinput="__e" class="textarea" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','intro','$event',[] ],['form'] ] ] ] ]}}" placeholder="请填写个人介绍" value="{{form.intro}}"></textarea>
+                    </view>
+                </view>
+            </view>
+            <view class="btn-box">
+                <form bindsubmit="__e" data-event-opts="{{[ [ 'submit',[ [ 'formSubmit',['$event'] ] ] ] ]}}">
+                    <button class="submit" formType="submit" type="primary">确认</button>
+                </form>
+            </view>
+        </view>
+    </view>
+    <wk-city-area2 bind:__l="__l" bind:onConfirm="__e" class="vue-ref" data-event-opts="{{[ [ '^onConfirm',[ ['areaConfirm'] ] ] ]}}" data-ref="areaSelect" vueId="1bb695d6-1"></wk-city-area2>
+</view>

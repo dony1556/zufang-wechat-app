@@ -1,0 +1,70 @@
+<view class="page">
+    <view class="top-box"></view>
+    <view class="body-box">
+        <view class="search-box">
+            <view bindtap="__e" class="city-box" data-event-opts="{{[ [ 'tap',[ [ 'open_select',['$event'] ] ] ] ]}}">
+                <view class="name">{{choose_name}}</view>
+                <view class="down"></view>
+                <view class="shu"></view>
+            </view>
+            <view class="serach-item">
+                <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ 'inputChange',['$event'] ] ] ] ]}}" placeholder="请输入小区名称"></input>
+                <view bindtap="search" class="search_bt">
+                    <view class="iconfont icon-search" style="font-size:30rpx;color:#6c6c6c;"></view>
+                </view>
+            </view>
+            <view bindtap="__e" class="add" data-event-opts="{{[ [ 'tap',[ [ 'navToCommunityPub',['$event'] ] ] ] ]}}">
+                <view class="iconfont icon-jia3" style="font-size:40rpx;color:#ff0000;"></view>
+            </view>
+        </view>
+        <view class="community-box">
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'choose',['$0'],[ [ ['list','',index] ] ] ] ] ] ]}}" wx:for="{{list}}" wx:key="index">
+                <view class="name">{{item.name}}</view>
+                <view class="address">{{item.address}}</view>
+            </view>
+            <view class="no-box" wx:if="{{$root.g0}}">
+                <view bindtap="__e" class="city-tip" data-event-opts="{{[ [ 'tap',[ [ 'selectCity',['$event'] ] ] ] ]}}">
+                    <text>{{'在'+city.cityName+'没有搜索到先关小区，'}}</text>
+                    <text style="color:#007AFF;">点击切换城市搜索</text>
+                </view>
+                <view bindtap="__e" class="com-tip" data-event-opts="{{[ [ 'tap',[ [ 'chooseNo',['$event'] ] ] ] ]}}">
+                    <text>{{'坚持使用无坐标地点【'+key+'】'}}</text>
+                    <text style="color:#007AFF;">点击使用</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <wk-login-modal bind:__l="__l" vueId="029a1bd9-1"></wk-login-modal>
+    <wk-skeletons bind:__l="__l" vueId="029a1bd9-2" wx:if="{{isLoading}}"></wk-skeletons>
+    <view class="select-house" wx:if="{{selectshow}}">
+        <view bindtap="__e" class="back-shadow" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}"></view>
+        <view class="{{[selectshow?'slect-box-active':'slect-box']}}" wx:if="{{selectshow}}">
+            <view class="choose-box">
+                <view class="area-box">
+                    <scroll-view class="left " scrollY="{{true}}">
+                        <view bindtap="__e" class="{{['item','',city_id==0?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selectCity',[-1] ] ] ] ]}}">不限</view>
+                        <view bindtap="__e" class="{{['item',city_id==item.id?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selectCity',[index] ] ] ] ]}}" wx:for="{{cityList}}" wx:key="index">{{''+item.city_name+''}}</view>
+                    </scroll-view>
+                    <block wx:if="{{city_id>0}}">
+                        <scroll-view class="between " scrollY="{{true}}">
+                            <view bindtap="__e" class="{{['item','',area_id==0?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selectArea',[-1] ] ] ] ]}}">不限</view>
+                            <view bindtap="__e" class="{{['item',area_id==item.id?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selectArea',[index] ] ] ] ]}}" wx:for="{{areaList}}" wx:key="index">{{''+item.name+''}}</view>
+                        </scroll-view>
+                        <scroll-view class="right" scrollY="true" wx:if="{{area_id>0}}">
+                            <view bindtap="__e" class="{{['item',buildarea_id==0?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selectBuildarea',[-1] ] ] ] ]}}">不限</view>
+                            <view bindtap="__e" class="{{['item',buildarea_id==item.id?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selectBuildarea',[index] ] ] ] ]}}" wx:for="{{buildareaList}}" wx:key="index">{{''+item.name+''}}</view>
+                        </scroll-view>
+                    </block>
+                    <block wx:if="{{choose_level==2}}">
+                        <scroll-view class="left " scrollY="{{true}}"></scroll-view>
+                        <scroll-view class="right" scrollY="true" wx:if="{{areaIndex>-1}}"></scroll-view>
+                    </block>
+                </view>
+            </view>
+            <view class="bottom-box">
+                <view bindtap="__e" class="clear" data-event-opts="{{[ [ 'tap',[ [ 'clear',['$event'] ] ] ] ]}}">重置</view>
+                <view bindtap="__e" class="confirm" data-event-opts="{{[ [ 'tap',[ [ 'confirm',['$event'] ] ] ] ]}}">确定</view>
+            </view>
+        </view>
+    </view>
+</view>

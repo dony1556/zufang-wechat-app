@@ -1,0 +1,36 @@
+.form-box {
+  background: #fff;
+}
+.form-box .form-item {
+  height: 96rpx;
+  border-bottom: 1rpx solid hsla(0, 0%, 87.5%, 0.9);
+  padding: 0 25rpx;
+}
+.form-box .form-item .item-title {
+  color: #333;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+.form-box .form-item .item-input {
+  font-size: 28rpx;
+  color: #333;
+  padding-left: 20rpx;
+}
+.form-box .form-item .pl-input {
+  color: #999;
+}
+.notice {
+  color: #999;
+  font-size: 24rpx;
+  padding: 0 25rpx;
+  height: 90rpx;
+}
+.btn-box .confirem-btn {
+  width: 710rpx;
+  height: 80rpx;
+  background: linear-gradient(90deg, #e9b461, #eecc89);
+  border: 1rpx solid #eee;
+  border-radius: 40rpx;
+  font-size: 30rpx;
+  color: hsla(0, 0%, 100%, 0.9);
+}

@@ -1,0 +1,10 @@
+<view class="page">
+    <map bindcallouttap="__e" class="map" data-event-opts="{{[ [ 'callouttap',[ [ 'callouttap',['$event'] ] ] ] ]}}" id="map" latitude="{{lat}}" longitude="{{lng}}" markers="{{markers}}" scale="15" showLocation="true"></map>
+    <view class="footer-box">
+        <view class="tab-box">
+            <scroll-view class="scroll" scrollX="{{true}}">
+                <view bindtap="__e" class="{{['item',key==item.name?'on':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'tabChange',['$0'],[ [ ['keyList','',index,'name'] ] ] ] ] ] ]}}" wx:for="{{keyList}}" wx:key="index">{{item.name}}</view>
+            </scroll-view>
+        </view>
+    </view>
+</view>

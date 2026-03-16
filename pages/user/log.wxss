@@ -1,0 +1,46 @@
+.head_box {
+  height: 70rpx;
+  padding: 0 30rpx;
+}
+.head_box .count-box {
+  font-size: 26rpx;
+  color: #999;
+}
+.head_box .count-box .all-num {
+  color: #a8700d;
+}
+.head_box .set-btn {
+  background: none;
+  font-size: 26rpx;
+  color: #a8700d;
+}
+.collect-list {
+  padding: 30rpx 20rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+.collect-list .goods-radio {
+  transform: scale(0.7);
+  margin-right: 20rpx;
+}
+.tools-box {
+  height: 100rpx;
+  width: 750rpx;
+  padding: 0 20rpx;
+  background: #fff;
+}
+.tools-box .check-all {
+  font-size: 26rpx;
+}
+.tools-box .check-all .check-all-radio {
+  transform: scale(0.7);
+}
+.tools-box .close-btn {
+  width: 200rpx;
+  height: 70rpx;
+  background: linear-gradient(90deg, #e9b461, #eecc89);
+  box-shadow: 0 7rpx 6rpx 0 rgba(229, 138, 0, 0.22);
+  border-radius: 35rpx;
+  padding: 0;
+  color: hsla(0, 0%, 100%, 0.9);
+}

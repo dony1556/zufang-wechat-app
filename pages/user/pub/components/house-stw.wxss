@@ -1,0 +1,69 @@
+.stw-picker .pickerMask {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+.stw-picker .picker-content {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transition: all 0.3s ease;
+  transform: translateY(100%);
+  z-index: 3000;
+  min-height: 400rpx;
+}
+.stw-picker .shopro-picker-view-show {
+  transform: translateY(0);
+}
+.stw-picker .shopro-picker__hd {
+  display: flex;
+  padding: 9px 15px;
+  background-color: #fff;
+  position: relative;
+  text-align: center;
+  font-size: 32rpx;
+}
+.stw-picker .shopro-picker__hd:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1px solid #e5e5e5;
+  color: #e5e5e5;
+  transform-origin: 0 100%;
+  transform: scaleY(0.5);
+}
+.stw-picker .shopro-picker__action {
+  display: block;
+  flex: 1;
+  color: #1aad19;
+}
+.stw-picker .shopro-picker__action:first-child {
+  text-align: left;
+  color: #888;
+}
+.stw-picker .shopro-picker__action:last-child {
+  text-align: right;
+}
+.stw-picker .picker-view {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 238px;
+  background-color: #fff;
+}
+.stw-picker .picker-view .picker-item-column {
+  text-align: center;
+  line-height: 40px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 16px;
+}

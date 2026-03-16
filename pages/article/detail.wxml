@@ -1,0 +1,34 @@
+<view class="page data-v-3eb76f6f">
+    <view class="content data-v-3eb76f6f">
+        <view class="detail data-v-3eb76f6f">
+            <view class="title data-v-3eb76f6f">{{article.title}}</view>
+            <view class="info data-v-3eb76f6f">
+                <view class="source-date data-v-3eb76f6f">
+                    <view bindtap="__e" class="source data-v-3eb76f6f" data-event-opts="{{[ [ 'tap',[ [ 'copyText',['$0'],['info.source_url'] ] ] ] ]}}" wx:if="{{article.source_url}}">{{info.source}}</view>
+                    <view class="source data-v-3eb76f6f" wx:else>{{article.source}}</view>
+                    <view class="date hidden data-v-3eb76f6f">{{article.create_time}}</view>
+                </view>
+                <view class="read data-v-3eb76f6f">{{'阅读 '+article.view_count}}</view>
+            </view>
+            <view class="desc data-v-3eb76f6f">
+                <wk-parser bind:__l="__l" class="data-v-3eb76f6f vue-ref" data-ref="content" lazyLoad="{{true}}" vueId="58187223-1"></wk-parser>
+            </view>
+            <view class="declaration data-v-3eb76f6f" wx:if="{{info.source_url}}">{{'本文转载至'+info.source+'，'}}<text bindtap="__e" class="data-v-3eb76f6f" data-event-opts="{{[ [ 'tap',[ [ 'copyText',['$0'],['info.source_url'] ] ] ] ]}}">点此可查看原文链接。</text>如有侵权，请联系我们，我们将在最短的时间内处理。</view>
+        </view>
+        <view bindtap="__e" class="bg-masker data-v-3eb76f6f" data-event-opts="{{[ [ 'tap',[ [ 'initAddComment',[false] ] ] ] ]}}" wx:if="{{showAddComment}}"></view>
+        <view class="add-comment data-v-3eb76f6f" wx:if="{{showAddComment}}">
+            <view class="info data-v-3eb76f6f">
+                <view class="input data-v-3eb76f6f">
+                    <textarea autoHeight="{{true}}" bindblur="__e" bindinput="__e" class="data-v-3eb76f6f vue-ref" cursorSpacing="{{20}}" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','commentContent','$event',['trim'] ] ] ] ],[ 'blur',[ ['$forceUpdate'] ] ] ]}}" data-ref="commentContent" fixed="{{true}}" focus="{{showAddComment}}" maxlength="{{200}}" placeholder="{{replyCommentId>0?'回复 '+replyNickname+'：':'发表评论'}}" placeholderClass="input-bg" showConfirmBar="{{false}}" value="{{commentContent}}"></textarea>
+                </view>
+                <view class="add data-v-3eb76f6f">
+                    <button bindtap="__e" class="mini-btn data-v-3eb76f6f" data-event-opts="{{[ [ 'tap',[ ['addCommentOrReply'] ] ] ]}}" size="mini" type="primary">{{replyCommentId>0?'回复':'发表'}}</button>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="house-box data-v-3eb76f6f">
+        <wk-houses bind:__l="__l" class="data-v-3eb76f6f" value="{{house_list}}" vueId="58187223-2"></wk-houses>
+    </view>
+    <wk-skeletons bind:__l="__l" class="data-v-3eb76f6f" type="detail" vueId="58187223-3" wx:if="{{isLoading}}"></wk-skeletons>
+</view>

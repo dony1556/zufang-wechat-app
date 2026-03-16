@@ -1,0 +1,8 @@
+<view class="bar-box ">
+    <view catchtap="__e" class="bar-item" data-event-opts="{{[ [ 'tap',[ [ 'routerTo',['$0'],[ [ ['value.data','',index] ] ] ] ] ] ]}}" wx:for="{{value.data}}" wx:for-item="child" wx:key="index">
+        <image class="bar-img" mode="aspectFill" src="{{child.imgUrl}}"></image>
+        <button class="system-buttom" openType="contact" wx:if="{{child.click_type==2}}"></button>
+        <button class="system-buttom" openType="share" wx:if="{{child.click_type==6}}"></button>
+    </view>
+    <wk-qrcode bind:__l="__l" class="vue-ref" data-ref="gzh_qrcode" vueId="35b79f7c-1"></wk-qrcode>
+</view>

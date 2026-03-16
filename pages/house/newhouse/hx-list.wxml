@@ -1,0 +1,21 @@
+<view class="page">
+    <view class="top-box"></view>
+    <view class="content-box">
+        <view class="hx-list">
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'navToHxDetail',['$0'],[ [ ['hxList','',index,'id'] ] ] ] ] ] ]}}" wx:for="{{hxList}}" wx:key="index">
+                <view class="img-box">
+                    <image class="img" src="{{item.thumbs[0]}}"></image>
+                </view>
+                <view class="info">
+                    <view class="title">
+                        <view class="shi">{{item.shi+'室'+item.ting+'厅'+item.wei+'卫'}}</view>
+                        <view class="sale_status">{{item.sale_status}}</view>
+                    </view>
+                    <view class="mj">{{item.mj+'㎡'}}</view>
+                    <view class="price" wx:if="{{item.money}}">{{item.money+'万元/套'}}</view>
+                    <view class="price" wx:else>价格待定</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

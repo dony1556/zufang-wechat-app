@@ -1,0 +1,14 @@
+<view class="page">
+    <view class="content-box">
+        <view class="house-type-box">
+            <scroll-view class="bg-white nav" scrollLeft="{{scrollLeft}}" scrollWithAnimation="{{true}}" scrollX="{{true}}" style="width:690rpx;">
+                <view bindtap="__e" class="{{['cu-item',item.type==type?'text-green cur':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selectType',['$0',index],[ [ ['typeList','',index] ] ] ] ] ] ]}}" wx:for="{{typeList}}" wx:key="index">{{(item.alias||item.name)+''}}</view>
+            </scroll-view>
+        </view>
+        <view class="house-box">
+            <wk-houses bind:__l="__l" value="{{houseList}}" vueId="b41cbb9a-1"></wk-houses>
+        </view>
+    </view>
+    <wk-skeletons bind:__l="__l" type="detail" vueId="b41cbb9a-2" wx:if="{{isLoading}}"></wk-skeletons>
+    <wk-login-modal bind:__l="__l" vueId="b41cbb9a-3"></wk-login-modal>
+</view>

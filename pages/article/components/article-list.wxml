@@ -1,0 +1,27 @@
+<view class="list" wx:if="{{$root.g0>0}}">
+    <view bindtap="__e" class="{{['item',toggleDelay?'animation-slide-bottom':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'navtoDetail',['$0'],[ [ ['list','',index,'id'] ] ] ] ] ] ]}}" style="{{'animation-delay:'+(index+1)*0.02+'s'+';'}}" wx:for="{{list}}" wx:key="index">
+        <view class="info">
+            <view class="text">
+                <view class="title">{{item.title}}</view>
+                <view class="other">
+                    <view class="left">
+                        <view class="source" wx:if="{{item.source}}">{{item.source}}</view>
+                        <view class="time">{{item.create_time}}</view>
+                    </view>
+                    <view class="right" wx:if="{{item.comment_count>0}}">
+                        <image src="/static/images/icon_comment.png"></image>
+                        <text>{{item.comment_count}}</text>
+                    </view>
+                    <view class="right view" wx:else>
+                        <view class="iconfont icon-browse" style="font-size:34rpx;color:#b6b6b6;"></view>
+                        <text>{{item.view_count}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="img-box">
+                <image class="img" mode="aspectFill" src="{{item.cover}}"></image>
+            </view>
+        </view>
+        <view class="line"></view>
+    </view>
+</view>

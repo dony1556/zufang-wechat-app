@@ -1,0 +1,255 @@
+<view class="page">
+    <view class="top-box"></view>
+    <view class="body-box">
+        <view class="form">
+            <view style="border-radius:12rpx;overflow:hidden;background-color:#FFFFFF;">
+                <view bindtap="__e" class="form-item" data-event-opts="{{[ [ 'tap',[ [ 'openCommunity',['$event'] ] ] ] ]}}">
+                    <text class="title">小区</text>
+                    <view class="right">
+                        <view class="choose-box">
+                            <view class="text">{{pubCommunity.name||'请选择小区'}}</view>
+                            <view class="iconfont icon-you icon"></view>
+                        </view>
+                    </view>
+                </view>
+                <view class="form-item">
+                    <text class="title">栋</text>
+                    <view class="right">
+                        <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','dong','$event',[] ],['form'] ] ] ] ]}}" placeholder="不对外展示" value="{{form.dong}}"></input>
+                        <view class="unit">栋</view>
+                    </view>
+                </view>
+                <view class="form-item">
+                    <text class="title">单元</text>
+                    <view class="right">
+                        <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','dy','$event',[] ],['form'] ] ] ] ]}}" placeholder="不对外展示" value="{{form.dy}}"></input>
+                        <view class="unit">单元</view>
+                    </view>
+                </view>
+                <view class="form-item">
+                    <text class="title">门牌号</text>
+                    <view class="right">
+                        <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','doorplate','$event',[] ],['form'] ] ] ] ]}}" placeholder="不对外展示" value="{{form.doorplate}}"></input>
+                    </view>
+                </view>
+                <view class="form-item">
+                    <view class="title">出租方式</view>
+                    <view class="right">
+                        <view class="_div" style="display:flex;align-items:center;">
+                            <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'select_let_way',['$0'],[ [ ['letWayList','',index,'value'] ] ] ] ] ] ]}}" style="display:flex;align-items:center;" wx:for="{{letWayList}}" wx:key="index">
+                                <view class="iconfont icon-gouxuan" style="font-size:32rpx;color:#ff4544;" wx:if="{{form.let_way==item.value}}"></view>
+                                <view class="iconfont icon-gouxuan1" style="font-size:32rpx;color:#999;" wx:else></view>
+                                <view style="margin:0rpx  20rpx;">{{item.name}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="form-item" wx:if="{{form.let_way==2}}">
+                    <text class="title">房间名称</text>
+                    <view class="right">
+                        <picker bindchange="__e" class="picker" data-event-opts="{{[ [ 'change',[ [ 'roomTypeChange',['$event'] ] ] ] ]}}" mode="selector" range="{{roomTypeList}}" rangeKey="name" value="{{roomTypeIndex}}">
+                            <view class="picker-box">
+                                <view class="text">{{roomTypeList[form.roomTypeIndex].name}}</view>
+                                <view class="iconfont icon-you  icon "></view>
+                            </view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="form-item">
+                    <text class="title">房租</text>
+                    <view class="right">
+                        <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','money','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入租金" type="number" value="{{form.money}}"></input>
+                        <view class="unit">元/月</view>
+                    </view>
+                </view>
+                <view class="floor-item">
+                    <view class="title">押</view>
+                    <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','ya_month','$event',[] ],['form'] ] ] ] ]}}" placeholder="押几个月" type="number" value="{{form.ya_month}}"></input>
+                    <view class="unit">月</view>
+                    <view class="title" style="margin-left:20rpx;">付</view>
+                    <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','fu_month','$event',[] ],['form'] ] ] ] ]}}" placeholder="几个月付一次" type="number" value="{{form.fu_month}}"></input>
+                    <view class="unit">月</view>
+                </view>
+                <view class="form-item">
+                    <text class="title">联系人</text>
+                    <view class="right">
+                        <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','name','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入联系人" value="{{form.name}}"></input>
+                    </view>
+                </view>
+                <view class="form-item">
+                    <text class="title">联系电话</text>
+                    <view class="right">
+                        <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','tel','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入联系电话" type="number" value="{{form.tel}}"></input>
+                    </view>
+                </view>
+            </view>
+            <view style="border-radius:12rpx;overflow:hidden;background-color:#FFFFFF;margin-top:16rpx;">
+                <view class="form-item">
+                    <view class="title">房屋面积</view>
+                    <view class="right">
+                        <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','mj','$event',[] ],['form'] ] ] ] ]}}" placeholder="请填写房屋面积" type="number" value="{{form.mj}}"></input>
+                        <view class="unit">㎡</view>
+                    </view>
+                </view>
+                <view class="form-item" wx:for="{{form_data}}" wx:key="index">
+                    <text class="title">{{item.name}}</text>
+                    <view class="right">
+                        <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','value','$event',[] ],[ [ ['form_data','',index] ] ] ] ] ] ]}}" value="{{item.value}}"></input>
+                    </view>
+                </view>
+                <view bindtap="__e" class="form-item" data-event-opts="{{[ [ 'tap',[ [ 'openHouseStw',['$event'] ] ] ] ]}}">
+                    <text class="title">户型</text>
+                    <view class="right">
+                        <view class="choose-box">
+                            <view class="text">{{form.stw_names||'请选择户型'}}</view>
+                            <view class="iconfont icon-you icon"></view>
+                        </view>
+                    </view>
+                </view>
+                <view class="floor-item">
+                    <view class="title">楼层</view>
+                    <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','floor','$event',[] ],['form'] ] ] ] ]}}" placeholder="请填写" type="number" value="{{form.floor}}"></input>
+                    <view class="unit">层</view>
+                    <view class="title" style="margin-left:20rpx;">共</view>
+                    <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','floor_total','$event',[] ],['form'] ] ] ] ]}}" placeholder="请填写" type="number" value="{{form.floor_total}}"></input>
+                    <view class="unit">层</view>
+                </view>
+                <view class="form-item">
+                    <view class="title">电梯</view>
+                    <view class="right">
+                        <view class="_div" style="display:flex;align-items:center;">
+                            <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'select_elevator',['$0'],[ [ ['elevatorList','',index,'value'] ] ] ] ] ] ]}}" style="display:flex;align-items:center;" wx:for="{{elevatorList}}" wx:key="index">
+                                <view class="iconfont icon-gouxuan" style="font-size:32rpx;color:#ff4544;" wx:if="{{form.is_elevator==item.value}}"></view>
+                                <view class="iconfont icon-gouxuan1" style="font-size:32rpx;color:#999;" wx:else></view>
+                                <view style="margin:0rpx  20rpx;">{{item.name}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="form-item">
+                    <text class="title">类型</text>
+                    <view class="right">
+                        <picker bindchange="__e" class="picker" data-event-opts="{{[ [ 'change',[ [ 'typeChange',['$event'] ] ] ] ]}}" mode="selector" range="{{typeList}}" rangeKey="name" value="{{typeIndex}}">
+                            <view class="picker-box">
+                                <view class="text">{{typeList[form.typeIndex].name}}</view>
+                                <view class="iconfont icon-you  icon"></view>
+                            </view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="form-item">
+                    <text class="title">装修</text>
+                    <view class="right">
+                        <picker bindchange="__e" class="picker" data-event-opts="{{[ [ 'change',[ [ 'decorateChange',['$event'] ] ] ] ]}}" mode="selector" range="{{decorateList}}" rangeKey="name" value="{{decorateIndex}}">
+                            <view class="picker-box">
+                                <view class="text">{{decorateList[form.decorateIndex].name}}</view>
+                                <view class="iconfont icon-you  icon"></view>
+                            </view>
+                        </picker>
+                    </view>
+                </view>
+                <view class="form-item">
+                    <text class="title">朝向</text>
+                    <view class="right">
+                        <picker bindchange="__e" class="picker" data-event-opts="{{[ [ 'change',[ [ 'directionChange',['$event'] ] ] ] ]}}" mode="selector" range="{{directionList}}" rangeKey="name" value="{{directionIndex}}">
+                            <view class="picker-box">
+                                <view class="text">{{directionList[form.directionIndex].name||'请选择朝向'}}</view>
+                                <view class="iconfont icon-you icon  "></view>
+                            </view>
+                        </picker>
+                    </view>
+                </view>
+                <view bindtap="__e" class="form-item" data-event-opts="{{[ [ 'tap',[ [ 'openTag',['$event'] ] ] ] ]}}">
+                    <text class="title">标签</text>
+                    <view class="right">
+                        <view class="choose-box">
+                            <view class="text">{{form.tag_names||'请选择标签'}}</view>
+                            <view class="iconfont icon-you icon"></view>
+                        </view>
+                    </view>
+                </view>
+                <view bindtap="__e" class="form-item" data-event-opts="{{[ [ 'tap',[ [ 'openFurnish',['$event'] ] ] ] ]}}">
+                    <text class="title">家具配置</text>
+                    <view class="right">
+                        <view class="choose-box">
+                            <view class="text">{{form.furnish_names||'请选择家具配置'}}</view>
+                            <view class="iconfont icon-you icon"></view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view style="border-radius:12rpx;overflow:hidden;background-color:#FFFFFF;margin-top:16rpx;">
+                <view class="form-item">
+                    <text class="title">介绍图片</text>
+                    <view class="right">
+                        <view class="img-box">
+                            <view class="preview-box" wx:for="{{form.thumbs}}" wx:key="index">
+                                <image class="preview-img" mode="aspectFill" src="{{item}}"></image>
+                                <text bindtap="__e" class="cuIcon-close" data-event-opts="{{[ [ 'tap',[ [ 'delImg',['$0',index],['form.thumbs'] ] ] ] ]}}"></text>
+                            </view>
+                            <view bindtap="__e" class="choose-img " data-event-opts="{{[ [ 'tap',[ [ 'onChooseImg',['$0',9],['form.thumbs'] ] ] ] ]}}" wx:if="{{$root.g0<9}}">
+                                <text class="cuIcon-cameraadd"></text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="form-item">
+                    <text class="title">介绍视频</text>
+                    <view class="right">
+                        <view class="img-box">
+                            <view class="preview-box" wx:if="{{form.video}}">
+                                <video class="preview-video" src="{{form.video}}"></video>
+                                <text bindtap="__e" class="cuIcon-close" data-event-opts="{{[ [ 'tap',[ ['delVideo'] ] ] ]}}"></text>
+                            </view>
+                            <view bindtap="__e" class="choose-img  " data-event-opts="{{[ [ 'tap',[ ['onChooseVideo'] ] ] ]}}" wx:if="{{!form.video}}">
+                                <text class="cuIcon-cameraadd"></text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="form-item2">
+                    <text class="title-box">房屋详情</text>
+                    <view class="bot-box">
+                        <textarea bindinput="__e" class="textarea" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','content','$event',[] ],['form'] ] ] ] ]}}" placeholder="请描述房源详情" value="{{form.content}}"></textarea>
+                    </view>
+                </view>
+                <view class="form-item2" wx:if="{{role=='fd'&&basicSet.fd_set.is_fcz==1}}">
+                    <text class="title-box">房产证、土地使用证、业主身份证正反面</text>
+                    <view class="bot-box">
+                        <view class="img-box">
+                            <view class="preview-box" ey="index" wx:for="{{form.fcz_imgs}}">
+                                <image class="preview-img" mode="aspectFill" src="{{item}}"></image>
+                                <text bindtap="__e" class="cuIcon-close" data-event-opts="{{[ [ 'tap',[ [ 'delImg',['$0',index],['form.fcz_imgs'] ] ] ] ]}}"></text>
+                            </view>
+                            <view bindtap="__e" class="choose-img " data-event-opts="{{[ [ 'tap',[ [ 'onChooseImg',['$0',9],['form.fcz_imgs'] ] ] ] ]}}" wx:if="{{$root.g1<9}}">
+                                <text class="cuIcon-cameraadd"></text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="form-item2">
+                    <text class="title-box">备注(不对外展示)</text>
+                    <view class="bot-box">
+                        <textarea bindinput="__e" class="textarea" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','own_remarks','$event',[] ],['form'] ] ] ] ]}}" placeholder="请填写备注" value="{{form.own_remarks}}"></textarea>
+                    </view>
+                </view>
+                <view class="treaty">
+                    <view bindtap="__e" class="iconfont icon-gouxuan" data-event-opts="{{[ [ 'tap',[ [ 'handTreaty',['$event'] ] ] ] ]}}" style="font-size:36rpx;color:#ff5500;" wx:if="{{treaty_agree}}"></view>
+                    <view bindtap="__e" class="iconfont icon-gouxuan1" data-event-opts="{{[ [ 'tap',[ [ 'handTreaty',['$event'] ] ] ] ]}}" style="font-size:36rpx;color:#c3c3c3;" wx:else></view>
+                    <view class="txt">我已经阅读并接受<text bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'navToTreaty',['$event'] ] ] ] ]}}" style="color:#014c8c;">【发布协议】</text>
+                    </view>
+                </view>
+            </view>
+            <view class="btn-box">
+                <form bindsubmit="__e" data-event-opts="{{[ [ 'submit',[ [ 'formSubmit',['$event'] ] ] ] ]}}">
+                    <button class="submit" formType="submit" type="primary">提交<block wx:if="{{basicSet.fd_set.house_pub_fee>0&&form.id==0}}">{{'(￥'+basicSet.fd_set.house_pub_fee+')'}}</block>
+                    </button>
+                </form>
+            </view>
+        </view>
+    </view>
+    <wk-login-modal bind:__l="__l" vueId="f1a06a5e-1"></wk-login-modal>
+    <house-stw bind:__l="__l" bind:onConfirm="__e" class="vue-ref" data-event-opts="{{[ [ '^onConfirm',[ ['stwConfirm'] ] ] ]}}" data-ref="houseStw" vueId="f1a06a5e-2"></house-stw>
+    <wk-multi-select bind:__l="__l" bind:confirm="__e" class="vue-ref" data-event-opts="{{[ [ '^confirm',[ ['tagConfirm'] ] ] ]}}" data-ref="multiSelect" listArr="{{tagList}}" vueId="f1a06a5e-3"></wk-multi-select>
+    <wk-multi-select bind:__l="__l" bind:confirm="__e" class="vue-ref" data-event-opts="{{[ [ '^confirm',[ ['furnishConfirm'] ] ] ]}}" data-ref="multiSelect2" listArr="{{furnishList}}" vueId="f1a06a5e-4"></wk-multi-select>
+</view>

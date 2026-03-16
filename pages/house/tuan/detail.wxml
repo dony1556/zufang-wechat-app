@@ -1,0 +1,41 @@
+<view class="page">
+    <view class="top-box"></view>
+    <view class="content-box">
+        <view class="swiper-box">
+            <swiper autoplay="{{true}}" bindchange="__e" class="carousel" data-event-opts="{{[ [ 'change',[ [ 'carouselChange',['$event'] ] ] ] ]}}">
+                <swiper-item class="carousel-item" wx:for="{{tuan.album}}" wx:key="index">
+                    <image class="img" lazyLoad="{{true}}" mode="aspectFill" src="{{item}}"></image>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view class="title2">{{tuan.title}}</view>
+        <view class="time2">{{'活动时间：'+tuan.see_time}}</view>
+        <view class="house-box">
+            <wk-houses bind:__l="__l" value="{{houseList}}" vueId="464bae4c-1"></wk-houses>
+        </view>
+        <view class="detail-box">
+            <view class="head">活动详情</view>
+            <view class="detail">{{tuan.content}}</view>
+        </view>
+    </view>
+    <view class="footer-box">
+        <view class="bot2">
+            <view catchtap="__e" class="nav2" data-event-opts="{{[ [ 'tap',[ [ 'backHome',['$event'] ] ] ] ]}}">
+                <view class="iconfont icon-shouye" style="font-size:36rpx;color:#999;"></view>
+                <text class="text">首页</text>
+            </view>
+            <view class="nav2" style="position:relative;">
+                <view class="iconfont icon-fenxiang1" style="font-size:36rpx;color:#999;"></view>
+                <text class="text">分享</text>
+                <button class="system-buttom" openType="share"></button>
+            </view>
+            <view class="btn-box">
+                <view catchtap="__e" class="call2" data-event-opts="{{[ [ 'tap',[ [ 'call',['$event'] ] ] ] ]}}">电话联系</view>
+                <view catchtap="__e" class="yy2" data-event-opts="{{[ [ 'tap',[ [ 'see',['$event'] ] ] ] ]}}">立即报名</view>
+            </view>
+        </view>
+    </view>
+    <tuan-yy bind:__l="__l" class="vue-ref" data-ref="tuanYy" vueId="464bae4c-2"></tuan-yy>
+    <wk-login-modal bind:__l="__l" vueId="464bae4c-3"></wk-login-modal>
+    <wk-skeletons bind:__l="__l" type="detail" vueId="464bae4c-4" wx:if="{{isLoading}}"></wk-skeletons>
+</view>

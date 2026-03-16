@@ -1,0 +1,21 @@
+<view class="page">
+    <scroll-view class="{{['scroll-box',modalName!=null?'show':'']}}" scrollY="{{modalName==null}}">
+        <view class="info-box">
+            <view bindtap="__e" bindtouchend="__e" bindtouchmove="__e" bindtouchstart="__e" class="{{['item',modalName=='move-box-'+index?'move-cur':'']}}" data-event-opts="{{[ [ 'touchstart',[ [ 'ListTouchStart',['$event'] ] ] ],[ 'touchmove',[ [ 'ListTouchMove',['$event'] ] ] ],[ 'touchend',[ [ 'ListTouchEnd',['$event'] ] ] ],[ 'tap',[ [ 'tochat',['$0'],[ [ ['list','',index] ] ] ] ] ] ]}}" data-target="{{'move-box-'+index}}" wx:for="{{list}}" wx:key="index">
+                <view class="avatar-box">
+                    <image class="avatar" mode="aspectFill" src="{{item.icon}}"></image>
+                    <view class="bage" wx:if="{{item.unread_num>0}}">{{item.unread_num>99?'99+':item.unread_num}}</view>
+                </view>
+                <view class="content">
+                    <view class="top-box">
+                        <view class="name">{{item.title}}</view>
+                        <view class="time">{{item.update_time}}</view>
+                    </view>
+                    <view class="text-gray text-sm">{{''+item.last_msg+''}}</view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+    <wk-qrcode bind:__l="__l" class="vue-ref" data-ref="gzh_qrcode" path="{{gzh_qrcode}}" vueId="76d2978c-1"></wk-qrcode>
+    <wk-tabar bind:__l="__l" vueId="76d2978c-2"></wk-tabar>
+</view>

@@ -1,0 +1,44 @@
+<view class="page_box">
+    <view class="head_box"></view>
+    <view class="content_box">
+        <view class="y-f money-box" wx:if="{{order.total_fee}}">
+            <text class="time" wx:if="{{isPast}}">{{timeText}}</text>
+            <view class="money">{{order.total_fee}}</view>
+        </view>
+        <radio-group bindchange="__e" class="pay-box" data-event-opts="{{[ [ 'change',[ [ 'selPay',['$event'] ] ] ] ]}}" wx:if="{{payment}}">
+            <label class="x-bc pay-item" wx:if="{{$root.g0}}">
+                <view class="x-f">
+                    <image mode class="pay-img" src="http://shopro.7wpp.com/imgs/wx_pay.png"></image>
+                    <text>微信支付</text>
+                </view>
+                <radio checked="{{payType==='wechat'}}" class="{{['','pay-radio','orange',payType==='wechat'?'checked':'']}}" value="wechat"></radio>
+            </label>
+            <label class="x-bc pay-item" wx:if="{{$root.g1}}">
+                <view class="x-f">
+                    <image mode class="pay-img" src="http://shopro.7wpp.com/imgs/ali_pay.png"></image>
+                    <text>支付宝支付</text>
+                </view>
+                <radio checked="{{payType==='alipay'}}" class="{{['pay-radio','orange',payType==='alipay'?'checked':'']}}" value="alipay"></radio>
+            </label>
+            <label class="x-bc pay-item" wx:if="{{$root.g2}}">
+                <view class="x-f">
+                    <image mode class="pay-img" src="http://shopro.7wpp.com/imgs/apple_pay.png"></image>
+                    <text>ApplePay</text>
+                </view>
+                <radio checked="{{payType==='iospay'}}" class="{{['pay-radio','orange',payType==='iospay'?'checked':'']}}" value="iospay"></radio>
+            </label>
+            <label class="x-bc pay-item" wx:if="{{$root.g3}}">
+                <view class="x-f">
+                    <image mode class="pay-img" src="http://shopro.7wpp.com/imgs/wallet_pay.png"></image>
+                    <text>余额支付</text>
+                </view>
+                <radio checked="{{payType==='wallet'}}" class="{{['pay-radio','orange',payType==='wallet'?'checked':'']}}" value="wallet"></radio>
+            </label>
+        </radio-group>
+        <view class="x-c">
+            <button bindtap="__e" class="cu-btn pay-btn" data-event-opts="{{[ [ 'tap',[ [ 'confirmPay',['$event'] ] ] ] ]}}">{{'确认支付 ￥'+order.total_fee}}</button>
+        </view>
+    </view>
+    <view class="foot_box"></view>
+    <shopro-login-modal bind:__l="__l" vueId="c0df55bc-1"></shopro-login-modal>
+</view>

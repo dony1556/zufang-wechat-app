@@ -1,0 +1,125 @@
+<view class="page_box">
+    <view class="head_box"></view>
+    <view class="content_box">
+        <view class="detail-head">
+            <view class="state-box x-f">
+                <image mode class="state-img" src="http://shopro.7wpp.com/imgs/order_state1.png"></image>
+                <text>{{orderDetail.status_name}}</text>
+            </view>
+        </view>
+        <view class="detail-goods">
+            <view class="order-list" wx:for="{{$root.l1}}" wx:for-index="__i0__" wx:for-item="order" wx:key="id">
+                <view class="order-bottom  x-f">
+                    <view class="refund_msg" wx:if="{{order.$orig.refund_msg}}">
+                        <text class="refund-title">退款原因：</text>{{''+order.$orig.refund_msg+''}}</view>
+                    <view class="btn-box" wx:for="{{order.l0}}" wx:for-item="btn" wx:key="$orig">
+                        <button bindtap="__e" class="{{['cu-btn','btn1',index+1===btn.g0?'btn2':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'jump',[ '/pages/goods/detail/index',[ 'o',['id',order.$orig.goods_id] ] ] ] ] ] ]}}" wx:if="{{btn.$orig==='buy_again'}}">再次购买</button>
+                        <button bindtap="__e" class="{{['cu-btn','btn1',index+1===btn.g1?'btn2':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'checkExpress',['$0','$1'],[ 'orderDetail.id',[ ['orderDetail.item','id',order.$orig.id,'id'] ] ] ] ] ] ]}}" wx:if="{{btn.$orig==='express'}}">查看物流</button>
+                        <button catchtap="__e" class="{{['cu-btn','btn1',index+1===btn.g2?'btn2':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'onConfirm',['$0','$1'],[ 'orderDetail.id',[ ['orderDetail.item','id',order.$orig.id,'id'] ] ] ] ] ] ]}}" wx:if="{{btn.$orig==='get'}}">确认收货</button>
+                        <button catchtap="__e" class="{{['cu-btn','btn1',index+1===btn.g3?'btn2':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'onAftersale',['$0','$1'],[ 'orderDetail.id',[ ['orderDetail.item','id',order.$orig.id,'id'] ] ] ] ] ] ]}}" wx:if="{{btn.$orig==='aftersale'}}">申请售后</button>
+                        <button catchtap="__e" class="{{['cu-btn','btn1',index+1===btn.g4?'btn2':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'onRefund',['$0','$1'],[ 'orderDetail.id',[ ['orderDetail.item','id',order.$orig.id,'id'] ] ] ] ] ] ]}}" wx:if="{{btn.$orig==='apply_refund'}}">申请退款</button>
+                        <button catchtap="__e" class="{{['cu-btn','btn1',index+1===btn.g5?'btn2':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'onRefund',['$0','$1'],[ 'orderDetail.id',[ ['orderDetail.item','id',order.$orig.id,'id'] ] ] ] ] ] ]}}" wx:if="{{btn.$orig==='reapply_refund'}}">重新退款</button>
+                        <button catchtap="__e" class="{{['cu-btn','btn1',index+1===btn.g6?'btn2':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'onComment',['$0','$1'],[ 'orderDetail.id',[ ['orderDetail.item','id',order.$orig.id,'id'] ] ] ] ] ] ]}}" wx:if="{{btn.$orig==='comment'}}">待评价</button>
+                        <button class="{{['cu-btn','btn1',index+1===btn.g7?'btn2':'']}}" wx:if="{{btn.$orig==='after_detail'}}">售后详情</button>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="notice-box" wx:if="{{true}}">
+            <view class="notice-box__head">收货信息</view>
+            <view class="notice-box__content">
+                <view class="x-f notice-item">
+                    <text class="title">收货人：</text>
+                    <text class="detail">{{orderDetail.name+'  '+orderDetail.phone}}</text>
+                </view>
+                <view class="x-f notice-item">
+                    <text class="title">收货地址：</text>
+                    <text class="detail">{{orderDetail.province+orderDetail.city+orderDetail.area+orderDetail.address}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="notice-box" wx:if="{{false}}">
+            <view class="notice-box__head">自提信息</view>
+            <view class="notice-box__content">
+                <view class="self-pickup-box x-c">
+                    <image class="self-pickup--img" mode="widthFix" src="/static/imgs/order/send_bg.png"></image>
+                </view>
+                <view class="x-f notice-item--center">
+                    <text class="title">自提码：</text>
+                    <text class="detail">123456789</text>
+                    <button bindtap="__e" class="cu-btn copy-btn" data-event-opts="{{[ [ 'tap',[ [ 'onCopy',[123456] ] ] ] ]}}">复制</button>
+                </view>
+                <view class="x-f notice-item--center">
+                    <text class="title">自提时间：</text>
+                    <text class="detail">2020年05月12日 18:30</text>
+                </view>
+                <view class="x-f notice-item">
+                    <text class="title">自提地址：</text>
+                    <text class="detail">{{orderDetail.province_name+orderDetail.city_name+orderDetail.area_name+orderDetail.address}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="notice-box" wx:if="{{false}}">
+            <view class="notice-box__head">配送信息</view>
+            <view class="notice-box__content">
+                <view class="x-f notice-item--center">
+                    <text class="title">配送时间：</text>
+                    <text class="detail">2020年05月12日 18:30</text>
+                </view>
+                <view class="x-f notice-item">
+                    <text class="title">配送地址：</text>
+                    <text class="detail">{{orderDetail.province_name+orderDetail.city_name+orderDetail.area_name+orderDetail.address}}</text>
+                </view>
+                <view class="x-f notice-item--center">
+                    <text class="title">商家电话：</text>
+                    <text class="detail">13985269546</text>
+                    <button bindtap="__e" class="cu-btn copy-btn" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}">拨打</button>
+                </view>
+            </view>
+        </view>
+        <view class="notice-box" wx:if="{{false}}">
+            <view class="notice-box__head">发货信息</view>
+            <view class="notice-box__content">
+                <view class="x-f notice-item--center">
+                    <text class="title">百度网盘：</text>
+                    <text class="detail">https://pan.baidu.com/</text>
+                    <button bindtap="__e" class="cu-btn copy-btn" data-event-opts="{{[ [ 'tap',[ [ 'onCopy',['https://pan.baidu.com/'] ] ] ] ]}}">复制</button>
+                </view>
+                <view class="x-f notice-item--center">
+                    <text class="title">提取码：</text>
+                    <text class="detail">123456</text>
+                    <button bindtap="__e" class="cu-btn copy-btn" data-event-opts="{{[ [ 'tap',[ [ 'onCopy',[123456] ] ] ] ]}}">复制</button>
+                </view>
+            </view>
+        </view>
+        <view class="notice-box">
+            <view class="notice-box__head">订单信息</view>
+            <view class="notice-box__content">
+                <view class="notice-item--center x-f">
+                    <text class="title">订单编号：</text>
+                    <text class="detail">{{orderDetail.order_no}}</text>
+                    <button bindtap="__e" class="cu-btn copy-btn" data-event-opts="{{[ [ 'tap',[ [ 'onCopy',['$0'],['orderDetail.order_no'] ] ] ] ]}}">复制</button>
+                </view>
+                <view class="notice-item x-f">
+                    <text class="title">下单时间：</text>
+                    <text class="detail">{{orderDetail.create_time}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="foot_box">
+        <view class="money-box x-f justify-end">
+            <text class="money-title">{{'共'+orderDetail.total_num+'件商品 合计:'}}</text>
+            <text class="all-price">{{'￥'+orderDetail.total_fee+''}}<block wx:if="{{orderDetail.total_credit}}">{{'+'+orderDetail.total_credit+'积分'}}</block>
+            </text>
+        </view>
+        <view class="btn-box x-f">
+            <view wx:for="{{orderDetail.btns}}" wx:for-index="__i1__" wx:for-item="btn" wx:key="*this">
+                <button catchtap="__e" class="cu-btn obtn1" data-event-opts="{{[ [ 'tap',[ [ 'onCancel',['$0'],['orderDetail.id'] ] ] ] ]}}" wx:if="{{btn==='cancel'}}">取消订单</button>
+                <button catchtap="__e" class="cu-btn obtn2" data-event-opts="{{[ [ 'tap',[ [ 'onPay',['$0'],['orderDetail.order_sn'] ] ] ] ]}}" wx:if="{{btn==='pay'}}">付款</button>
+                <button catchtap="__e" class="cu-btn obtn2" data-event-opts="{{[ [ 'tap',[ [ 'jump',[ '/pages/activity/groupon/detail',[ 'o',['id',orderDetail.ext_arr.groupon_id] ] ] ] ] ] ]}}" wx:if="{{btn==='groupon'}}">拼团详情</button>
+            </view>
+        </view>
+    </view>
+    <shopro-login-modal bind:__l="__l" vueId="a2b0478a-1"></shopro-login-modal>
+</view>

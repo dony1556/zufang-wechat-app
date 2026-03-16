@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "二手房发布",
+  "usingComponents": {
+    "wk-multi-select": "/components/wk-multi-select/index",
+    "house-stw": "/pages/user/pub/components/house-stw"
+  }
+}

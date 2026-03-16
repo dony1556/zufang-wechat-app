@@ -1,0 +1,63 @@
+.success-box {
+  background: #fff;
+  width: 750rpx;
+  padding: 40rpx 0;
+}
+.success-box .pay-img {
+  width: 128rpx;
+  height: 76rpx;
+}
+.success-box .notice {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 700;
+  color: #333;
+  line-height: 30rpx;
+  margin-top: 30rpx;
+}
+.success-box .pay-money {
+  font-size: 36rpx;
+  color: #e1212b;
+  font-weight: 600;
+  margin-top: 20rpx;
+}
+.success-box .btn-box {
+  margin-top: 30rpx;
+  width: 660rpx;
+}
+.success-box .btn-box .base-btn {
+  width: 320rpx;
+  height: 70rpx;
+  background: #fff;
+  border: 1rpx solid hsla(0, 0%, 87.5%, 0.5);
+  border-radius: 35rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #999;
+  padding: 0;
+}
+.success-box .btn-box .again-pay {
+  width: 320rpx;
+  height: 70rpx;
+  background: linear-gradient(90deg, #e9b461, #eecc89);
+  box-shadow: 0 7rpx 6rpx 0 rgba(229, 138, 0, 0.22);
+  border-radius: 35rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: hsla(0, 0%, 100%, 0.8);
+  padding: 0;
+}
+.hot-box {
+  background: #fff;
+  padding: 20rpx;
+  margin-top: 20rpx;
+}
+.hot-box .hot-title {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333;
+  height: 80rpx;
+}

@@ -1,0 +1,3 @@
+<view class="ad-box">
+    <ad unitId="{{basicSet.set.ad_banner_id}}" wx:if="{{value.params.type==1&&basicSet.set&&basicSet.set.ad_banner_id}}"></ad>
+</view>

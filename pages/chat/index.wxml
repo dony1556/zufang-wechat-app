@@ -1,0 +1,101 @@
+<view>
+    <view bindtouchstart="__e" class="content" data-event-opts="{{[ [ 'touchstart',[ [ 'hideDrawer',['$event'] ] ] ] ]}}">
+        <scroll-view bindscrolltoupper="__e" class="msg-list" data-event-opts="{{[ [ 'scrolltoupper',[ [ 'loadHistory',['$event'] ] ] ] ]}}" scrollIntoView="{{scrollToView}}" scrollTop="{{scrollTop}}" scrollWithAnimation="{{scrollAnimation}}" scrollY="true" upperThreshold="50">
+            <view class="row" id="{{'msg'+row.$orig.msg.id}}" wx:for="{{$root.l0}}" wx:for-item="row" wx:key="index">
+                <view class="system" wx:if="{{row.$orig.type=='system'}}">
+                    <view class="text" wx:if="{{row.$orig.msg.type=='text'}}">{{''+row.$orig.msg.content.text+''}}</view>
+                    <view class="red-envelope" wx:if="{{row.$orig.msg.type=='redEnvelope'}}">
+                        <image src="/static/img/red-envelope-chat.png"></image>{{''+row.$orig.msg.content.text+''}}</view>
+                </view>
+                <block wx:else>
+                    <view class="my" wx:if="{{row.$orig.is_my}}">
+                        <view class="left">
+                            <view class="bubble" wx:if="{{row.$orig.type=='text'}}">
+                                <rich-text nodes="{{row.$orig.content.text}}"></rich-text>
+                            </view>
+                            <view bindtap="__e" class="{{['bubble','voice',playMsgid==row.$orig.msg.id?'play':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'playVoice',['$0'],[ [ ['msgList','',index,'msg'] ] ] ] ] ] ]}}" wx:if="{{row.$orig.type=='voice'}}">
+                                <view class="length">{{row.g0}}</view>
+                                <view class="icon my-voice"></view>
+                            </view>
+                            <view bindtap="__e" class="bubble img" data-event-opts="{{[ [ 'tap',[ [ 'showPic',['$0'],[ [ ['msgList','',index,'msg'] ] ] ] ] ] ]}}" wx:if="{{row.$orig.type=='img'}}">
+                                <image src="{{row.$orig.msg.content.url}}" style="{{'width:'+row.$orig.msg.content.w+'px'+';'+'height:'+row.$orig.msg.content.h+'px'+';'}}"></image>
+                            </view>
+                            <view bindtap="__e" class="bubble red-envelope" data-event-opts="{{[ [ 'tap',[ [ 'openRedEnvelope',['$0',index],[ [ ['msgList','',index,'msg'] ] ] ] ] ] ]}}" wx:if="{{row.$orig.type=='redEnvelope'}}">
+                                <image src="/static/img/red-envelope.png"></image>
+                                <view class="tis"></view>
+                                <view class="blessing">{{''+row.$orig.msg.content.blessing+''}}</view>
+                            </view>
+                            <view bindtap="__e" class="house-box" data-event-opts="{{[ [ 'tap',[ [ 'houseDetail',['$0','$1'],[ [ ['msgList','',index,'content.house_id'] ],[ ['msgList','',index,'content.house_type'] ] ] ] ] ] ]}}" wx:if="{{row.$orig.type=='house'}}">
+                                <view class="status">正在查看</view>
+                                <image class="img" mode="aspectFill" src="{{row.$orig.content.img}}"></image>
+                                <view class="detail">{{''+row.$orig.content.text+''}}</view>
+                            </view>
+                        </view>
+                        <view class="right">
+                            <image src="{{row.$orig.avatarurl}}"></image>
+                        </view>
+                    </view>
+                    <view class="other" wx:if="{{!row.$orig.is_my}}">
+                        <view class="left">
+                            <image src="{{row.$orig.avatarurl}}"></image>
+                        </view>
+                        <view class="right">
+                            <view class="username" wx:if="{{false}}">
+                                <view class="name">{{row.$orig.nickname}}</view>
+                                <view class="time">{{row.$orig.create_time}}</view>
+                            </view>
+                            <view class="bubble" wx:if="{{row.$orig.type=='text'}}">
+                                <rich-text nodes="{{row.$orig.content.text}}"></rich-text>
+                            </view>
+                            <view bindtap="__e" class="house-box" data-event-opts="{{[ [ 'tap',[ [ 'houseDetail',['$0','$1'],[ [ ['msgList','',index,'content.house_id'] ],[ ['msgList','',index,'content.house_type'] ] ] ] ] ] ]}}" wx:if="{{row.$orig.type=='house'}}">
+                                <view class="status">正在查看</view>
+                                <image class="img" mode="aspectFill" src="{{row.$orig.content.img}}"></image>
+                                <view class="detail">{{''+row.$orig.content.text+''}}</view>
+                            </view>
+                            <view bindtap="__e" class="{{['bubble','voice',playMsgid==row.$orig.msg.id?'play':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'playVoice',['$0'],[ [ ['msgList','',index,'msg'] ] ] ] ] ] ]}}" wx:if="{{row.$orig.type=='voice'}}">
+                                <view class="icon other-voice"></view>
+                                <view class="length">{{row.g1}}</view>
+                            </view>
+                            <view bindtap="__e" class="bubble img" data-event-opts="{{[ [ 'tap',[ [ 'showPic',['$0'],[ [ ['msgList','',index,'msg'] ] ] ] ] ] ]}}" wx:if="{{row.$orig.type=='img'}}">
+                                <image src="{{row.$orig.content.url}}" style="{{'width:'+row.$orig.msg.content.w+'px'+';'+'height:'+row.$orig.msg.content.h+'px'+';'}}"></image>
+                            </view>
+                            <view bindtap="__e" class="bubble red-envelope" data-event-opts="{{[ [ 'tap',[ [ 'openRedEnvelope',['$0',index],[ [ ['msgList','',index,'msg'] ] ] ] ] ] ]}}" wx:if="{{row.$orig.type=='redEnvelope'}}">
+                                <image src="/static/img/red-envelope.png"></image>
+                                <view class="tis"></view>
+                                <view class="blessing">{{''+row.$orig.msg.content.blessing+''}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+            </view>
+        </scroll-view>
+    </view>
+    <view catchtouchmove="__e" class="{{['popup-layer',popupLayerClass]}}" data-event-opts="{{[ [ 'touchmove',[ [ 'discard',['$event'] ] ] ] ]}}">
+        <view class="{{['more-layer',hideMore?'hidden':'']}}">
+            <view class="list"></view>
+        </view>
+    </view>
+    <view catchtouchmove="__e" class="{{['input-box',popupLayerClass]}}" data-event-opts="{{[ [ 'touchmove',[ [ 'discard',['$event'] ] ] ] ]}}">
+        <view class="textbox">
+            <view bindtouchcancel="__e" bindtouchend="__e" bindtouchstart="__e" catchtouchmove="__e" class="{{['voice-mode',isVoice?'':'hidden',recording?'recording':'']}}" data-event-opts="{{[ [ 'touchstart',[ [ 'voiceBegin',['$event'] ] ] ],[ 'touchmove',[ [ 'voiceIng',['$event'] ] ] ],[ 'touchend',[ [ 'voiceEnd',['$event'] ] ] ],[ 'touchcancel',[ [ 'voiceCancel',['$event'] ] ] ] ]}}">{{voiceTis}}</view>
+            <view class="{{['text-mode',isVoice?'hidden':'']}}">
+                <view class="box">
+                    <textarea autoHeight="true" bindfocus="__e" bindinput="__e" data-event-opts="{{[ [ 'focus',[ [ 'textareaFocus',['$event'] ] ] ],[ 'input',[ [ '__set_model',[ '','textMsg','$event',[] ] ] ] ] ]}}" value="{{textMsg}}"></textarea>
+                </view>
+            </view>
+        </view>
+        <view bindtap="__e" class="{{['send',isVoice?'hidden':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'sendText',['$event'] ] ] ] ]}}">
+            <view class="btn">发送</view>
+        </view>
+    </view>
+    <view class="{{['record',recording?'':'hidden']}}">
+        <view class="{{['ing',willStop?'hidden':'']}}">
+            <view class="icon luyin2"></view>
+        </view>
+        <view class="{{['cancel',willStop?'':'hidden']}}">
+            <view class="icon chehui"></view>
+        </view>
+        <view class="{{['tis',willStop?'change':'']}}">{{recordTis}}</view>
+    </view>
+    <wk-qrcode bind:__l="__l" class="vue-ref" data-ref="gzh_qrcode" path="{{gzh_qrcode}}" vueId="214c3072-1"></wk-qrcode>
+</view>

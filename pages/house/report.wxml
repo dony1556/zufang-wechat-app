@@ -1,0 +1,15 @@
+<view class="page">
+    <view class="top-box"></view>
+    <view class="body-box">
+        <view class="head">请选择举报类型</view>
+        <view class="item-box">
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'select_type',[index] ] ] ] ]}}" wx:for="{{items}}" wx:key="index">
+                <view class="iconfont icon-gouxuan" style="font-size:36rpx;color:#ff5500;" wx:if="{{type_index==index}}"></view>
+                <view class="iconfont icon-gouxuan1" style="font-size:36rpx;color:#c3c3c3;" wx:if="{{type_index!=index}}"></view>
+                <view class="name">{{item.name}}</view>
+            </view>
+        </view>
+        <view bindtap="__e" class="btn-box" data-event-opts="{{[ [ 'tap',[ [ 'confirm',['$event'] ] ] ] ]}}">确认提交</view>
+    </view>
+    <wk-login-modal bind:__l="__l" vueId="75d84a0a-1"></wk-login-modal>
+</view>

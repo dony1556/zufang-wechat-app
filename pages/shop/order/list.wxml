@@ -1,0 +1,30 @@
+<view class="page_box">
+    <view class="head_box"></view>
+    <view class="content_box">
+        <view bindtap="__e" class="order-list" data-event-opts="{{[ [ 'tap',[ [ 'order_detail',['$0'],[ [ ['orderList','out_trade_no',order.out_trade_no,'id'] ] ] ] ] ] ]}}" wx:for="{{orderList}}" wx:for-index="__i0__" wx:for-item="order" wx:key="out_trade_no">
+            <view class="order-head">
+                <view class="no">{{'订单号：'+order.out_trade_no}}</view>
+                <view class="state">{{order.status_name}}</view>
+            </view>
+            <view class="goods-order">
+                <view class="goods-info" wx:for="{{order.goods_list}}" wx:key="crate_time">
+                    <view class="img-box">
+                        <image class="img" mode="aspectFill" src="{{item.cover}}"></image>
+                    </view>
+                    <view class="info">
+                        <view class="title">{{item.title}}</view>
+                        <view class="price-number">
+                            <view class="number">{{'x'+item.number}}</view>
+                            <view class="price">{{'¥'+item.money+'+ '+item.credit+'积分'}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="order-num">
+                <view class="num">{{'共'+order.total_num+'个'}}</view>
+                <view class="fee">{{'合计：¥'+order.total_money+' + '+order.total_score+'积分'}}</view>
+            </view>
+            <view class="order-bottom"></view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,24 @@
+<view bindtap="__e" class="{{['cu-modal','bottom-modal',showModal?'show':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'hideModal',['$event'] ] ] ] ]}}">
+    <view catchtap="__e" class="cu-dialog shop-modal" data-event-opts="{{[ [ 'tap',[ [ '',['$event'] ] ] ] ]}}" style="background:none;">
+        <view class="modal-box page_box">
+            <view class="modal-head x-bc">
+                <text></text>
+                <text class="head-title">选择优惠券</text>
+                <text bindtap="__e" class="cuIcon-roundclosefill" data-event-opts="{{[ [ 'tap',[ [ 'hideModal',['$event'] ] ] ] ]}}"></text>
+            </view>
+            <view class="modal-content content_box y-f">
+                <label bindtap="__e" class="radio-item x-bc" data-event-opts="{{[ [ 'tap',[ [ 'selCoupon',[0] ] ] ] ]}}">
+                    <text class="coupon-title">不使用优惠券</text>
+                    <radio checked="{{radioId===0}}" class="{{['orange','coupon-radio',radioId===0?'checked':'']}}"></radio>
+                </label>
+                <label bindtap="__e" class="radio-item x-bc" data-event-opts="{{[ [ 'tap',[ [ 'selCoupon',[index+1] ] ] ] ]}}" wx:for="{{pickerData.couponList}}" wx:for-item="radio" wx:key="user_coupons_id">
+                    <text class="coupon-title">{{radio.name+':'+'满'+radio.enough+'减'+radio.amount}}</text>
+                    <radio checked="{{radioId===index+1}}" class="{{['orange','coupon-radio',radioId===index+1?'checked':'']}}"></radio>
+                </label>
+            </view>
+            <view class="modal-foot x-c">
+                <button bindtap="__e" class="cu-btn serve-btn" data-event-opts="{{[ [ 'tap',[ [ 'saveCoupon',['$event'] ] ] ] ]}}">确定</button>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,28 @@
+.page_box {
+  background: #fff;
+}
+.coupon-nav {
+  background: #fff;
+  height: 100rpx;
+}
+.coupon-nav .nav-item {
+  flex: 1;
+}
+.coupon-nav .nav-item .item-title {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #333;
+  line-height: 76rpx;
+}
+.coupon-nav .nav-item .nav-line {
+  width: 120rpx;
+  height: 4rpx;
+  background: #fff;
+}
+.coupon-nav .nav-item .line-active {
+  background: #e6b873;
+}
+.coupon-list {
+  margin: 30rpx 20rpx;
+}

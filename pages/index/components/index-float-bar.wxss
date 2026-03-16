@@ -1,0 +1,19 @@
+.bar-box {
+  position: fixed;
+  right: 30rpx;
+  bottom: 280rpx;
+  z-index: 99899;
+}
+.bar-box .bar-item {
+  position: relative;
+  width: 76rpx;
+  height: 76rpx;
+  margin-top: 16rpx;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 4rpx 4rpx 12rpx #d9d9d9;
+}
+.bar-box .bar-item .bar-img {
+  width: 76rpx;
+  height: 76rpx;
+}

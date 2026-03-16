@@ -1,0 +1,43 @@
+<view class="page_box">
+    <view class="head_box"></view>
+    <view class="content_box">
+        <view class="address-item x-f">
+            <label class="x-f flex-sub">
+                <text class="item-title">收货人：</text>
+                <input bindinput="__e" class="inp flex-sub" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','name','$event',[] ],['addressData'] ] ] ] ]}}" placeholder="请填写收货人姓名" type="text" value="{{addressData.name}}"></input>
+            </label>
+        </view>
+        <view class="address-item x-f">
+            <label class="x-f flex-sub">
+                <text class="item-title">手机号：</text>
+                <input bindinput="__e" class="inp flex-sub" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','phone','$event',[] ],['addressData'] ] ] ] ]}}" placeholder="请输入收货人手机号" type="number" value="{{addressData.phone}}"></input>
+            </label>
+        </view>
+        <view bindtap="__e" class="address-item x-f" data-event-opts="{{[ [ 'tap',[ [ 'selCity',['$event'] ] ] ] ]}}">
+            <label class="x-f flex-sub">
+                <text class="item-title">所在地区：</text>
+                <input bindinput="__e" class="inp flex-sub" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','area_text','$event',[] ] ] ] ] ]}}" disabled="{{true}}" placeholder="点击选择所在地区" type="text" value="{{area_text}}"></input>
+            </label>
+        </view>
+        <view class="area-box x-f">
+            <label class="x-f x-start">
+                <view class="area-item">
+                    <text class="item-title">详细地址：</text>
+                </view>
+                <textarea autoHeight="{{true}}" bindinput="__e" class="area-inp" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','address','$event',[] ],['addressData'] ] ] ] ]}}" placeholder="如道路、门牌号、小区、楼栋号、单元室等" placeholderClass="area-pl" type="text" value="{{addressData.address}}"></textarea>
+            </label>
+        </view>
+        <view class="default-box x-bc">
+            <text class="title">设为默认地址</text>
+            <switch bindtap="__e" checked="{{addressData.is_default}}" class="{{['olive','switch',addressData.is_default?'checked':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'onSwitch',['$event'] ] ] ] ]}}"></switch>
+        </view>
+    </view>
+    <view class="foot_box x-bc" wx:if="{{addressData.id!=0}}">
+        <button bindtap="__e" class="cu-btn delete-btn" data-event-opts="{{[ [ 'tap',[ [ 'deleteAddress',['$event'] ] ] ] ]}}">删除收货地址</button>
+        <button bindtap="__e" class="cu-btn save-btn" data-event-opts="{{[ [ 'tap',[ [ 'editAddress',['$event'] ] ] ] ]}}">保存收货地址</button>
+    </view>
+    <view class="foot_box " wx:else>
+        <button bindtap="__e" class="cu-btn add-btn" data-event-opts="{{[ [ 'tap',[ [ 'editAddress',['$event'] ] ] ] ]}}">保存收货地址</button>
+    </view>
+    <sh-picker bind:__l="__l" bind:onCancel="__e" bind:onConfirm="__e" class="vue-ref" data-event-opts="{{[ [ '^onCancel',[ ['onCancel'] ] ],[ '^onConfirm',[ ['onConfirm'] ] ] ]}}" data-ref="shoproCityPicker" pickerValueDefault="{{cityPickerValueDefault}}" vueId="a22d1cb4-1"></sh-picker>
+</view>

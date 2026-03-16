@@ -1,0 +1,33 @@
+<view class="page">
+    <view class="top-box">
+        <view class="scroll-box">
+            <scroll-view class="scroll" scrollX="true">
+                <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'selectTab',['$0'],[ [ ['tabList','',index,'id'] ] ] ] ] ] ]}}" wx:for="{{tabList}}" wx:key="index">
+                    <view class="{{['name',currentStatus==item.id?'active':'']}}">{{item.name}}</view>
+                    <view class="line" wx:if="{{currentStatus==item.id}}"></view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+    <view class="content-box">
+        <view class="yy-box">
+            <view class="item" wx:for="{{list}}" wx:key="index">
+                <view bindtap="__e" class="head" data-event-opts="{{[ [ 'tap',[ [ 'houseDetail',['$0'],[ [ ['list','',index] ] ] ] ] ] ]}}">
+                    <view class="title">{{item.title}}</view>
+                    <view class="iconfont icon-you" style="font-size:32rpx;color:#bcbcbc;"></view>
+                </view>
+                <view class="content">
+                    <view class="name">{{'预约人：'+item.name}}</view>
+                    <view class="time">{{'预约时间：'+item.time}}</view>
+                </view>
+                <view class="btn-box">
+                    <view bindtap="__e" class="tel-btn" data-event-opts="{{[ [ 'tap',[ [ 'call',['$0'],[ [ ['list','',index] ] ] ] ] ] ]}}">拨打电话</view>
+                    <view bindtap="__e" class="tel-btn" data-event-opts="{{[ [ 'tap',[ [ 'yySee',['$0'],[ [ ['list','',index,'id'] ] ] ] ] ] ]}}" wx:if="{{item.status==1}}">已带看房</view>
+                    <view bindtap="__e" class="cancel-btn" data-event-opts="{{[ [ 'tap',[ [ 'yyCancel',['$0'],[ [ ['list','',index,'id'] ] ] ] ] ] ]}}" wx:if="{{item.status==1}}">取消</view>
+                </view>
+            </view>
+        </view>
+        <wk-empty bind:__l="__l" emptyData="{{emptyData}}" vueId="6d609c4c-1" wx:if="{{$root.g0==0}}"></wk-empty>
+    </view>
+    <view class="footer-box"></view>
+</view>

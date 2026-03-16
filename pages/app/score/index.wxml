@@ -1,0 +1,22 @@
+<view class="page_box">
+    <view class="head_box"></view>
+    <view class="content_box">
+        <scroll-view bindscrolltolower="__e" class="scroll-box" data-event-opts="{{[ [ 'scrolltolower',[ [ 'loadMore',['$event'] ] ] ] ]}}" enableBackToTop="{{true}}" scrollWithAnimation="{{true}}" scrollY="true">
+            <sh-score-search bind:__l="__l" vueId="e2e270f0-1"></sh-score-search>
+            <sh-score-banner bind:__l="__l" value="{{banner_list}}" vueId="e2e270f0-2" wx:if="{{$root.g0}}"></sh-score-banner>
+            <sh-score-menu bind:__l="__l" value="{{cat_list}}" vueId="e2e270f0-3" wx:if="{{$root.g1}}"></sh-score-menu>
+            <view class="goods-box" wx:if="{{$root.g2}}">
+                <view class="goods-list" wx:if="{{goods}}" wx:for="{{scoreList}}" wx:for-index="__i0__" wx:for-item="goods" wx:key="id">
+                    <sh-score-goods bind:__l="__l" scoreData="{{goods}}" vueId="{{'e2e270f0-4-'+__i0__}}"></sh-score-goods>
+                </view>
+            </view>
+            <wk-empty bind:__l="__l" emptyData="{{emptyData}}" vueId="e2e270f0-5" wx:if="{{$root.g3}}"></wk-empty>
+            <view class="{{['cu-load','text-gray',loadStatus]}}" wx:if="{{$root.g4}}"></view>
+            <wk-skeletons bind:__l="__l" type="detail" vueId="e2e270f0-6" wx:if="{{isLoading}}"></wk-skeletons>
+        </scroll-view>
+    </view>
+    <view class="foot_box"></view>
+    <shopro-tabbar bind:__l="__l" vueId="e2e270f0-7"></shopro-tabbar>
+    <shopro-float-btn bind:__l="__l" vueId="e2e270f0-8"></shopro-float-btn>
+    <shopro-login-modal bind:__l="__l" vueId="e2e270f0-9"></shopro-login-modal>
+</view>

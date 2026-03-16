@@ -1,0 +1,322 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/index/select-list",
+        "pages/index/select-city",
+        "pages/index/search",
+        "pages/index/interest",
+        "pages/index/my",
+        "pages/index/gfzg",
+        "pages/index/pc",
+        "pages/index/notice",
+        "pages/index/about-us",
+        "pages/index/agent-list",
+        "pages/index/agent-detail",
+        "pages/index/level-menu",
+        "pages/index/web-view",
+        "pages/index/house-pub"
+    ],
+    "window": {
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#FFFFFF",
+        "backgroundColor": "#F8F8F8",
+        "onReachBottomDistance": 50
+    },
+    "tabBar": {
+        "color": "#333",
+        "selectedColor": "#a8700d",
+        "backgroundColor": "#ffffff",
+        "borderStyle": "black",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": " ",
+                "iconPath": "static/imgs/empty/emptyTabar.png",
+                "selectedIconPath": "static/imgs/empty/emptyTabar.png"
+            },
+            {
+                "pagePath": "pages/index/house-pub",
+                "text": " ",
+                "iconPath": "static/imgs/empty/emptyTabar.png",
+                "selectedIconPath": "static/imgs/empty/emptyTabar.png"
+            },
+            {
+                "pagePath": "pages/index/my",
+                "text": " ",
+                "iconPath": "static/imgs/empty/emptyTabar.png",
+                "selectedIconPath": "static/imgs/empty/emptyTabar.png"
+            }
+        ]
+    },
+    "subPackages": [
+        {
+            "root": "pages/app/",
+            "pages": [
+                "coupon/list",
+                "coupon/detail",
+                "score/index",
+                "score/list"
+            ]
+        },
+        {
+            "root": "pages/goods/",
+            "pages": [
+                "list",
+                "detail/index"
+            ]
+        },
+        {
+            "root": "pages/admin/",
+            "pages": [
+                "house/check-list",
+                "yy/list"
+            ]
+        },
+        {
+            "root": "pages/zs/",
+            "pages": [
+                "index",
+                "knowledge/detail",
+                "pc/detail",
+                "mmlc/detail",
+                "mmlc/index"
+            ]
+        },
+        {
+            "root": "pages/chat/",
+            "pages": [
+                "list",
+                "index"
+            ]
+        },
+        {
+            "root": "pages/order/",
+            "pages": [
+                "confirm",
+                "detail",
+                "list",
+                "add-comment",
+                "express",
+                "refund",
+                "payment/method",
+                "payment/result"
+            ]
+        },
+        {
+            "root": "pages/calculator/",
+            "pages": [
+                "index",
+                "detail",
+                "pre-index",
+                "pre-detail",
+                "yg"
+            ]
+        },
+        {
+            "root": "pages/agent/",
+            "pages": [
+                "index",
+                "menu/index",
+                "menu/log",
+                "basic-info",
+                "select-store",
+                "yy/list",
+                "staff/list",
+                "staff/detail",
+                "house/list",
+                "house/pub",
+                "help/list",
+                "help/detail",
+                "treaty",
+                "register"
+            ]
+        },
+        {
+            "root": "pages/distribute/",
+            "pages": [
+                "index",
+                "see/list",
+                "team-list",
+                "order-list",
+                "treaty",
+                "mx",
+                "tx",
+                "tx-mx",
+                "add"
+            ]
+        },
+        {
+            "root": "pages/article/",
+            "pages": [
+                "index",
+                "detail"
+            ]
+        },
+        {
+            "root": "pages/work/",
+            "pages": [
+                "index",
+                "house/list",
+                "register",
+                "treaty",
+                "house-pub",
+                "user-log",
+                "yy/list",
+                "help/list",
+                "help/detail",
+                "share-log"
+            ]
+        },
+        {
+            "root": "pages/community/",
+            "pages": [
+                "index",
+                "detail",
+                "pub"
+            ]
+        },
+        {
+            "root": "pages/shop/",
+            "pages": [
+                "index",
+                "goods/detail",
+                "order/confirm",
+                "order/list",
+                "address/list",
+                "address/edit"
+            ]
+        },
+        {
+            "root": "pages/house/",
+            "pages": [
+                "tuan/index",
+                "tuan/detail",
+                "want/rent-list",
+                "want/rent-my",
+                "want/buy-list",
+                "want/buy-my",
+                "lethouse/index",
+                "lethouse/list",
+                "lethouse/select",
+                "lethouse/detail",
+                "oldhouse/index",
+                "oldhouse/list",
+                "oldhouse/detail",
+                "oldhouse/select",
+                "newhouse/index",
+                "newhouse/info",
+                "newhouse/list",
+                "newhouse/detail",
+                "newhouse/hx-detail",
+                "newhouse/hx-list",
+                "shophouse/index",
+                "shophouse/list",
+                "shophouse/detail",
+                "officehouse/index",
+                "officehouse/list",
+                "officehouse/detail",
+                "land/index",
+                "land/list",
+                "land/detail",
+                "park/index",
+                "park/list",
+                "park/detail",
+                "hotel/index",
+                "hotel/list",
+                "hotel/detail",
+                "warehouse/index",
+                "warehouse/list",
+                "warehouse/detail",
+                "workhouse/index",
+                "workhouse/list",
+                "workhouse/detail",
+                "near",
+                "report",
+                "map-search-select",
+                "map-search"
+            ]
+        },
+        {
+            "root": "pages/public/",
+            "pages": [
+                "friend-circle/add",
+                "friend-circle/index",
+                "friend-circle/my",
+                "help/list",
+                "help/detail",
+                "news-goods/index",
+                "news-goods/my",
+                "news-goods/add",
+                "news-goods/detail",
+                "news-zp/index",
+                "news-zp/my",
+                "news-zp/add",
+                "news-zp/detail",
+                "kefu/index",
+                "richtext",
+                "webview",
+                "feedback",
+                "forgot",
+                "login",
+                "register",
+                "poster/index",
+                "faq"
+            ]
+        },
+        {
+            "root": "pages/user/",
+            "pages": [
+                "house/index",
+                "vip/buy-log",
+                "pub/community-select",
+                "pub/city-select",
+                "top/menu-list",
+                "center/index",
+                "pub/lethouse/index",
+                "pub/oldhouse/index",
+                "pub/shophouse/index",
+                "pub/officehouse/index",
+                "pub/want/index",
+                "pub/land/index",
+                "pub/hotel/index",
+                "pub/warehouse/index",
+                "pub/workhouse/index",
+                "pub/park/index",
+                "pub/treaty",
+                "collect/list",
+                "yy/list",
+                "log",
+                "sign/index",
+                "address/edit",
+                "address/list",
+                "set",
+                "edit-password",
+                "favorite",
+                "info",
+                "edit-phone",
+                "wallet/index",
+                "wallet/bind-bank",
+                "wallet/sz-log",
+                "wallet/tx-log",
+                "wallet/score-balance"
+            ]
+        }
+    ],
+    "permission": {
+        "scope.userLocation": {
+            "desc": "获取城市定位"
+        }
+    },
+    "preloadRule": {
+        "pages/index/index": {
+            "network": "all",
+            "packages": [
+                "pages/house"
+            ]
+        }
+    },
+    "requiredPrivateInfos": [
+        "getLocation",
+        "chooseLocation"
+    ]
+}

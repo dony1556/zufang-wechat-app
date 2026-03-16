@@ -1,0 +1,135 @@
+<view>
+    <view class="kefu_container">
+        <view class="error_tips" wx:if="{{errorTips}}">{{errorTips}}</view>
+        <view class="notice x-start" wx:if="{{config.announcement&&errorTips==''}}">
+            <text>{{config.announcement}}</text>
+            <text bindtap="__e" class="close_notice cuIcon-roundclose y-end" data-event-opts="{{[ [ 'tap',[ [ 'close_notice',['$event'] ] ] ] ]}}"></text>
+        </view>
+        <view class="leave_message" wx:if="{{showLeaveMessage}}">
+            <form>
+                <view class="form-group">
+                    <label class="control-label" for="c-name">
+                        <view class="label-title">姓名</view>
+                        <input bindinput="__e" class="form-control" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','name','$event',[] ],['leaveMessage'] ],[ 'leave_message',['$event'] ] ] ] ]}}" id="c-name" name="name" placeholder="请输入您的姓名" placeholderStyle="color:#B1B3C7" type="text" value="{{leaveMessage.name}}"></input>
+                    </label>
+                </view>
+                <view class="form-group">
+                    <label class="control-label" for="c-contact">
+                        <view class="label-title">联系方式</view>
+                    </label>
+                    <input bindinput="__e" class="form-control" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','contact','$event',[] ],['leaveMessage'] ],[ 'leave_message',['$event'] ] ] ] ]}}" id="c-contact" name="contact" placeholder="请输入手机/QQ/微信号" placeholderStyle="color:#B1B3C7" type="text" value="{{leaveMessage.contact}}"></input>
+                </view>
+                <view class="form-group">
+                    <label class="control-label" for="c-message">
+                        <view class="label-title">留言内容</view>
+                    </label>
+                    <textarea bindinput="__e" class="form-control" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','message','$event',[] ],['leaveMessage'] ],[ 'leave_message',['$event'] ] ] ] ]}}" id="c-message" name="message" placeholder="遇到的问题、所需服务、产品等，我们将尽快与您取得联系" placeholderStyle="color:#B1B3C7" rows="5" style="height:240rpx;" value="{{leaveMessage.message}}"></textarea>
+                </view>
+                <button bindtap="__e" class="leave_success cu-btn" data-event-opts="{{[ [ 'tap',[ [ 'post_leave_message',['$event'] ] ] ] ]}}" type="button">确认留言</button>
+            </form>
+        </view>
+        <view class="content_wrapper" style="{{'height:'+'calc(100vh - '+writeBottom+'px)'+';'}}" wx:if="{{!showLeaveMessage}}">
+            <view class="chat_wrapper" style="{{'height:'+'calc(100% - '+wrapperHeight+'px)'+';'}}">
+                <scroll-view bindscrolltoupper="__e" bindtap="__e" data-event-opts="{{[ [ 'scrolltoupper',[ [ 'wrapper_scrolltoupper',['$event'] ] ] ],[ 'tap',[ [ 'tap_scroll_view',['$event'] ] ] ] ]}}" scrollIntoView="{{scrollIntoFooter}}" scrollWithAnimation="{{true}}" scrollY="{{true}}">
+                    <block wx:for="{{messageList}}" wx:key="index">
+                        <view class="status">
+                            <text>{{item.datetime}}</text>
+                        </view>
+                        <block wx:for="{{item.data}}" wx:for-index="__i0__" wx:for-item="message" wx:key="id">
+                            <view class="status" wx:if="{{message.message_type==3}}">
+                                <text>{{message.message}}</text>
+                            </view>
+                            <view class="{{['message-item','x-f',message.sender=='me'?'message__right':'message__left']}}">
+                                <view class="head-img">
+                                    <image mode class="head-img" src="/static/imgs/kefu/sys_head.png" wx:if="{{message.sender=='you'}}"></image>
+                                </view>
+                                <view class="{{['bubble',message.sender=='me'?'me':'you']}}" wx:if="{{message.message_type!=3}}">
+                                    <uni-parser bind:__l="__l" bind:imgtap="__e" data-event-opts="{{[ [ '^imgtap',[ ['message_img_preview'] ] ] ]}}" html="{{message.message}}" tagStyle="{{tagStyleData}}" vueId="{{'45f26ffd-1-'+index+'-'+__i0__}}" wx:if="{{message.message_type==0}}"></uni-parser>
+                                    <uni-parser bind:__l="__l" html="{{'<a target=_blank href='+message.message+'>'+message.message+'</a>'}}" vueId="{{'45f26ffd-2-'+index+'-'+__i0__}}" wx:if="{{message.message_type==2}}"></uni-parser>
+                                    <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'preview_img',['$0'],[ [ ['messageList','',index],['data','id',message.id,'message'] ] ] ] ] ] ]}}" mode="widthFix" src="{{message.message}}" wx:if="{{message.message_type==1}}"></image>
+                                    <view class="project_item" style="margin:0;" wx:if="{{message.message_type==4||message.message_type==5}}">
+                                        <image src="{{message.message.logo}}"></image>
+                                        <view class="project_item_body y-bc">
+                                            <view>
+                                                <view class="project_item_title more-t">{{message.message.subject}}</view>
+                                                <view class="project_item_note one-t" style="width:280rpx;margin-right:-20rpx;" wx:if="{{message.message.note}}">{{message.message.note}}</view>
+                                            </view>
+                                            <view class="project_item_price">
+                                                <text class="price" wx:if="{{message.message.price}}">{{'￥'+message.message.price}}</text>
+                                                <text class="unit" wx:if="{{message.message.number}}">{{'x'+message.message.number}}</text>
+                                            </view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="head-img">
+                                    <image mode class="head-img" src="{{userInfo.avatar}}" wx:if="{{message.sender=='me'}}"></image>
+                                </view>
+                            </view>
+                        </block>
+                    </block>
+                    <view id="wrapper_footer"></view>
+                </scroll-view>
+            </view>
+            <view class="write" style="{{'bottom:'+writeBottom+'px'+';'}}">
+                <view class="widget_textarea">
+                    <textarea adjustPosition="{{false}}" autoHeight="{{false}}" bindblur="__e" bindfocus="__e" bindinput="__e" class="kefu_message" cursorSpacing="{{14}}" data-event-opts="{{[ [ 'blur',[ [ 'kefu_message_blur',['$event'] ] ] ],[ 'input',[ [ 'textarea_input',['$event'] ] ] ],[ 'focus',[ [ 'textarea_focus',['$event'] ] ] ] ]}}" fixed="{{true}}" focus="{{kefuMessageFocus}}" maxlength="-1" placeholder="请输入你要咨询的问题" placeholderStyle="color:#999" showConfirmBar="{{false}}" value="{{kefuMessage}}"></textarea>
+                </view>
+                <view class="write_right" style="{{'flex:'+(showSendButton?3:2)+';'}}">
+                    <text bindtap="__e" class="toolbar_icon smiley" data-event-opts="{{[ [ 'tap',[ [ 'show_tool',['smiley'] ] ] ] ]}}" style="{{'background:'+'url('+config.toolbar.expression.icon_image+') no-repeat'+';'+'background-size:'+'100% 100%'+';'}}" wx:if="{{config.toolbar&&config.toolbar.expression}}"></text>
+                    <button bindtap="__e" class="send_btn" data-event-opts="{{[ [ 'tap',[ [ 'send_message',['$0',0],['kefuMessage'] ] ] ] ]}}" hoverClass="send_btn_hover" wx:if="{{showSendButton}}">发送</button>
+                    <text bindtap="__e" class="toolbar_icon attach" data-event-opts="{{[ [ 'tap',[ [ 'show_tool',['more'] ] ] ] ]}}" style="{{'background:'+'url('+attachBackground+') no-repeat'+';'+'background-size:'+'100% 100%'+';'}}" wx:if="{{!showSendButton&&attachBackground}}"></text>
+                </view>
+            </view>
+            <view class="footer_div" wx:if="{{showTool}}">
+                <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'select_expression',['$0'],[ [ ['expressionData','',index,'title'] ] ] ] ] ] ]}}" src="{{item.src}}" wx:if="{{showTool=='smiley'}}" wx:for="{{expressionData}}" wx:key="index"></image>
+                <view class="toolbar" wx:if="{{showTool=='more'}}">
+                    <view bindtap="__e" class="toolbar_item" data-event-opts="{{[ [ 'tap',[ [ 'show_select_model',['order'] ] ] ] ]}}" wx:if="{{config.toolbar&&config.toolbar.order}}">
+                        <image class="tool-img" src="/static/imgs/kefu/kefu_order.png"></image>
+                        <view>{{config.toolbar.order.title}}</view>
+                    </view>
+                    <view bindtap="__e" class="toolbar_item" data-event-opts="{{[ [ 'tap',[ [ 'show_select_model',['goods'] ] ] ] ]}}" wx:if="{{config.toolbar&&config.toolbar.goods}}">
+                        <image class="tool-img" src="/static/imgs/kefu/kefu_goods.png"></image>
+                        <view>{{config.toolbar.goods.title}}</view>
+                    </view>
+                    <view bindtap="__e" class="toolbar_item" data-event-opts="{{[ [ 'tap',[ [ 'upload_file',['$event'] ] ] ] ]}}" wx:if="{{config.toolbar&&config.toolbar.file}}">
+                        <image class="tool-img" src="/static/imgs/kefu/kefu_file.png"></image>
+                        <view>{{config.toolbar.file.title}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="select_model" wx:if="{{selectModel}}">
+            <view class="x-bc select_model--head">
+                <view class="select-title-box y-f">
+                    <view class="title-text">{{''+selectModelType[selectModel]+''}}</view>
+                    <text class="title-line"></text>
+                </view>
+                <view bindtap="__e" class="close_select" data-event-opts="{{[ [ 'tap',[ [ 'show_select_model',[false] ] ] ] ]}}">
+                    <text class="cuIcon-roundclose"></text>
+                </view>
+            </view>
+            <view class="project_list">
+                <radio-group bindchange="__e" data-event-opts="{{[ [ 'change',[ [ 'select_done',['$event'] ] ] ] ]}}" wx:if="{{$root.g0>0}}">
+                    <label class="project_item" wx:for="{{$root.l0}}" wx:key="index">
+                        <image src="{{item.$orig.logo}}"></image>
+                        <view class="project_item_body y-bc">
+                            <view>
+                                <view class="project_item_title more-t">{{item.$orig.subject}}</view>
+                                <view class="project_item_note one-t" style="width:470rpx;" wx:if="{{item.$orig.note}}">{{item.$orig.note}}</view>
+                            </view>
+                            <view class="project_item_price">
+                                <text class="price" wx:if="{{item.$orig.price}}">{{item.$orig.price}}</text>
+                                <text class="unit" wx:if="{{item.$orig.number}}">{{'x'+item.$orig.number}}</text>
+                            </view>
+                        </view>
+                        <radio checked="{{false}}" hide="{{true}}" style="opacity:0;width:0;height:0;" value="{{item.g1}}"></radio>
+                    </label>
+                </radio-group>
+                <view class="select_model_no_data" wx:if="{{$root.g2<=0}}">
+                    <text>没有更多记录了...</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="mask"></view>
+</view>

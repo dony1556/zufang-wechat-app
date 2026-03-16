@@ -1,0 +1,124 @@
+.top-back {
+  height: 300rpx;
+  border-bottom-left-radius: 120rpx 60rpx;
+  border-bottom-right-radius: 120rpx 60rpx;
+}
+.top-box {
+  margin-top: -300rpx;
+}
+.top {
+  display: flex;
+  align-items: center;
+  padding: 30rpx 30rpx;
+}
+.top .user-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border: 2rpx solid #fff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.top .mum-box {
+  flex: 1;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+.top .integral-box {
+  width: 160rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.top .integral-box .iconfont {
+  font-size: 36rpx;
+  color: gold;
+}
+.top .integral-box .text {
+  font-size: 22rpx;
+  margin-top: 8rpx;
+}
+.sign-box {
+  width: 710rpx;
+  margin-left: 20rpx;
+  border-radius: 12rpx;
+  padding: 30rpx 20rpx;
+  background-color: #fff;
+}
+.sign-box .head-box {
+  font-size: 28rpx;
+  border-bottom: 1rpx solid #eee;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sign-box .head-box .head {
+  font-size: 30rpx;
+  font-weight: 700;
+}
+.sign-box .head-box .intro {
+  font-size: 24rpx;
+}
+.sign-box .list {
+  display: flex;
+  padding: 60rpx 0;
+}
+.sign-box .list .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+.sign-box .list .item .num {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  background-color: #e4e4e2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 24rpx;
+}
+.sign-box .list .item .num.on {
+  background-color: #02af11;
+}
+.sign-box .list .item .text {
+  font-size: 24rpx;
+  margin-top: 20rpx;
+}
+.sign-box .list .heng {
+  width: 70rpx;
+  height: 4rpx;
+  margin-top: 38rpx;
+  background-color: #d1d0cb;
+}
+.sign-box .sign-btn {
+  margin-top: 30rpx;
+  background-color: #21c795;
+  border-radius: 30rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.sign-box .sign-btn2 {
+  margin-top: 30rpx;
+  background-color: rgba(2, 177, 16, 0.6);
+  border-radius: 30rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.ad-box {
+  padding: 20rpx 50rpx;
+}
+.ad-box .img {
+  width: 100%;
+}
+.house-box {
+  margin-top: 50rpx;
+}

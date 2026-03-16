@@ -1,0 +1,52 @@
+.page .body-box {
+  padding-top: 20rpx;
+}
+.page .body-box .swiper-box {
+  height: 400rpx;
+}
+.page .body-box .swiper-box .slide-swiper {
+  width: 100%;
+  height: 400rpx;
+  position: relative;
+  margin-top: 12rpx;
+}
+.page .body-box .swiper-box .slide-swiper .swiper-item {
+  width: 100%;
+  font-size: 0;
+  line-height: 0;
+}
+.page .body-box .swiper-box .slide-swiper .swiper-item .item {
+  width: 100%;
+  height: 100%;
+  padding: 0 20rpx;
+}
+.page .body-box .swiper-box .slide-swiper .swiper-item .item .img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12rpx;
+}
+.page .body-box .btn-box {
+  padding: 70rpx 20rpx;
+}
+.page .body-box .btn-box .btn {
+  width: 500rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  text-align: center;
+  border-radius: 38rpx;
+  background-color: #f50;
+  color: #fff;
+  margin: 40rpx auto 0rpx auto;
+  box-shadow: 2rpx 2rpx 6rpx #c9c9c9;
+}
+.page .body-box .btn-box .btn2 {
+  width: 500rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  text-align: center;
+  border-radius: 38rpx;
+  background-color: #0af;
+  color: #fff;
+  margin: 90rpx auto 0rpx auto;
+  box-shadow: 2rpx 2rpx 6rpx #c9c9c9;
+}

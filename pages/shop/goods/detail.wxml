@@ -1,0 +1,60 @@
+<view class="page">
+    <view class="top-box"></view>
+    <view class="content-box">
+        <view class="swiper-box">
+            <swiper autoplay="true" class="swiper" indicatorDots="true">
+                <swiper-item wx:for="{{goods.pictures}}" wx:key="index">
+                    <image class="img" mode="aspectFill" src="{{item}}"></image>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view class="info-box goods-info">
+            <view class="left">
+                <view class="price">{{goods.credit+'积分 + ￥'+goods.money}}</view>
+                <view class="title">{{goods.title}}</view>
+            </view>
+        </view>
+        <view class="info2">
+            <view>
+                <text>运费：</text>
+                <text>{{'￥'+goods.freight}}</text>
+            </view>
+            <view>
+                <text>兑换次数：</text>
+                <text>{{goods.sales}}</text>
+            </view>
+            <view>
+                <text>库存：</text>
+                <text>{{goods.stores}}</text>
+            </view>
+        </view>
+        <view class="description">
+            <view class="title">———— 商品详情 ————</view>
+            <view class="content">
+                <text>{{goods.content}}</text>
+                <view class="img-box">
+                    <image class="img" mode="widthFix" src="{{item}}" wx:for="{{goods.content_imgs}}" wx:key="index"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="footer-box">
+        <view class="footer">
+            <view class="icons">
+                <view bindtap="__e" class="home" data-event-opts="{{[ [ 'tap',[ [ 'backHome',['$event'] ] ] ] ]}}">
+                    <view class="iconfont icon-shouye " style="font-size:36rpx;color:#828282;"></view>
+                    <view class="text">首页</view>
+                </view>
+                <view class="kefu">
+                    <view class="iconfont icon-kefu  icon" style="font-size:36rpx;color:#828282;"></view>
+                    <view class="text">客服</view>
+                    <button class="system-buttom" openType="contact"></button>
+                </view>
+            </view>
+            <view class="btn">
+                <view bindtap="__e" class="buy" data-event-opts="{{[ [ 'tap',[ [ 'buyNow',['$event'] ] ] ] ]}}">立即兑换</view>
+            </view>
+        </view>
+    </view>
+    <wk-skeletons bind:__l="__l" type="detail" vueId="4ec14d68-1" wx:if="{{isLoading}}"></wk-skeletons>
+</view>

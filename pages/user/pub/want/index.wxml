@@ -1,0 +1,88 @@
+<view class="page">
+    <view class="top-box"></view>
+    <view class="body-box">
+        <view class="out-box">
+            <view bindtap="__e" class="{{['item',item.value==want_type?'on':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selectWantType',['$0'],[ [ ['wantTypeList','value',item.value,'value'] ] ] ] ] ] ]}}" wx:for="{{wantTypeList}}" wx:key="value">{{''+item.name+''}}</view>
+        </view>
+        <view class="price-box" wx:if="{{want_type==1}}">
+            <view class="title">
+                <view class="line"></view>
+                <view class="txt">租房预算</view>
+            </view>
+            <view class="content">
+                <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','start_rent','$event',[] ],['form'] ] ] ] ]}}" type="number" value="{{form.start_rent}}"></input>
+                <text class="unit">~</text>
+                <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','end_rent','$event',[] ],['form'] ] ] ] ]}}" type="number" value="{{form.end_rent}}"></input>
+                <text class="unit">元/月</text>
+            </view>
+        </view>
+        <view class="price-box" wx:if="{{want_type==2}}">
+            <view class="title">
+                <view class="line"></view>
+                <view class="txt">买房预算</view>
+            </view>
+            <view class="content">
+                <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','start_price','$event',[] ],['form'] ] ] ] ]}}" type="number" value="{{form.start_price}}"></input>
+                <text class="unit">~</text>
+                <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','end_price','$event',[] ],['form'] ] ] ] ]}}" type="number" value="{{form.end_price}}"></input>
+                <text class="unit">万元</text>
+            </view>
+        </view>
+        <view class="tag-box" wx:if="{{want_type==1}}">
+            <view class="title">
+                <view class="line"></view>
+                <view class="txt">选择符合您的标签</view>
+            </view>
+            <view class="content">
+                <view bindtap="__e" class="{{['cu-tag','radius','',item.g0>-1?'bg-green':'line-green']}}" data-event-opts="{{[ [ 'tap',[ [ 'tagClick',[index] ] ] ] ]}}" wx:for="{{$root.l0}}" wx:key="id">{{item.$orig.name}}</view>
+            </view>
+        </view>
+        <view class="tag-box" wx:if="{{want_type==2}}">
+            <view class="title">
+                <view class="line"></view>
+                <view class="txt">选择符合您的标签</view>
+            </view>
+            <view class="content">
+                <view bindtap="__e" class="{{['cu-tag','radius','',item.g1>-1?'bg-green':'line-green']}}" data-event-opts="{{[ [ 'tap',[ [ 'tagClick2',[index] ] ] ] ]}}" wx:for="{{$root.l1}}" wx:key="id">{{item.$orig.name}}</view>
+            </view>
+        </view>
+        <view class="yx-box">
+            <view class="title">
+                <view class="line"></view>
+                <view class="txt">基础意向</view>
+            </view>
+            <view class="content">
+                <view class="area">
+                    <text class="name">意向区域</text>
+                    <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','area','$event',[] ],['form'] ] ] ] ]}}" placeholder="xx路xx商圈" type="text" value="{{form.area}}"></input>
+                </view>
+                <view class="detail">
+                    <view class="name">要求</view>
+                    <textarea bindinput="__e" class="textarea" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','detail','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入的你详细要求" value="{{form.detail}}"></textarea>
+                </view>
+            </view>
+        </view>
+        <view class="lx-box">
+            <view class="title">
+                <view class="line"></view>
+                <view class="txt">联系方式</view>
+            </view>
+            <view class="content">
+                <view class="item">
+                    <text class="name" decode="{{true}}">称    呼</text>
+                    <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','name','$event',[] ],['form'] ] ] ] ]}}" placeholder="怎么称呼您" type="text" value="{{form.name}}"></input>
+                </view>
+                <view class="item">
+                    <text class="name">手机号</text>
+                    <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','tel','$event',[] ],['form'] ] ] ] ]}}" placeholder="您的联系电话" value="{{form.tel}}"></input>
+                </view>
+            </view>
+        </view>
+        <view class="b-box">
+            <form bindsubmit="__e" class="form" data-event-opts="{{[ [ 'submit',[ [ 'formSubmit',['$event'] ] ] ] ]}}">
+                <button class="submit" formType="submit" type="primary">确认</button>
+            </form>
+        </view>
+    </view>
+    <wk-login-modal bind:__l="__l" vueId="0438bb46-1"></wk-login-modal>
+</view>

@@ -1,0 +1,36 @@
+.page {
+  background-color: #fff;
+}
+.page .log-box {
+  padding: 10rpx 10rpx;
+}
+.page .log-box .item {
+  padding: 20rpx 20rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+  display: flex;
+}
+.page .log-box .item .img-box {
+  width: 100rpx;
+  height: 100rpx;
+}
+.page .log-box .item .img-box .img {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.page .log-box .item .right {
+  margin-left: 20rpx;
+}
+.page .log-box .item .right .name {
+  font-size: 24rpx;
+  font-weight: 700;
+}
+.page .log-box .item .right .title {
+  font-size: 26rpx;
+  margin-top: 16rpx;
+}
+.page .log-box .item .right .time {
+  font-size: 22rpx;
+  color: #dbdbdb;
+  margin-top: 16rpx;
+}

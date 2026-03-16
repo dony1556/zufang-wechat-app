@@ -1,0 +1,38 @@
+<view class="page_box">
+    <view class="head_box">
+        <cu-custom bind:__l="__l" isBack="{{true}}" vueId="cce220ba-1" vueSlots="{{['backText','content']}}">
+            <view slot="backText">优惠券详情</view>
+            <view slot="content"></view>
+        </cu-custom>
+    </view>
+    <view class="content_box">
+        <scroll-view bindscroll="__e" class="scroll-box" data-event-opts="{{[ [ 'scroll',[ [ 'onScroll',['$event'] ] ] ] ]}}" enableBackToTop="{{true}}" scrollIntoView="{{scrollId}}" scrollWithAnimation="{{true}}" scrollY="true">
+            <view class="coupon-box">
+                <view class="top y-f">
+                    <view class="img-box x-c">
+                        <image mode class="coupon-img" src="http://shopro.7wpp.com/imgs/coupon.png"></image>
+                    </view>
+                    <view class="title">{{couponDetail.amount+'元优惠券'}}</view>
+                    <view class="tip">{{'满'+couponDetail.enough+'元可用'}}</view>
+                    <button bindtap="__e" class="cu-btn use-btn" data-event-opts="{{[ [ 'tap',[ [ 'goScroll',['$event'] ] ] ] ]}}">{{state===2?'已使用':'立即使用'}}</button>
+                    <button class="cu-btn fail-btn" wx:if="{{couponGoods.usetimeend-nowTime<=0}}">已失效</button>
+                    <view class="time" wx:if="{{couponDetail.usetime}}">{{'有效期：'+$root.g0+' 至 '+$root.g1+''}}</view>
+                </view>
+                <view class="bottom y-start">
+                    <view class="notice-item y-start">
+                        <view class="notice-title">优惠券说明</view>
+                        <text class="notice-detail">{{couponDetail.description}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="coupon-goods" wx:if="{{$root.g2}}">
+                <view class="coupon-goods-title x-f" id="couponGoods">适用商品</view>
+                <view class="goods-list" wx:for="{{couponGoods}}" wx:for-index="__i0__" wx:for-item="goods" wx:key="id"></view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="foot_box"></view>
+    <shopro-tabbar bind:__l="__l" vueId="cce220ba-2"></shopro-tabbar>
+    <shopro-float-btn bind:__l="__l" vueId="cce220ba-3"></shopro-float-btn>
+    <shopro-login-modal bind:__l="__l" vueId="cce220ba-4"></shopro-login-modal>
+</view>

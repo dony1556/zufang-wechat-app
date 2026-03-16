@@ -1,0 +1,37 @@
+<view class="page_box">
+    <view class="head_box"></view>
+    <view class="content_box">
+        <view class="goods-box"></view>
+        <view bindtap="__e" class="goods-item x-bc" data-event-opts="{{[ [ 'tap',[ [ 'onSel',[1] ] ] ] ]}}">
+            <text class="item-title">货物状态</text>
+            <text class="cuIcon-right"></text>
+        </view>
+        <view bindtap="__e" class="goods-item x-bc" data-event-opts="{{[ [ 'tap',[ [ 'onSel',[2] ] ] ] ]}}">
+            <text class="item-title">退款原因</text>
+            <text class="cuIcon-right"></text>
+        </view>
+        <view class="goods-item x-f">
+            <text class="item-title">退款金额：</text>
+            <text class="price">￥16.00</text>
+        </view>
+        <view class="explain goods-item x-f">
+            <text class="item-title">说明：</text>
+            <input class="flex-sub" placeholder="选填" value=""></input>
+        </view>
+        <view class="upload-img">
+            <text class="upload-title">上传凭证</text>
+            <view class="img-box">
+                <view class="preview-box" wx:for="{{imgList}}" wx:key="index">
+                    <image class="preview-img" mode="aspectFill" src="{{imgList[index]}}"></image>
+                    <text bindtap="__e" class="cuIcon-close" data-event-opts="{{[ [ 'tap',[ [ 'DelImg',[index] ] ] ] ]}}"></text>
+                </view>
+                <view bindtap="__e" class="choose-img x-c" data-event-opts="{{[ [ 'tap',[ [ 'chooseImg',['$event'] ] ] ] ]}}" wx:if="{{$root.g0<10}}">
+                    <text class="cuIcon-cameraadd"></text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="foot_box x-c">
+        <button class="cu-btn sub-btn">提交</button>
+    </view>
+</view>

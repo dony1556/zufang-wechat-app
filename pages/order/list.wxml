@@ -1,0 +1,53 @@
+<view class="page_box">
+    <view class="head_box">
+        <view class="order-nav x-f">
+            <view bindtap="__e" class="nav-item y-f" data-event-opts="{{[ [ 'tap',[ [ 'onNav',['$0'],[ [ ['orderState','id',nav.id,'id'] ] ] ] ] ] ]}}" wx:for="{{orderState}}" wx:for-index="__i0__" wx:for-item="nav" wx:key="id">
+                <view class="item-title">{{nav.title}}</view>
+                <text class="{{['nav-line',status==nav.id?'line-active':'']}}"></text>
+            </view>
+        </view>
+    </view>
+    <view class="content_box">
+        <view catchtap="__e" class="order-list" data-event-opts="{{[ [ 'tap',[ [ 'jump',[ '/pages/order/detail',[ 'o',['id',order.$orig.id] ] ] ] ] ] ]}}" wx:for="{{$root.l2}}" wx:for-index="__i1__" wx:for-item="order" wx:key="id">
+            <view class="order-head x-bc">
+                <text class="no">{{'订单编号：'+order.$orig.order_no}}</text>
+                <text class="state">{{order.$orig.status_name}}</text>
+            </view>
+            <view class="goods-order" wx:for="{{order.l1}}" wx:for-index="__i2__" wx:for-item="goods" wx:key="id">
+                <view class="order-content"></view>
+                <view class="goods-bottom  x-f">
+                    <view class="btn-box" wx:for="{{goods.l0}}" wx:for-item="btn" wx:key="$orig">
+                        <button catchtap="__e" class="{{['cu-btn','btn1',index+1===btn.g0?'btn2':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'jump',[ '/pages/goods/detail/index',[ 'o',['id',goods.$orig.goods_id] ] ] ] ] ] ]}}" wx:if="{{btn.$orig==='buy_again'}}">再次购买</button>
+                        <button catchtap="__e" class="{{['cu-btn','btn1',index+1===btn.g1?'btn2':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'checkExpress',['$0','$1'],[ [ ['orderList','id',order.$orig.id,'id'] ],[ ['orderList','id',order.$orig.id],['order_goods','id',goods.$orig.id,'id'] ] ] ] ] ] ]}}" wx:if="{{btn.$orig==='express'}}">查看物流</button>
+                        <button catchtap="__e" class="{{['cu-btn','btn1',index+1===btn.g2?'btn2':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'onConfirm',['$0','$1'],[ [ ['orderList','id',order.$orig.id,'id'] ],[ ['orderList','id',order.$orig.id],['order_goods','id',goods.$orig.id,'id'] ] ] ] ] ] ]}}" wx:if="{{btn.$orig==='get'}}">确认收货</button>
+                        <button catchtap="__e" class="{{['cu-btn','btn1',index+1===btn.g3?'btn2':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'onAftersale',['$0','$1'],[ [ ['orderList','id',order.$orig.id,'id'] ],[ ['orderList','id',order.$orig.id],['order_goods','id',goods.$orig.id,'id'] ] ] ] ] ] ]}}" wx:if="{{btn.$orig==='aftersale'}}">申请售后</button>
+                        <button catchtap="__e" class="{{['cu-btn','btn1',index+1===btn.g4?'btn2':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'onRefund',['$0','$1'],[ [ ['orderList','id',order.$orig.id,'id'] ],[ ['orderList','id',order.$orig.id],['order_goods','id',goods.$orig.id,'id'] ] ] ] ] ] ]}}" wx:if="{{btn.$orig==='reapply_refund'}}">重新退款</button>
+                        <button catchtap="__e" class="{{['cu-btn','btn1',index+1===btn.g5?'btn2':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'onRefund',['$0','$1'],[ [ ['orderList','id',order.$orig.id,'id'] ],[ ['orderList','id',order.$orig.id],['order_goods','id',goods.$orig.id,'id'] ] ] ] ] ] ]}}" wx:if="{{btn.$orig==='apply_refund'}}">申请退款</button>
+                        <button catchtap="__e" class="{{['cu-btn','btn1',index+1===btn.g6?'btn2':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'onComment',['$0','$1'],[ [ ['orderList','id',order.$orig.id,'id'] ],[ ['orderList','id',order.$orig.id],['order_goods','id',goods.$orig.id,'id'] ] ] ] ] ] ]}}" wx:if="{{btn.$orig==='comment'}}">待评价</button>
+                        <button class="{{['cu-btn','btn1',index+1===btn.g7?'btn2':'']}}" wx:if="{{btn.$orig==='after_detail'}}">售后详情</button>
+                    </view>
+                </view>
+            </view>
+            <view class="order-num">
+                <view class="num">{{'共'+order.$orig.total_num+'个商品,实付款'}}</view>
+                <view class="fee">{{'¥'+order.$orig.total_fee+''}}</view>
+            </view>
+            <view class="order-bottom x-f" wx:if="{{order.g8}}">
+                <view class="btn-box" wx:for="{{order.$orig.btns}}" wx:for-index="__i3__" wx:for-item="orderBtn" wx:key="*this">
+                    <button catchtap="__e" class="cu-btn obtn1" data-event-opts="{{[ [ 'tap',[ [ 'onCancel',['$0'],[ [ ['orderList','id',order.$orig.id,'id'] ] ] ] ] ] ]}}" wx:if="{{orderBtn==='cancel'}}">取消订单22</button>
+                    <button catchtap="__e" class="cu-btn obtn2" data-event-opts="{{[ [ 'tap',[ [ 'onPay',['$0'],[ [ ['orderList','id',order.$orig.id,'order_no'] ] ] ] ] ] ]}}" wx:if="{{orderBtn==='pay'}}">支付订单</button>
+                    <button catchtap="__e" class="cu-btn obtn2" data-event-opts="{{[ [ 'tap',[ [ 'onConfirm',['$0'],[ [ ['orderList','id',order.$orig.id,'id'] ] ] ] ] ] ]}}" wx:if="{{orderBtn==='get'}}">确认收货</button>
+                    <button catchtap="__e" class="cu-btn obtn1" data-event-opts="{{[ [ 'tap',[ [ 'checkExpress',['$0'],[ [ ['orderList','id',order.$orig.id,'id'] ] ] ] ] ] ]}}" wx:if="{{orderBtn==='express'}}">查看物流</button>
+                    <button catchtap="__e" class="cu-btn obtn2" data-event-opts="{{[ [ 'tap',[ [ 'onComment',['$0'],[ [ ['orderList','id',order.$orig.id,'id'] ] ] ] ] ] ]}}" wx:if="{{orderBtn==='comment'}}">评价</button>
+                    <button catchtap="__e" class="cu-btn obtn2" data-event-opts="{{[ [ 'tap',[ [ 'jump',[ '/pages/activity/groupon/detail',[ 'o',['id',order.$orig.ext_arr.groupon_id] ] ] ] ] ] ]}}" wx:if="{{orderBtn==='groupon'}}">拼团详情</button>
+                </view>
+            </view>
+        </view>
+        <wk-empty bind:__l="__l" emptyData="{{emptyData}}" vueId="439118e4-1" wx:if="{{$root.g9}}"></wk-empty>
+        <shopro-load bind:__l="__l" bind:input="__e" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','isLoading','$event',[] ] ] ] ] ]}}" value="{{isLoading}}" vueId="439118e4-2"></shopro-load>
+    </view>
+    <view class="foot_box"></view>
+    <shopro-tabbar bind:__l="__l" vueId="439118e4-3"></shopro-tabbar>
+    <shopro-float-btn bind:__l="__l" vueId="439118e4-4"></shopro-float-btn>
+    <shopro-login-modal bind:__l="__l" vueId="439118e4-5"></shopro-login-modal>
+</view>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "确认订单",
+  "usingComponents": {
+    "sh-picker-modal": "/pages/order/children/sh-picker-modal"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "wk-parser": "/components/wk-parser/index"
+  }
+}

@@ -1,0 +1,109 @@
+<view class="page">
+    <view class="head-box">
+        <view class="tab-box">
+            <view bindtap="__e" class="{{['tab',tabIndex==index?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selectTab',[index] ] ] ] ]}}" wx:for="{{tabList}}" wx:key="index">{{item.name}}</view>
+        </view>
+    </view>
+    <view class="form-box">
+        <view class="section">
+            <view class="section-title">还款方式</view>
+            <view class="seciton-right">
+                <view class="_div" style="display:flex;align-items:center;">
+                    <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'hkfsChange',['$0'],[ [ ['hkfsList','',index,'value'] ] ] ] ] ] ]}}" style="display:flex;align-items:center;" wx:for="{{hkfsList}}" wx:key="index">
+                        <view class="iconfont icon-gouxuan" style="font-size:32rpx;color:#ff4544;" wx:if="{{form.hkfs==item.value}}"></view>
+                        <view class="iconfont icon-gouxuan1" style="font-size:32rpx;color:#999;" wx:else></view>
+                        <view style="margin:0rpx  30rpx 0rpx 12rpx;">{{item.name}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <block wx:if="{{tabIndex==0}}">
+            <view class="section">
+                <view class="section-title">贷款总额</view>
+                <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','sd_money','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入贷款总额" type="digit" value="{{form.sd_money}}"></input>
+                <view class="unit">（万元）</view>
+            </view>
+            <view class="section">
+                <view class="section-title">按揭年数</view>
+                <view class="seciton-right">
+                    <picker bindchange="__e" class="picker" data-event-opts="{{[ [ 'change',[ [ 'changeSdYear',['$event'] ] ] ] ]}}" name="time" range="{{sdYearList}}" rangeKey="name">
+                        <view class="picker-text">{{sdYearList[sdIndex].name+'（'+sdYearList[sdIndex].year*12+'期）'}}</view>
+                    </picker>
+                </view>
+            </view>
+            <view class="section">
+                <view class="section-title">利率方式</view>
+                <view class="seciton-right">
+                    <picker bindchange="__e" class="picker" data-event-opts="{{[ [ 'change',[ [ 'changellType',['$event'] ] ] ] ]}}" name="time" range="{{llList}}" rangeKey="name">
+                        <view class="picker-text">{{llList[llIndex].name}}</view>
+                    </picker>
+                </view>
+            </view>
+            <view class="section">
+                <view class="section-title">商贷利率</view>
+                <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','sd_rate','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入商贷利率" type="digit" value="{{form.sd_rate}}"></input>
+                <view class="unit">%</view>
+            </view>
+        </block>
+        <block wx:if="{{tabIndex==1}}">
+            <view class="section">
+                <view class="section-title">贷款总额</view>
+                <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','gj_money','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入贷款总额" type="digit" value="{{form.gj_money}}"></input>
+                <view class="unit">万元</view>
+            </view>
+            <view class="section">
+                <view class="section-title">按揭年数</view>
+                <view class="seciton-right">
+                    <picker bindchange="__e" class="picker" data-event-opts="{{[ [ 'change',[ [ 'changeGjjYear',['$event'] ] ] ] ]}}" name="time" range="{{gjYearList}}" rangeKey="name" value="{{gjjIndex}}">
+                        <view class="picker-text">{{gjYearList[gjjIndex].name+'（'+gjYearList[gjjIndex].year*12+'期）'}}</view>
+                    </picker>
+                </view>
+            </view>
+            <view class="section">
+                <view class="section-title">公积金利率</view>
+                <input class="input" placeholder="请输入公积金利率" type="digit"></input>
+                <view class="unit">%</view>
+            </view>
+        </block>
+        <block wx:if="{{tabIndex==2}}">
+            <view class="section">
+                <view class="section-title">商业贷款总额</view>
+                <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','sd_money','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入贷款总额" type="digit" value="{{form.sd_money}}"></input>
+                <view class="unit">万元</view>
+            </view>
+            <view class="section">
+                <view class="section-title">商业贷款按揭年数</view>
+                <view class="seciton-right">
+                    <picker bindchange="__e" class="picker" data-event-opts="{{[ [ 'change',[ [ 'changeSdYear',['$event'] ] ] ] ]}}" name="time" range="{{sdYearList}}" rangeKey="name" value="{{sdIndex}}">
+                        <view class="picker-text">{{sdYearList[sdIndex].name+'（'+sdYearList[sdIndex].year*12+'期）'}}</view>
+                    </picker>
+                </view>
+            </view>
+            <view class="section">
+                <view class="section-title">商贷利率</view>
+                <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','sd_rate','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入商贷利率" type="digit" value="{{form.sd_rate}}"></input>
+                <view class="unit">%</view>
+            </view>
+            <view class="section">
+                <view class="section-title">公积金贷款总额</view>
+                <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','gj_money','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入贷款总额" type="digit" value="{{form.gj_money}}"></input>
+                <view class="unit">万元</view>
+            </view>
+            <view class="section">
+                <view class="section-title">公积金贷款按揭年数</view>
+                <picker bindchange="__e" class="picker" data-event-opts="{{[ [ 'change',[ [ 'changeGjjYear',['$event'] ] ] ] ]}}" name="time" range="{{gjYearList}}" rangeKey="name" value="{{gjjIndex}}">
+                    <view class="picker-text">{{gjYearList[gjjIndex].name+'（'+gjYearList[gjjIndex].year*12+'期）'}}</view>
+                </picker>
+            </view>
+            <view class="section">
+                <view class="section-title">公积金利率</view>
+                <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','gj_rate','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入公积金利率" type="digit" value="{{form.gj_rate}}"></input>
+                <view class="unit">%</view>
+            </view>
+        </block>
+    </view>
+    <view class="tip">等额本金每月还款逐月减少。等额利息每月相同</view>
+    <form bindsubmit="__e" data-event-opts="{{[ [ 'submit',[ [ 'formSubmit',['$event'] ] ] ] ]}}">
+        <button class="submit" formType="submit">计算</button>
+    </form>
+</view>

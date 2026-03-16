@@ -1,0 +1,17 @@
+<view class="menu-category-box " wx:if="{{carousel}}">
+    <swiper autoplay="{{true}}" bindchange="__e" circular="{{true}}" class="menu-swiper-box" data-event-opts="{{[ [ 'change',[ [ 'onSwiper',['$event'] ] ] ] ]}}" duration="{{1000}}" interval="{{8000}}" style="{{$root.g0<=value.params.rowNum?'height:160rpx':'height:320rpx'}}" vertical="{{false}}">
+        <swiper-item class="menu-swiper-item" wx:for="{{carousel}}" wx:for-item="itemList" wx:key="index">
+            <view class="menu-tab-box">
+                <view bindtap="__e" class="tab-item" data-event-opts="{{[ [ 'tap',[ [ 'routerTo',['$0'],[ [ ['carousel','',index],['','title',child.title] ] ] ] ] ] ]}}" style="{{'width:'+100/value.params.rowNum+'%'+';'}}" wx:for="{{itemList}}" wx:for-index="__i0__" wx:for-item="child" wx:key="title">
+                    <image class="tab-img" mode="aspectFill" src="{{child.imgUrl}}"></image>
+                    <text class="tab-text">{{child.title}}</text>
+                    <button class="system-buttom" openType="contact" wx:if="{{child.click_type==2}}"></button>
+                    <button class="system-buttom" openType="share" wx:if="{{child.click_type==6}}"></button>
+                </view>
+            </view>
+        </swiper-item>
+    </swiper>
+    <view class="menu-category-dots" wx:if="{{$root.g1>1}}">
+        <text class="{{[categoryCurrent===index?'category-dot-active':'category-dot']}}" wx:for="{{carousel.length}}" wx:for-item="dot" wx:key="index"></text>
+    </view>
+</view>

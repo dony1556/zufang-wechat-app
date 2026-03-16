@@ -1,0 +1,38 @@
+<view class="shopro-selector-rect" wx:if="{{serveList}}">
+    <view bindtap="__e" class="x-bc serve-box" data-event-opts="{{[ [ 'tap',[ [ 'onServe',['$event'] ] ] ] ]}}">
+        <view class="x-f">
+            <text class="title">服务</text>
+            <view class="tip x-f">
+                <view class="tip-list x-f" wx:for="{{serveList}}" wx:for-item="serve" wx:key="title">
+                    <view wx:if="{{index<3}}">
+                        <image mode class="tip-img" src="{{serve.image}}"></image>
+                        <text>{{serve.name}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <text class="cuIcon-right"></text>
+    </view>
+    <view bindtap="__e" catchtouchmove="true" class="{{['cu-modal','bottom-modal',showModal?'show':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'hideModal',['$event'] ] ] ] ]}}" style="z-index:999;">
+        <view catchtap="__e" class="cu-dialog server-modal" data-event-opts="{{[ [ 'tap',[ [ '',['$event'] ] ] ] ]}}" style="background:none;">
+            <view class="server-modal-box page_box">
+                <view class="modal-head x-c">
+                    <text class="head-title">服务保障</text>
+                    <text bindtap="__e" class="cuIcon-roundclosefill" data-event-opts="{{[ [ 'tap',[ [ 'hideModal',['$event'] ] ] ] ]}}"></text>
+                </view>
+                <view class="modal-content content_box">
+                    <view class="serve-list" wx:for="{{serveList}}" wx:for-index="__i0__" wx:for-item="serve" wx:key="title">
+                        <view class="title-box x-f">
+                            <image mode class="title-tag" src="{{serve.image}}"></image>
+                            <text class="serve-title">{{serve.name}}</text>
+                        </view>
+                        <view class="serve-detail">{{serve.description}}</view>
+                    </view>
+                </view>
+                <view class="modal-foot x-c">
+                    <button bindtap="__e" class="cu-btn serve-btn" data-event-opts="{{[ [ 'tap',[ [ 'hideModal',['$event'] ] ] ] ]}}">确定</button>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,20 @@
+<view class="comment-box">
+    <view class="head x-bc">
+        <view class="x-f">
+            <image class="avatar" mode="aspectFill" src="{{comment.user.avatar}}"></image>
+            <view class="user-name">{{comment.user.nickname}}</view>
+            <view class="x-f star-box">
+                <text class="cuIcon-favorfill star-active" wx:for="{{comment.level}}" wx:for-index="__i0__" wx:for-item="s" wx:key="*this"></text>
+                <text class="cuIcon-favorfill" wx:for="{{5-comment.level}}" wx:for-index="__i1__" wx:for-item="z" wx:key="*this"></text>
+            </view>
+        </view>
+        <text class="time">{{$root.g0}}</text>
+    </view>
+    <view class="detail">{{comment.content}}</view>
+    <view class="img-box">
+        <view class="mask"></view>
+        <scroll-view class="nav" scrollLeft="{{scrollLeft}}" scrollWithAnimation="{{true}}" scrollX="{{true}}">
+            <image catchtap="__e" class="comment-img" data-event-opts="{{[ [ 'tap',[ [ 'imgSelect',[index] ],[ 'e0',['$event'] ] ] ] ]}}" data-event-params="{{index}}" mode="aspectFill" src="{{img}}" wx:for="{{comment.images}}" wx:for-item="img" wx:key="index"></image>
+        </scroll-view>
+    </view>
+</view>

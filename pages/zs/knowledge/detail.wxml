@@ -1,0 +1,10 @@
+<view class="page">
+    <view class="title">{{zs.title}}</view>
+    <view class="info">
+        <view class="time">{{zs.update_time}}</view>
+        <view class="v-count">{{'浏览量：'+zs.view_count}}</view>
+    </view>
+    <view class="content">
+        <wk-parser bind:__l="__l" class="vue-ref" data-ref="content" lazyLoad="{{true}}" vueId="4571a292-1"></wk-parser>
+    </view>
+</view>

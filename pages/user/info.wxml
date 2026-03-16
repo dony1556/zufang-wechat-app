@@ -1,0 +1,37 @@
+<view class="container">
+    <view class="user-list x-bc">
+        <text class="list-name">头像</text>
+        <view bindtap="__e" class="x-f" data-event-opts="{{[ [ 'tap',[ [ 'onChooseImg',['$event'] ] ] ] ]}}">
+            <image mode class="avatar" src="{{userData.avatar}}"></image>
+            <text class="cuIcon-right"></text>
+        </view>
+    </view>
+    <view class="user-list x-bc">
+        <text class="list-name">昵称</text>
+        <view class="x-f">
+            <input bindinput="__e" class="list-val" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','nickname','$event',[] ],['userData'] ] ] ] ]}}" value="{{userData.nickname}}"></input>
+            <text class="cuIcon-right"></text>
+        </view>
+    </view>
+    <picker bindchange="__e" data-event-opts="{{[ [ 'change',[ [ 'onDateChange',['$event'] ] ] ] ]}}" end="{{endDate}}" mode="date" start="{{startDate}}" style="width:750rpx;" value="{{userData.birthday}}">
+        <view class="user-list x-bc">
+            <text class="list-name">生日</text>
+            <view class="x-f">
+                <text class="list-val">{{userData.birthday||startDate}}</text>
+                <text class="cuIcon-right"></text>
+            </view>
+        </view>
+    </picker>
+    <view bindtap="__e" class="user-list x-bc" data-event-opts="{{[ [ 'tap',[ [ 'jump',['/pages/user/edit-phone'] ] ] ] ]}}">
+        <text class="list-name">修改手机号</text>
+        <view class="x-f">
+            <text class="list-val">{{userData.mobile}}</text>
+            <text class="cuIcon-right"></text>
+        </view>
+    </view>
+    <view class="btn-box flex align-center justify-center">
+        <button bindtap="__e" class="cu-btn confirem-btn" data-event-opts="{{[ [ 'tap',[ [ 'editUserInfo',['$event'] ] ] ] ]}}">保存</button>
+    </view>
+    <shopro-tabbar bind:__l="__l" vueId="6d2caedd-1"></shopro-tabbar>
+    <shopro-float-btn bind:__l="__l" vueId="6d2caedd-2"></shopro-float-btn>
+</view>

@@ -1,0 +1,82 @@
+.page {
+  min-height: 100vh;
+  padding-top: 1rpx;
+}
+.head-box {
+  display: flex;
+  margin: 50rpx 30rpx 50rpx 30rpx;
+  background-color: #fff;
+}
+.head-box .tab-box {
+  display: flex;
+  width: 100%;
+  border: 1rpx solid #c1c1c1;
+  border-radius: 8rpx;
+  box-shadow: 2rpx 2rpx 6rpx #e6e6e6;
+}
+.head-box .tab-box .tab {
+  flex: 1;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.head-box .tab-box .tab:not(:last-child) {
+  border-right: 1rpx solid #c1c1c1;
+}
+.head-box .tab-box .tab.active {
+  color: #fe753a;
+  font-weight: 700;
+}
+.form-box {
+  margin: 0 20rpx;
+  padding: 0rpx 16rpx;
+  background-color: #fff;
+  border-radius: 8rpx;
+}
+.form-box .section {
+  display: flex;
+  align-items: center;
+  height: 120rpx;
+}
+.form-box .section:not(:last-child) {
+  border-bottom: 1rpx #e6e6e6 solid;
+}
+.form-box .section .section-title {
+  width: 200rpx;
+}
+.form-box .section .seciton-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.form-box .section .input {
+  flex: 1;
+  text-align: right;
+}
+.form-box .section .unit {
+  padding: 0rpx 10rpx 0rpx 10rpx;
+}
+.form-box .picker {
+  flex: 1;
+}
+.form-box .picker .picker-text {
+  width: 100%;
+  text-align: right;
+}
+.submit {
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 38rpx;
+  background: #fe753a;
+  color: #fff;
+  height: 76rpx;
+  line-height: 76rpx;
+  font-size: 26rpx;
+}
+.tip {
+  padding-top: 45rpx;
+  padding-bottom: 30rpx;
+  text-align: center;
+  color: #b2b2b2;
+  font-size: 20rpx;
+}

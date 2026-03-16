@@ -1,0 +1,109 @@
+.order-nav {
+  background: #fff;
+  height: 80rpx;
+}
+.order-nav .nav-item {
+  flex: 1;
+}
+.order-nav .nav-item .item-title {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #333;
+  line-height: 76rpx;
+}
+.order-nav .nav-item .nav-line {
+  width: 100rpx;
+  height: 4rpx;
+  background: #fff;
+}
+.order-nav .nav-item .line-active {
+  background: #e6b873;
+}
+.order-list {
+  background: #fff;
+  margin: 20rpx 0;
+}
+.order-list .order-bottom {
+  justify-content: flex-end;
+  padding-bottom: 30rpx;
+}
+.order-list .order-bottom .obtn1 {
+  width: 160rpx;
+  height: 60rpx;
+  background: #eee;
+  border-radius: 30rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #333;
+  margin-right: 20rpx;
+  padding: 0;
+}
+.order-list .order-bottom .obtn2 {
+  width: 160rpx;
+  height: 60rpx;
+  background: linear-gradient(90deg, #e9b461, #eecc89);
+  box-shadow: 0 7rpx 6rpx 0 rgba(229, 138, 0, 0.22);
+  border-radius: 30rpx;
+  margin-right: 20rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(168, 112, 13, 0.9);
+  padding: 0;
+}
+.order-list .order-head {
+  padding: 0 25rpx;
+  height: 77rpx;
+  border-bottom: 1rpx solid #dfdfdf;
+}
+.order-list .order-head .no {
+  font-size: 26rpx;
+  color: #999;
+}
+.order-list .order-head .state {
+  font-size: 26rpx;
+  color: #a8700d;
+}
+.order-list .goods-order {
+  border-bottom: 1px solid hsla(0, 0%, 87.5%, 0.5);
+  padding: 20rpx 20rpx 0;
+  margin-bottom: 20rpx;
+}
+.order-list .order-num {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10rpx 26rpx 20rpx 26rpx;
+}
+.order-list .order-num .num {
+  font-size: 26rpx;
+}
+.order-list .order-num .fee {
+  color: #f55;
+}
+.order-list .goods-bottom {
+  background: #fff;
+  padding-bottom: 30rpx;
+  justify-content: flex-end;
+}
+.order-list .goods-bottom .btn-box .btn1 {
+  height: 60rpx;
+  border: 1rpx solid #dfdfdf;
+  border-radius: 30rpx;
+  font-size: 26rpx;
+  background: #fff;
+  padding: 0 20rpx;
+  margin-right: 20rpx;
+}
+.order-list .goods-bottom .btn-box .btn2 {
+  width: 160rpx;
+  height: 60rpx;
+  border: 1rpx solid #d5a65a !important;
+  border-radius: 30rpx;
+  font-size: 26rpx;
+  color: #d5a65a !important;
+  padding: 0;
+  background: #fff;
+  margin-right: 20rpx;
+}

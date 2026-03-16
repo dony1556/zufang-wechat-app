@@ -1,0 +1,15 @@
+<view class="menu-category-box" style="{{$root.g0<=num?'height:200rpx':'height:360rpx'}}" wx:if="{{carousel}}">
+    <swiper autoplay="{{false}}" bindchange="__e" circular="{{true}}" class="menu-swiper-box" data-event-opts="{{[ [ 'change',[ [ 'onSwiper',['$event'] ] ] ] ]}}" duration="{{1000}}" interval="{{3000}}" style="{{$root.g1<=num?'height:160rpx':'height:320rpx'}}">
+        <swiper-item class="menu-swiper-item" style="{{itemList.g2<=num?'height:200rpx':'height:340rpx'}}" wx:for="{{$root.l0}}" wx:for-item="itemList" wx:key="index">
+            <view class="menu-tab-box">
+                <view catchtap="__e" class="tab-list y-f" data-event-opts="{{[ [ 'tap',[ [ 'jump',[ '/pages/app/score/list',[ 'o',['category_id',child.id] ] ] ] ] ] ]}}" style="{{'width:'+690/num+'rpx'+';'}}" wx:for="{{itemList.$orig}}" wx:for-index="__i0__" wx:for-item="child" wx:key="title">
+                    <image class="tab-img shopro-selector-circular" src="{{child.thumb}}" style="{{'width:'+imgW+'rpx'+';'+'height:'+imgW+'rpx'+';'}}"></image>
+                    <text class="shopro-selector-rect">{{child.name}}</text>
+                </view>
+            </view>
+        </swiper-item>
+    </swiper>
+    <view class="menu-category-dots" wx:if="{{$root.g3>1}}">
+        <text class="{{[categoryCurrent===index?'category-dot-active':'category-dot']}}" wx:for="{{carousel.length}}" wx:for-item="dot" wx:key="index"></text>
+    </view>
+</view>

@@ -1,0 +1,42 @@
+.page {
+  background-color: #fff;
+}
+.page .select-house {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0rpx;
+  background-color: #fff;
+  z-index: 999;
+}
+.page .house-type-box {
+  display: flex;
+  padding: 0rpx 30rpx;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0rpx;
+  background-color: #fff;
+  z-index: 99;
+}
+.page .house-type-box .title {
+  font-size: 30rpx;
+  width: 110rpx;
+  line-height: 100rpx;
+}
+.page .house-type-box .swiper-box {
+  width: 690rpx;
+  white-space: nowrap;
+  height: 90rpx;
+}
+.page .house-type-box .swiper-box .item {
+  position: relative;
+  display: inline-block;
+  padding: 0rpx 24rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+}
+.page .house-type-box .swiper-box .item.on {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #5a0;
+}

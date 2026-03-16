@@ -1,0 +1,36 @@
+.category-box {
+  padding-top: 20rpx;
+  background: #fff;
+}
+.category-box,
+.swiper-box {
+  position: relative;
+  height: 220rpx;
+  margin-bottom: 20rpx;
+}
+.category-box .tab-list .coupon-wrap,
+.swiper-box .tab-list .coupon-wrap {
+  width: 710rpx;
+}
+.category-box .category-dots,
+.swiper-box .category-dots {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 15rpx;
+}
+.category-box .category-dots .category-dot,
+.swiper-box .category-dots .category-dot {
+  width: 40rpx;
+  height: 3rpx;
+  background: #eee;
+  margin-right: 10rpx;
+}
+.category-box .category-dots .category-dot-active,
+.swiper-box .category-dots .category-dot-active {
+  width: 40rpx;
+  height: 3rpx;
+  background: #a8700d;
+  margin-right: 10rpx;
+}

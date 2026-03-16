@@ -1,0 +1,11 @@
+<view class="banner-swiper-box " wx:if="{{value}}">
+    <canvas canvasId="colorThief" class="hide-canvas"></canvas>
+    <swiper autoplay="{{true}}" bindchange="__e" circular="{{true}}" class="banner-carousel shopro-selector-rect" data-event-opts="{{[ [ 'change',[ [ 'swiperChange',['$event'] ] ] ] ]}}">
+        <swiper-item bindtap="__e" class="carousel-item " data-event-opts="{{[ [ 'tap',[ [ 'routerTo',['$0'],[ [ ['value','',index,'path'] ] ] ] ] ] ]}}" wx:for="{{value}}" wx:key="index">
+            <image class="swiper-image " lazyLoad="{{true}}" mode="aspectFill" src="{{item.thumb}}"></image>
+        </swiper-item>
+    </swiper>
+    <view class="banner-swiper-dots">
+        <text class="{{[swiperCurrent===index?'banner-dot-active':'banner-dot']}}" wx:for="{{value.data.length}}" wx:for-item="dot" wx:key="index"></text>
+    </view>
+</view>

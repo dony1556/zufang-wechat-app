@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "wk-houses": "/components/wk-houses/index",
+    "wk-login-modal": "/components/wk-login-modal/index",
+    "wk-skeletons": "/components/wk-skeletons/index",
+    "tuan-yy": "/pages/house/tuan/components/tuan-yy"
+  }
+}

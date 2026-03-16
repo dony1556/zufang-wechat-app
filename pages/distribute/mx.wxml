@@ -1,0 +1,30 @@
+<view class="page">
+    <view class="top-box">
+        <view class="left">
+            <view class="name">分销佣金</view>
+            <view class="total">{{distribute.total_money+'元'}}</view>
+        </view>
+        <view class="right">
+            <view bindtap="__e" class="txmx" data-event-opts="{{[ [ 'tap',[ [ 'navToTxmx',['$event'] ] ] ] ]}}">提现明细</view>
+        </view>
+    </view>
+    <view class="item-box">
+        <view class="item">
+            <view class="name">可提现佣金</view>
+            <view class="num">{{distribute.ktx_money+'元'}}</view>
+        </view>
+        <view class="item">
+            <view class="name">提现中佣金</view>
+            <view class="num">{{distribute.txz_money+'元'}}</view>
+        </view>
+        <view class="item">
+            <view class="name">已提现佣金</view>
+            <view class="num">{{distribute.ytx_money+'元'}}</view>
+        </view>
+        <view class="item">
+            <view class="name">未结算佣金</view>
+            <view class="num">{{distribute.bktx_money+'元'}}</view>
+        </view>
+    </view>
+    <view bindtap="__e" class="tx" data-event-opts="{{[ [ 'tap',[ [ 'navToTx',['$event'] ] ] ] ]}}">提现</view>
+</view>

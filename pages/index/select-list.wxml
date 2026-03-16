@@ -1,0 +1,12 @@
+<view class="page">
+    <view class="top-box">
+        <view bindtap="__e" class="search-box" data-event-opts="{{[ [ 'tap',[ [ 'toSearch',['$event'] ] ] ] ]}}">
+            <view class="iconfont icon-search  icon"></view>
+            <view class="text">{{searchKey}}</view>
+        </view>
+        <view class="select-house"></view>
+    </view>
+    <view class="content-box">
+        <view class="house-box"></view>
+    </view>
+</view>

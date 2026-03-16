@@ -1,0 +1,14 @@
+<view class="page">
+    <view class="top-box"></view>
+    <view class="store-box">
+        <view bindtap="__e" class="store" data-event-opts="{{[ [ 'tap',[ [ 'select',['$0'],[ [ ['list','',index] ] ] ] ] ] ]}}" wx:for="{{list}}" wx:key="index">
+            <view class="img-box">
+                <image class="img" mode="aspectFill" src="{{item.logo}}"></image>
+            </view>
+            <view class="right">
+                <view class="name">{{item.name}}</view>
+                <view class="address">{{item.address}}</view>
+            </view>
+        </view>
+    </view>
+</view>

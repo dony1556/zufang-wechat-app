@@ -1,0 +1,7 @@
+<view class="imageWindow" style="{{'background:'+value.params.backgroundColor+';'+'padding-bottom:'+value.params.paddingTop+'rpx'+';'}}">
+    <view bindtap="__e" class="image-item" data-event-opts="{{[ [ 'tap',[ [ 'routerTo',['$0'],[ [ ['value.data','',index] ] ] ] ] ] ]}}" style="{{'width:'+100/value.params.rowNum+'%'+';'+'padding:'+value.params.paddingTop+'rpx '+value.params.paddingLeft+'rpx  0rpx'+';'}}" wx:for="{{value.data}}" wx:for-item="child" wx:key="index">
+        <image class="img" mode="widthFix" src="{{child.imgUrl}}"></image>
+        <button class="system-buttom" openType="contact" wx:if="{{child.click_type==2}}"></button>
+        <button class="system-buttom" openType="share" wx:if="{{child.click_type==6}}"></button>
+    </view>
+</view>

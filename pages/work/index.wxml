@@ -1,0 +1,54 @@
+<view class="page">
+    <view class="no-box" wx:if="{{user.fd_status==0}}">
+        <image mode class="img" src="static/image/icon-share-tip.png"></image>
+        <view class="tip">您还不是房东，请先提交申请</view>
+        <view bindtap="__e" class="apply" data-event-opts="{{[ [ 'tap',[ [ 'navToAdd',['$event'] ] ] ] ]}}">立即申请</view>
+    </view>
+    <view class="wait-box" wx:if="{{user.fd_status==1}}">
+        <image mode class="img" src="static/image/icon-share-tip.png"></image>
+        <view class="tip">感谢您的支持，请等待审核</view>
+        <view bindtap="__e" class="apply" data-event-opts="{{[ [ 'tap',[ [ 'navToHome',['$event'] ] ] ] ]}}">去逛逛</view>
+    </view>
+    <view class="delete-box" wx:if="{{user.fd_status==4}}">
+        <image mode class="img" src="static/image/icon-share-tip.png"></image>
+        <view class="tip">非常抱歉，您的申请被驳回</view>
+        <view class="tip2">{{'拒绝理由：'+user.fd_check_remark}}</view>
+        <view bindtap="__e" class="apply" data-event-opts="{{[ [ 'tap',[ [ 'navToAdd',['$event'] ] ] ] ]}}">重新申请</view>
+    </view>
+    <block wx:if="{{user.fd_status==6}}">
+        <view class="head-box">
+            <image mode class="img" src="{{user.avatarurl}}"></image>
+            <view class="info">
+                <view class="name">{{user.truename||user.nickname}}</view>
+                <view class="tel">{{user.mobile||user.phone}}</view>
+            </view>
+        </view>
+        <view class="item-box">
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'pub_house',['$event'] ] ] ] ]}}" style="background:linear-gradient(45deg, #ff00ff, #ff6cdd);">
+                <view class="text-box">
+                    <text class="title">发布房源</text>
+                    <text class="text"></text>
+                </view>
+            </view>
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'my_house',['$event'] ] ] ] ]}}" style="background:linear-gradient(45deg, #0055ff, #7272ff);">
+                <view class="text-box">
+                    <text class="title">管理房源</text>
+                    <text class="text"></text>
+                </view>
+            </view>
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'yy_log',['$event'] ] ] ] ]}}" style="background:linear-gradient(45deg, #00ffff, #aaffff);">
+                <view class="text-box">
+                    <text class="title">预约管理</text>
+                    <text class="text"></text>
+                </view>
+            </view>
+            <!-- <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'help',['$event'] ] ] ] ]}}" style="background:linear-gradient(45deg, #55aa00, #7af5b6);">
+                <view class="text-box">
+                    <text class="title">常见问题</text>
+                    <text class="text"></text>
+                </view>
+            </view> -->
+        </view>
+    </block>
+    <wk-painter bind:__l="__l" board="{{board}}" class="vue-ref" customStyle="{{'transform: scale('+343/375+'); transform-origin: left top;'}}" data-ref="wkPainter" isBase64ToPath="{{true}}" isRenderImage="{{true}}" vueId="3614c1ce-1"></wk-painter>
+</view>

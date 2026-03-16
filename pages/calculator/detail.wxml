@@ -1,0 +1,156 @@
+<view class="page">
+    <view style="padding:0 10% 0 10%;background:#fff;">
+        <view bindtap="__e" class="{{['tabler',req.hkfs==1?'on':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'hkfsChage',[1] ] ] ] ]}}">等额本金</view>
+        <view bindtap="__e" class="{{['tabler',req.hkfs==2?'on':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'hkfsChage',[2] ] ] ] ]}}">等额本息</view>
+        <view style="clear:both;"></view>
+    </view>
+    <view>
+        <view class="getone">
+            <view class="getone_top">
+                <view style="color:#eee;">贷款总额（元）</view>
+                <view style="color:#fff;font-size:65rpx;font-weight:bold;">{{result.d_money}}</view>
+            </view>
+            <view class="getone_bottom">
+                <view class="getone_bottom_left">
+                    <view style="color:#eee;">还款总额（元）</view>
+                    <view style="color:#fff;">{{result.t_money}}</view>
+                </view>
+                <view class="getone_bottom_right">
+                    <view style="color:#eee;">利息总额（元）</view>
+                    <view style="color:#fff;">{{result.r_money}}</view>
+                </view>
+                <view style="clear:both;"></view>
+            </view>
+        </view>
+        <view>
+            <block wx:if="{{req.hkfs==2}}">
+                <view>
+                    <block wx:if="{{result.sd_t_money>0}}">
+                        <view class="sd_title">商业贷款</view>
+                        <view class="sd_yue" style="display:flex;flex-direction:column;align-items:center;">
+                            <view style="font-size:32rpx;color:#000000;">每月还款</view>
+                            <view style="font-size:45rpx;font-weight:bold;">{{result.sd_e_money+'元'}}</view>
+                        </view>
+                        <view class="sd_top">
+                            <view class="sd_top_left">
+                                <view style="color:#000000;font-size:32rpx;">贷款金额（元）</view>
+                                <view style="color:#000000;font-size:32rpx;">{{req.sd_money}}</view>
+                            </view>
+                            <view class="sd_top_right">
+                                <view style="color:#000000;font-size:32rpx;">贷款期限</view>
+                                <view style="color:#000000;font-size:32rpx;">{{req.sd_year+'年（'+req.sd_month+'期）'}}</view>
+                            </view>
+                            <view style="clear:both;"></view>
+                        </view>
+                        <view class="sd_bottom">
+                            <view class="sd_bottom_left">
+                                <view style="color:#000000;font-size:32rpx;">还款金额（元）</view>
+                                <view style="color:#000000;font-size:32rpx;">{{result.sd_t_money}}</view>
+                            </view>
+                            <view class="sd_bottom_right">
+                                <view style="color:#000000;font-size:32rpx;">还款利息（元）</view>
+                                <view style="color:#000000;font-size:32rpx;">{{result.sd_r_money}}</view>
+                            </view>
+                            <view style="clear:both;"></view>
+                        </view>
+                    </block>
+                </view>
+                <view wx:if="{{result.gj_t_money>0}}">
+                    <view class="sd_title">公积金贷款</view>
+                    <view class="sd_yue" style="display:flex;flex-direction:column;align-items:center;">
+                        <view style="font-size:32rpx;color:#000;">每月还款（元）</view>
+                        <view style="font-size:45rpx;font-weight:bold;">{{result.gj_e_money}}</view>
+                    </view>
+                    <view class="sd_top">
+                        <view class="sd_top_left">
+                            <view style="color:#000000;font-size:32rpx;">贷款金额（元）</view>
+                            <view style="color:#000000;font-size:32rpx;">{{req.gj_money}}</view>
+                        </view>
+                        <view class="sd_top_right">
+                            <view style="color:#000000;font-size:32rpx;">贷款期限</view>
+                            <view style="color:#000000;font-size:32rpx;">{{req.gj_year+'年（'+req.gj_month+'期）'}}</view>
+                        </view>
+                        <view style="clear:both;"></view>
+                    </view>
+                    <view class="sd_bottom">
+                        <view class="sd_bottom_left">
+                            <view style="color:#000;font-size:32rpx;">还款金额（元）</view>
+                            <view style="color:#000;font-size:32rpx;">{{result.gj_t_money}}</view>
+                        </view>
+                        <view class="sd_bottom_right">
+                            <view style="color:#000;font-size:32rpx;">还款利息（元）</view>
+                            <view style="color:#000;font-size:32rpx;">{{result.gj_r_money}}</view>
+                        </view>
+                        <view style="clear:both;"></view>
+                    </view>
+                </view>
+            </block>
+            <block wx:if="{{req.hkfs==1}}">
+                <view wx:if="{{result.sd_t_money>0}}">
+                    <view class="sd_title">商业贷款</view>
+                    <view class="sd_yue" style="display:flex;flex-direction:column;align-items:center;">
+                        <view style="font-size:32rpx;color:#000;">首月还款</view>
+                        <view style="font-size:45rpx;font-weight:bold;">{{result.sd_first_money+'元'}}</view>
+                        <view style="font-size:24rpx;color:#d2d2d2;">{{'每个月递减'+result.sd_dj_money+'元'}}</view>
+                    </view>
+                    <view class="sd_top">
+                        <view class="sd_top_left">
+                            <view style="color:#000;font-size:32rpx;">贷款金额（元）</view>
+                            <view style="color:#000;font-size:32rpx;">{{req.sd_money}}</view>
+                        </view>
+                        <view class="sd_top_right">
+                            <view style="color:#000;font-size:32rpx;">贷款期限</view>
+                            <view style="color:#000;font-size:32rpx;">{{req.sd_year+'年（'+req.sd_month+'期）'}}</view>
+                        </view>
+                        <view style="clear:both;"></view>
+                    </view>
+                    <view class="sd_bottom">
+                        <view class="sd_bottom_left">
+                            <view style="color:#000;font-size:32rpx;">还款金额（元）</view>
+                            <view style="color:#000;font-size:32rpx;">{{result.sd_t_money}}</view>
+                        </view>
+                        <view class="sd_bottom_right">
+                            <view style="color:#000;font-size:32rpx;">还款利息（元）</view>
+                            <view style="color:#000;font-size:32rpx;">{{result.sd_r_money}}</view>
+                        </view>
+                        <view style="clear:both;"></view>
+                    </view>
+                </view>
+                <view wx:if="{{result.gj_t_money>0}}">
+                    <view class="sd_title">公积金贷款</view>
+                    <view class="sd_yue" style="display:flex;flex-direction:column;align-items:center;">
+                        <view style="font-size:32rpx;color:#000;">首月还款</view>
+                        <view style="font-size:45rpx;font-weight:bold;">{{result.gj_first_money+'元'}}</view>
+                        <view style="font-size:24rpx;color:#d2d2d2;">{{'每个月递减'+result.gj_dj_money+'元'}}</view>
+                    </view>
+                    <view class="sd_top">
+                        <view class="sd_top_left">
+                            <view style="color:#000;font-size:32rpx;">贷款金额（元）</view>
+                            <view style="color:#000;font-size:32rpx;">{{req.gj_money}}</view>
+                        </view>
+                        <view class="sd_top_right">
+                            <view style="color:#000;font-size:32rpx;">贷款期限</view>
+                            <view style="color:#000;font-size:32rpx;">{{req.gj_year+'年（'+req.gj_month+'期）'}}</view>
+                        </view>
+                        <view style="clear:both;"></view>
+                    </view>
+                    <view class="sd_bottom">
+                        <view class="sd_bottom_left">
+                            <view style="color:#000;font-size:32rpx;">还款金额（元）</view>
+                            <view style="color:#000;font-size:32rpx;">{{result.gj_t_money}}</view>
+                        </view>
+                        <view class="sd_bottom_right">
+                            <view style="color:#000;font-size:32rpx;">还款利息（元）</view>
+                            <view style="color:#000;font-size:32rpx;">{{result.gj_r_money}}</view>
+                        </view>
+                        <view style="clear:both;"></view>
+                    </view>
+                </view>
+            </block>
+        </view>
+        <view style="margin:30rpx auto;width:90%;padding-bottom:30rpx;">
+            <view style="font-size:24rpx;">以上结果仅供参考，请以当地实际情况为准</view>
+            <view bindtap="__e" class="look" data-event-opts="{{[ [ 'tap',[ [ 'look',['$event'] ] ] ] ]}}">查看月供详情</view>
+        </view>
+    </view>
+</view>

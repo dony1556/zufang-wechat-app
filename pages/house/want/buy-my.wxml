@@ -1,0 +1,20 @@
+<view class="page">
+    <view class="item-box">
+        <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'toDetail',['$0'],[ [ ['list','',index,'id'] ] ] ] ] ] ]}}" wx:for="{{list}}" wx:key="index">
+            <view class="city">{{'意向位置：'+item.area}}</view>
+            <view class="budget">{{'购房预算：'+item.start_price+' ~ '+item.end_price+'万元'}}</view>
+            <view class="remark">{{'备注信息：'+item.detail}}</view>
+            <view class="time">{{'发帖时间：'+item.create_time}}</view>
+            <view class="remark">审核状态：<text style="color:#ff5500;" wx:if="{{item.check_status==1}}">待审核</text>
+                <text style="color:#06AD56;" wx:if="{{item.check_status==6}}">已通过</text>
+                <text wx:if="{{item.check_status==4}}">被拒绝</text>
+            </view>
+            <view class="remark">处理状态：<text style="color:#ff5500;" wx:if="{{item.status==1}}">待处理</text>
+                <text style="color:#06AD56;" wx:if="{{item.status==6}}">已处理</text>
+            </view>
+            <view class="btn-box">
+                <view bindtap="__e" class="deal" data-event-opts="{{[ [ 'tap',[ [ 'deal',['$0'],[ [ ['list','',index] ] ] ] ] ] ]}}" wx:if="{{item.check_status==6&&item.status==1}}">确认处理</view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,48 @@
+<view class="page">
+    <view class="swiper-box">
+        <swiper autoplay="true" class="slide-swiper">
+            <swiper-item class="swiper-item" wx:for="{{swiperList}}" wx:key="index">
+                <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'navto',['$event'] ] ] ] ]}}">
+                    <image class="img" mode="aspectFill" src="{{item.img}}"></image>
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="form">
+        <view class="item">
+            <view class="title">姓名</view>
+            <view class="input-box">
+                <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','name','$event',[] ] ] ] ] ]}}" placeholder="请填写真实姓名" value="{{name}}"></input>
+            </view>
+        </view>
+        <view class="item">
+            <view class="title">手机号码</view>
+            <view class="input-box">
+                <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','phone','$event',[] ] ] ] ] ]}}" placeholder="请填写手机号码" value="{{phone}}"></input>
+            </view>
+        </view>
+        <view class="form-item">
+            <text class="title">身份证</text>
+            <view class="right">
+                <view class="img-box">
+                    <view class="preview-box" wx:for="{{card}}" wx:key="index">
+                        <image class="preview-img" mode="aspectFill" src="{{item}}"></image>
+                        <text bindtap="__e" class="cuIcon-close" data-event-opts="{{[ [ 'tap',[ [ 'delImg',['$0',index],['card'] ] ] ] ]}}"></text>
+                    </view>
+                    <view bindtap="__e" class="choose-img  " data-event-opts="{{[ [ 'tap',[ [ 'onChooseImg',['$0',2],['card'] ] ] ] ]}}" wx:if="{{$root.g0<2}}">
+                        <text class="cuIcon-cameraadd"></text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view style="border-radius:12rpx;overflow:hidden;background-color:#FFFFFF;margin-top:16rpx;">
+            <view class="treaty">
+                <view bindtap="__e" class="iconfont icon-gouxuan" data-event-opts="{{[ [ 'tap',[ [ 'handTreaty',['$event'] ] ] ] ]}}" style="font-size:28rpx;color:#ff5500;" wx:if="{{treaty_agree}}"></view>
+                <view bindtap="__e" class="iconfont icon-gouxuan1" data-event-opts="{{[ [ 'tap',[ [ 'handTreaty',['$event'] ] ] ] ]}}" style="font-size:28rpx;color:#c3c3c3;" wx:if="{{!treaty_agree}}"></view>
+                <view class="txt">我已经阅读并了解<text bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'navToTreaty',['$event'] ] ] ] ]}}" style="color:#014c8c;">【分销申请协议】</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="__e" class="add" data-event-opts="{{[ [ 'tap',[ [ 'formSubmit',['$event'] ] ] ] ]}}">申请成为分销商</view>
+</view>

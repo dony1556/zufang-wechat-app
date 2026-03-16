@@ -1,0 +1,38 @@
+<view class="page">
+    <view class="top-box">
+        <view class="scroll-box">
+            <scroll-view class="scroll" enableFlex="true" scrollX="true">
+                <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'selectTab',[index] ] ] ] ]}}" wx:for="{{tabList}}" wx:key="index">
+                    <view class="{{['name',index==tabIndex?'active':'']}}">{{item.name}}</view>
+                    <view class="line" wx:if="{{index==tabIndex}}"></view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+    <view class="content-box">
+        <view class="yy-box">
+            <view class="item" wx:for="{{houseList}}" wx:key="index">
+                <view bindtap="__e" class="head" data-event-opts="{{[ [ 'tap',[ [ 'houseDetail',['$0'],[ [ ['houseList','',index] ] ] ] ] ] ]}}">
+                    <view class="title">{{item.title}}</view>
+                    <text class="iconfont icon-you" style="font-size:24rpx;color:#999;"></text>
+                </view>
+                <view class="content">
+                    <view class="name">
+                        <text>{{'预约人：  '+item.name}}</text>
+                    </view>
+                    <view class="tel">
+                        <text>{{'预约电话：'+item.tel}}</text>
+                    </view>
+                    <view class="time">
+                        <text>{{'预约时间：'+item.time}}</text>
+                    </view>
+                </view>
+                <view class="btn-box">
+                    <view bindtap="__e" class="cancel-btn" data-event-opts="{{[ [ 'tap',[ [ 'yyCancel',['$0'],[ [ ['houseList','',index,'id'] ] ] ] ] ] ]}}" wx:if="{{item.status==1}}">取消</view>
+                </view>
+            </view>
+        </view>
+        <wk-empty bind:__l="__l" emptyData="{{emptyData}}" vueId="7e3280e4-1" wx:if="{{$root.g0==0}}"></wk-empty>
+    </view>
+    <view class="footer-box"></view>
+</view>

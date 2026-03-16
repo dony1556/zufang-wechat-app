@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "积分商品",
+  "usingComponents": {
+    "wk-empty": "/components/wk-empty/index",
+    "sh-score-goods": "/pages/app/score/children/sh-score-goods"
+  }
+}

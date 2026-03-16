@@ -1,0 +1,28 @@
+.skeletons-box {
+  width: 750rpx;
+  overflow: hidden;
+  height: 100vh;
+  position: fixed;
+  z-index: 99999;
+  background-color: #fff;
+  top: 0rpx;
+  left: 0rpx;
+}
+.skeletons-box .img {
+  width: 100%;
+}
+.skeletons-box .loading {
+  width: 140rpx;
+  height: 140rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+.skeletons-box .loading::after {
+  content: "" !important;
+}
+.skeletons-box .loading::before {
+  background-color: initial;
+}

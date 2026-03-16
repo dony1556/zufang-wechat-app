@@ -1,0 +1,97 @@
+<view class="page">
+    <view class="top-box"></view>
+    <view class="content-box">
+        <view class="swiper-box">
+            <swiper autoplay="{{true}}" bindchange="__e" class="carousel" current="{{carouselIndex}}" data-event-opts="{{[ [ 'change',[ [ 'carouselChange',['$event'] ] ] ] ]}}">
+                <swiper-item bindtap="__e" class="carousel-item" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}" data-event-params="{{index}}" wx:for="{{hx.thumbs}}" wx:key="index">
+                    <image class="img" lazyLoad="{{true}}" mode="aspectFill" src="{{item}}"></image>
+                </swiper-item>
+            </swiper>
+            <view class="num-box">
+                <text class="text">{{carouselIndex2+1+'/'+$root.g0}}</text>
+            </view>
+        </view>
+        <view class="box-1">
+            <view class="title-box">
+                <view class="title">{{hx.shi+'室'+hx.ting+'厅'+hx.wei+'卫'}}</view>
+            </view>
+            <view class="price" wx:if="{{hx.money>0}}">{{hx.money+'万元/套'}}</view>
+            <view class="price" wx:else>价格待定</view>
+        </view>
+        <view class="info-box">
+            <text class="head">信息</text>
+            <view class="des-box ">
+                <view class="des">
+                    <view class="left">面积：</view>
+                    <view class="right">{{hx.mj+'㎡'}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="agent-box" wx:if="{{house.origin==2}}">
+            <view class="img-box">
+                <image class="img" src="{{agent.head_img}}"></image>
+            </view>
+            <view class="text-box">
+                <view class="name">{{agent.name}}</view>
+                <view class="text">{{agent.autograph}}</view>
+            </view>
+            <view bindtap="__e" class="chat" data-event-opts="{{[ [ 'tap',[ [ 'chat',['$event'] ] ] ] ]}}">
+                <view class="iconfont icon-IMliaotian-duihua" style="font-size:46rpx;color:#739e3b;"></view>
+            </view>
+            <view bindtap="__e" class="phone" data-event-opts="{{[ [ 'tap',[ [ 'call',['$0'],['agent.tel'] ] ] ] ]}}"></view>
+        </view>
+        <view class="hx-box" wx:if="{{$root.g1>1}}">
+            <view class="head-box">
+                <view class="title">其他户型图</view>
+                <view class="more">更多</view>
+            </view>
+            <view class="content">
+                <scroll-view class="scroll" scrollX="true">
+                    <view class="scroll-item" wx:if="{{item.id!=id}}" wx:for="{{hxList}}" wx:key="index">
+                        <image class="img" mode="aspectFit" src="{{item.thumbs[0]}}"></image>
+                        <view class="info">
+                            <view class="title">
+                                <view class="shi">{{item.shi+'室'+item.ting+'厅'+item.wei+'卫'}}</view>
+                                <view class="sale_status">{{item.sale_status}}</view>
+                            </view>
+                            <view class="mj">{{item.mj+'㎡'}}</view>
+                            <view class="price" wx:if="{{item.money}}">{{item.money+'万元/套'}}</view>
+                            <view class="price" wx:else>价格待定</view>
+                        </view>
+                    </view>
+                </scroll-view>
+            </view>
+        </view>
+        <view class="near-box" wx:if="{{$root.g2>0}}">
+            <view class="title-box">
+                <text class="title">附近其他房源</text>
+            </view>
+            <view class="content">
+                <wk-houses bind:__l="__l" value="{{houseList}}" vueId="86fa9f82-1"></wk-houses>
+            </view>
+        </view>
+    </view>
+    <view class="footer-box">
+        <view class="bot2">
+            <view bindtap="__e" class="nav2" data-event-opts="{{[ [ 'tap',[ [ 'backHome',['$event'] ] ] ] ]}}">
+                <view class="iconfont icon-shouye" style="font-size:32rpx;color:#999;"></view>
+                <text class="text">首页</text>
+            </view>
+            <view bindtap="__e" class="nav2" data-event-opts="{{[ [ 'tap',[ [ 'collect',['$event'] ] ] ] ]}}">
+                <block wx:if="{{isCollect==1}}">
+                    <view class="iconfont icon-buoumaotubiao44" style="font-size:32rpx;color:#FF0000;"></view>
+                    <text class="text" style="color:#FF0000;">已收藏</text>
+                </block>
+                <block wx:else>
+                    <view class="iconfont icon-shoucang1" style="font-size:32rpx;color:#999;"></view>
+                    <text class="text">收藏</text>
+                </block>
+            </view>
+            <view class="btn-box">
+                <view bindtap="__e" class="call2" data-event-opts="{{[ [ 'tap',[ ['call'] ] ] ]}}">电话联系</view>
+            </view>
+        </view>
+    </view>
+    <wk-login-modal bind:__l="__l" vueId="86fa9f82-2"></wk-login-modal>
+    <wk-skeletons bind:__l="__l" type="detail" vueId="86fa9f82-3" wx:if="{{isLoading}}"></wk-skeletons>
+</view>

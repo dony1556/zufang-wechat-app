@@ -1,0 +1,26 @@
+<view class="bank-wrap">
+    <view class="form-box">
+        <label>
+            <view class="form-item flex align-center justify-between">
+                <view class="item-title">持卡人:</view>
+                <input bindinput="__e" class="item-input flex-sub" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','real_name','$event',[] ],['bankInfo'] ] ] ] ]}}" placeholder="请输入持卡人姓名" placeholderClass="pl-input" type="text" value="{{bankInfo.real_name}}"></input>
+            </view>
+        </label>
+        <label>
+            <view class="form-item flex align-center justify-between">
+                <view class="item-title">银行卡号:</view>
+                <input bindinput="__e" class="item-input flex-sub" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','card_no','$event',[] ],['bankInfo'] ] ] ] ]}}" placeholder="请输入银行卡号" placeholderClass="pl-input" type="number" value="{{bankInfo.card_no}}"></input>
+            </view>
+        </label>
+        <label>
+            <view class="form-item flex align-center justify-between">
+                <view class="item-title">开户行:</view>
+                <input bindinput="__e" class="item-input flex-sub" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','bank_name','$event',[] ],['bankInfo'] ] ] ] ]}}" placeholder="请输入开户行" placeholderClass="pl-input" type="text" value="{{bankInfo.bank_name}}"></input>
+            </view>
+        </label>
+    </view>
+    <view class="notice flex align-center">请填写持卡人本人的银行卡信息</view>
+    <view class="btn-box flex align-center justify-center">
+        <button bindtap="__e" class="cu-btn confirem-btn" data-event-opts="{{[ [ 'tap',[ [ 'editBankInfo',['$event'] ] ] ] ]}}">确定</button>
+    </view>
+</view>

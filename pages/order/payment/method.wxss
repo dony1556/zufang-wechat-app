@@ -1,0 +1,47 @@
+@charset "UTF-8";
+.money-box {
+  background: #fff;
+  height: 250rpx;
+  margin-bottom: 20rpx;
+  padding-top: 30rpx;
+}
+.money-box .time {
+  font-size: 28rpx;
+  color: #c4c4c4;
+}
+.money-box .money {
+  color: #e1212b;
+  font-size: 60rpx;
+  margin-top: 60rpx;
+}
+.money-box .money::before {
+  content: "￥";
+  font-size: 46rpx;
+}
+.pay-box .pay-item {
+  height: 90rpx;
+  padding: 0 30rpx;
+  font-size: 26rpx;
+  background: #fff;
+  width: 750rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.pay-box .pay-item:last-child {
+  border-bottom: none;
+}
+.pay-box .pay-item .pay-radio {
+  transform: scale(0.8);
+}
+.pay-box .pay-item .pay-img {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 25rpx;
+}
+.pay-btn {
+  width: 690rpx;
+  height: 80rpx;
+  background: linear-gradient(90deg, #f0c785, #f6d69d);
+  border-radius: 40rpx;
+  color: hsla(0, 0%, 100%, 0.9);
+  margin-top: 100rpx;
+}

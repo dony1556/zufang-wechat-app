@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "我的",
+  "usingComponents": {
+    "wk-empty": "/components/wk-empty/index",
+    "wk-skeletons": "/components/wk-skeletons/index"
+  }
+}

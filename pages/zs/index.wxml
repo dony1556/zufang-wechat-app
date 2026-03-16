@@ -1,0 +1,32 @@
+<view class="page">
+    <view class="content-box">
+        <block wx:for="{{items}}" wx:key="index">
+            <sh-search bind:__l="__l" value="{{item}}" vueId="{{'389581b1-1-'+index}}" wx:if="{{item.type=='search'}}"></sh-search>
+            <zs-banner bind:__l="__l" value="{{item}}" vueId="{{'389581b1-2-'+index}}" wx:if="{{item.type=='banner'}}"></zs-banner>
+            <zs-img-w bind:__l="__l" value="{{item}}" vueId="{{'389581b1-3-'+index}}" wx:if="{{item.type=='imageWindow2'}}"></zs-img-w>
+            <index-notice bind:__l="__l" value="{{item}}" vueId="{{'389581b1-4-'+index}}" wx:if="{{item.type=='notice'}}"></index-notice>
+            <index-num bind:__l="__l" value="{{item}}" vueId="{{'389581b1-5-'+index}}" wx:if="{{item.type=='houseNum'}}"></index-num>
+            <zs-nav bind:__l="__l" value="{{item}}" vueId="{{'389581b1-6-'+index}}" wx:if="{{item.type=='navBar'}}"></zs-nav>
+            <sh-img bind:__l="__l" value="{{item}}" vueId="{{'389581b1-7-'+index}}" wx:if="{{item.type=='imageWindow'}}"></sh-img>
+            <index-ad bind:__l="__l" value="{{item}}" vueId="{{'389581b1-8-'+index}}" wx:if="{{item.type=='ad'}}"></index-ad>
+            <index-float-bar bind:__l="__l" value="{{item}}" vueId="{{'389581b1-9-'+index}}" wx:if="{{item.type=='floatBar'}}"></index-float-bar>
+            <sh-adv bind:__l="__l" value="{{item}}" vueId="{{'389581b1-10-'+index}}" wx:if="{{item.type=='img'}}"></sh-adv>
+        </block>
+        <view class="t-box" wx:if="{{$root.g0>0}}">
+            <scroll-view class="type-scroll" scrollX="{{true}}">
+                <view bindtap="__e" class="{{['item',type_index==index?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selectType',[index] ] ] ] ]}}" wx:for="{{type_list}}" wx:key="index">
+                    <view class="{{['name',type_index==index?'on':'']}}">{{item.name}}</view>
+                </view>
+            </scroll-view>
+        </view>
+        <view class="z-box">
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'navToDetail',['$0'],[ [ ['zs_list','',index,'id'] ] ] ] ] ] ]}}" wx:for="{{zs_list}}" wx:key="index">
+                <view class="title">{{item.title}}</view>
+                <view class="info">
+                    <view class="time">{{item.update_time}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <wk-skeletons bind:__l="__l" type="detail" vueId="389581b1-11" wx:if="{{isLoading}}"></wk-skeletons>
+</view>

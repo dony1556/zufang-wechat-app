@@ -1,0 +1,29 @@
+<view class="page">
+    <view class="scroll-box2">
+        <scroll-view class="scroll" enableFlex="true" scrollX="true">
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'selectTab2',['$0'],[ [ ['tabList2','',index,'status'] ] ] ] ] ] ]}}" wx:for="{{tabList2}}" wx:key="index">
+                <view class="{{['name',status==item.status?'active':'']}}">{{item.name}}</view>
+                <view class="line" wx:if="{{status==item.status}}"></view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="yy-box">
+        <view class="item" wx:for="{{list}}" wx:key="index">
+            <view class="head">
+                <view class="name">{{'订单号：'+item.order_no}}</view>
+                <view class="status" wx:if="{{item.state==1}}">待确认</view>
+                <view class="status" wx:if="{{item.state==9}}">已完成</view>
+            </view>
+            <view class="info">
+                <view class="user">
+                    <image mode class="img" src="{{item.user.avatarurl}}"></image>
+                    <view class="name">{{item.user.nickname}}</view>
+                </view>
+                <view class="money" wx:if="{{loginUser.id==item.one_user_id}}">佣金:<text style="color:#ff5500;">{{item.one_money}}</text>元</view>
+                <view class="money" wx:if="{{loginUser.id==item.two_user_id}}">{{'佣金:style=\\x22color: #ff5500;\\x22>'+item.two_money+'元'}}</view>
+                <view class="money" wx:if="{{loginUser.id==item.three_user_id}}">{{'佣金:style=\\x22color: #ff5500;\\x22>'+item.three_money+'元'}}</view>
+            </view>
+        </view>
+    </view>
+    <wk-empty bind:__l="__l" emptyData="{{emptyData}}" vueId="056e3e78-1" wx:if="{{$root.g0==0}}"></wk-empty>
+</view>

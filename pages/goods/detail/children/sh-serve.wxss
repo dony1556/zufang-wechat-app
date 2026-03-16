@@ -1,0 +1,77 @@
+.serve-box {
+  line-height: 82rpx;
+  background: #fff;
+  padding: 0 20rpx;
+  margin: 20rpx 0;
+}
+.serve-box .title {
+  font-size: 28rpx;
+  color: #999;
+  margin-right: 20rpx;
+}
+.serve-box .tip .tip-list {
+  font-size: 28rpx;
+  margin-right: 20rpx;
+}
+.serve-box .tip .tip-list .tip-img {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+.serve-box .cuIcon-right {
+  color: #bfbfbf;
+  font-size: 36rpx;
+}
+.server-modal-box {
+  width: 750rpx;
+  height: 100%;
+  border-radius: 30rpx 30rpx 0 0;
+  background: #fff;
+  padding: 30rpx;
+}
+.server-modal-box .serve-btn {
+  width: 690rpx;
+  height: 80rpx;
+  background: linear-gradient(90deg, #f0c785, #f6d69d);
+  border-radius: 40rpx;
+  color: hsla(0, 0%, 100%, 0.9);
+  margin-top: 40rpx;
+}
+.server-modal-box .modal-head {
+  margin-bottom: 30rpx;
+  position: relative;
+}
+.server-modal-box .modal-head .head-title {
+  font-size: 32rpx;
+  font-weight: 700;
+}
+.server-modal-box .modal-head .cuIcon-roundclosefill {
+  position: absolute;
+  font-size: 34rpx;
+  color: #e0e0e0;
+  top: 10rpx;
+  right: 10rpx;
+}
+.server-modal-box .modal-content {
+  overflow-y: auto;
+}
+.server-modal-box .modal-content .serve-list {
+  padding-bottom: 40rpx;
+}
+.server-modal-box .modal-content .serve-list .title-tag {
+  width: 38rpx;
+  height: 38rpx;
+  margin-right: 20rpx;
+}
+.server-modal-box .modal-content .serve-list .serve-title {
+  font-size: 28rpx;
+  font-weight: 700;
+}
+.server-modal-box .modal-content .serve-list .serve-detail {
+  text-align: left;
+  font-size: 26rpx;
+  color: #999;
+  line-height: 42rpx;
+  padding-left: 58rpx;
+  margin-top: 20rpx;
+}

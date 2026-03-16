@@ -1,0 +1,21 @@
+<view class="page">
+    <image class="logo" mode="widthFix" src="{{basicSet.logo}}"></image>
+    <view class="name">{{basicSet.home_title}}</view>
+    <view class="content">
+        <wk-parser bind:__l="__l" class="vue-ref" data-ref="content" lazyLoad="{{true}}" vueId="d5b10a5c-1"></wk-parser>
+    </view>
+    <view class="item-box">
+        <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'call',['$event'] ] ] ] ]}}">
+            <view class="left">客服电话</view>
+            <view class="text">{{basicSet.phone}}</view>
+        </view>
+        <view class="item">
+            <view class="left">分享好友</view>
+            <view class="iconfont icon-you" style="font-size:24rpx;color:#999;"></view>
+            <button class="system-buttom" openType="share"></button>
+        </view>
+    </view>
+    <view class="foot">
+        <view class="copyright">{{basicSet.copyright}}</view>
+    </view>
+</view>

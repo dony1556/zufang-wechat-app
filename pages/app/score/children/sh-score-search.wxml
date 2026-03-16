@@ -1,0 +1,7 @@
+<view class="search-box">
+    <view class="box">
+        <view class="iconfont icon-search"></view>
+        <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','key','$event',[] ] ] ] ] ]}}" value="{{key}}"></input>
+        <view bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ [ 'search',['$event'] ] ] ] ]}}">搜索</view>
+    </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "经纪人中心",
+  "usingComponents": {
+    "wk-painter": "/components/wk-painter/index"
+  }
+}

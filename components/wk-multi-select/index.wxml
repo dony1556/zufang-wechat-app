@@ -1,0 +1,13 @@
+<view bindtap="__e" class="jsfun-picker" data-event-opts="{{[ [ 'tap',[ [ 'showPicker',['$event'] ] ] ] ]}}">
+    <slot></slot>
+    <view catchtap="__e" catchtouchmove="true" class="mask" data-event-opts="{{[ [ 'tap',[ [ 'closePicker',['$event'] ] ] ] ]}}" wx:if="{{isShow}}"></view>
+    <view catchtouchmove="true" class="{{['picker',isShow?'pickerShow':'']}}">
+        <view class="top-box">
+            <view catchtap="__e" class="cancel" data-event-opts="{{[ [ 'tap',[ [ 'closePicker',['$event'] ] ] ] ]}}">取消</view>
+            <view catchtap="__e" class="ok" data-event-opts="{{[ [ 'tap',[ [ 'okClick',['$event'] ] ] ] ]}}">确定</view>
+        </view>
+        <view class="list">
+            <view bindtap="__e" class="{{['item',item.select?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'itemClick',[index] ] ] ] ]}}" wx:for="{{listArrNew}}" wx:key="index">{{item.name}}</view>
+        </view>
+    </view>
+</view>

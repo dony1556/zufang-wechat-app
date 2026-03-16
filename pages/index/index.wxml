@@ -1,0 +1,45 @@
+<view class="page">
+    <view catchtap="__e" class="tip-box" data-event-opts="{{[ [ 'tap',[ [ 'tipClose',['$event'] ] ] ] ]}}" wx:if="{{tip_show}}">
+        <text>点击“</text>
+        <view class="small-circle "></view>
+        <view class="big-circle "></view>
+        <view class="small-circle "></view>
+        <text>”添加到我的小程序,微信首页下拉即可快速访问</text>
+        <view class="iconfont icon-guanbi tip-close"></view>
+        <view class="tip-sj"></view>
+    </view>
+    <view class="top-back" style="{{'background:'+hbData.head.params.backgroundColor+';'}}"></view>
+    <view class="content-box">
+        <block wx:for="{{items}}" wx:key="index">
+            <sh-search bind:__l="__l" value="{{item}}" vueId="{{'8dd740cc-1-'+index}}" wx:if="{{item.type=='search'}}"></sh-search>
+            <sh-banner bind:__l="__l" value="{{item}}" vueId="{{'8dd740cc-2-'+index}}" wx:if="{{item.type=='banner'}}"></sh-banner>
+            <index-notice bind:__l="__l" value="{{item}}" vueId="{{'8dd740cc-3-'+index}}" wx:if="{{item.type=='notice'}}"></index-notice>
+            <index-magic bind:__l="__l" value="{{item}}" vueId="{{'8dd740cc-4-'+index}}" wx:if="{{item.type=='imageMagic'}}"></index-magic>
+            <index-num bind:__l="__l" value="{{item}}" vueId="{{'8dd740cc-5-'+index}}" wx:if="{{item.type=='houseNum'}}"></index-num>
+            <sh-menu bind:__l="__l" value="{{item}}" vueId="{{'8dd740cc-6-'+index}}" wx:if="{{item.type=='navBar'}}"></sh-menu>
+            <sh-img bind:__l="__l" value="{{item}}" vueId="{{'8dd740cc-7-'+index}}" wx:if="{{item.type=='imageWindow'}}"></sh-img>
+            <index-ad bind:__l="__l" value="{{item}}" vueId="{{'8dd740cc-8-'+index}}" wx:if="{{item.type=='ad'}}"></index-ad>
+            <index-float-bar bind:__l="__l" value="{{item}}" vueId="{{'8dd740cc-9-'+index}}" wx:if="{{item.type=='floatBar'}}"></index-float-bar>
+            <sh-adv bind:__l="__l" value="{{item}}" vueId="{{'8dd740cc-10-'+index}}" wx:if="{{item.type=='img'}}"></sh-adv>
+            <sh-hot-goods bind:__l="__l" value="{{item}}" vueId="{{'8dd740cc-11-'+index}}" wx:if="{{item.type==='goodsList'||item.type==='goods-group'}}"></sh-hot-goods>
+        </block>
+        <view class="house-type-box" wx:if="{{$root.g0>0}}">
+            <scroll-view class="type-scroll" scrollIntoView="{{'t_'+type_index}}" scrollWithAnimation="{{true}}" scrollX="{{true}}">
+                <view bindtap="__e" class="{{['item',index==type_index?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selectType',[index] ] ] ] ]}}" id="{{'t_'+index}}" wx:for="{{typeList}}" wx:key="index">
+                    <view class="{{['name',index==type_index?'on':'']}}">{{item.alias||item.name}}</view>
+                </view>
+            </scroll-view>
+        </view>
+        <view class="house-box">
+            <wk-houses bind:__l="__l" value="{{houseList}}" vueId="8dd740cc-12"></wk-houses>
+        </view>
+        <view class="more-load">
+            <view class="cu-load  light bg-olive  loading" wx:if="{{isLoading2==1}}"></view>
+            <view bindtap="__e" class="cu-load  light bg-olive" data-event-opts="{{[ [ 'tap',[ [ 'navToMore',['$event'] ] ] ] ]}}" wx:if="{{type&&isLoading2==0}}">查看更多</view>
+        </view>
+    </view>
+    <view class="copyright">{{basicSet.copyright}}</view>
+    <wk-tabar bind:__l="__l" vueId="8dd740cc-13"></wk-tabar>
+    <wk-skeletons bind:__l="__l" type="detail" vueId="8dd740cc-14" wx:if="{{isLoading}}"></wk-skeletons>
+    <wk-login-modal bind:__l="__l" vueId="8dd740cc-15"></wk-login-modal>
+</view>

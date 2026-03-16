@@ -1,0 +1,24 @@
+<view class="set-box">
+    <view bindtap="__e" class="list x-bc" data-event-opts="{{[ [ 'tap',[ [ 'jump',['/pages/public/feedback'] ] ] ] ]}}">
+        <view class="title">意见反馈</view>
+        <text class="cuIcon-right"></text>
+    </view>
+    <view bindtap="__e" class="list x-bc" data-event-opts="{{[ [ 'tap',[ [ 'jump',['/pages/user/edit-password'] ] ] ] ]}}">
+        <view class="title">修改密码</view>
+        <text class="cuIcon-right"></text>
+    </view>
+    <view bindtap="__e" class="list x-bc" data-event-opts="{{[ [ 'tap',[ [ 'jump',[ '/pages/public/richtext',[ 'o',['id',3] ] ] ] ] ] ]}}">
+        <view class="title">关于我们</view>
+        <text class="cuIcon-right"></text>
+    </view>
+    <view bindtap="__e" class="list x-bc" data-event-opts="{{[ [ 'tap',[ [ 'onVersion',['$event'] ] ] ] ]}}">
+        <view class="title">当前版本</view>
+        <text class="cuIcon-right"></text>
+    </view>
+    <view bindtap="__e" class="list x-bc" data-event-opts="{{[ [ 'tap',[ [ 'outLogin',['$event'] ] ] ] ]}}">
+        <view class="title">退出登录</view>
+        <text class="cuIcon-right"></text>
+    </view>
+    <shopro-tabbar bind:__l="__l" vueId="215ffd4f-1"></shopro-tabbar>
+    <shopro-float-btn bind:__l="__l" vueId="215ffd4f-2"></shopro-float-btn>
+</view>

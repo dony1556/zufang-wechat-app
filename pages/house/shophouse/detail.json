@@ -1,0 +1,13 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "wk-navbar": "/components/wk-navbar/index",
+    "wk-near-map": "/components/wk-near-map/index",
+    "wk-houses": "/components/wk-houses/index",
+    "wk-share": "/components/wk-share/index",
+    "wk-painter": "/components/wk-painter/index",
+    "wk-login-modal": "/components/wk-login-modal/index",
+    "wk-skeletons": "/components/wk-skeletons/index",
+    "house-yy": "/pages/house/components/house-yy"
+  }
+}

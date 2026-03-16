@@ -1,0 +1,14 @@
+<view class="banner-swiper-box" style="{{'padding:'+value.params.paddingTB+'rpx '+value.params.paddingLR+'rpx'+';'+'background-color:'+value.params.backgroundColor+';'}}" wx:if="{{value.data}}">
+    <swiper autoplay="{{true}}" bindchange="__e" circular="{{true}}" class="banner-carousel " data-event-opts="{{[ [ 'change',[ [ 'swiperChange',['$event'] ] ] ] ]}}" style="{{'height:'+swiper_height+'rpx'+';'}}">
+        <swiper-item bindtap="__e" class="swiper-item " data-event-opts="{{[ [ 'tap',[ [ 'routerTo',['$0'],[ [ ['value.data','',index] ] ] ] ] ] ]}}" wx:for="{{value.data}}" wx:key="index">
+            <view class="item">
+                <image class="img " mode="aspectFill" src="{{item.imgUrl}}" style="{{'border-radius:'+value.params.radius+'rpx'+';'}}"></image>
+                <button class="system-buttom" openType="contact" wx:if="{{item.click_type==2}}"></button>
+                <button class="system-buttom" openType="share" wx:if="{{item.click_type==6}}"></button>
+            </view>
+        </swiper-item>
+    </swiper>
+    <view class="banner-swiper-dots">
+        <text class="{{[swiperCurrent===index?'banner-dot-active':'banner-dot']}}" wx:for="{{value.data.length}}" wx:for-item="dot" wx:key="index"></text>
+    </view>
+</view>

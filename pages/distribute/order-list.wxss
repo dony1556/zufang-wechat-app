@@ -1,0 +1,122 @@
+.page .scroll-box {
+  background-color: #fff;
+  width: 100%;
+  border-bottom: 1rpx solid #f7f8f9;
+  position: -webkit-sticky;
+  position: sticky;
+}
+.page .scroll-box .scroll {
+  height: 80rpx;
+  white-space: nowrap;
+  width: 100%;
+  text-align: center;
+}
+.page .scroll-box .scroll .item {
+  height: 80rpx;
+  padding: 0 50rpx;
+  display: inline-block;
+  width: 50%;
+}
+.page .scroll-box .scroll .item .name {
+  height: 72rpx;
+  line-height: 72rpx;
+}
+.page .scroll-box .scroll .item .name.active {
+  color: #f50;
+}
+.page .scroll-box .scroll .item .line {
+  margin-left: 30%;
+  width: 40%;
+  height: 2rpx;
+  background-color: #f50;
+  border-radius: 6rpx;
+}
+.page .scroll-box2 {
+  background-color: #fff;
+  width: 100%;
+  border-bottom: 1rpx solid #f7f8f9;
+  position: -webkit-sticky;
+  position: sticky;
+}
+.page .scroll-box2 .scroll {
+  height: 80rpx;
+  white-space: nowrap;
+  width: 100%;
+  text-align: center;
+}
+.page .scroll-box2 .scroll .item {
+  height: 80rpx;
+  padding: 0 50rpx;
+  display: inline-block;
+  width: 33.33%;
+}
+.page .scroll-box2 .scroll .item .name {
+  height: 72rpx;
+  line-height: 72rpx;
+}
+.page .scroll-box2 .scroll .item .name.active {
+  color: #f50;
+}
+.page .scroll-box2 .scroll .item .line {
+  margin-left: 30%;
+  width: 40%;
+  height: 2rpx;
+  background-color: #f50;
+  border-radius: 6rpx;
+}
+.page .yy-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0rpx 20rpx;
+}
+.page .yy-box .item {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8rpx;
+  background-color: #fff;
+  padding: 20rpx 20rpx;
+  margin-top: 20rpx;
+}
+.page .yy-box .item .head {
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #f8f8f8;
+}
+.page .yy-box .item .head .name {
+  font-weight: 700;
+  font-size: 26rpx;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 66rpx;
+}
+.page .yy-box .item .head .status {
+  margin-left: 20rpx;
+  font-size: 26rpx;
+  font-weight: 700;
+  color: #f50;
+}
+.page .yy-box .item .info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 0rpx;
+}
+.page .yy-box .item .info .user {
+  display: flex;
+  align-items: center;
+}
+.page .yy-box .item .info .user .img {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 6rpx;
+}
+.page .yy-box .item .info .user .name {
+  font-size: 28rpx;
+  margin-left: 12rpx;
+}
+.page .yy-box .item .info .money {
+  font-size: 28rpx;
+}

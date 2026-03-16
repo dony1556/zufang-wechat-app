@@ -1,0 +1,53 @@
+<view class="page">
+    <view class="no-box" wx:if="{{loginUser.is_distributor==1}}">
+        <image mode class="img" src="static/image/icon-share-tip.png"></image>
+        <view class="tip">您还不是分销商，请先提交申请</view>
+        <view bindtap="__e" class="apply" data-event-opts="{{[ [ 'tap',[ [ 'navToAdd',['$event'] ] ] ] ]}}">立即申请</view>
+    </view>
+    <view class="wait-box" wx:if="{{loginUser.is_distributor==2}}">
+        <image mode class="img" src="static/image/icon-share-tip.png"></image>
+        <view class="tip">感谢您的支持，请等待审核</view>
+        <view bindtap="__e" class="apply" data-event-opts="{{[ [ 'tap',[ [ 'navToHome',['$event'] ] ] ] ]}}">去逛逛</view>
+    </view>
+    <view class="delete-box" wx:if="{{loginUser.is_distributor==4}}">
+        <image mode class="img" src="static/image/icon-share-tip.png"></image>
+        <view class="tip">非常抱歉，您的申请被驳回</view>
+        <view class="tip2">{{'拒绝理由：'+distribute.check_msg}}</view>
+    </view>
+    <view class="delete-box" wx:if="{{loginUser.is_distributor==5}}">
+        <image mode class="img" src="static/image/icon-share-tip.png"></image>
+        <view class="tip">您被解除分销商身份</view>
+        <view class="tip2">{{'解除理由：'+distribute.delete_msg}}</view>
+        <view bindtap="__e" class="apply" data-event-opts="{{[ [ 'tap',[ [ 'navToAdd',['$event'] ] ] ] ]}}">再次申请</view>
+    </view>
+    <view class="index-box" wx:if="{{loginUser.is_distributor==6}}">
+        <view class="item-box">
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'navToWallet',['$event'] ] ] ] ]}}">
+                <image mode class="img" src="static/image/img-share-price.png"></image>
+                <view class="name">钱包</view>
+                <view class="num">{{loginUser.money+'元'}}</view>
+            </view>
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'navToOrder',['$event'] ] ] ] ]}}">
+                <image mode class="img" src="static/image/img-share-order.png"></image>
+                <view class="name">分销订单</view>
+                <view class="num">{{order_count}}</view>
+            </view>
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'navToTeam',['$event'] ] ] ] ]}}">
+                <image mode class="img" src="static/image/img-share-team.png"></image>
+                <view class="name">团队</view>
+                <view class="num">{{team_count+'人'}}</view>
+            </view>
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'share_haibao',['$event'] ] ] ] ]}}">
+                <image mode class="img" src="static/image/img-share-qrcode.png"></image>
+                <view class="name">分销码</view>
+                <view class="num"></view>
+            </view>
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'navToSee',['$event'] ] ] ] ]}}">
+                <image mode class="img" src="static/image/see.png"></image>
+                <view class="name">转发浏览</view>
+                <view class="num"></view>
+            </view>
+        </view>
+    </view>
+    <wk-painter bind:__l="__l" board="{{board}}" class="vue-ref" customStyle="{{'transform: scale('+343/375+'); transform-origin: left top;'}}" data-ref="wkPainter" isBase64ToPath="{{true}}" isRenderImage="{{true}}" vueId="e3e6f9ee-1"></wk-painter>
+</view>

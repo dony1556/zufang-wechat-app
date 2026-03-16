@@ -1,0 +1,204 @@
+<view class="page">
+    <wk-navbar bind:__l="__l" isBack="{{true}}" style="{{style}}" vueId="e45dae92-1" vueSlots="{{['default']}}">
+        <view class="flex">{{pageTitle}}</view>
+    </wk-navbar>
+    <view class="top-box"></view>
+    <view class="content-box">
+        <scroll-view bindscroll="__e" class="scroll-box" data-event-opts="{{[ [ 'scroll',[ [ 'pageScroll',['$event'] ] ] ] ]}}" scrollY="true">
+            <view class="swiper-box">
+                <swiper autoplay="{{true}}" bindchange="__e" class="carousel" current="{{carouselIndex}}" data-event-opts="{{[ [ 'change',[ [ 'carouselChange',['$event'] ] ] ] ]}}">
+                    <swiper-item bindtap="__e" class="carousel-item" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}" data-event-params="{{index}}" wx:for="{{house.thumbs}}" wx:key="index">
+                        <image class="img" lazyLoad="{{true}}" mode="aspectFill" src="{{item}}"></image>
+                    </swiper-item>
+                    <swiper-item class="carousel-item" wx:if="{{$root.g0==0}}">
+                        <image class="img" lazyLoad="{{true}}" mode="aspectFill" src="{{basicSet.default_img}}"></image>
+                    </swiper-item>
+                </swiper>
+                <view class="type-box">
+                    <view class="item on">图片</view>
+                    <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'navToVr',['$event'] ] ] ] ]}}" wx:if="{{house.vr_link}}">vr</view>
+                    <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'openVideo',['$event'] ] ] ] ]}}" wx:if="{{house.video}}">视频</view>
+                </view>
+                <view class="num-box">
+                    <text class="text">{{carouselIndex2+1+'/'+$root.g1}}</text>
+                </view>
+                <video class="video" id="video" src="{{house.video}}" wx:if="{{video_show==1}}"></video>
+                <view bindtap="__e" class="iconfont icon-shanchu1  video-close" data-event-opts="{{[ [ 'tap',[ [ 'close_video',['$event'] ] ] ] ]}}" wx:if="{{video_show==1}}"></view>
+            </view>
+            <view class="box-1">
+                <view class="title-box">
+                    <view class="title">{{house.title}}</view>
+                    <view bindtap="__e" class="share" data-event-opts="{{[ [ 'tap',[ [ 'openShare',['$event'] ] ] ] ]}}">
+                        <view class="iconfont icon-fenxiang1" style="font-size:36rpx;color:#00aa00;"></view>
+                        <text class="text">分享</text>
+                    </view>
+                </view>
+                <view class=" bz-box" wx:if="{{house.guarantee}}">
+                    <text class="left">保障</text>
+                    <text class="right">{{house.guarantee}}</text>
+                </view>
+                <view class="lb-box">
+                    <block wx:for="{{house.tag_names}}" wx:key="index">
+                        <view class="cu-tag radius line-red" wx:if="{{index%6==0}}">{{item}}</view>
+                        <view class="cu-tag radius line-olive" wx:if="{{index%6==1}}">{{item}}</view>
+                        <view class="cu-tag radius line-yellow" wx:if="{{index%6==2}}">{{item}}</view>
+                        <view class="cu-tag radius  line-green" wx:if="{{index%6==3}}">{{item}}</view>
+                        <view class="cu-tag radius line-blue" wx:if="{{index%6==4}}">{{item}}</view>
+                        <view class="cu-tag radius line-mauve" wx:if="{{index%6==5}}">{{item}}</view>
+                    </block>
+                </view>
+            </view>
+            <view class="thrs-box">
+                <view class="thr-item">
+                    <view class="tit">价格</view>
+                    <view class="con" wx:if="{{house.money>0}}">{{house.money+'万元'}}</view>
+                    <view class="con" wx:else>面议</view>
+                </view>
+                <view class="thr-item">
+                    <view class="tit">户型</view>
+                    <view class="con">
+                        <block wx:if="{{house.shi>0}}">{{house.shi+'室'}}</block>
+                        <block wx:if="{{house.ting>0}}">{{house.ting+'厅'}}</block>
+                        <block wx:if="{{house.wei>0}}">{{house.wei+'卫'}}</block>
+                    </view>
+                </view>
+                <view class="thr-item">
+                    <view class="tit">面积</view>
+                    <view class="con">{{house.mj+'㎡'}}</view>
+                </view>
+            </view>
+            <view class="info-box">
+                <view class="head">
+                    <text class="iconfont icon-jibenxinxi" style="font-size:36rpx;color:#ff5500;margin-right:8rpx;"></text>房源信息</view>
+                <view class="des-box ">
+                    <view class="des" wx:if="{{house.type2}}">
+                        <view class="left">类型：</view>
+                        <view class="right">{{house.type2}}</view>
+                    </view>
+                    <view class="des">
+                        <view class="left">楼层：</view>
+                        <view class="right">{{house.floorLevel}}</view>
+                    </view>
+                    <view class="des">
+                        <view class="left">朝向：</view>
+                        <view class="right">{{house.direction}}</view>
+                    </view>
+                    <view class="des">
+                        <view class="left">装修：</view>
+                        <view class="right">{{house.decorate}}</view>
+                    </view>
+                    <view class="des">
+                        <view class="left">电梯：</view>
+                        <view class="right">{{house.is_elevator==1?'电梯房':'无'}}</view>
+                    </view>
+                    <view class="des">
+                        <view class="left">年代：</view>
+                        <view class="right">{{house.year}}</view>
+                    </view>
+                    <view class="des" wx:for="{{house.form_data}}" wx:key="index">
+                        <view class="left">{{item.name+'：'}}</view>
+                        <view class="right">{{item.value}}</view>
+                    </view>
+                    <view class="des" wx:if="{{is_admin==1}}">
+                        <view class="left">楼层：</view>
+                        <view class="right">{{house.floor}}</view>
+                    </view>
+                    <view class="des" wx:if="{{is_admin==1}}">
+                        <view class="left">房产证：</view>
+                        <view bindtap="__e" class="right" data-event-opts="{{[ [ 'tap',[ [ 'fczPre',['$event'] ] ] ] ]}}" style="color:#0081FF;" wx:if="{{$root.g2>0}}">点击查看</view>
+                        <view class="right" wx:else>暂无</view>
+                    </view>
+                    <view class="des">
+                        <view class="left">小区：</view>
+                        <view bindtap="__e" class="right" data-event-opts="{{[ [ 'tap',[ [ 'navtoCommunity',['$event'] ] ] ] ]}}" style="color:#0081FF;">{{house.xiao_qu}}</view>
+                    </view>
+                </view>
+            </view>
+            <view bindtap="__e" class="user-box" data-event-opts="{{[ [ 'tap',[ [ 'navToCenter',['$event'] ] ] ] ]}}" wx:if="{{user.id>0&&basicSet.house_set.show_pub_man==1&&house.agent_id==0}}">
+                <view class="head">
+                    <text class="iconfont icon-faburen" style="font-size:32rpx;color:#ff5500;margin-right:8rpx;"></text>发布者信息</view>
+                <view class="user">
+                    <view class="img-box">
+                        <image class="img" src="{{user.avatarurl}}"></image>
+                    </view>
+                    <view class="text-box">
+                        <view class="name">{{user.nickname}}</view>
+                    </view>
+                    <view catchtap="__e" class="chat" data-event-opts="{{[ [ 'tap',[ ['chat'] ] ] ]}}" wx:if="{{basicSet.house_set.show_chat==1}}">
+                        <view class="iconfont icon-IMliaotian-duihua" style="font-size:46rpx;color:#739e3b;"></view>
+                    </view>
+                    <view catchtap="__e" class="phone" data-event-opts="{{[ [ 'tap',[ ['call2'] ] ] ]}}">
+                        <view class="iconfont icon-weibiaoti-" style="font-size:46rpx;color:#ec693f;"></view>
+                    </view>
+                </view>
+            </view>
+            <view class="detail-box" wx:if="{{house.content}}">
+                <view class="head">
+                    <text class="iconfont icon-xinwenbijixuexineirongmeiti" style="font-size:32rpx;color:#ff5500;margin-right:8rpx;"></text>房屋介绍</view>
+                <view class="content">
+                    <text>{{house.content}}</text>
+                </view>
+            </view>
+            <view class="map-box">
+                <view class="head">
+                    <text class="iconfont icon-weizhi" style="font-size:32rpx;color:#ff5500;margin-right:8rpx;"></text>位置及周边</view>
+                <view bindtap="__e" class="address" data-event-opts="{{[ [ 'tap',[ [ 'nav_address',['$event'] ] ] ] ]}}">
+                    <view class="title">位置：</view>
+                    <view class="name">{{house.address}}</view>
+                    <view class="iconfont icon-daohangdizhi icon"></view>
+                </view>
+                <view class="content" wx:if="{{house.lat>0&&house.lng>0&&basicSet.house_set.show_near==1}}">
+                    <wk-near-map bind:__l="__l" lat="{{house.lat}}" lng="{{house.lng}}" vueId="e45dae92-2"></wk-near-map>
+                </view>
+            </view>
+            <view class="no-ze" wx:if="{{basicSet.disclaimer}}">
+                <view class="top-box">
+                    <view class="title">免责说明</view>
+                    <view bindtap="__e" class="report" data-event-opts="{{[ [ 'tap',[ [ 'navToReport',['$event'] ] ] ] ]}}">举报</view>
+                </view>
+                <view class="content">{{basicSet.disclaimer}}</view>
+            </view>
+            <view class="near-box" wx:if="{{$root.g3>0}}">
+                <view class="title-box">
+                    <view class="title">
+                        <text class="iconfont icon-house" style="font-size:32rpx;color:#ff5500;margin-right:8rpx;"></text>附近其他房源</view>
+                </view>
+                <view class="content">
+                    <wk-houses bind:__l="__l" value="{{houseList}}" vueId="e45dae92-3"></wk-houses>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="footer-box">
+        <view class="bot2">
+            <view catchtap="__e" class="nav2" data-event-opts="{{[ [ 'tap',[ [ 'backHome',['$event'] ] ] ] ]}}">
+                <view class="iconfont icon-shouye" style="font-size:36rpx;color:#999;"></view>
+                <text class="text">首页</text>
+            </view>
+            <view catchtap="__e" class="{{['nav2',collect_delay?'animation-scale-up':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'collect',['$event'] ] ] ] ]}}">
+                <block wx:if="{{isCollect==1}}">
+                    <view class="iconfont icon-buoumaotubiao44" style="font-size:36rpx;color:#FF0000;"></view>
+                    <text class="text" style="color:#FF0000;">已收藏</text>
+                </block>
+                <block wx:else>
+                    <view class="iconfont icon-shoucang1" style="font-size:36rpx;color:#999;"></view>
+                    <text class="text">收藏</text>
+                </block>
+            </view>
+            <view catchtap="__e" class="{{['nav2',yy_delay?'animation-scale-up':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'see',['$event'] ] ] ] ]}}">
+                <view class="iconfont icon-yuyue" style="font-size:36rpx;color:#999;"></view>
+                <text class="text">预约</text>
+            </view>
+            <view class="btn-box">
+                <view catchtap="__e" class="call2" data-event-opts="{{[ [ 'tap',[ ['call2'] ] ] ]}}" hoverClass="hover-call" hoverStayTime="3000">电话联系</view>
+                <view catchtap="__e" class="yy2" data-event-opts="{{[ [ 'tap',[ ['chat'] ] ] ]}}" hoverClass="hover-yy" hoverStayTime="3000" wx:if="{{basicSet.house_set.show_chat==1}}">在线聊天<button class="system-buttom" openType="contact" wx:if="{{house.uid==0&&house.agent_id==0}}"></button>
+                </view>
+            </view>
+        </view>
+    </view>
+    <wk-share bind:__l="__l" bind:handlePoster="__e" class="vue-ref" data-event-opts="{{[ [ '^handlePoster',[ ['handlePoster'] ] ] ]}}" data-ref="wkShare" vueId="e45dae92-4"></wk-share>
+    <wk-painter bind:__l="__l" board="{{board}}" class="vue-ref" customStyle="{{'transform: scale('+343/375+'); transform-origin: left top;'}}" data-ref="wkPainter" isBase64ToPath="{{true}}" isRenderImage="{{true}}" vueId="e45dae92-5"></wk-painter>
+    <house-yy bind:__l="__l" class="vue-ref" data-ref="houseYy" house_type="oldhouse" vueId="e45dae92-6"></house-yy>
+    <wk-login-modal bind:__l="__l" vueId="e45dae92-7"></wk-login-modal>
+    <wk-skeletons bind:__l="__l" type="detail" vueId="e45dae92-8" wx:if="{{isLoading}}"></wk-skeletons>
+</view>

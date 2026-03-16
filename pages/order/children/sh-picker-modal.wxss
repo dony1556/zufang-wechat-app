@@ -1,0 +1,40 @@
+.modal-box {
+  width: 750rpx;
+  height: 700rpx;
+  border-radius: 30rpx 30rpx 0 0;
+  background: #fff;
+  padding: 30rpx;
+}
+.modal-box .serve-btn {
+  width: 690rpx;
+  height: 80rpx;
+  background: linear-gradient(90deg, #f0c785, #f6d69d);
+  border-radius: 40rpx;
+  color: hsla(0, 0%, 100%, 0.9);
+  margin-top: 40rpx;
+}
+.modal-box .modal-head {
+  margin-bottom: 30rpx;
+}
+.modal-box .modal-head .head-title {
+  font-size: 32rpx;
+  font-weight: 700;
+}
+.modal-box .modal-head .cuIcon-roundclosefill {
+  font-size: 34rpx;
+  color: #e0e0e0;
+}
+.modal-box .modal-content .radio-item {
+  width: 100%;
+  padding: 10rpx 0;
+}
+.modal-box .modal-content .radio-item .coupon-title {
+  font-size: 28rpx;
+}
+.modal-box .modal-content .radio-item .coupon-radio {
+  transform: scale(0.8);
+}
+.modal-box .uni-radio-input-checked {
+  background-color: #f37b1d !important;
+  border: #f37b1d !important;
+}

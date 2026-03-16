@@ -1,0 +1,39 @@
+<view class="page_box">
+    <view class="head_box">
+        <cu-custom bind:__l="__l" isBack="{{true}}" vueId="c2b546c0-1" vueSlots="{{['backText','content']}}">
+            <view slot="backText">积分余额</view>
+            <view slot="content"></view>
+        </cu-custom>
+        <image mode class="bg" src="http://shopro.7wpp.com/imgs/user/integral_bg.png"></image>
+        <view class="all-box x-c">
+            <text class="all-num">{{score}}</text>
+            <text class="all-title">当前积分</text>
+        </view>
+        <view class="tab-box x-f">
+            <view bindtap="__e" class="tab-item y-f " data-event-opts="{{[ [ 'tap',[ [ 'onTab',['all'] ] ] ] ]}}">
+                <text class="{{['tab-name',tabDot==='all'?'tab-active':'']}}">全部</text>
+            </view>
+            <view bindtap="__e" class="tab-item y-f " data-event-opts="{{[ [ 'tap',[ [ 'onTab',['add'] ] ] ] ]}}">
+                <text class="{{['tab-name',tabDot==='add'?'tab-active':'']}}">收入</text>
+            </view>
+            <view bindtap="__e" class="tab-item y-f " data-event-opts="{{[ [ 'tap',[ [ 'onTab',['reduce'] ] ] ] ]}}">
+                <text class="{{['tab-name',tabDot==='reduce'?'tab-active':'']}}">支出</text>
+            </view>
+        </view>
+    </view>
+    <view class="content_box">
+        <scroll-view bindscrolltolower="__e" class="scroll-box" data-event-opts="{{[ [ 'scrolltolower',[ [ 'loadMore',['$event'] ] ] ] ]}}" scrollY="true">
+            <view class="item-box x-bc" wx:for="{{$root.l0}}" wx:for-index="__i0__" wx:for-item="log" wx:key="id">
+                <view class="y-start">
+                    <view class="name">{{log.$orig.type_name}}</view>
+                    <view class="time">{{log.m0}}</view>
+                </view>
+                <view class="num" wx:if="{{log.$orig.is_add}}">{{'+'+log.$orig.wallet}}</view>
+                <view class="num" wx:else>{{'-'+log.$orig.wallet}}</view>
+            </view>
+            <view class="{{['cu-load','text-gray',loadStatus]}}" wx:if="{{$root.g0}}"></view>
+        </scroll-view>
+    </view>
+    <view class="foot_box"></view>
+    <shopro-tabbar bind:__l="__l" vueId="c2b546c0-2"></shopro-tabbar>
+</view>

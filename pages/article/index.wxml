@@ -1,0 +1,38 @@
+<view class="page data-v-03c1e9f0">
+    <view class="top data-v-03c1e9f0">
+        <view class="{{['navbar','data-v-03c1e9f0',showNavFloat?'floatbar':'']}}">
+            <view class="menu data-v-03c1e9f0" wx:if="{{$root.g0>0}}">
+                <view class="category data-v-03c1e9f0">
+                    <scroll-view bindscroll="__e" class="data-v-03c1e9f0" data-event-opts="{{[ [ 'scroll',[ ['navFloatShow'] ] ] ]}}" scrollIntoView="{{scrollTypeId}}" scrollWithAnimation="{{true}}" scrollX="{{true}}">
+                        <view bindtap="__e" class="{{['item','data-v-03c1e9f0',typeId==item.id?'current':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'categoryChange',[index] ] ] ] ]}}" id="{{'type-id-'+index}}" wx:for="{{typeList}}" wx:key="index">
+                            <view class="text data-v-03c1e9f0">
+                                <text class="data-v-03c1e9f0">{{item.type_name}}</text>
+                            </view>
+                        </view>
+                    </scroll-view>
+                </view>
+                <view bindtap="__e" class="list data-v-03c1e9f0" data-event-opts="{{[ [ 'tap',[ [ 'menuShow',[!showMenu] ] ] ] ]}}">
+                    <view class="iconfont icon-Group- data-v-03c1e9f0" style="font-size:40rpx;color:#bbbbbb;"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="content data-v-03c1e9f0">
+        <view class="menu-block fade-in data-v-03c1e9f0" hidden="{{!showMenu}}">
+            <view class="list data-v-03c1e9f0">
+                <text bindtap="__e" class="{{['item','data-v-03c1e9f0',typeId==item.id?'current':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'categoryChange',[index] ] ] ] ]}}" id="{{'category_id-'+index+1}}" wx:for="{{typeList}}" wx:key="index">{{''+item.type_name+''}}</text>
+            </view>
+        </view>
+        <swiper autoplay="{{true}}" circular="{{true}}" class="swiper data-v-03c1e9f0" indicatorDots="{{true}}" wx:if="{{$root.g1>0}}">
+            <swiper-item class="data-v-03c1e9f0" wx:for="{{sliderList}}" wx:key="index">
+                <view bindtap="__e" class="item data-v-03c1e9f0" data-event-opts="{{[ [ 'tap',[ [ 'navtoDetail',['$0'],[ [ ['sliderList','',index,'id'] ] ] ] ] ] ]}}">
+                    <image class="data-v-03c1e9f0" lazyLoad="{{true}}" mode="aspectFill" src="{{item.cover}}"></image>
+                    <view class="title data-v-03c1e9f0">
+                        <text class="data-v-03c1e9f0">{{item.title}}</text>
+                    </view>
+                </view>
+            </swiper-item>
+        </swiper>
+        <article-list bind:__l="__l" class="data-v-03c1e9f0" list="{{articleList}}" vueId="287468b6-1"></article-list>
+    </view>
+</view>

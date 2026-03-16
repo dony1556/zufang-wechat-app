@@ -1,0 +1,18 @@
+.page {
+  background-color: #fff;
+  min-height: 100vh;
+}
+.page .logo {
+  width: 128rpx;
+  height: 128rpx;
+  margin-top: 100rpx;
+  margin-bottom: 25rpx;
+}
+.page .name {
+  margin-top: 40rpx;
+  font-size: 35rpx;
+  color: #333;
+}
+.page .content {
+  padding: 10rpx 16rpx;
+}

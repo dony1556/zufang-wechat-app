@@ -1,0 +1,125 @@
+<wk-skeletons bind:__l="__l" type="detail" vueId="dd396f40-1" wx:if="{{!goods.title}}"></wk-skeletons>
+<view class="detail_box shopro-selector" wx:else>
+    <view class="detail-content">
+        <view class="goodes_detail_swiper-box">
+            <sh-groupon-tip bind:__l="__l" vueId="dd396f40-2" wx:if="{{false}}"></sh-groupon-tip>
+            <swiper autoplay="{{true}}" bindchange="__e" circular="{{true}}" class="carousel" data-event-opts="{{[ [ 'change',[ [ 'swiperChange',['$event'] ] ] ] ]}}">
+                <swiper-item bindtap="__e" class="carousel-item" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}" wx:for="{{goods.thumbs}}" wx:for-item="img" wx:key="index">
+                    <image class="swiper-image shopro-selector-rect" lazyLoad="{{true}}" mode="aspectFill" src="{{img}}"></image>
+                </swiper-item>
+            </swiper>
+            <view class="swiper-dots" wx:if="{{goods.thumbs}}">{{swiperCurrent+1+' / '+$root.g0}}</view>
+        </view>
+        <sh-price bind:__l="__l" bind:change="__e" data-event-opts="{{[ [ '^change',[ ['getActivityRules'] ] ] ]}}" detail="{{goods}}" type="{{detailType}}" vueId="dd396f40-3" wx:if="{{goods}}"></sh-price>
+        <view class="goods-title ">
+            <text class="shopro-selector-rect">{{goods.title}}</text>
+        </view>
+        <view class="sub-title ">
+            <text class="shopro-selector-rect">{{goods.subtitle}}</text>
+        </view>
+        <view bindtap="__e" class="sku-box shopro-selector-rect" data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}" wx:if="{{$root.m0}}">
+            <view class="x-bc">
+                <view class="x-f">
+                    <text class="title">规格</text>
+                    <text class="tip">{{currentSkuText||'请选择规格'}}</text>
+                </view>
+                <text class="cuIcon-right"></text>
+            </view>
+        </view>
+        <sh-serve bind:__l="__l" bind:input="__e" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','showServe','$event',[] ] ] ] ] ]}}" serveList="{{goods.service}}" value="{{showServe}}" vueId="dd396f40-4"></sh-serve>
+        <sh-coupon bind:__l="__l" couponList="{{goods.coupons}}" vueId="dd396f40-5" wx:if="{{$root.g1}}"></sh-coupon>
+        <sh-groupon bind:__l="__l" grouponData="{{goods}}" vueId="dd396f40-6" wx:if="{{goods.activity&&goods.activity.type==='groupon'&&goods.activity.rules.team_card==='1'&&detailType!=='score'}}"></sh-groupon>
+        <view class="sticky-box">
+            <view class="tab-box x-f">
+                <view bindtap="__e" class="tab-item y-f x-c" data-event-opts="{{[ [ 'tap',[ [ 'onTab',['$0'],[ [ ['tabList','id',tab.$orig.id,'id'] ] ] ] ] ] ]}}" wx:for="{{$root.l0}}" wx:for-index="__i0__" wx:for-item="tab" wx:key="id">
+                    <view class="tab-title">{{''+tab.$orig.title+''}}<text class="comment-num" wx:if="{{tab.$orig.id=='tab2'}}">{{'('+tab.g2+')'}}</text>
+                    </view>
+                    <text class="{{['tab-line',tabCurrent===tab.$orig.id?'line-active':'']}}"></text>
+                </view>
+            </view>
+            <view class="tab-detail">
+                <view class="rich-box" hidden="{{!(tabCurrent==='tab0')}}">
+                    <uni-parse bind:__l="__l" content="{{goods.content}}" vueId="dd396f40-7"></uni-parse>
+                </view>
+                <view class="goods-size" wx:if="{{tabCurrent==='tab1'}}">
+                    <view class="table-box" wx:if="{{$root.g3}}">
+                        <view class="t-tr x-f" wx:for="{{goods.params}}" wx:for-index="__i1__" wx:for-item="t" wx:key="title">
+                            <view class="t-head x-f">{{t.title}}</view>
+                            <view class="t-detail">{{t.content}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="goods-comment" wx:if="{{tabCurrent==='tab2'}}">
+                    <sh-comment bind:__l="__l" comment="{{comment}}" vueId="{{'dd396f40-8-'+__i2__}}" wx:for="{{commentList}}" wx:for-index="__i2__" wx:for-item="comment" wx:key="id"></sh-comment>
+                    <view class="empty-box x-c" wx:if="{{!$root.g4}}">
+                        <wk-empty bind:__l="__l" emptyData="{{emptyData}}" isFixed="{{false}}" vueId="dd396f40-9"></wk-empty>
+                    </view>
+                    <view class="more-box x-c" wx:if="{{$root.g5}}">
+                        <button bindtap="__e" class="cu-btn more-btn x-f" data-event-opts="{{[ [ 'tap',[ [ 'jump',[ '/pages/goods/comment-list',[ 'o',['goodsId',goods.id] ] ] ] ] ] ]}}">查看全部<text class="cuIcon-right"></text>
+                        </button>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="score-foot-box x-f" wx:if="{{!showSku&&!showServe&&detailType==='score'}}">
+        <view class="left x-f">
+            <view bindtap="__e" class="tools-item y-f" data-event-opts="{{[ [ 'tap',[ [ 'goHome',['$event'] ] ] ] ]}}">
+                <image mode class="tool-img" src="http://shopro.7wpp.com/imgs/tabbar/tab_home_sel.png"></image>
+                <text class="tool-title">首页</text>
+            </view>
+        </view>
+        <view class="right">
+            <view class="btn-box x-ac">
+                <button bindtap="__e" class="cu-btn  seckill-btn" data-event-opts="{{[ [ 'tap',[ [ 'goPay',['$event'] ] ] ] ]}}">立即兑换</button>
+            </view>
+        </view>
+    </view>
+    <view class="detail-foot_box  x-f" wx:if="{{!showSku&&!showServe&&detailType!=='score'}}">
+        <view class="left x-f">
+            <view bindtap="__e" class="tools-item y-f" data-event-opts="{{[ [ 'tap',[ [ 'goHome',['$event'] ] ] ] ]}}">
+                <image mode class="tool-img shopro-selector-circular" src="http://shopro.7wpp.com/imgs/tabbar/tab_home_sel.png"></image>
+                <text class="tool-title shopro-selector-rect">首页</text>
+            </view>
+            <view bindtap="__e" class="tools-item y-f" data-event-opts="{{[ [ 'tap',[ [ 'onFavorite',['$0'],['goods.id'] ] ] ] ]}}">
+                <image mode class="tool-img" src="{{is_collect==1?'http://shopro.7wpp.com/imgs/favorite_end.png':'http://shopro.7wpp.com/imgs/favorite.png'}}"></image>
+                <text class="tool-title">收藏</text>
+            </view>
+            <view bindtap="__e" class="tools-item y-f" data-event-opts="{{[ [ 'tap',[ [ 'goCart',['$event'] ] ] ] ]}}">
+                <view class="badge" wx:if="{{cartNum>0}}">{{''+cartNum+''}}</view>
+                <view class="iconfont icon-gouwuche-01" style="font-size:46rpx;color:#000000;"></view>
+                <text class="tool-title">购物车</text>
+            </view>
+        </view>
+        <view class="detail-right">
+            <view class="detail-btn-box x-ac" wx:if="{{!goods.activity}}">
+                <button bindtap="__e" class="cu-btn tool-btn add-btn" data-event-opts="{{[ [ 'tap',[ [ 'addCart',['$event'] ] ] ] ]}}">加入购物车</button>
+                <button bindtap="__e" class="cu-btn tool-btn pay-btn" data-event-opts="{{[ [ 'tap',[ [ 'goPay',['$event'] ] ] ] ]}}">立即购买</button>
+            </view>
+            <view class="detail-btn-box x-ac" wx:if="{{goods.activity&&goods.activity.type==='seckill'}}">
+                <button bindtap="__e" class="cu-btn  seckill-btn" data-event-opts="{{[ [ 'tap',[ [ 'goSeckill',['$event'] ] ] ] ]}}" wx:if="{{activityRules.status==='ing'}}">立即秒杀</button>
+                <button class="cu-btn  seckilled-btn" wx:if="{{activityRules.status=='waiting'}}">暂未开始</button>
+                <button class="cu-btn  seckilled-btn" wx:if="{{activityRules.status=='end'}}">已结束</button>
+            </view>
+            <view class="detail-btn-box x-ac" wx:if="{{goods.activity&&goods.activity.type==='groupon'}}">
+                <button class="cu-btn  seckilled-btn" wx:if="{{activityRules.status=='waiting'}}">暂未开始</button>
+                <button class="cu-btn  seckilled-btn" wx:if="{{activityRules.status=='end'}}">已结束</button>
+                <view class="x-f" wx:if="{{activityRules.status=='ing'}}">
+                    <button bindtap="__e" class="cu-btn tool-btn add-btn y-f" data-event-opts="{{[ [ 'tap',[ [ 'payGroupon',['$event'] ] ] ] ]}}" wx:if="{{goods.activity.rules.is_alone==='1'}}">
+                        <text class="price">{{'￥'+goods.price}}</text>
+                        <text class="price-title">单独购买</text>
+                    </button>
+                    <button bindtap="__e" class="cu-btn tool-btn groupon-btn y-f" data-event-opts="{{[ [ 'tap',[ [ 'payGroupon',['groupon'] ] ] ] ]}}" style="{{goods.activity.rules.is_alone==='0'?'width:400rpx':''}}">
+                        <text class="price">{{'￥'+goods.groupon_price}}</text>
+                        <text class="price-title">我要开团</text>
+                    </button>
+                </view>
+            </view>
+        </view>
+    </view>
+    <shopro-share bind:__l="__l" bind:input="__e" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','showShare','$event',[] ] ] ] ] ]}}" goods="{{goods}}" posterType="goods" value="{{showShare}}" vueId="dd396f40-10"></shopro-share>
+    <shopro-login-modal bind:__l="__l" vueId="dd396f40-11"></shopro-login-modal>
+    <shopro-skeleton bind:__l="__l" showSkeleton="{{false}}" vueId="dd396f40-12"></shopro-skeleton>
+    <shopro-tabbar bind:__l="__l" vueId="dd396f40-13"></shopro-tabbar>
+    <shopro-float-btn bind:__l="__l" vueId="dd396f40-14"></shopro-float-btn>
+</view>

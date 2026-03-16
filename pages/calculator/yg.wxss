@@ -1,0 +1,41 @@
+.page {
+  background-color: #fff;
+  min-height: 100vh;
+}
+.tit view {
+  background: #eeeef3;
+  text-align: center;
+  color: #a7a7a9;
+  float: left;
+  width: 20%;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.styleyue {
+  border-bottom: 4rpx #00f solid;
+}
+.tatol {
+  float: left;
+  text-align: center;
+  height: 40rpx;
+  width: 33%;
+}
+.list view {
+  text-align: center;
+  float: left;
+  width: 20%;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.tit .fir,
+.list .fir {
+  width: 15%;
+}
+.tit .end,
+.list .end {
+  width: 25%;
+}
+.tishi {
+  padding: 16rpx 20rpx;
+  font-size: 24rpx;
+}

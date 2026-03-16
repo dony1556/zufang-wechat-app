@@ -1,0 +1,32 @@
+<view class="page">
+    <view class="c-box">
+        <image class="c-img" src="{{type_list[type_index].url}}"></image>
+    </view>
+    <view class="b-box">
+        <view bindtap="__e" class="{{['item-'+index+1]}}" data-event-opts="{{[ [ 'tap',[ [ 'selectType',[index] ] ] ] ]}}" wx:for="{{type_list}}" wx:key="index">
+            <view class="{{['biao',type_index==index?'on':'']}}"></view>
+            <view class="{{['quan',type_index==index?'on':'']}}"></view>
+            <view class="{{['name',type_index==index?'on':'']}}">{{item.name}}</view>
+        </view>
+    </view>
+    <view class="s-box">
+        <swiper autoplay="{{false}}" class="swiper" current="{{type_index}}">
+            <swiper-item wx:for="{{mm_list}}" wx:key="index">
+                <view class="swiper-item">
+                    <view class="name-box">
+                        <view class="name">{{index+1+item.name}}</view>
+                    </view>
+                    <view class="con">
+                        <view bindtap="__e" class="item2" data-event-opts="{{[ [ 'tap',[ [ 'navToDetail',[index,index2] ] ] ] ]}}" wx:for="{{item.children}}" wx:for-index="index2" wx:for-item="item2" wx:key="index2">
+                            <view class="title-box">
+                                <view class="title">{{index+1+'.'+index2+1+item2.title}}</view>
+                                <view class="iconfont icon-you" style="font-size:20rpx;color:#999;"></view>
+                            </view>
+                            <view class="intro">{{item2.intro}}</view>
+                        </view>
+                    </view>
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+</view>

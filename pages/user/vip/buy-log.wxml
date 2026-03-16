@@ -1,0 +1,20 @@
+<view class="page">
+    <view class="content-box">
+        <view class="item-box">
+            <view class="item" wx:for="{{list}}" wx:key="index">
+                <view class="title">{{item.vip_name+' --'+item.name+'('+item.day+'天)'}}</view>
+                <view class="detail">
+                    <text style="font-weight:bold;">周期：</text>{{''+item.start_time+' ~~ '+item.end_time+''}}</view>
+                <view class="detail">
+                    <text style="font-weight:bold;">权益：</text>{{'每天可发布'+item.day_pub_num+'条房源信息,'}}<block wx:if="{{item.no_check==1}}">发布房源免审</block>
+                </view>
+                <view class="fee-box">
+                    <view class="fee">
+                        <text style="font-weight:bold;color:#2E2E2E;">费用：</text>{{'¥'+item.fee+''}}</view>
+                    <view class="time">{{item.create_time}}</view>
+                </view>
+            </view>
+        </view>
+        <wk-empty bind:__l="__l" emptyData="{{emptyData}}" vueId="340f9cc6-1" wx:if="{{$root.g0==0}}"></wk-empty>
+    </view>
+</view>

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "关注房源",
+  "usingComponents": {
+    "wk-houses": "/components/wk-houses/index",
+    "wk-tabar": "/components/wk-tabar/index",
+    "wk-login-modal": "/components/wk-login-modal/index"
+  }
+}

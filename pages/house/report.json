@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "举报中心",
+  "usingComponents": {
+    "wk-login-modal": "/components/wk-login-modal/index"
+  }
+}

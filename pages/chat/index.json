@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "wk-qrcode": "/components/wk-qrcode/index"
+  }
+}

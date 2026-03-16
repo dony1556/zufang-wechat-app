@@ -1,0 +1,66 @@
+.page .scroll-box {
+  background-color: #fff;
+  width: 100%;
+  border-bottom: 1rpx solid #f7f8f9;
+  position: -webkit-sticky;
+  position: sticky;
+}
+.page .scroll-box .scroll {
+  height: 90rpx;
+  white-space: nowrap;
+  width: 100%;
+  text-align: center;
+}
+.page .scroll-box .scroll .item {
+  height: 90rpx;
+  padding: 0 50rpx;
+  display: inline-block;
+}
+.page .scroll-box .scroll .item .name {
+  height: 82rpx;
+  line-height: 82rpx;
+}
+.page .scroll-box .scroll .item .name.active {
+  color: #f50;
+}
+.page .scroll-box .scroll .item .line {
+  margin-left: 30%;
+  width: 40%;
+  height: 6rpx;
+  background-color: #f50;
+  border-radius: 6rpx;
+}
+.page .item-box {
+  width: 100%;
+  padding: 0rpx 20rpx;
+}
+.page .item-box .item {
+  border-radius: 8rpx;
+  background-color: #fff;
+  padding: 20rpx 20rpx;
+  margin-top: 20rpx;
+}
+.page .item-box .item .head {
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #f8f8f8;
+}
+.page .item-box .item .head .name {
+  font-weight: 700;
+  font-size: 26rpx;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 66rpx;
+}
+.page .item-box .item .head .status {
+  margin-left: 20rpx;
+  font-size: 26rpx;
+  color: #f50;
+}
+.page .item-box .item .time {
+  margin-top: 10rpx;
+  color: #bcbcbc;
+  font-size: 24rpx;
+}

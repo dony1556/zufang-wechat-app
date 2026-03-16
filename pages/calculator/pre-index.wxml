@@ -1,0 +1,84 @@
+<view class="page">
+    <view class="head-box"></view>
+    <view class="form-box">
+        <view class="section">
+            <view class="section-title">贷款方式</view>
+            <view class="seciton-right">
+                <view class="_div" style="display:flex;align-items:center;">
+                    <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'typeChange',['$0'],[ [ ['typeList','',index,'value'] ] ] ] ] ] ]}}" style="display:flex;align-items:center;" wx:for="{{typeList}}" wx:key="index">
+                        <view class="iconfont icon-gouxuan" style="font-size:32rpx;color:#ff4544;" wx:if="{{form.type==item.value}}"></view>
+                        <view class="iconfont icon-gouxuan1" style="font-size:32rpx;color:#999;" wx:else></view>
+                        <view style="margin:0rpx  30rpx 0rpx 12rpx;">{{item.name}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="section">
+            <view class="section-title">还款方式</view>
+            <view class="seciton-right">
+                <view class="_div" style="display:flex;align-items:center;">
+                    <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'hkfsChange',['$0'],[ [ ['hkfsList','',index,'value'] ] ] ] ] ] ]}}" style="display:flex;align-items:center;" wx:for="{{hkfsList}}" wx:key="index">
+                        <view class="iconfont icon-gouxuan" style="font-size:32rpx;color:#ff4544;" wx:if="{{form.hkfs==item.value}}"></view>
+                        <view class="iconfont icon-gouxuan1" style="font-size:32rpx;color:#999;" wx:else></view>
+                        <view style="margin:0rpx  30rpx 0rpx 12rpx;">{{item.name}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="section">
+            <view class="section-title">贷款总额</view>
+            <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','d_money','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入贷款总额" type="number" value="{{form.d_money}}"></input>
+            <view class="unit">（万元）</view>
+        </view>
+        <view class="section">
+            <view class="section-title">贷款年限</view>
+            <view class="seciton-right">
+                <picker bindchange="__e" class="picker" data-event-opts="{{[ [ 'change',[ [ 'yearChange',['$event'] ] ] ] ]}}" name="time" range="{{yearList}}" rangeKey="name">
+                    <view class="picker-text">{{yearList[year_index].name+'（'+yearList[year_index].year*12+'期）'}}</view>
+                </picker>
+            </view>
+        </view>
+        <view class="section">
+            <view class="section-title">贷款利率</view>
+            <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','rate','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入商贷利率" type="digit" value="{{form.rate}}"></input>
+            <view class="unit">%</view>
+        </view>
+        <view class="section">
+            <view class="section-title">首次还款时间</view>
+            <view class="seciton-right">
+                <picker bindchange="__e" class="picker" data-event-opts="{{[ [ 'change',[ [ 'startMonthChange',['$event'] ] ] ] ]}}" fields="month" mode="date" value="{{form.start_month}}">
+                    <view class="picker-text">{{form.start_month||'请选择首次还款时间'}}</view>
+                </picker>
+            </view>
+        </view>
+        <view class="section">
+            <view class="section-title">提前还款时间</view>
+            <view class="seciton-right">
+                <picker bindchange="__e" class="picker" data-event-opts="{{[ [ 'change',[ [ 'endMonthChange',['$event'] ] ] ] ]}}" fields="month" mode="date" value="{{form.end_month}}">
+                    <view class="picker-text">{{form.end_month||'请选择提前还款时间'}}</view>
+                </picker>
+            </view>
+        </view>
+        <view class="section">
+            <view class="section-title">贷款方式</view>
+            <view class="seciton-right">
+                <view class="_div" style="display:flex;align-items:center;">
+                    <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'tqChange',['$0'],[ [ ['tqList','',index,'value'] ] ] ] ] ] ]}}" style="display:flex;align-items:center;" wx:for="{{tqList}}" wx:key="index">
+                        <view class="iconfont icon-gouxuan" style="font-size:32rpx;color:#ff4544;" wx:if="{{form.tq_type==item.value}}"></view>
+                        <view class="iconfont icon-gouxuan1" style="font-size:32rpx;color:#999;" wx:else></view>
+                        <view style="margin:0rpx  30rpx 0rpx 12rpx;">{{item.name}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="section" wx:if="{{form.tq_type==2}}">
+            <view class="section-title">提前还款金额</view>
+            <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','h_money','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入提前还款金额" type="number" value="{{form.h_money}}"></input>
+            <view class="unit">（万元）</view>
+        </view>
+    </view>
+    <view class="tip">等额本金每月还款逐月减少。等额利息每月相同</view>
+    <form bindsubmit="__e" data-event-opts="{{[ [ 'submit',[ [ 'formSubmit',['$event'] ] ] ] ]}}">
+        <button class="submit" formType="submit">计算</button>
+    </form>
+</view>

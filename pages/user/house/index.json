@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "我的房源",
+  "usingComponents": {
+    "wk-empty": "/components/wk-empty/index"
+  }
+}

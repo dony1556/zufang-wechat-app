@@ -1,0 +1,15 @@
+page {
+  background-color: #fff;
+}
+page .title {
+  font-size: 28rpx;
+  font-weight: 700;
+  padding: 16rpx 16rpx;
+}
+page .intro {
+  padding: 20rpx 12rpx;
+  font-size: 26rpx;
+}
+page .content {
+  padding: 20rpx 20rpx;
+}

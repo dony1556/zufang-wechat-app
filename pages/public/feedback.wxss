@@ -1,0 +1,150 @@
+.page_box {
+  background: #fff;
+}
+.form-item {
+  margin-top: 30rpx;
+}
+.form-item .inp-title {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 30rpx;
+}
+.form-item .inp {
+  width: 690rpx;
+  height: 84rpx;
+  background: #f9fafb;
+  border-radius: 20rpx;
+  padding: 0 30rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 38rpx;
+}
+.form-item .inp-house {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #b1b3c7;
+}
+.form-item .area-inp {
+  height: 190rpx;
+  padding: 30rpx;
+}
+.form-item .pl-style {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  color: #b1b3c7;
+}
+.area-box {
+  width: 690rpx;
+  min-height: 306rpx;
+  background: #f9fafb;
+  border-radius: 20rpx;
+  padding: 28rpx;
+}
+.area-box .pl-style {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #b1b3c7;
+  line-height: 50rpx;
+}
+.area-box .inp-area {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333;
+  line-height: 50rpx;
+  width: 100%;
+}
+.area-box .img-box {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20rpx;
+}
+.area-box .img-box .choose-img,
+.area-box .img-box .preview-box {
+  width: 108rpx;
+  height: 108rpx;
+  background: #f9fafb;
+  border: 1rpx solid #dfdfdf;
+  margin-right: 25rpx;
+  margin-bottom: 25rpx;
+  position: relative;
+}
+.area-box .img-box .choose-img:nth-child(5n),
+.area-box .img-box .preview-box:nth-child(5n) {
+  margin-right: 0;
+}
+.area-box .img-box .choose-img .cuIcon-cameraadd,
+.area-box .img-box .preview-box .cuIcon-cameraadd {
+  font-size: 50rpx;
+  color: #dfdfdf;
+}
+.area-box .img-box .choose-img .preview-img,
+.area-box .img-box .preview-box .preview-img {
+  width: 100%;
+  height: 100%;
+}
+.area-box .img-box .choose-img .cuIcon-close,
+.area-box .img-box .preview-box .cuIcon-close {
+  background: linear-gradient(90deg, #d89f64, #ebc196);
+  border-radius: 50%;
+  width: 40rpx;
+  line-height: 40rpx;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+}
+.foot_box {
+  border-top: 1rpx solid #eee;
+  height: 100rpx;
+}
+.foot_box .contact-btn {
+  flex: 1;
+  height: 70rpx;
+  background: linear-gradient(90deg, #676869, #525252);
+  box-shadow: 0 2rpx 5rpx 0 rgba(102, 103, 104, 0.46);
+  border-radius: 35rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #fff;
+}
+.foot_box .post-btn {
+  flex: 1;
+  height: 74rpx;
+  background: linear-gradient(90deg, #e9b461, #eecc89);
+  box-shadow: 0 7rpx 6rpx 0rpx rgba(229, 138, 0, 0.22);
+  border-radius: 37rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #fff;
+}
+.radio-box {
+  margin-top: 30rpx;
+}
+.radio-box .radio-item {
+  margin-bottom: 40rpx;
+}
+.radio-box .radio-item .radio-inp {
+  transform: scale(0.7);
+  margin-right: 10rpx;
+}
+.radio-box .radio-item .radio-title {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #333;
+}
+.uni-radio-input-checked {
+  background-color: #f37b1d !important;
+  border: #f37b1d !important;
+}

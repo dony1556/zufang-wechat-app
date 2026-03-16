@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "发布协议",
+  "usingComponents": {
+    "wk-parser": "/components/wk-parser/index"
+  }
+}

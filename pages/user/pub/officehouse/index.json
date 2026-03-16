@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "写字楼发布",
+  "usingComponents": {
+    "wk-login-modal": "/components/wk-login-modal/index",
+    "wk-multi-select": "/components/wk-multi-select/index",
+    "wk-city-area": "/components/wk-city-area/index"
+  }
+}

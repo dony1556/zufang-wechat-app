@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "会员购买记录",
+  "usingComponents": {
+    "wk-empty": "/components/wk-empty/index"
+  }
+}

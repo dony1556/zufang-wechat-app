@@ -1,0 +1,62 @@
+<view class="page">
+    <view class="top">
+        <view class="title" wx:if="{{req.tq_type==1}}">一次性还清，当月需还</view>
+        <view class="title" wx:if="{{req.tq_type==2}}">提前部分还款，当月需还</view>
+        <view class="h-money">{{''+result.dy_hk_money+''}}<text>元</text>
+        </view>
+        <view class="info">
+            <view class="item">
+                <view class="txt">已还利息</view>
+                <view class="num">{{result.yh_r_money+'元'}}</view>
+            </view>
+            <view style="height:50rpx;width:1rpx;background-color:#fff;"></view>
+            <view class="item">
+                <view class="txt">已还本金</view>
+                <view class="num">{{result.yh_b_money+'元'}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="result" wx:if="{{req.tq_type==1}}">
+        <view class="row">
+            <view class="txt">可节省利息</view>
+            <view class="num">{{result.js_r_money+'元'}}</view>
+        </view>
+        <view class="row">
+            <view class="txt">最后还款日期</view>
+            <view class="num">{{req.end_month}}</view>
+        </view>
+    </view>
+    <view class="result2" wx:if="{{req.tq_type==2}}">
+        <view class="left">
+            <view class="title">月供减少、年限不变</view>
+            <view class="item">
+                <view class="txt">次月还款</view>
+                <view class="num">{{result.cy_hk_money+'元'}}</view>
+            </view>
+            <view class="item">
+                <view class="txt">可节省利息</view>
+                <view class="num">{{result.js_r_money+'元'}}</view>
+            </view>
+            <view class="item">
+                <view class="txt">最后还款日期</view>
+                <view class="num">{{result.end_month+'月'}}</view>
+            </view>
+        </view>
+        <view style="height:200rpx;width:1rpx;background-color:#ededed;"></view>
+        <view class="right">
+            <view class="title">月供不变、年限缩短</view>
+            <view class="item">
+                <view class="txt">次月还款</view>
+                <view class="num">{{result.cy_hk_money2+'元'}}</view>
+            </view>
+            <view class="item">
+                <view class="txt">可节省利息</view>
+                <view class="num">{{result.js_r_money2+'元'}}</view>
+            </view>
+            <view class="item">
+                <view class="txt">最后还款日期</view>
+                <view class="num">{{result.end_month2+'月'}}</view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,45 @@
+<view class="page">
+    <view class="top-box">
+        <view class="search-box">
+            <view class="item">
+                <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','key','$event',[] ] ] ] ] ]}}" placeholder="请输入小区关键词搜索" value="{{key}}"></input>
+                <view bindtap="__e" class="{{['search',search_delay?'animation-slide-right':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'search',['$event'] ] ] ] ]}}">搜索</view>
+            </view>
+        </view>
+        <scroll-view class="scroll" scrollX="true">
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'selectTab',['$0'],[ [ ['typeList','',index,'type'] ] ] ] ] ] ]}}" wx:for="{{typeList}}" wx:key="index">
+                <view class="{{['name',item.type==type?'active':'']}}">{{item.name}}</view>
+                <view class="line" wx:if="{{item.type==type}}"></view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="house-box">
+        <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'select_item',[index] ] ] ] ]}}" wx:for="{{houseList}}" wx:key="index">
+            <view class="top">
+                <view class="title">{{item.title}}</view>
+                <view class="status">
+                    <block wx:if="{{item.check_status==0}}">审核中</block>
+                    <block wx:if="{{item.check_status==4}}">未通过</block>
+                </view>
+            </view>
+            <view class="bot">
+                <view class="tip">
+                    <block wx:if="{{item.check_status==0}}">
+                        <icon color="#00aa00" size="12" style="margin-right:12rpx;" type="waiting"></icon>请耐心等待</block>
+                    <block wx:if="{{item.check_status==4}}">
+                        <icon color="#f9922b" size="12" style="margin-right:12rpx;" type="warn"></icon>{{''+item.check_remark+''}}</block>
+                </view>
+                <view class="top-msg" wx:if="{{item.top_time}}">{{'置顶到期时间：'+item.top_time}}</view>
+                <view class="button-box" wx:if="{{select_index==index}}">
+                    <view catchtap="__e" class="bt" data-event-opts="{{[ [ 'tap',[ [ 'navtoDetail',['$0'],[ [ ['houseList','',index] ] ] ] ] ] ]}}" style="background-color:#00aaff;">详情</view>
+                    <view catchtap="__e" class="bt" data-event-opts="{{[ [ 'tap',[ [ 'navtoEdit',['$0'],[ [ ['houseList','',index] ] ] ] ] ] ]}}" style="background-color:#FF9700;">编辑</view>
+                    <view catchtap="__e" class="bt" data-event-opts="{{[ [ 'tap',[ [ 'house_up',['$0'],[ [ ['houseList','',index] ] ] ] ] ] ]}}" style="background-color:#A4E82F;" wx:if="{{item.status==2}}">上架</view>
+                    <view catchtap="__e" class="bt" data-event-opts="{{[ [ 'tap',[ [ 'house_down',['$0'],[ [ ['houseList','',index] ] ] ] ] ] ]}}" style="background-color:#2DE8BD;" wx:if="{{item.status==1}}">下架</view>
+                    <view catchtap="__e" class="bt" data-event-opts="{{[ [ 'tap',[ [ 'house_delete',['$0'],[ [ ['houseList','',index] ] ] ] ] ] ]}}" style="background-color:#E8E22F;">删除</view>
+                    <view catchtap="__e" class="bt" data-event-opts="{{[ [ 'tap',[ [ 'house_top',['$0'],[ [ ['houseList','',index] ] ] ] ] ] ]}}" style="background-color:#E83A30;">置顶</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <wk-empty bind:__l="__l" emptyData="{{emptyData}}" vueId="3aef8e96-1" wx:if="{{$root.g0==0}}"></wk-empty>
+</view>

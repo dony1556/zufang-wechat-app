@@ -1,0 +1,60 @@
+<view class="h-box" wx:if="{{$root.g0>0}}">
+    <view bindtap="__e" class="{{['house',toggleDelay?'animation-slide-bottom':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'detail',['$0'],[ [ ['value','',index] ] ] ] ] ] ]}}" hoverClass="hover-house" hoverStayTime="3000" style="{{'animation-delay:'+(index+1)*0.02+'s'+';'}}" wx:for="{{value}}" wx:key="index">
+        <view class="img-box">
+            <image class="img" mode="aspectFill" src="{{item.thumbs[0]||basicSet.default_img}}"></image>
+            <view class="icon-box">
+                <view class="iconfont icon-Dxuanzhuan  item" wx:if="{{item.vr_link}}"></view>
+                <view class="iconfont icon-shipin  item " wx:if="{{item.video}}"></view>
+            </view>
+            <image src="../../static/imgs/tj.png" style="position:absolute;left:0rpx;top:0rpx;width:60rpx;height:60rpx;" wx:if="{{item.is_recommend==1}}"></image>
+            <image src="../../static/imgs/top.png" style="position:absolute;right:0rpx;top:0rpx;width:60rpx;height:60rpx;" wx:if="{{item.is_top==1}}"></image>
+        </view>
+        <view class="house-right">
+            <view class="title">{{item.title}}</view>
+            <view class="sx">
+                <block wx:if="{{basicSet.house_set.show_fd==1}}">
+                    <view class="la" style="color:#8dc63f;background-color:#e8f4d9;" wx:if="{{item.origin==1}}">房东</view>
+                    <view class="la" style="color:#0081ff;background-color:#cce6ff;" wx:if="{{item.origin==2}}">经纪人</view>
+                    <view class="la" style="color:#ff5500;background-color:#f98d5b;" wx:if="{{item.origin==3}}">平台</view>
+                </block>
+                <view class="label" wx:if="{{item.mj>0}}">{{item.mj+'㎡'}}</view>
+                <view class="label" wx:if="{{item.direction}}">{{item.direction}}</view>
+                <view class="label" wx:if="{{item.decorate}}">{{item.decorate}}</view>
+            </view>
+            <scroll-view class="bq" scrollX="true">
+                <block wx:for="{{item.tag_names}}" wx:for-index="tagIndex" wx:for-item="tag" wx:key="tagIndex">
+                    <view class="la" style="color:#e54d42;background-color:#fadbd9;" wx:if="{{tagIndex%3==0}}">{{tag}}</view>
+                    <view class="la" style="color:#8dc63f;background-color:#e8f4d9;" wx:if="{{tagIndex%3==1}}">{{tag}}</view>
+                    <view class="la" style="color:#0081ff;background-color:#cce6ff;" wx:if="{{tagIndex%3==2}}">{{tag}}</view>
+                </block>
+            </scroll-view>
+            <view class="money-box">
+                <block wx:if="{{item.money}}">
+                    <block wx:if="{{item.house_type=='lethouse'}}">
+                        <view class="money">{{item.money}}</view>
+                        <view class="unit">元/月</view>
+                    </block>
+                    <block wx:else>
+                        <block wx:if="{{item.house_type=='oldhouse'}}">
+                            <view class="money">{{item.money}}</view>
+                            <view class="unit">万元</view>
+                        </block>
+                        <block wx:else>
+                            <block wx:if="{{item.house_type=='newhouse'}}">
+                                <view class="money">{{item.money}}</view>
+                                <view class="unit">元/㎡</view>
+                            </block>
+                            <block wx:else>
+                                <view class="money">{{item.money}}</view>
+                                <view class="unit" wx:if="{{item.type==1}}">元/月</view>
+                                <view class="unit" wx:if="{{item.type==2}}">万元</view>
+                            </block>
+                        </block>
+                    </block>
+                </block>
+                <view class="money" wx:else>面议</view>
+                <view class="address">{{item.xiao_qu}}</view>
+            </view>
+        </view>
+    </view>
+</view>

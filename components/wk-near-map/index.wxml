@@ -1,0 +1,10 @@
+<view class="near-box">
+    <view class="tab-box">
+        <scroll-view class="tab-title" scrollX="{{true}}">
+            <view bindtap="__e" class="{{['tab',currentIndex==index?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'tabChange',[index] ] ] ] ]}}" wx:for="{{keyList}}" wx:key="index">{{item.name}}</view>
+        </scroll-view>
+    </view>
+    <view class="map-ct">
+        <map bindcallouttap="__e" bindtap="__e" class="map" data-event-opts="{{[ [ 'tap',[ [ 'navToNear',['$event'] ] ] ],[ 'callouttap',[ [ 'navToNear',['$event'] ] ] ] ]}}" enableScroll="false" enableZoom="false" latitude="{{lat}}" longitude="{{lng}}" markers="{{markers}}" scale="14" showLocation="true"></map>
+    </view>
+</view>

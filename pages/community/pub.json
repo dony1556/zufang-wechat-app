@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "新增小区",
+  "usingComponents": {
+    "wk-city-area": "/components/wk-city-area/index"
+  }
+}

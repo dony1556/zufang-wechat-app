@@ -1,0 +1,24 @@
+.page {
+  background-color: #fff;
+}
+.page .top-box .scroll-box {
+  width: 100%;
+  padding: 0rpx 20rpx;
+  border-bottom: 1rpx solid #efefef;
+}
+.page .top-box .scroll-box .scroll-view {
+  width: 100%;
+  white-space: nowrap;
+}
+.page .top-box .scroll-box .scroll-view .item {
+  position: relative;
+  display: inline-block;
+  padding: 0rpx 30rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.page .top-box .scroll-box .scroll-view .item.on {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #f50;
+}

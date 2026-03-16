@@ -1,0 +1,43 @@
+<view class="page">
+    <view class="order-info">
+        <view class="item">
+            <view class="name">姓名：</view>
+            <view class="value">{{agent.name}}</view>
+        </view>
+        <view class="item">
+            <view class="name">电话：</view>
+            <view class="value">{{agent.tel}}</view>
+        </view>
+        <view class="item">
+            <view class="name">角色：</view>
+            <view class="value" wx:if="{{agent.role==0}}"></view>
+            <view class="value" style="color:#FF9700;" wx:if="{{agent.role==1}}">店长</view>
+            <view class="value" style="color:#55aa00;" wx:if="{{agent.role==2}}">员工</view>
+        </view>
+        <view class="item">
+            <view class="name">加入时间：</view>
+            <view class="value">{{agent.create_time}}</view>
+        </view>
+    </view>
+    <view class="msg-box" wx:if="{{agent.check_status==1}}">
+        <textarea bindinput="__e" class="textarea" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','check_remark','$event',[] ] ] ] ] ]}}" placeholder="请填写审批意见" value="{{check_remark}}"></textarea>
+    </view>
+    <view class="bt-box">
+        <block wx:if="{{agent.check_status==2}}">
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'handleRole',['$event'] ] ] ] ]}}">
+                <view class="bt">设置角色</view>
+            </view>
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'handleDelete',['$event'] ] ] ] ]}}">
+                <view class="bt">删除</view>
+            </view>
+        </block>
+        <block wx:if="{{agent.check_status==1}}">
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'handleAgree',['$event'] ] ] ] ]}}">
+                <view class="bt">同意</view>
+            </view>
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'handleRefuse',['$event'] ] ] ] ]}}">
+                <view class="bt">拒绝</view>
+            </view>
+        </block>
+    </view>
+</view>

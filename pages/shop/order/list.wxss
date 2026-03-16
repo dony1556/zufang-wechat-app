@@ -1,0 +1,163 @@
+.order-nav {
+  background: #fff;
+  height: 80rpx;
+  display: flex;
+}
+.order-nav .nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.order-nav .nav-item .item-title {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 76rpx;
+}
+.order-nav .nav-item .nav-line {
+  width: 100rpx;
+  height: 4rpx;
+  background: #fff;
+}
+.order-nav .nav-item .line-active {
+  background: #f50;
+}
+.order-list {
+  background: #fff;
+  margin: 20rpx 20rpx;
+  border-radius: 10rpx;
+}
+.order-list .order-head {
+  padding: 0 25rpx;
+  height: 77rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #f6f6f6;
+}
+.order-list .order-head .no {
+  flex: 1;
+  font-size: 24rpx;
+  color: #999;
+}
+.order-list .order-head .state {
+  font-size: 26rpx;
+  color: #a8700d;
+}
+.order-list .order-bottom {
+  display: flex;
+  justify-content: flex-end;
+}
+.order-list .order-bottom .btn {
+  border: 1rpx solid #0a0;
+  border-radius: 12rpx;
+  color: #0a0;
+  line-height: 60rpx;
+  padding: 0rpx 20rpx;
+  margin: 16rpx 20rpx;
+  font-size: 24rpx;
+}
+.order-list .order-bottom .obtn1 {
+  width: 160rpx;
+  height: 60rpx;
+  background: #eee;
+  border-radius: 30rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #333;
+  margin-right: 20rpx;
+  padding: 0;
+}
+.order-list .order-bottom .obtn2 {
+  width: 160rpx;
+  height: 60rpx;
+  background: linear-gradient(90deg, #e9b461, #eecc89);
+  box-shadow: 0 7rpx 6rpx 0 rgba(229, 138, 0, 0.22);
+  border-radius: 30rpx;
+  margin-right: 20rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(168, 112, 13, 0.9);
+  padding: 0;
+}
+.order-list .goods-order {
+  padding: 20rpx 20rpx;
+}
+.order-list .goods-order .goods-info {
+  width: 100%;
+  display: flex;
+  padding: 20rpx 0rpx;
+}
+.order-list .goods-order .goods-info .img-box {
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 6rpx;
+  overflow: hidden;
+  flex-shrink: 0;
+  margin-right: 20rpx;
+}
+.order-list .goods-order .goods-info .img-box .img {
+  width: 130rpx;
+  height: 130rpx;
+}
+.order-list .goods-order .goods-info .info {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+.order-list .goods-order .goods-info .info .title {
+  width: 100%;
+  font-size: 26rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  color: #353535;
+}
+.order-list .goods-order .goods-info .info .spec {
+  display: flex;
+}
+.order-list .goods-order .goods-info .info .spec view {
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 20rpx;
+  padding: 0 10rpx;
+  margin-left: 8rpx;
+  border-radius: 15rpx;
+  color: #fff;
+  background-color: #f10d0d;
+}
+.order-list .goods-order .goods-info .info .price-number {
+  position: absolute;
+  width: 100%;
+  bottom: 0rpx;
+  display: flex;
+  justify-content: space-between;
+  height: 40rpx;
+}
+.order-list .goods-order .goods-info .info .price-number .price {
+  color: #f06c7a;
+  font-weight: 700;
+}
+.order-list .goods-order .goods-info .info .price-number .number {
+  color: #999;
+  font-size: 22rpx;
+}
+.order-list .order-num {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 10rpx 26rpx 20rpx 26rpx;
+}
+.order-list .order-num .num {
+  font-size: 24rpx;
+  color: #999;
+}
+.order-list .order-num .fee {
+  color: #f55;
+  font-size: 30rpx;
+  margin-left: 30rpx;
+}

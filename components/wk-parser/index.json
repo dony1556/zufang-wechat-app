@@ -1,0 +1,4 @@
+{
+  "component": true,
+  "usingComponents": { "trees": "/components/wk-parser/libs/trees" }
+}

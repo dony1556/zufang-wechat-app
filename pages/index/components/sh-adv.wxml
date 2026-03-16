@@ -1,0 +1,41 @@
+<view class="adv-box ">
+    <view class="type2 x-bc" wx:if="{{value.params.style==1}}">
+        <image bindtap="__e" class="type2-img1" data-event-opts="{{[ [ 'tap',[ [ 'jump',['$0'],['value.data.__$n0.path'] ] ] ] ]}}" mode="aspectFill" src="{{value.data[0].imgUrl}}"></image>
+        <view class="y-f type2-box">
+            <image bindtap="__e" class="type2-img2" data-event-opts="{{[ [ 'tap',[ [ 'jump',['$0'],['value.data.__$n1.path'] ] ] ] ]}}" mode="aspectFill" src="{{value.data[1].imgUrl}}" style="border-bottom:1rpx solid #f6f6f6;"></image>
+            <image bindtap="__e" class="type2-img2" data-event-opts="{{[ [ 'tap',[ [ 'jump',['$0'],['value.data.__$n2.path'] ] ] ] ]}}" mode="aspectFill" src="{{value.data[2].imgUrl}}"></image>
+        </view>
+    </view>
+    <view class="type3 x-bc" wx:if="{{value.params.style==4}}">
+        <view class="type3-box y-f">
+            <image bindtap="__e" class="type3-img1" data-event-opts="{{[ [ 'tap',[ [ 'jump',['$0'],['item.data.__$n0.path'] ] ] ] ]}}" mode="aspectFill" src="{{item.data[0].imgUrl}}"></image>
+            <image bindtap="__e" class="type3-img1" data-event-opts="{{[ [ 'tap',[ [ 'jump',['$0'],['item.data.__$n1.path'] ] ] ] ]}}" mode="aspectFill" src="{{item.data[1].imgUrl}}"></image>
+        </view>
+        <image bindtap="__e" class="type3-img2" data-event-opts="{{[ [ 'tap',[ [ 'jump',['$0'],['item.data.__$n2.path'] ] ] ] ]}}" mode="aspectFill" src="{{item.data[2].imgUrl}}"></image>
+    </view>
+    <view class="type4 y-f" wx:if="{{item.params.style==5}}">
+        <view class="type4-box x-f">
+            <image bindtap="__e" class="type4-img1" data-event-opts="{{[ [ 'tap',[ [ 'jump',['$0'],['item.data.__$n0.path'] ] ] ] ]}}" mode="aspectFill" src="{{item.data[0].imgUrl}}"></image>
+            <image bindtap="__e" class="type4-img1" data-event-opts="{{[ [ 'tap',[ [ 'jump',['$0'],['item.data.__$n1.path'] ] ] ] ]}}" mode="aspectFill" src="{{item.data[1].imgUrl}}"></image>
+        </view>
+        <image bindtap="__e" class="type4-img2" data-event-opts="{{[ [ 'tap',[ [ 'jump',['$0'],['item.data.__$n2.path'] ] ] ] ]}}" mode="aspectFill" src="{{item.data[2].imgUrl}}"></image>
+    </view>
+    <view class="type5 y-f" wx:if="{{value.params.style==6}}">
+        <image bindtap="__e" class="type5-img1" data-event-opts="{{[ [ 'tap',[ [ 'jump',['$0'],['value.data.__$n0.path'] ] ] ] ]}}" mode="aspectFill" src="{{value.data[0].imgUrl}}"></image>
+        <view class="type5-box x-bc">
+            <image bindtap="__e" class="type5-img2" data-event-opts="{{[ [ 'tap',[ [ 'jump',['$0'],['value.data.__$n1.path'] ] ] ] ]}}" mode="aspectFill" src="{{value.data[1].imgUrl}}" style="border-bottom:1rpx solid #f6f6f6;"></image>
+            <image bindtap="__e" class="type5-img2" data-event-opts="{{[ [ 'tap',[ [ 'jump',['$0'],['value.data.__$n2.path'] ] ] ] ]}}" mode="aspectFill" src="{{value.data[2].imgUrl}}"></image>
+        </view>
+    </view>
+    <view class="type6 y-f" wx:if="{{value.params.style==7}}">
+        <view class="x-f type6-box1">
+            <image bindtap="__e" class="type6-img1" data-event-opts="{{[ [ 'tap',[ [ 'jump',['$0'],['value.data.__$n0.path'] ] ] ] ]}}" mode="aspectFill" src="{{value.data[0].imgUrl}}"></image>
+            <image bindtap="__e" class="type6-img1" data-event-opts="{{[ [ 'tap',[ [ 'jump',['$0'],['value.data.__$n1.path'] ] ] ] ]}}" mode="aspectFill" src="{{value.data[1].imgUrl}}"></image>
+        </view>
+        <view class="x-f type6-box2">
+            <image bindtap="__e" class="type6-img2" data-event-opts="{{[ [ 'tap',[ [ 'jump',['$0'],['value.data.__$n2.path'] ] ] ] ]}}" mode="aspectFill" src="{{value.data[2].imgUrl}}"></image>
+            <image bindtap="__e" class="type6-img2" data-event-opts="{{[ [ 'tap',[ [ 'jump',['$0'],['value.data.__$n3.path'] ] ] ] ]}}" mode="aspectFill" src="{{value.data[3].imgUrl}}"></image>
+            <image bindtap="__e" class="type6-img2" data-event-opts="{{[ [ 'tap',[ [ 'jump',['$0'],['value.data.__$n4.path'] ] ] ] ]}}" mode="aspectFill" src="{{value.data[4].imgUrl}}"></image>
+        </view>
+    </view>
+</view>

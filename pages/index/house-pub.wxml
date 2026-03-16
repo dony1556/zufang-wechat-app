@@ -1,0 +1,19 @@
+<view class="page">
+    <view class="body-box">
+        <view class="swiper-box">
+            <swiper autoplay="true" class="slide-swiper">
+                <swiper-item class="swiper-item" wx:for="{{swiperList}}" wx:key="index">
+                    <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'navto',['$event'] ] ] ] ]}}">
+                        <image class="img" mode="aspectFill" src="{{item.img}}"></image>
+                    </view>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view class="btn-box">
+            <view bindtap="__e" class="btn" data-event-opts="{{[ [ 'tap',[ ['navtoPub'] ] ] ]}}">我是房东</view>
+            <!-- <view bindtap="__e" class="btn2" data-event-opts="{{[ [ 'tap',[ ['navtoPub2'] ] ] ]}}">我是经纪人</view> -->
+        </view>
+    </view>
+    <wk-tabar bind:__l="__l" vueId="769fad48-1"></wk-tabar>
+    <wk-login-modal bind:__l="__l" vueId="769fad48-2"></wk-login-modal>
+</view>

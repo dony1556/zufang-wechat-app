@@ -1,0 +1,35 @@
+<view class="page">
+    <view class="top-box"></view>
+    <view class="search-box">
+        <view class="search">
+            <view class="iconfont icon-search" style="font-size:26rpx;color:#999;"></view>
+            <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','key','$event',[] ] ],[ 'inputChange',['$event'] ] ] ] ]}}" placeholder="请输入关键字查询" value="{{key}}"></input>
+        </view>
+    </view>
+    <scroll-view class="content-box" scrollIntoView="{{'b-'+b_key}}" scrollY="true">
+        <view id="b-"></view>
+        <view class="location-box" wx:if="{{location.city}}">
+            <view class="tit">当前城市</view>
+            <view class="location">
+                <view class="b">
+                    <view class="text">{{cityArea.cityName}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="title">热门城市</view>
+        <view class="citys">
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'selectCity',['$0'],[ [ ['hot_list','',index] ] ] ] ] ] ]}}" wx:for="{{hot_list}}" wx:key="index">
+                <view class="text">{{item.city_name}}</view>
+            </view>
+        </view>
+        <view class="s-item" id="{{'b-'+key}}" wx:for="{{c_list}}" wx:for-index="key" wx:key="key">
+            <view class="f">{{key}}</view>
+            <view class="c">
+                <view bindtap="__e" class="item2" data-event-opts="{{[ [ 'tap',[ [ 'selectCity',['$0'],[ [ ['c_list','',key],['','',key2] ] ] ] ] ] ]}}" wx:for="{{item}}" wx:for-index="key2" wx:for-item="item2" wx:key="key2">{{item2.city_name}}</view>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="fix-box">
+        <view catchtap="__e" class="{{['item',b_key==item?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'select_b',['$0'],[ [ ['b_list','',key] ] ] ] ] ] ]}}" wx:for="{{b_list}}" wx:for-index="key" wx:key="key">{{item}}</view>
+    </view>
+</view>

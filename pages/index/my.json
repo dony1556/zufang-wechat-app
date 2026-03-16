@@ -1,0 +1,10 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "wk-tabar": "/components/wk-tabar/index",
+    "wk-login-modal": "/components/wk-login-modal/index",
+    "my-nav": "/pages/index/components/my-nav",
+    "my-nav2": "/pages/index/components/my-nav2",
+    "my-top-head": "/pages/index/components/my-top-head"
+  }
+}

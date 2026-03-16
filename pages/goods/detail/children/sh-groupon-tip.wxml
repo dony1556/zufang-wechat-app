@@ -1,0 +1,8 @@
+<swiper autoplay="{{true}}" bindchange="__e" circular="{{true}}" class="silde-tip-wrap" data-event-opts="{{[ [ 'change',[ [ 'changeSwiper',['$event'] ] ] ] ]}}" disableTouch="{{true}}" duration="{{1000}}" interval="{{5000}}" vertical="{{true}}">
+    <swiper-item class="silde-box" wx:for="{{3}}" wx:for-index="__i0__" wx:key="*this">
+        <view class="{{['silde-item','x-f',current==item-1?'silde--active':'']}}">
+            <image class="item-img" mode="aspectFill" src="/static/imgs/base_avatar.png"></image>
+            <text class="item-text">{{'美**'+item+'刚刚参与了团购'}}</text>
+        </view>
+    </swiper-item>
+</swiper>

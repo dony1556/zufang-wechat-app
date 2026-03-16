@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "商品详情",
+  "usingComponents": {
+    "wk-skeletons": "/components/wk-skeletons/index",
+    "wk-empty": "/components/wk-empty/index",
+    "sh-serve": "/pages/goods/detail/children/sh-serve",
+    "sh-price": "/pages/goods/detail/children/sh-price",
+    "sh-groupon": "/pages/goods/detail/children/sh-groupon",
+    "sh-coupon": "/pages/goods/detail/children/sh-coupon",
+    "sh-groupon-tip": "/pages/goods/detail/children/sh-groupon-tip",
+    "sh-comment": "/pages/goods/children/sh-comment"
+  }
+}

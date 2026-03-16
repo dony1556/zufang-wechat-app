@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "海报",
+  "usingComponents": {
+    "sh-invite-poster": "/pages/public/poster/children/sh-invite-poster",
+    "sh-goods-poster": "/pages/public/poster/children/sh-goods-poster",
+    "sh-groupon-poster": "/pages/public/poster/children/sh-groupon-poster"
+  }
+}

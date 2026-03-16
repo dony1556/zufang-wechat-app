@@ -1,0 +1,49 @@
+.hide-canvas {
+  position: fixed !important;
+  top: -99999rpx;
+  left: -99999rpx;
+  z-index: -99999;
+}
+.banner-swiper-box {
+  background: #fff;
+  margin-bottom: 10rpx;
+}
+.banner-swiper-box,
+.banner-carousel {
+  width: 750rpx;
+  height: 350rpx;
+  position: relative;
+}
+.banner-swiper-box .carousel-item,
+.banner-carousel .carousel-item {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.banner-swiper-box .swiper-image,
+.banner-carousel .swiper-image {
+  width: 100%;
+  height: 100%;
+}
+.banner-swiper-dots {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20rpx;
+  z-index: 66;
+}
+.banner-swiper-dots .banner-dot {
+  width: 14rpx;
+  height: 14rpx;
+  background: #fff;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+.banner-swiper-dots .banner-dot-active {
+  width: 14rpx;
+  height: 14rpx;
+  background: #a8700d;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}

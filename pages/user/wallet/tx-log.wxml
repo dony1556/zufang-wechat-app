@@ -1,0 +1,25 @@
+<view class="page">
+    <view class="scroll-box">
+        <scroll-view class="scroll" enableFlex="true" scrollX="true">
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'selectTab',['$0'],[ [ ['tabList','',index,'id'] ] ] ] ] ] ]}}" wx:for="{{tabList}}" wx:key="index">
+                <view class="{{['name',currentStatus==item.id?'active':'']}}">{{item.name}}</view>
+                <view class="line" wx:if="{{currentStatus==item.id}}"></view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="item-box">
+        <view class="item" wx:for="{{list}}" wx:key="index">
+            <view class="head">
+                <view class="name">{{'提现金额：'+item.total_money+'(实际应到帐：'+item.money+')'}}</view>
+                <view class="status" wx:if="{{item.status==1}}">提现中</view>
+                <view class="status" wx:if="{{item.status==6}}">已打款</view>
+                <view class="status" wx:if="{{item.status==4}}">驳回</view>
+            </view>
+            <view class="time">{{'手续费：'+item.fee}}</view>
+            <view class="time">{{'申请时间：'+item.create_time}}</view>
+            <view class="time" wx:if="{{item.status>1}}">{{'完成时间：'+item.check_time}}</view>
+            <view class="time" wx:if="{{item.status>1}}">{{'审批信息：'+item.check_msg}}</view>
+        </view>
+    </view>
+    <wk-empty bind:__l="__l" emptyData="{{emptyData}}" vueId="2b551000-1" wx:if="{{$root.g0==0}}"></wk-empty>
+</view>

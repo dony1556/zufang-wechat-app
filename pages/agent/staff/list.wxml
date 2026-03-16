@@ -1,0 +1,21 @@
+<view class="page">
+    <view class="store-box">
+        <view bindtap="__e" class="store" data-event-opts="{{[ [ 'tap',[ [ 'toDetail',['$0'],[ [ ['list','',index] ] ] ] ] ] ]}}" wx:for="{{list}}" wx:key="index">
+            <view class="top">
+                <view class="img-box">
+                    <image class="img" mode="aspectFill" src="{{item.logo}}"></image>
+                </view>
+                <view class="info">
+                    <view class="name">{{item.name}}</view>
+                    <view class="name2">
+                        <block wx:if="{{item.check_status==2}}">
+                            <text wx:if="{{item.role==1}}">店长</text>
+                            <text wx:if="{{item.role==2}}">员工</text>
+                        </block>
+                        <text style="color:#F37B1D;" wx:if="{{item.check_status==1}}">待审核</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

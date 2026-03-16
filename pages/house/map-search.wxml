@@ -1,0 +1,49 @@
+<view class="page">
+    <view class="tab-box">
+        <scroll-view class="scroll" scrollIntoView="{{scroll_id}}" scrollX="{{true}}">
+            <view bindtap="__e" class="{{['item',houseType==item.type?'on':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selectType',['$0',index],[ [ ['houseTypeList','',index,'type'] ] ] ] ] ] ]}}" id="{{'v-'+index}}" wx:for="{{houseTypeList}}" wx:key="index">{{''+item.name+''}}</view>
+        </scroll-view>
+    </view>
+    <view class="map-box">
+        <map bindcallouttap="__e" bindregionchange="__e" bindtap="__e" circles="{{circles}}" class="map" data-event-opts="{{[ [ 'tap',[ [ 'mapClick',['$event'] ] ] ],[ 'callouttap',[ [ 'calloutTap',['$event'] ] ] ],[ 'regionchange',[ [ 'regionChange',['$event'] ] ] ] ]}}" id="map" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}" scale="{{scale_list[scale_index]}}" showLocation="true" style="width:100%;height:100vh;"></map>
+    </view>
+    <cover-view class="input-box">
+        <cover-view class="sear">
+            <cover-view bindtap="__e" class="serach-item" data-event-opts="{{[ [ 'tap',[ [ 'selectAddress',['$event'] ] ] ] ]}}">
+                <cover-view class="iconfont icon-search" style="font-size:24rpx;color:#6c6c6c;margin-right:12rpx;"></cover-view>
+                <cover-view class="text">{{search_placehold}}</cover-view>
+            </cover-view>
+        </cover-view>
+    </cover-view>
+    <cover-view class="select-box">
+        <block wx:if="{{houseType=='lethouse'}}">
+            <cover-view bindtap="__e" class="se" data-event-opts="{{[ [ 'tap',[ ['navto_select'] ] ] ]}}" wx:if="{{$root.g0}}">
+                <cover-image src="./static/select2.png" style="width:32rpx;height:32rpx;"></cover-image>
+            </cover-view>
+            <cover-view bindtap="__e" class="se" data-event-opts="{{[ [ 'tap',[ ['navto_select'] ] ] ]}}" wx:else>
+                <cover-image src="./static/select.png" style="width:32rpx;height:32rpx;"></cover-image>
+            </cover-view>
+        </block>
+        <block wx:if="{{scale_show==0&&distance_show==0}}">
+            <cover-view bindtap="__e" class="scale" data-event-opts="{{[ [ 'tap',[ ['open_scale'] ] ] ]}}">{{scale_list[scale_index]}}</cover-view>
+            <cover-view bindtap="__e" class="distance" data-event-opts="{{[ [ 'tap',[ ['open_distance'] ] ] ]}}">{{distance_list[distance_index].name}}</cover-view>
+        </block>
+        <cover-view class="scale-box" wx:if="{{scale_show==1}}">
+            <cover-view bindtap="__e" class="{{['item',index==scale_index?'on':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'select_scale',[index] ] ] ] ]}}" wx:for="{{scale_list}}" wx:key="index">{{item}}</cover-view>
+        </cover-view>
+        <cover-view class="distance-box" wx:if="{{distance_show==1}}">
+            <cover-view bindtap="__e" class="{{['item',index==distance_index?'on':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'select_distance',[index] ] ] ] ]}}" wx:for="{{distance_list}}" wx:key="index">{{''+item.name+''}}</cover-view>
+        </cover-view>
+    </cover-view>
+    <view class="bot-box" wx:if="{{$root.g1>0}}">
+        <view class="head-box">
+            <view class="title">{{title}}</view>
+        </view>
+        <scroll-view class="house-box" scrollY="true">
+            <wk-houses bind:__l="__l" value="{{houseList}}" vueId="064c71b6-1"></wk-houses>
+        </scroll-view>
+    </view>
+    <cover-view catchtap="__e" class="tip-box" data-event-opts="{{[ [ 'tap',[ [ 'tipClose',['$event'] ] ] ] ]}}" wx:if="{{tip_show}}">点击地图上小区即可查看房源<cover-view bindtap="__e" class="iconfont icon-guanbi tip-close" data-event-opts="{{[ [ 'tap',[ [ 'closeHint',['$event'] ] ] ] ]}}"></cover-view>
+        <cover-view class="tip-sj"></cover-view>
+    </cover-view>
+</view>

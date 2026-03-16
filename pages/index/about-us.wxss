@@ -1,0 +1,50 @@
+.page {
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+}
+.page .logo {
+  width: 128rpx;
+  height: 128rpx;
+  margin-top: 100rpx;
+  margin-bottom: 25rpx;
+}
+.page .name {
+  margin-top: 40rpx;
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #333;
+}
+.page .content {
+  width: 680rpx;
+  margin-top: 30rpx;
+}
+.page .item-box {
+  padding: 20rpx 50rpx;
+  width: 100%;
+  border-top: 20rpx solid #f7f8f9;
+}
+.page .item-box .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100rpx;
+  width: 100%;
+  position: relative;
+  padding: 10rpx;
+}
+.page .item-box .item:not(:last-of-type) {
+  border-bottom: 1rpx solid #e4e8eb;
+}
+.page .foot {
+  width: 100%;
+  background-color: #f6f6f6;
+}
+.page .foot .copyright {
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
+  font-size: 24rpx;
+  text-align: center;
+}

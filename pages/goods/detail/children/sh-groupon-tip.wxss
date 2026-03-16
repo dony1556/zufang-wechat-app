@@ -1,0 +1,33 @@
+.silde-tip-wrap {
+  position: absolute;
+  left: 30rpx;
+  top: 30rpx;
+  height: 100rpx;
+  width: 750rpx;
+  z-index: 999;
+}
+.silde-tip-wrap .silde-box .silde-item {
+  height: 64rpx;
+  background: linear-gradient(90deg, #ff5f5f, #ff6c00);
+  border-radius: 32rpx;
+  padding: 0 10rpx;
+  transition: all 1s linear;
+  opacity: 0;
+  width: 400rpx;
+}
+.silde-tip-wrap .silde-box .silde-item .item-img {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+.silde-tip-wrap .silde-box .silde-item .item-text {
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: 700;
+  color: #fefefe;
+}
+.silde-tip-wrap .silde-box .silde--active {
+  transition: all 1s linear;
+  opacity: 0.8;
+}

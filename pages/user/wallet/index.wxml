@@ -1,0 +1,47 @@
+<view class="page">
+    <view class="content-box">
+        <view class="wallet-box">
+            <image class="img" src="/static/imgs/wallet.png" style="width:120rpx;height:120rpx;"></image>
+            <view class="money">{{'￥'+user.money}}</view>
+        </view>
+        <view class="scroll-box">
+            <scroll-view class="scroll" scrollX="{{true}}">
+                <view bindtap="__e" class="{{['item',selectIndex==index?'on':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'tabChange',[index] ] ] ] ]}}" wx:for="{{tabList}}" wx:key="index">{{item.name}}</view>
+            </scroll-view>
+        </view>
+        <view class="bottom">
+            <block wx:if="{{selectIndex==0}}">
+                <view class="tx-box">
+                    <view class="title">充值金额</view>
+                    <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','money','$event',[] ] ] ] ] ]}}" placeholder="请输入充值数量" type="digit" value="{{money}}"></input>
+                </view>
+                <view bindtap="__e" class="pay-btn" data-event-opts="{{[ [ 'tap',[ [ 'czHandle',['$event'] ] ] ] ]}}">充值</view>
+                <view bindtap="__e" class="cz-log" data-event-opts="{{[ [ 'tap',[ [ 'sz_mx',['$event'] ] ] ] ]}}">收支明细</view>
+            </block>
+            <block wx:if="{{selectIndex==1}}">
+                <view class="tx-box">
+                    <view class="title">提现金额</view>
+                    <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','money2','$event',[] ],['form2'] ] ] ] ]}}" placeholder="请输入提现金额" type="digit" value="{{form2.money2}}"></input>
+                </view>
+                <view class="tx-box">
+                    <view class="title">姓名</view>
+                    <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','truename','$event',[] ],['form2'] ] ] ] ]}}" placeholder="请输入姓名" value="{{form2.truename}}"></input>
+                </view>
+                <view class="tx-box">
+                    <view class="title">手机号</view>
+                    <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','mobile','$event',[] ],['form2'] ] ] ] ]}}" placeholder="请输入手机号" value="{{form2.mobile}}"></input>
+                </view>
+                <view class="tx-box">
+                    <view class="title">微信号</view>
+                    <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','wx_no','$event',[] ],['form2'] ] ] ] ]}}" placeholder="请输入微信号" value="{{form2.wx_no}}"></input>
+                </view>
+                <view class="tx-box">
+                    <view class="title">支付宝号</view>
+                    <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','zfb_no','$event',[] ],['form2'] ] ] ] ]}}" placeholder="请输入支付宝号" value="{{form2.zfb_no}}"></input>
+                </view>
+                <view bindtap="__e" class="tx-btn" data-event-opts="{{[ [ 'tap',[ [ 'txHandle',['$event'] ] ] ] ]}}">提现</view>
+                <view bindtap="__e" class="tx-log" data-event-opts="{{[ [ 'tap',[ [ 'tx_mx',['$event'] ] ] ] ]}}">提现记录</view>
+            </block>
+        </view>
+    </view>
+</view>

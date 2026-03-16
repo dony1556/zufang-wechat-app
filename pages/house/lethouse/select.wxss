@@ -1,0 +1,224 @@
+.page {
+  background-color: #fff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.page .top-box {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0rpx;
+  background-color: #fff;
+  z-index: 999;
+  box-shadow: 1rpx 1rpx 6rpx #d6d6d6;
+}
+.page .top-box .search-box {
+  background-color: #f7f8f9;
+  margin: 16rpx 40rpx 16rpx 40rpx;
+  height: 66rpx;
+  border-radius: 36rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 30rpx;
+}
+.page .top-box .search-box .icon {
+  font-size: 36rpx;
+  color: #a2a2a2;
+}
+.page .top-box .search-box .text {
+  margin-left: 20rpx;
+  color: #a2a2a2;
+  flex: 1;
+  font-size: 24rpx;
+}
+.page .top-box .item-box {
+  display: flex;
+}
+.page .top-box .item-box .item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100rpx;
+}
+.page .top-box .item-box .item .tit {
+  font-size: 26rpx;
+}
+.page .top-box .item-box .item .tit.active {
+  color: #3dbcc5;
+}
+.page .top-box .item-box .item .icon {
+  font-size: 20rpx;
+  color: #a2a2a2;
+  margin-left: 8rpx;
+}
+.page .top-box .item-box .item .icon.active {
+  color: #f50;
+}
+.page .choose-box {
+  padding: 0 12rpx;
+  flex: 1;
+  overflow-y: auto;
+}
+.page .choose-box .area-box {
+  width: 100%;
+  background-color: #fff;
+  padding: 20rpx;
+  display: flex;
+  min-height: 60vh;
+}
+.page .choose-box .area-box .left {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.page .choose-box .area-box .left .item {
+  padding: 30rpx 30rpx;
+  font-size: 28rpx;
+}
+.page .choose-box .area-box .left .item.active {
+  color: #50d0d9;
+}
+.page .choose-box .area-box .between {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #f2f2f2;
+}
+.page .choose-box .area-box .between .item {
+  padding: 30rpx 30rpx;
+  font-size: 26rpx;
+}
+.page .choose-box .area-box .between .item.active {
+  color: #50d0d9;
+}
+.page .choose-box .area-box .right {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #fff;
+}
+.page .choose-box .area-box .right .item {
+  padding: 30rpx 30rpx;
+  font-size: 26rpx;
+  border-bottom: 1rpx solid #efefef;
+}
+.page .choose-box .area-box .right .item.active {
+  color: #50d0d9;
+}
+.page .choose-box .price-box {
+  width: 100%;
+  background-color: #fff;
+  padding: 20rpx;
+}
+.page .choose-box .price-box .select-price {
+  height: 100%;
+}
+.page .choose-box .price-box .select-price.active {
+  color: #3dbcc5;
+}
+.page .choose-box .price-box .select-price .price-item {
+  line-height: 90rpx;
+  text-align: center;
+}
+.page .choose-box .price-box .select-price .price-item.active {
+  color: #3dbcc5;
+}
+.page .choose-box .shi-box {
+  width: 100%;
+  padding: 20rpx;
+}
+.page .choose-box .shi-box .title {
+  font-weight: 700;
+  font-size: 28rpx;
+  margin-bottom: 35rpx;
+}
+.page .choose-box .shi-box .shis {
+  display: flex;
+  flex-wrap: wrap;
+}
+.page .choose-box .shi-box .shis .shi-item {
+  width: 22%;
+  line-height: 60rpx;
+  margin: 0 1.5% 30rpx 1.5%;
+  border: 2rpx solid #eaeaea;
+  text-align: center;
+  font-size: 24rpx;
+  border-radius: 40rpx;
+}
+.page .choose-box .shi-box .shis .shi-item.active {
+  color: #50d0d9;
+  border: 1rpx solid #50d0d9;
+}
+.page .choose-box .more-box {
+  padding: 15rpx 20rpx;
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+.page .choose-box .more-box .more-scroll {
+  height: 100%;
+}
+.page .choose-box .more-box .more-scroll .title {
+  font-weight: 700;
+  line-height: 70rpx;
+  font-size: 28rpx;
+}
+.page .choose-box .more-box .more-scroll .more-item {
+  display: flex;
+  flex-wrap: wrap;
+}
+.page .choose-box .more-box .more-scroll .more-item .option {
+  background-color: #fff;
+  border: 2rpx solid #eaeaea;
+  color: #333;
+  width: 28%;
+  margin: 15rpx 2.5%;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 24rpx;
+  border-radius: 60rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.page .choose-box .more-box .more-scroll .more-item .option.active {
+  border: 1rpx solid #50d0d9;
+  color: #50d0d9;
+}
+.page .bottom-box {
+  height: 130rpx;
+  width: 100%;
+  padding: 12rpx 16rpx 12rpx 16rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #fff;
+  box-shadow: -1rpx -1rpx 6rpx #d6d6d6;
+}
+.page .bottom-box .clear {
+  width: 150rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2rpx solid #e4e8eb;
+  border-radius: 6rpx;
+  height: 80rpx;
+}
+.page .bottom-box .confirm {
+  width: 510rpx;
+  background-image: linear-gradient(-90deg, #52d2d2, #3dbcc6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  height: 80rpx;
+  border-radius: 6rpx;
+}

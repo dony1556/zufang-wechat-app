@@ -1,0 +1,63 @@
+.page {
+  position: relative;
+  background-color: #fff;
+}
+.page .select-box {
+  height: calc(100vh - 130rpx);
+  padding: 12rpx 20rpx;
+}
+.page .select-box .title {
+  font-weight: 700;
+  line-height: 70rpx;
+  font-size: 28rpx;
+}
+.page .select-box .item {
+  display: flex;
+  flex-wrap: wrap;
+}
+.page .select-box .item .option {
+  background-color: #fff;
+  border: 2rpx solid #eaeaea;
+  color: #333;
+  width: 28%;
+  margin: 15rpx 2.5%;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 22rpx;
+  border-radius: 60rpx;
+  padding: 0rpx 8rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.page .select-box .item .option.active {
+  border: 1rpx solid #f50;
+  color: #f50;
+}
+.page .bottom-box {
+  height: 130rpx;
+  display: flex;
+  justify-content: space-around;
+  padding: 16rpx 20rpx 0rpx;
+  background-color: #fff;
+  background-color: #fff;
+}
+.page .bottom-box .clear {
+  width: 150rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2rpx solid #e4e8eb;
+  border-radius: 6rpx;
+  height: 80rpx;
+}
+.page .bottom-box .confirm {
+  width: 510rpx;
+  background-image: linear-gradient(-90deg, #f50, #ffaa7f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  height: 80rpx;
+  border-radius: 6rpx;
+}

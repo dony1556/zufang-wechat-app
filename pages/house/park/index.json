@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "车位",
+  "usingComponents": {
+    "wk-houses": "/components/wk-houses/index",
+    "wk-skeletons": "/components/wk-skeletons/index"
+  }
+}

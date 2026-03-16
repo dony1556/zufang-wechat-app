@@ -1,0 +1,57 @@
+.menu-category-box {
+  padding: 20rpx 0rpx 20rpx 0rpx;
+  width: 710rpx;
+  margin: 0rpx 20rpx;
+  position: relative;
+}
+.menu-category-box .menu-swiper-box {
+  position: relative;
+  background: #fff;
+}
+.menu-category-box .menu-swiper-box .menu-swiper-item {
+  background: #fff;
+  height: 100%;
+  width: 100%;
+}
+.menu-category-box .menu-swiper-box .menu-tab-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+.menu-category-box .menu-swiper-box .menu-tab-box .tab-item {
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.menu-category-box .menu-swiper-box .menu-tab-box .tab-item .tab-img {
+  margin-bottom: 16rpx;
+  width: 90rpx;
+  height: 90rpx;
+}
+.menu-category-box .menu-swiper-box .menu-tab-box .tab-item .tab-text {
+  font-size: 24rpx;
+  font-weight: 700;
+}
+.menu-category-box .menu-category-dots {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 20rpx;
+}
+.menu-category-box .menu-category-dots .category-dot {
+  width: 36rpx;
+  height: 6rpx;
+  background: #eee;
+  margin-right: 10rpx;
+  border-radius: 6rpx;
+}
+.menu-category-box .menu-category-dots .category-dot-active {
+  width: 36rpx;
+  height: 8rpx;
+  background: red;
+  margin-right: 10rpx;
+  border-radius: 6rpx;
+}

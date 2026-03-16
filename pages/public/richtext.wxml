@@ -1,0 +1,10 @@
+<view class="page_box">
+    <view class="head_box"></view>
+    <view class="content_box">
+        <uni-parser bind:__l="__l" html="{{richText.content}}" vueId="f12e1880-1"></uni-parser>
+    </view>
+    <view class="foot_box"></view>
+    <shopro-login-modal bind:__l="__l" vueId="f12e1880-2"></shopro-login-modal>
+    <shopro-tabbar bind:__l="__l" vueId="f12e1880-3"></shopro-tabbar>
+    <shopro-float-btn bind:__l="__l" vueId="f12e1880-4"></shopro-float-btn>
+</view>

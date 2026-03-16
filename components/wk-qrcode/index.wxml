@@ -1,0 +1,13 @@
+<view>
+    <view bindtap="__e" class="{{['back-shadow',showModal?'on':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'hide',['$event'] ] ] ] ]}}"></view>
+    <view bindtap="__e" class="{{['box',showModal?'on':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'hide',['$event'] ] ] ] ]}}">
+        <view catchtap="__e" class="content" data-event-opts="{{[ [ 'tap',[ [ '',['$event'] ] ] ] ]}}">
+            <view bindlongpress="__e" class="img-box" data-event-opts="{{[ [ 'longpress',[ [ 'saveImg',['$event'] ] ] ] ]}}">
+                <image class="img" mode="aspectFit" src="{{path}}"></image>
+                <view class="tip">长按保存图片</view>
+                <view class="tip2">{{tip2}}</view>
+            </view>
+            <view bindtap="__e" class="iconfont icon-guanbi del" data-event-opts="{{[ [ 'tap',[ [ 'hide',['$event'] ] ] ] ]}}"></view>
+        </view>
+    </view>
+</view>

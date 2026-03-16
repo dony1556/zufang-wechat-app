@@ -1,0 +1,187 @@
+.page .no-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200rpx;
+}
+.page .no-box .img {
+  width: 420rpx;
+  height: 240rpx;
+}
+.page .no-box .tip {
+  font-size: 30rpx;
+  margin-top: 80rpx;
+}
+.page .no-box .apply {
+  height: 80rpx;
+  width: 560rpx;
+  border-radius: 40rpx;
+  margin: 88rpx auto 0;
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  background: #ff4544;
+  text-align: center;
+}
+.page .wait-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200rpx;
+}
+.page .wait-box .img {
+  width: 420rpx;
+  height: 240rpx;
+}
+.page .wait-box .tip {
+  font-size: 30rpx;
+  margin-top: 80rpx;
+}
+.page .wait-box .apply {
+  height: 80rpx;
+  width: 560rpx;
+  border-radius: 40rpx;
+  margin: 88rpx auto 0;
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  background: #ff4544;
+  text-align: center;
+}
+.page .delete-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200rpx;
+}
+.page .delete-box .img {
+  width: 420rpx;
+  height: 240rpx;
+}
+.page .delete-box .tip {
+  font-size: 30rpx;
+  margin-top: 80rpx;
+}
+.page .delete-box .tip2 {
+  font-size: 26rpx;
+  margin-top: 20rpx;
+  padding: 0rpx 20rpx;
+}
+.page .delete-box .apply {
+  height: 80rpx;
+  width: 560rpx;
+  border-radius: 40rpx;
+  margin: 88rpx auto 0;
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  background: #ff4544;
+  text-align: center;
+}
+.page .index-box .top {
+  background-color: #f50;
+  padding: 30rpx 30rpx;
+}
+.page .index-box .top .name {
+  font-size: 30rpx;
+  color: #fff;
+}
+.page .index-box .top .phone {
+  font-size: 28rpx;
+  color: #fff;
+  margin-top: 12rpx;
+}
+.page .index-box .top .line {
+  margin-top: 30rpx;
+  height: 2rpx;
+  background-color: #fff;
+}
+.page .index-box .top .tx-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30rpx;
+}
+.page .index-box .top .tx-box .money-box .txt {
+  font-size: 26rpx;
+  color: #fff;
+}
+.page .index-box .top .tx-box .money-box .money {
+  color: #fff;
+  margin-top: 10rpx;
+}
+.page .index-box .top .tx-box .tx {
+  font-size: 28rpx;
+  border-radius: 30rpx;
+  width: 130rpx;
+  line-height: 60rpx;
+  height: 60rpx;
+  border: 1rpx solid #fff;
+  text-align: center;
+  color: #fff;
+}
+.page .index-box .mx-box {
+  margin: 20rpx 20rpx;
+  background-color: #fff;
+  border-radius: 12rpx;
+  display: flex;
+  padding: 20rpx 20rpx;
+}
+.page .index-box .mx-box .ytx {
+  width: 50%;
+  border-right: 1rpx solid #5a0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page .index-box .mx-box .ytx .name {
+  font-size: 28rpx;
+}
+.page .index-box .mx-box .ytx .num {
+  color: #f50;
+  font-size: 26rpx;
+  margin-top: 16rpx;
+}
+.page .index-box .mx-box .wjs {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page .index-box .mx-box .wjs .name {
+  font-size: 28rpx;
+}
+.page .index-box .mx-box .wjs .num {
+  color: #fa0;
+  font-size: 26rpx;
+  margin-top: 16rpx;
+}
+.page .index-box .item-box {
+  display: flex;
+  background-color: #fff;
+  padding: 20rpx 20rpx;
+  margin: 20rpx 20rpx;
+  border-radius: 8rpx;
+}
+.page .index-box .item-box .item {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30rpx 0rpx;
+  margin-top: 20rpx;
+}
+.page .index-box .item-box .item .img {
+  width: 60rpx;
+  height: 60rpx;
+}
+.page .index-box .item-box .item .name {
+  font-size: 24rpx;
+  margin-top: 16rpx;
+}
+.page .index-box .item-box .item .num {
+  margin-top: 16rpx;
+  font-size: 24rpx;
+  color: #fa0;
+  height: 40rpx;
+}

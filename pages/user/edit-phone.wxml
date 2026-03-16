@@ -1,0 +1,22 @@
+<view class="bank-wrap">
+    <view class="form-box">
+        <label>
+            <view class="form-item flex align-center justify-between">
+                <view class="item-title">手机号:</view>
+                <input bindinput="__e" class="item-input flex-sub" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','phone','$event',[] ] ] ] ] ]}}" placeholder="请输入要绑定的新手机号" placeholderClass="pl-input" type="number" value="{{phone}}"></input>
+            </view>
+        </label>
+        <view class="form-item flex align-center justify-between">
+            <label>
+                <view class="x-f">
+                    <view class="item-title">验证码:</view>
+                    <input bindinput="__e" class="item-input flex-sub" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','value','$event',[] ],['code'] ] ] ] ]}}" placeholder="请输入验证码" placeholderClass="pl-input" type="text" value="{{code.value}}"></input>
+                </view>
+            </label>
+            <button catchtap="__e" class="cu-btn code-btn" data-event-opts="{{[ [ 'tap',[ [ 'getCode',['$event'] ] ] ] ]}}" disabled="{{code.status}}">{{code.text}}</button>
+        </view>
+    </view>
+    <view class="btn-box flex align-center justify-center">
+        <button bindtap="__e" class="cu-btn confirem-btn" data-event-opts="{{[ [ 'tap',[ [ 'editChangemobile',['$event'] ] ] ] ]}}">提交</button>
+    </view>
+</view>

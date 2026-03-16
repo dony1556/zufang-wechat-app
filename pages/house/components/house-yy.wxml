@@ -1,0 +1,26 @@
+<view class="box">
+    <view bindtap="__e" catchtouchmove="__e" class="{{['back-shadow',showModal?'on':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'hide',['$event'] ] ] ],[ 'touchmove',[ [ '',['$event'] ] ] ] ]}}"></view>
+    <view class="{{['yy-box',showModal?'on':'']}}">
+        <view class="head">
+            <text>预约看房</text>
+        </view>
+        <view class="form">
+            <view class="item">
+                <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','name','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入联系人姓名" value="{{form.name}}"></input>
+            </view>
+            <view class="item">
+                <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','tel','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入联系人号码" value="{{form.tel}}"></input>
+            </view>
+            <view class="item">
+                <picker bindchange="__e" bindcolumnchange="__e" class="time-picker" data-event-opts="{{[ [ 'change',[ [ 'pickerChange',['$event'] ] ] ],[ 'columnchange',[ [ 'columnChange',['$event'] ] ] ] ]}}" mode="multiSelector" range="{{timeArray}}" rangeKey="name" value="{{timeIndex}}">
+                    <name bind:__l="__l" class="text" vueId="ea4183d0-1" vueSlots="{{['default']}}">{{form.time||'请选择预约时间'}}</name>
+                </picker>
+            </view>
+            <view class="btn-box">
+                <form bindsubmit="__e" data-event-opts="{{[ [ 'submit',[ [ 'formSubmit',['$event'] ] ] ] ]}}" reportSubmit="true">
+                    <button class="btn-yy" formType="submit">确认预约</button>
+                </form>
+            </view>
+        </view>
+    </view>
+</view>

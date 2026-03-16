@@ -1,0 +1,30 @@
+<view class="page">
+    <view class="top-box"></view>
+    <view class="body-box">
+        <view class="swiper-box" wx:if="{{$root.g0>0}}">
+            <swiper autoplay="true" class="slide-swiper">
+                <swiper-item class="swiper-item" wx:for="{{swiperList}}" wx:key="index">
+                    <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'navto',['$event'] ] ] ] ]}}">
+                        <image class="img" mode="aspectFill" src="{{item.img}}"></image>
+                    </view>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view class="tuan-box">
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'detail',['$0'],[ [ ['list','',index,'id'] ] ] ] ] ] ]}}" wx:for="{{list}}" wx:key="index">
+                <view class="img-box">
+                    <image class="img" mode="aspectFill" src="{{item.album[0]}}"></image>
+                    <view class="status" style="background:linear-gradient(45deg , #55aa00 , #55aa7f);" wx:if="{{item.status==2}}">正在报名</view>
+                    <view class="status" style="background:linear-gradient(45deg , #d7d7d7 , #fafafa);" wx:if="{{item.status==3}}">停止报名</view>
+                </view>
+                <view class="title-box">
+                    <view class="title">{{item.title}}</view>
+                    <view class="time">{{'活动时间：'+item.see_time}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="footer-box"></view>
+    <wk-login-modal bind:__l="__l" vueId="9776f926-1"></wk-login-modal>
+    <wk-skeletons bind:__l="__l" type="detail" vueId="9776f926-2" wx:if="{{isLoading}}"></wk-skeletons>
+</view>

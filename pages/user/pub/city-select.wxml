@@ -1,0 +1,7 @@
+<view class="page">
+    <view class="citys">
+        <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'selectCity',[index] ] ] ] ]}}" wx:for="{{cityList}}" wx:key="index">
+            <view class="text">{{item.city_name}}</view>
+        </view>
+    </view>
+</view>

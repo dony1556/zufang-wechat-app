@@ -1,0 +1,65 @@
+.page {
+  background-color: #fff;
+  min-height: 100vh;
+}
+.page .scroll-box {
+  padding: 10rpx 16rpx;
+}
+.page .scroll-box .scroll {
+  height: 90rpx;
+  width: 100%;
+  white-space: nowrap;
+}
+.page .scroll-box .scroll .item {
+  width: auto;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: inline-block;
+  padding: 0rpx 30rpx;
+  position: relative;
+}
+.page .scroll-box .scroll .item.active {
+  color: #3688ff;
+  font-weight: 700;
+}
+.page .scroll-box .scroll .item.active:after {
+  position: absolute;
+  content: "";
+  width: 20%;
+  height: 4rpx;
+  background: #3688ff;
+  border-radius: 6rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.page .search-box {
+  background-color: #f7f8f9;
+  margin: 16rpx 30rpx 36rpx 30rpx;
+  height: 72rpx;
+  border-radius: 36rpx;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.page .search-box .input {
+  flex: 1;
+  width: 0;
+  margin-left: 30rpx;
+  outline-style: none;
+  height: 72rpx;
+  font-size: 24rpx;
+  background-color: #f7f8f9;
+}
+.page .search-box .search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120rpx;
+  height: 72rpx;
+  background-color: #ff9700;
+}
+.page .house-box {
+  margin-top: 16rpx;
+}

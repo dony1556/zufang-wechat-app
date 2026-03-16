@@ -1,0 +1,26 @@
+.float-head {
+  padding: 20rpx 20rpx;
+  border-radius: 8rpx;
+  background-color: #fff;
+  box-shadow: 0 0 40rpx rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  position: relative;
+}
+.float-head .item {
+  flex-shrink: 0;
+  width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 20rpx 0rpx;
+}
+.float-head .item .img {
+  width: 44rpx;
+  height: 44rpx;
+}
+.float-head .item .name {
+  margin-top: 12rpx;
+  font-size: 24rpx;
+}

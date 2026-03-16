@@ -1,0 +1,29 @@
+<view class="login-box">
+    <view bindtap="__e" class="{{['login-shadow',showLoginTip?'on':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'hide',['$event'] ] ] ] ]}}"></view>
+    <view class="{{['l-box',showLoginTip?'on':'']}}">
+        <view class="login-head">登录</view>
+        <view class="login-content">
+            <block wx:if="{{btn_show==1}}">
+                <view style="padding:30rpx 100rpx 30rpx 100rpx;">
+                    <view style="display:flex;align-items:center;height:100rpx;">
+                        <view style="margin-right:20rpx;">头像</view>
+                        <view style="display:flex;align-items:center;">
+                            <image src="{{avatarurl}}" style="width:60rpx;height:60rpx;border-radius:50%;" wx:if="{{avatarurl}}"></image>
+                            <button bindchooseavatar="__e" data-event-opts="{{[ [ 'chooseavatar',[ [ 'chooseAvatar',['$event'] ] ] ] ]}}" openType="chooseAvatar" style="background-color:#ffffff;font-size:26rpx;color:#55aaff;">选择头像</button>
+                        </view>
+                    </view>
+                    <view style="display:flex;align-items:center;height:100rpx;margin-right:20rpx;">
+                        <view style="margin-right:20rpx;">昵1称</view>
+                        <view>
+                            <input bindinput="__e" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','nickname','$event',[] ] ],[ 'nicknameChange',['$event'] ] ] ] ]}}" style="background-color:#f3f3f3;line-height:76rpx;border-radius:6rpx;height:76rpx;padding:0rpx 20rpx;" type="nickname" value="{{nickname}}"></input>
+                        </view>
+                    </view>
+                </view>
+                <button bindtap="__e" class="l-btn1" data-event-opts="{{[ [ 'tap',[ [ 'new_login',['$event'] ] ] ] ]}}">登录</button>
+            </block>
+            <block wx:if="{{btn_show==2}}">
+                <button bindgetphonenumber="__e" class="btn1" data-event-opts="{{[ [ 'getphonenumber',[ [ 'getphonenumber',['$event'] ] ] ] ]}}" openType="getPhoneNumber" wx:if="{{btn_show==2}}">绑定手机号</button>
+            </block>
+        </view>
+    </view>
+</view>

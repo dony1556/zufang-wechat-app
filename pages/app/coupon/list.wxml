@@ -1,0 +1,19 @@
+<view class="page_box">
+    <view class="head_box">
+        <view class="coupon-nav x-f">
+            <view bindtap="__e" class="nav-item y-f" data-event-opts="{{[ [ 'tap',[ [ 'onNav',['$0'],[ [ ['couponsState','id',nav.id,'id'] ] ] ] ] ] ]}}" wx:for="{{couponsState}}" wx:for-index="__i0__" wx:for-item="nav" wx:key="id">
+                <view class="item-title">{{nav.title}}</view>
+                <text class="{{['nav-line',stateCurrent===nav.id?'line-active':'']}}"></text>
+            </view>
+        </view>
+    </view>
+    <view class="content_box">
+        <view bindtap="__e" class="coupon-list" data-event-opts="{{[ [ 'tap',[ [ 'jump',[ '/pages/app/coupon/detail',[ 'o',['couponId',c.id],['state',stateCurrent] ] ] ] ] ] ]}}" wx:for="{{couponList}}" wx:for-index="__i1__" wx:for-item="c" wx:key="id">
+            <shoprp-coupon bind:__l="__l" couponData="{{c}}" state="{{stateCurrent}}" vueId="{{'6f1c40f6-1-'+__i1__}}"></shoprp-coupon>
+        </view>
+    </view>
+    <view class="foot_box"></view>
+    <shopro-tabbar bind:__l="__l" vueId="6f1c40f6-2"></shopro-tabbar>
+    <shopro-float-btn bind:__l="__l" vueId="6f1c40f6-3"></shopro-float-btn>
+    <shopro-login-modal bind:__l="__l" vueId="6f1c40f6-4"></shopro-login-modal>
+</view>

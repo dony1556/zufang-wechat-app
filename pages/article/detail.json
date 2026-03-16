@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "wk-parser": "/components/wk-parser/index",
+    "wk-houses": "/components/wk-houses/index",
+    "wk-skeletons": "/components/wk-skeletons/index"
+  }
+}

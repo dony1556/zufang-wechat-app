@@ -1,0 +1,109 @@
+<view class="page">
+    <view class="top-box"></view>
+    <view class="content-box">
+        <view bindtap="__e" class="search-box" data-event-opts="{{[ [ 'tap',[ [ 'toSearch',['$event'] ] ] ] ]}}">
+            <view class="iconfont icon-search  icon"></view>
+            <view class="text">{{searchKey}}</view>
+        </view>
+        <view class="swiper-box" wx:if="{{$root.g0>0}}">
+            <swiper autoplay="true" class="slide-swiper">
+                <swiper-item class="swiper-item" wx:for="{{swiperList}}" wx:key="index">
+                    <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'navto',['$event'] ] ] ] ]}}">
+                        <image class="img" mode="aspectFill" src="{{item.img}}"></image>
+                    </view>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view class="select-house">
+            <view bindtap="__e" class="back-shadow" data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}" wx:if="{{selectshow}}"></view>
+            <view class="{{[selectshow?'slect-box-active':'slect-box']}}">
+                <view class="item-box">
+                    <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'selectTab',[0] ] ] ] ]}}">
+                        <view class="{{['tit','',area_id>0?'active':'']}}">{{headArea||'位置'}}</view>
+                        <view class="{{['iconfont','icon-16_shixinxiangxia','icon',area_id>0?'active':'']}}"></view>
+                    </view>
+                    <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'selectTab',[1] ] ] ] ]}}">
+                        <view class="{{['tit','','',mj_index>=0?'active':'']}}">{{headPrice||'面积'}}</view>
+                        <view class="{{['iconfont','icon-16_shixinxiangxia','icon',mj_index>=0?'active':'']}}"></view>
+                    </view>
+                    <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'selectTab',[2] ] ] ] ]}}">
+                        <block wx:if="{{$root.g1}}">
+                            <view class="tit active">{{headShi}}</view>
+                            <view class="iconfont icon-16_shixinxiangxia  icon active"></view>
+                        </block>
+                        <block wx:else>
+                            <view class="tit">{{headShi}}</view>
+                            <view class="iconfont icon-16_shixinxiangxia icon"></view>
+                        </block>
+                    </view>
+                    <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'selectTab',[3] ] ] ] ]}}">
+                        <block wx:if="{{$root.g2}}">
+                            <view class="tit active">{{headMore}}</view>
+                            <view class="iconfont icon-16_shixinxiangxia icon active "></view>
+                        </block>
+                        <block wx:else>
+                            <view class="tit">{{headMore}}</view>
+                            <view class="iconfont icon-16_shixinxiangxia  icon"></view>
+                        </block>
+                    </view>
+                </view>
+                <block wx:if="{{selectshow}}">
+                    <view class="choose-box">
+                        <view class="area-box" wx:if="{{itemIndex==0}}">
+                            <scroll-view class="left " scrollY="{{true}}">
+                                <view bindtap="__e" class="{{['item',areaType==1?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selectDq',['$event'] ] ] ] ]}}">区域</view>
+                            </scroll-view>
+                            <block wx:if="{{areaType==1}}">
+                                <scroll-view class="between " scrollY="{{true}}">
+                                    <view bindtap="__e" class="{{['item',area_id==item.id?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selectArea',[index] ] ] ] ]}}" wx:for="{{areaList}}" wx:key="index">{{''+item.name+''}}</view>
+                                </scroll-view>
+                                <scroll-view class="right" scrollY="true" wx:if="{{area_id>0}}">
+                                    <view bindtap="__e" class="{{['item',item.g3>-1?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selectBuildarea',[index] ] ] ] ]}}" wx:for="{{$root.l0}}" wx:key="index">{{''+item.$orig.name+''}}</view>
+                                </scroll-view>
+                            </block>
+                            <block wx:if="{{areaType==2}}">
+                                <scroll-view class="left " scrollY="{{true}}"></scroll-view>
+                                <scroll-view class="right" scrollY="true" wx:if="{{areaIndex>-1}}"></scroll-view>
+                            </block>
+                        </view>
+                        <view class="price-box" wx:if="{{itemIndex==1}}">
+                            <scroll-view class="select-price" scrollY="{{true}}">
+                                <view bindtap="__e" class="{{['price-item',index==mj_index?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'choosePrice',[index] ] ] ] ]}}" wx:for="{{mjList}}" wx:key="index">{{item.name}}</view>
+                            </scroll-view>
+                        </view>
+                        <view class="shi-box" wx:if="{{itemIndex==2}}">
+                            <view class="title">类型</view>
+                            <view class="shis">
+                                <view bindtap="__e" class="{{['shi-item',type==item.id?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'chooseType',['$0'],[ [ ['typeList','',index,'id'] ] ] ] ] ] ]}}" wx:for="{{typeList}}" wx:key="index">{{item.name}}</view>
+                            </view>
+                        </view>
+                        <view class="more-box" wx:if="{{itemIndex==3}}">
+                            <scroll-view class="more-scroll" scrollY="true">
+                                <view class="title">装修</view>
+                                <view class="more-item">
+                                    <view bindtap="__e" class="{{['option',item.g4>-1?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'chooseDecorate',[index] ] ] ] ]}}" wx:for="{{$root.l1}}" wx:key="index">{{item.$orig.name}}</view>
+                                </view>
+                                <view class="title">房屋类型</view>
+                                <view class="more-item">
+                                    <view bindtap="__e" class="{{['option',item.g5>-1?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'chooseType2',[index] ] ] ] ]}}" wx:for="{{$root.l2}}" wx:key="index">{{item.$orig.name}}</view>
+                                </view>
+                                <view class="title">标签</view>
+                                <view class="more-item">
+                                    <view bindtap="__e" class="{{['option',item.g6>-1?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'chooseTag',[index] ] ] ] ]}}" wx:for="{{$root.l3}}" wx:key="index">{{item.$orig.name}}</view>
+                                </view>
+                            </scroll-view>
+                        </view>
+                    </view>
+                    <view class="bottom-box">
+                        <view bindtap="__e" class="clear" data-event-opts="{{[ [ 'tap',[ [ 'clear',['$event'] ] ] ] ]}}">重置</view>
+                        <view bindtap="__e" class="confirm" data-event-opts="{{[ [ 'tap',[ [ 'confirm',['$event'] ] ] ] ]}}">确定</view>
+                    </view>
+                </block>
+            </view>
+        </view>
+        <view class="house-box">
+            <wk-houses bind:__l="__l" value="{{houseList}}" vueId="69436efb-1"></wk-houses>
+        </view>
+    </view>
+    <wk-skeletons bind:__l="__l" type="detail" vueId="69436efb-2" wx:if="{{isLoading}}"></wk-skeletons>
+</view>

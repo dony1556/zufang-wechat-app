@@ -1,0 +1,30 @@
+.search-box {
+  display: flex;
+  padding: 20rpx;
+  background-color: #f1f1f2;
+}
+.search-box .box {
+  display: flex;
+  flex: 1;
+}
+.search-box .box .iconfont {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80rpx;
+  height: 70rpx;
+}
+.search-box .box .input {
+  flex: 1;
+  background-color: #fff;
+  height: 70rpx;
+}
+.search-box .box .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  height: 70rpx;
+  width: 100rpx;
+}

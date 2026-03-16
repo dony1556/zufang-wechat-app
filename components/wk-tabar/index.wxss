@@ -1,0 +1,58 @@
+.tabar-box {
+  height: 110rpx;
+  position: relative;
+  width: 100%;
+  z-index: 998;
+}
+.footer {
+  width: 100%;
+  background: #fff;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  height: 110rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+}
+.footer .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  width: 0;
+  position: relative;
+}
+.footer .item .img-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 66rpx;
+}
+.footer .item .img-box .img {
+  width: 42rpx;
+  height: 42rpx;
+  margin: 12rpx 0 10rpx 0;
+}
+.footer .item .img-box .fix-box {
+  width: 110rpx;
+  height: 110rpx;
+  position: absolute;
+  border-radius: 50%;
+  top: -46rpx;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer .item .img-box .fix-box .img2 {
+  width: 66rpx;
+  height: 66rpx;
+  border-radius: 50%;
+}
+.footer .item .title {
+  font-size: 24rpx;
+}

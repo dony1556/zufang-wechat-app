@@ -1,0 +1,15 @@
+<view class="tabar-box" style="{{'height:'+(platform_system.is_iphonex?'180rpx':'110rpx')+';'}}">
+    <view class="footer" style="{{'background:'+bottom.params.backgroundColor+';'+'height:'+(platform_system.is_iphonex?'160rpx':'110rpx')+';'}}">
+        <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'routerTo',['$0'],[ [ ['bottom.data','',index] ] ] ] ] ] ]}}" wx:if="{{item.$orig.status!=2}}" wx:for="{{$root.l0}}" wx:key="index">
+            <view class="img-box">
+                <image class="img" src="{{currentPath==item.m0?item.$orig.imgSelectUrl:item.$orig.imgUrl}}" wx:if="{{item.$orig.is_fixed!=1}}"></image>
+                <view class="fix-box" style="{{'background:'+bottom.params.backgroundColor+';'}}" wx:if="{{item.$orig.is_fixed==1}}">
+                    <image class="img2" src="{{currentPath==item.m1?item.$orig.imgSelectUrl:item.$orig.imgUrl}}"></image>
+                </view>
+            </view>
+            <view class="title" style="{{'color:'+(currentPath==item.m2?bottom.params.titleTextSelectColor:bottom.params.titleTextColor)+';'}}">{{''+item.$orig.title+''}}</view>
+            <button class="system-buttom" openType="contact" wx:if="{{item.$orig.click_type==2}}"></button>
+            <button class="system-buttom" openType="share" wx:if="{{item.$orig.click_type==6}}"></button>
+        </view>
+    </view>
+</view>

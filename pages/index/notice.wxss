@@ -1,0 +1,27 @@
+.page .item {
+  margin: 30rpx 20rpx 0rpx;
+  border-radius: 10rpx;
+  display: flex;
+  background-color: #fff;
+  overflow: hidden;
+}
+.page .item .left {
+  flex: 1;
+  padding: 20rpx;
+}
+.page .item .left .name {
+  font-size: 28rpx;
+  font-weight: 700;
+}
+.page .item .left .num {
+  font-size: 24rpx;
+  margin-top: 20rpx;
+}
+.page .item .right {
+  background-color: #ff9700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200rpx;
+}

@@ -1,0 +1,40 @@
+.notice-box {
+  width: 100%;
+}
+.notice-box .box {
+  display: flex;
+  align-items: center;
+}
+.notice-box .box .icon-box {
+  height: 32rpx;
+  flex-shrink: 0;
+  margin: 0 10rpx 0 10rpx;
+}
+.notice-box .box .icon-box .img {
+  height: 32rpx;
+  width: auto;
+}
+.notice-box .box .swiper {
+  flex: 1;
+  width: 0;
+  height: 60rpx;
+}
+.notice-box .box .swiper .item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0rpx 16rpx;
+  box-sizing: border-box;
+}
+.notice-box .box .swiper .item .text {
+  flex: 1;
+  line-height: 60rpx;
+  color: #ff5344;
+  font-size: 26rpx;
+  margin-right: 20rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

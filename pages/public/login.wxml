@@ -1,0 +1,58 @@
+<view class="container">
+    <view class="head-box">
+        <cu-custom bind:__l="__l" isBack="{{true}}" vueId="9a41ee6c-1" vueSlots="{{['backText']}}">
+            <view slot="backText">登录</view>
+        </cu-custom>
+    </view>
+    <view class="wrapper">
+        <view class="x-c">
+            <image class="logo" mode="widthFix" src="{{basicSet.logo}}"></image>
+        </view>
+        <view class="tab-box x-f">
+            <view bindtap="__e" class="tab-item x-c" data-event-opts="{{[ [ 'tap',[ [ 'onLoginWay',[0] ] ] ] ]}}">
+                <text class="tab-title">手机登录</text>
+                <view class="line-box" hidden="{{!(loginWay===0)}}">
+                    <text class="triangle"></text>
+                </view>
+            </view>
+            <view bindtap="__e" class="tab-item x-c" data-event-opts="{{[ [ 'tap',[ [ 'onLoginWay',[1] ] ] ] ]}}">
+                <text class="tab-title">密码登录</text>
+                <view class="line-box" hidden="{{!(loginWay===1)}}" password="{{true}}">
+                    <text class="triangle"></text>
+                </view>
+            </view>
+        </view>
+        <view class="login-box y-f" hidden="{{!(loginWay===0)}}">
+            <view class="input-item x-c">
+                <input bindinput="__e" class="inp" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','userPhone','$event',[] ] ] ] ] ]}}" placeholder="请输入手机号" placeholderClass="pl" type="number" value="{{userPhone}}"></input>
+            </view>
+            <view class="input-item x-c">
+                <input bindinput="__e" class="inp" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','value','$event',[] ],['code'] ] ] ] ]}}" placeholder="请输入验证码" placeholderClass="pl" type="number" value="{{code.value}}"></input>
+                <button bindtap="__e" class="cu-btn code-btn" data-event-opts="{{[ [ 'tap',[ [ 'getCode',['$event'] ] ] ] ]}}" disabled="{{code.status}}">{{code.text}}</button>
+            </view>
+        </view>
+        <view class="login-box y-f" hidden="{{!(loginWay===1)}}">
+            <view class="input-item x-c">
+                <input bindinput="__e" class="inp" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','userPhone','$event',[] ] ] ] ] ]}}" placeholder="请输入账号" placeholderClass="pl" type="number" value="{{userPhone}}"></input>
+            </view>
+            <view class="input-item x-c">
+                <input bindinput="__e" class="inp" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','userPassword','$event',[] ] ] ] ] ]}}" password="{{true}}" placeholder="请输入密码" placeholderClass="pl" type="text" value="{{userPassword}}"></input>
+            </view>
+        </view>
+        <view class="x-c y-f">
+            <button bindtap="__e" class="cu-btn login-btn" data-event-opts="{{[ [ 'tap',[ [ 'toLogin',['$event'] ] ] ] ]}}">登录</button>
+            <view class="x-bc tip-box" wx:if="{{false}}">
+                <button bindtap="__e" class="cu-btn tip-btn" data-event-opts="{{[ [ 'tap',[ [ 'jump',['/pages/public/register'] ] ] ] ]}}">立即注册</button>
+                <view hidden="{{!(loginWay===1)}}">
+                    <button bindtap="__e" class="cu-btn tip-btn" data-event-opts="{{[ [ 'tap',[ [ 'jump',['/pages/public/forgot'] ] ] ] ]}}">忘记密码</button>
+                </view>
+            </view>
+        </view>
+        <view class="third-party y-f" wx:if="{{false}}">
+            <button bindgetuserinfo="__e" class="cu-btn wx-logo-box y-f" data-event-opts="{{[ [ 'getuserinfo',[ [ 'getuserinfo',['$event'] ] ] ] ]}}" openType="getUserInfo">
+                <image mode class="auto-login" src="http://shopro.7wpp.com/imgs/auto_login.png"></image>
+                <view>微信一键登录</view>
+            </button>
+        </view>
+    </view>
+</view>

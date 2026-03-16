@@ -1,0 +1,29 @@
+<view class="page_box">
+    <view class="head_box x-bc" wx:if="{{$root.g0}}">
+        <view class="count-box"></view>
+        <button bindtap="__e" class="cu-btn set-btn" data-event-opts="{{[ [ 'tap',[ [ 'onSet',['$event'] ] ] ] ]}}">{{isSel?'完成':'编辑'}}</button>
+    </view>
+    <view class="content_box">
+        <scroll-view bindscrolltolower="__e" class="scroll-box" data-event-opts="{{[ [ 'scrolltolower',[ [ 'loadMore',['$event'] ] ] ] ]}}" scrollY="true">
+            <checkbox-group bindchange="__e" data-event-opts="{{[ [ 'change',[ [ 'onSel',['$event'] ] ] ] ]}}" wx:if="{{$root.g1}}">
+                <view class="collect-list x-f" wx:for="{{$root.l0}}" wx:for-index="__i0__" wx:for-item="f" wx:key="id">
+                    <checkbox checked="{{f.$orig.checked}}" class="{{['goods-radio','round','orange',f.$orig.checked?'checked':'']}}" value="{{f.g2}}" wx:if="{{isSel}}"></checkbox>
+                </view>
+            </checkbox-group>
+            <wk-empty bind:__l="__l" emptyData="{{emptyData}}" vueId="450713ad-1" wx:if="{{!$root.g3}}"></wk-empty>
+            <view class="{{['cu-load','text-gray',loadStatus]}}" wx:if="{{$root.g4}}"></view>
+        </scroll-view>
+    </view>
+    <view class="foot_box ">
+        <view class="tools-box x-bc" wx:if="{{$root.g5}}">
+            <label bindtap="__e" class="check-all" data-event-opts="{{[ [ 'tap',[ [ 'onAllSel',['$event'] ] ] ] ]}}">
+                <radio checked="{{allSel}}" class="{{['check-all-radio','orange',allSel?'checked':'']}}"></radio>
+                <text>全选</text>
+            </label>
+            <button bindtap="__e" class="cu-btn close-btn" data-event-opts="{{[ [ 'tap',[ [ 'cancelFavorite',['$event'] ] ] ] ]}}">删除</button>
+        </view>
+    </view>
+    <shopro-tabbar bind:__l="__l" vueId="450713ad-2"></shopro-tabbar>
+    <shopro-float-btn bind:__l="__l" vueId="450713ad-3"></shopro-float-btn>
+    <shopro-login-modal bind:__l="__l" vueId="450713ad-4"></shopro-login-modal>
+</view>

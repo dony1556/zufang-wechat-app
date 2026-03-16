@@ -1,0 +1,18 @@
+{
+  "usingComponents": {
+    "wk-houses": "/components/wk-houses/index",
+    "wk-tabar": "/components/wk-tabar/index",
+    "wk-skeletons": "/components/wk-skeletons/index",
+    "wk-login-modal": "/components/wk-login-modal/index",
+    "sh-search": "/pages/index/components/sh-search",
+    "sh-menu": "/pages/index/components/sh-menu",
+    "sh-banner": "/pages/index/components/sh-banner",
+    "sh-adv": "/pages/index/components/sh-adv",
+    "sh-img": "/pages/index/components/sh-img",
+    "index-notice": "/pages/index/components/index-notice",
+    "index-num": "/pages/index/components/index-num",
+    "index-ad": "/pages/index/components/index-ad",
+    "index-float-bar": "/pages/index/components/index-float-bar",
+    "index-magic": "/pages/index/components/index-magic"
+  }
+}

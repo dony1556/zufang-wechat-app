@@ -1,0 +1,7 @@
+<view class="sunui-stars x-f">
+    <view class="sunui-m x-f">
+        <view bindtap="__e" class="sunui-stars-items x-f" data-event-opts="{{[ [ 'tap',[ [ 'changeStar',['$event'] ] ] ] ]}}" data-value="{{index}}" wx:for="{{maxStar}}" wx:key="index">
+            <text class="{{['cuIcon-favorfill',curStarNum>index?'icon-star-hover':'icon-star-nhover']}}"></text>
+        </view>
+    </view>
+</view>
