@@ -100,6 +100,7 @@ require("../../common/vendor.js"),
                   typeIndex: 0,
                   content: "",
                   own_remarks: "",
+                  video:""
                 },
                 treaty_agree: !1,
               };
@@ -257,6 +258,13 @@ require("../../common/vendor.js"),
                     c.$tools.uploadFile("file.upload", t).then(function (t) {
                       e.push(t.url);
                     });
+                  });
+                });
+              },
+              onChooseVideo: function () {
+                c.$tools.chooseVideo().then(function (t) {
+                  c.$tools.uploadFile("file.upload2", t).then(function (t) {
+                    c.form.video = t.url
                   });
                 });
               },
