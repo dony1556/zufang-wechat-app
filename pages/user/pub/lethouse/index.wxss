@@ -19,7 +19,7 @@
 }
 .page .body-box .treaty .txt {
   margin-left: 16rpx;
-  font-size: 28rpx;
+  font-size: 40rpx;
 }
 .page .body-box .form {
   width: 718rpx;
@@ -35,13 +35,18 @@
   border-bottom: 1rpx solid #f3f3f3;
 }
 .page .body-box .form .form-item .title {
-  width: 180rpx;
+  width: 190rpx;
   min-height: 90rpx;
   display: flex;
   align-items: center;
-  font-size: 26rpx;
+  font-size: 40rpx;
   flex-shrink: 0;
 }
+.required {
+  color: #ff0000;
+  padding: 5px;
+}
+
 .page .body-box .form .form-item .right {
   flex: 1;
   display: flex;
@@ -58,7 +63,7 @@
   flex: 1;
   height: 90rpx;
   line-height: 90rpx;
-  font-size: 26rpx;
+  font-size: 40rpx;
   width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -82,10 +87,10 @@
   flex: 1;
   height: 90rpx;
   line-height: 90rpx;
-  font-size: 26rpx;
+  font-size: 40rpx;
 }
 .page .body-box .form .form-item .right .picker .picker-box .icon {
-  font-size: 20rpx;
+  font-size: 25rpx;
   color: #c4c4c4;
   margin-right: 10rpx;
 }
@@ -93,13 +98,13 @@
   flex: 1;
   height: 90rpx;
   line-height: 90rpx;
-  font-size: 26rpx;
+  font-size: 40rpx;
 }
 .page .body-box .form .form-item .right .unit {
   padding: 0 10rpx;
   height: 90rpx;
   line-height: 90rpx;
-  font-size: 26rpx;
+  font-size: 40rpx;
   color: #a0a0a0;
 }
 .page .body-box .form .form-item2 {
@@ -113,7 +118,7 @@
   display: flex;
   align-items: center;
   height: 80rpx;
-  font-size: 26rpx;
+  font-size: 40rpx;
 }
 .page .body-box .form .form-item2 .title-box .title {
   height: 70rpx;
@@ -126,7 +131,7 @@
 .page .body-box .form .form-item2 .input {
   height: 90rpx;
   line-height: 90rpx;
-  font-size: 26rpx;
+  font-size: 40rpx;
 }
 .page .body-box .form .form-item2 .bot-box .textarea {
   width: 100%;
@@ -134,7 +139,7 @@
   height: 200rpx;
   border: 1rpx solid #eee;
   padding: 16rpx;
-  font-size: 26rpx;
+  font-size: 35rpx;
 }
 .page .body-box .form .img-box {
   display: flex;
@@ -144,8 +149,8 @@
 }
 .page .body-box .form .img-box .choose-img,
 .page .body-box .form .img-box .preview-box {
-  width: 90rpx;
-  height: 90rpx;
+  width: 120rpx;
+  height: 120rpx;
   background: #f9fafb;
   border: 1rpx solid #efefef;
   margin-right: 25rpx;
@@ -198,15 +203,15 @@
 }
 .page .body-box .form .floor-item .title {
   width: 170rpx;
-  font-size: 26rpx;
+  font-size: 40rpx;
 }
 .page .body-box .form .floor-item .input {
   height: 90rpx;
   line-height: 90rpx;
-  font-size: 26rpx;
+  font-size: 40rpx;
 }
 .page .body-box .form .floor-item .unit {
-  font-size: 26rpx;
+  font-size: 40rpx;
   padding: 0 10rpx;
   color: #a0a0a0;
 }
@@ -224,5 +229,5 @@
   text-align: center;
   border-radius: 40rpx;
   background: linear-gradient(45deg, #f50, #ffb8ae);
-  font-size: 26rpx;
+  font-size: 40rpx;
 }

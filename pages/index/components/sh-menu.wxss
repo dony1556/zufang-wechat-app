@@ -27,11 +27,11 @@
 }
 .menu-category-box .menu-swiper-box .menu-tab-box .tab-item .tab-img {
   margin-bottom: 16rpx;
-  width: 90rpx;
-  height: 90rpx;
+  width: 135rpx;
+  height: 135rpx;
 }
 .menu-category-box .menu-swiper-box .menu-tab-box .tab-item .tab-text {
-  font-size: 24rpx;
+  font-size: 30rpx;
   font-weight: 700;
 }
 .menu-category-box .menu-category-dots {

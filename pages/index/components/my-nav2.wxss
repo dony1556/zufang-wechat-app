@@ -17,10 +17,10 @@
   padding: 20rpx 0rpx;
 }
 .float-head .item .img {
-  width: 44rpx;
-  height: 44rpx;
+  width: 85rpx;
+  height: 85rpx;
 }
 .float-head .item .name {
   margin-top: 12rpx;
-  font-size: 24rpx;
+  font-size: 35rpx;
 }

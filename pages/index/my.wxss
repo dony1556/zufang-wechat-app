@@ -7,7 +7,7 @@
   text-align: center;
   background-color: #fff;
   color: #757575;
-  font-size: 24rpx;
+  font-size: 38rpx;
   color: #a1a1a1;
 }
 .page .copyright {

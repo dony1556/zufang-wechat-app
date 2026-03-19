@@ -16,15 +16,15 @@
   top: 100rpx;
 }
 .top-box .user .img-box {
-  width: 90rpx;
-  height: 90rpx;
+  width: 120rpx;
+  height: 120rpx;
   margin-left: 40rpx;
   margin-right: 30rpx;
   position: relative;
 }
 .top-box .user .img-box .avatar {
-  width: 90rpx;
-  height: 90rpx;
+  width: 120rpx;
+  height: 120rpx;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -36,8 +36,8 @@
   color: #fff;
 }
 .top-box .user .right .text {
-  color: #666;
-  font-size: 30rpx;
+  color: black;
+  font-size: 45rpx;
   font-weight: 700;
 }
 .top-box .user .right .phone {
@@ -48,8 +48,8 @@
 .top-box .user .right .phone .btn1 {
   margin-left: 4rpx;
   background: transparent;
-  color: #666;
-  font-size: 26rpx;
+  color: black;
+  font-size: 35rpx;
   line-height: normal;
   padding: 0;
 }

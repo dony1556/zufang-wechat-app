@@ -132,9 +132,9 @@
                     <view class="right">
                         <view class="_div" style="display:flex;align-items:center;">
                             <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'select_elevator',['$0'],[ [ ['elevatorList','',index,'value'] ] ] ] ] ] ]}}" style="display:flex;align-items:center;" wx:for="{{elevatorList}}" wx:key="index">
-                                <view class="iconfont icon-gouxuan" style="font-size:32rpx;color:#ff4544;" wx:if="{{house.is_elevator==item.value}}"></view>
-                                <view class="iconfont icon-gouxuan1" style="font-size:32rpx;color:#999;" wx:if="{{house.is_elevator!=item.value}}"></view>
-                                <view style="margin:0rpx  20rpx;">{{item.name}}</view>
+                                <view class="iconfont icon-gouxuan" style="font-size:35rpx;color:#ff4544;" wx:if="{{house.is_elevator==item.value}}"></view>
+                                <view class="iconfont icon-gouxuan1" style="font-size:35rpx;color:#999;" wx:if="{{house.is_elevator!=item.value}}"></view>
+                                <view style="margin:0rpx  20rpx;font-size:40rpx;">{{item.name}}</view>
                             </view>
                         </view>
                     </view>

@@ -4,7 +4,8 @@
         <view class="form">
             <view style="border-radius:12rpx;overflow:hidden;background-color:#FFFFFF;">
                 <view bindtap="__e" class="form-item" data-event-opts="{{[ [ 'tap',[ [ 'openCommunity',['$event'] ] ] ] ]}}">
-                    <text class="title">小区</text>
+                    <text class="title">小区<text class="required">*</text>
+                    </text>
                     <view class="right">
                         <view class="choose-box">
                             <view class="text">{{pubCommunity.name||'请选择小区'}}</view>
@@ -33,13 +34,13 @@
                     </view>
                 </view>
                 <view class="form-item">
-                    <view class="title">出租方式</view>
+                    <view class="title">出租方式<text class="required">*</text></view>
                     <view class="right">
                         <view class="_div" style="display:flex;align-items:center;">
                             <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'select_let_way',['$0'],[ [ ['letWayList','',index,'value'] ] ] ] ] ] ]}}" style="display:flex;align-items:center;" wx:for="{{letWayList}}" wx:key="index">
-                                <view class="iconfont icon-gouxuan" style="font-size:32rpx;color:#ff4544;" wx:if="{{form.let_way==item.value}}"></view>
-                                <view class="iconfont icon-gouxuan1" style="font-size:32rpx;color:#999;" wx:else></view>
-                                <view style="margin:0rpx  20rpx;">{{item.name}}</view>
+                                <view class="iconfont icon-gouxuan" style="font-size:35rpx;color:#ff4544;" wx:if="{{form.let_way==item.value}}"></view>
+                                <view class="iconfont icon-gouxuan1" style="font-size:35rpx;color:#999;" wx:else></view>
+                                <view style="margin:0rpx  20rpx;font-size:35rpx;">{{item.name}}</view>
                             </view>
                         </view>
                     </view>
@@ -56,7 +57,7 @@
                     </view>
                 </view>
                 <view class="form-item">
-                    <text class="title">房租</text>
+                    <text class="title">房租<text class="required">*</text></text>
                     <view class="right">
                         <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','money','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入租金" type="number" value="{{form.money}}"></input>
                         <view class="unit">元/月</view>
@@ -71,13 +72,13 @@
                     <view class="unit">月</view>
                 </view>
                 <view class="form-item">
-                    <text class="title">联系人</text>
+                    <text class="title">联系人<text class="required">*</text></text>
                     <view class="right">
                         <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','name','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入联系人" value="{{form.name}}"></input>
                     </view>
                 </view>
                 <view class="form-item">
-                    <text class="title">联系电话</text>
+                    <text class="title">联系电话<text class="required">*</text></text>
                     <view class="right">
                         <input bindinput="__e" class="input" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','tel','$event',[] ],['form'] ] ] ] ]}}" placeholder="请输入联系电话" type="number" value="{{form.tel}}"></input>
                     </view>
@@ -119,9 +120,9 @@
                     <view class="right">
                         <view class="_div" style="display:flex;align-items:center;">
                             <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'select_elevator',['$0'],[ [ ['elevatorList','',index,'value'] ] ] ] ] ] ]}}" style="display:flex;align-items:center;" wx:for="{{elevatorList}}" wx:key="index">
-                                <view class="iconfont icon-gouxuan" style="font-size:32rpx;color:#ff4544;" wx:if="{{form.is_elevator==item.value}}"></view>
-                                <view class="iconfont icon-gouxuan1" style="font-size:32rpx;color:#999;" wx:else></view>
-                                <view style="margin:0rpx  20rpx;">{{item.name}}</view>
+                                <view class="iconfont icon-gouxuan" style="font-size:35rpx;color:#ff4544;" wx:if="{{form.is_elevator==item.value}}"></view>
+                                <view class="iconfont icon-gouxuan1" style="font-size:35rpx;color:#999;" wx:else></view>
+                                <view style="margin:0rpx  20rpx;font-size:40rpx;">{{item.name}}</view>
                             </view>
                         </view>
                     </view>

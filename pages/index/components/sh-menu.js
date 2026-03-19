@@ -67,7 +67,7 @@
                 this.value.data.length / this.value.params.rowNum
               ),
               n = Math.min(this.value.params.rowNum2, n);
-            return (148 + 2 * this.value.params.paddingInTB) * n;
+            return (180 + 2 * this.value.params.paddingInTB) * n;
           },
         },
         created: function () {},

@@ -29,15 +29,15 @@
   padding: 70rpx 20rpx;
 }
 .page .body-box .btn-box .btn {
-  width: 500rpx;
-  height: 76rpx;
-  line-height: 76rpx;
+  width: 560rpx;
+  height: 130rpx;
+  line-height: 130rpx;
   text-align: center;
-  border-radius: 38rpx;
-  background-color: #f50;
-  color: #fff;
+  border-radius: 68rpx;
+  background: var(--2, linear-gradient(180deg, #4588FA 0%, #3378EE 100%));  color: #fff;
   margin: 40rpx auto 0rpx auto;
   box-shadow: 2rpx 2rpx 6rpx #c9c9c9;
+  font-size: 35rpx;
 }
 .page .body-box .btn-box .btn2 {
   width: 500rpx;
