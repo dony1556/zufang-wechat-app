@@ -24,21 +24,21 @@
             </view>
         </view>
         <view class="item-box">
-            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'pub_house',['$event'] ] ] ] ]}}" style="background: linear-gradient(180deg, #FFDABC 0%, #FBEBD2 100%);">
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'pub_house',['$event'] ] ] ] ]}}" style="background-image: url('https://syzufang.oss-cn-hangzhou.aliyuncs.com/attachment/weike_house/2/2026/03/19/6730712572283739.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                 <view class="text-box">
-                    <text class="title">发布房源</text>
+                    <text class="title"></text>
                     <text class="text"></text>
                 </view>
             </view>
-            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'my_house',['$event'] ] ] ] ]}}" style="background:linear-gradient(180deg, #CDE7FF 0%, #DDF0FF 100%);">
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'my_house',['$event'] ] ] ] ]}}" style="background-image: url('https://syzufang.oss-cn-hangzhou.aliyuncs.com/attachment/weike_house/2/2026/03/19/3125247323219877.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                 <view class="text-box">
-                    <text class="title">管理房源</text>
+                    <text class="title"></text>
                     <text class="text"></text>
                 </view>
             </view>
-            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'yy_log',['$event'] ] ] ] ]}}" style="background:linear-gradient(180deg, #FBDBE0 0%, #FFDCE8 100%);">
+            <view bindtap="__e" class="item" data-event-opts="{{[ [ 'tap',[ [ 'yy_log',['$event'] ] ] ] ]}}" style="background-image: url('https://syzufang.oss-cn-hangzhou.aliyuncs.com/attachment/weike_house/2/2026/03/19/7194662879831274.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                 <view class="text-box">
-                    <text class="title">预约管理</text>
+                    <text class="title"></text>
                     <text class="text"></text>
                 </view>
             </view>
