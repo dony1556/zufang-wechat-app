@@ -30,11 +30,11 @@
   display: flex;
   justify-content: center;
   position: relative;
-  height: 66rpx;
+  height: 75rpx;
 }
 .footer .item .img-box .img {
-  width: 42rpx;
-  height: 42rpx;
+  width: 62rpx;
+  height: 62rpx;
   margin: 12rpx 0 10rpx 0;
 }
 .footer .item .img-box .fix-box {
@@ -49,10 +49,11 @@
   justify-content: center;
 }
 .footer .item .img-box .fix-box .img2 {
-  width: 66rpx;
-  height: 66rpx;
+  width: 80rpx;
+  height: 80rpx;
   border-radius: 50%;
 }
 .footer .item .title {
-  font-size: 24rpx;
+  font-size: 35rpx;
+  padding-left: 5rpx;
 }
