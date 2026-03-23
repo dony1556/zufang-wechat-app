@@ -136,7 +136,7 @@
   line-height: 80rpx;
   background-color: #3dbcc6;
   color: #fff;
-  margin-top: 50rpx;
+  margin-top: 10rpx;
   border-radius: 40rpx;
   font-size: 26rpx;
 }
@@ -149,4 +149,44 @@
   border: 1rpx solid #3dbcc6;
   border-radius: 40rpx;
   font-size: 26rpx;
+}
+.agreement-box {
+  display: flex;
+  align-items: center;
+  padding-top: 30rpx;
+}
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.checkbox {
+  width: 36rpx;
+  height: 36rpx;
+  border: 2rpx solid #ccc;
+  border-radius: 6rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+.checkbox.checked {
+  background-color: #3dbcc6;
+  border-color: #3dbcc6;
+}
+.check-icon {
+  color: #fff;
+  font-size: 24rpx;
+  font-weight: bold;
+}
+.agreement-text {
+  flex: 1;
+  font-size: 24rpx;
+  color: #666;
+  margin-left: 10rpx;
+  line-height: 1.5;
+}
+.link-text {
+  color: #3dbcc6;
+  text-decoration: none;
 }

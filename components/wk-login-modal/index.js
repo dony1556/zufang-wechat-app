@@ -79,6 +79,7 @@
               unionid: "",
               avatarurl: "",
               nickname: "",
+              agreed: false,
             };
           },
           props: {},
@@ -133,6 +134,21 @@
             show: function (t) {
               this.$store.commit("LOGIN_TIP", !0), (this.type = t);
             },
+            toggleAgreement: function (e) {
+              this.agreed = !this.agreed;
+            },
+            openAgreementUser: function (e) {
+              this.$Router.push({
+                path: "/pages/public/help/detail",
+                query: { id: 5 },
+              });
+            },
+            openAgreementPrivacy: function (e) {
+              this.$Router.push({
+                path: "/pages/public/help/detail",
+                query: { id: 6 },
+              });
+            },
             chooseAvatar: function (t) {
               console.info(t);
               var o = this;
@@ -160,7 +176,8 @@
               this.openid
                 ? "" != this.avatarurl
                   ? "" != this.nickname
-                    ? e
+                    ? this.agreed
+                      ? e
                         .$api(
                           "index.new_login",
                           {
@@ -194,8 +211,9 @@
                                 (e.session_key = t.data.session_key))
                               : e.$tools.toast(t.data.msg));
                         })
-                    : e.$tools.toast("昵称不能为空")
-                  : e.$tools.toast("头像不能为空")
+                    : e.$tools.toast("请先同意用户协议和隐私政策")
+                  : e.$tools.toast("昵称不能为空")
+                : e.$tools.toast("头像不能为空")
                 : e.$tools.toast("异常");
             },
             getUserInfo: function () {
