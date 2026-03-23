@@ -7,7 +7,7 @@
         </view>
         <view class="login-content">
             <block wx:if="{{btn_show==1}}">
-                <view style="padding:30rpx 55rpx 30rpx 100rpx;">
+                <view style="padding:30rpx 100rpx 30rpx 100rpx;">
                     <view style="display:flex;align-items:center;height:100rpx;">
                         <view style="margin-right:20rpx;">头像</view>
                         <view style="display:flex;align-items:center;">
